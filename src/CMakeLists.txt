@@ -173,6 +173,29 @@ target_include_directories(mc_rbdyn SYSTEM PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/
 target_link_libraries(mc_rbdyn PRIVATE qhullcpp qhullstatic_r)
 install_mc_rtc_lib(mc_rbdyn)
 
+
+
+
+############
+## mc_tvm ##
+############
+set(mc_tvm_SRC
+mc_tvm/Robot.cpp
+)
+
+set(mc_tvm_HDR
+../include/mc_tvm/Robot.h
+)
+
+add_library(mc_tvm SHARED ${mc_tvm_SRC} ${mc_tvm_HDR})
+set_target_properties(mc_tvm PROPERTIES COMPILE_FLAGS "-DMC_RBDYN_EXPORTS")
+target_link_libraries(mc_tvm PUBLIC TVM::TVM)
+install_mc_rtc_lib(mc_tvm)
+
+
+################
+## mc_rtc_gui ##
+################
 set(mc_rtc_gui_SRC
   mc_rtc/gui/StateBuilder.cpp
 )
