@@ -401,7 +401,7 @@ void ControllerClient::handle_polygon(const ElementId & id, const mc_rtc::Config
     exc.silence();
     try
     {
-      const std::vector<std::vector<Eigen::Vector3d>> p = {data};
+      const std::vector<std::vector<Eigen::Vector3d>> p = data;
       polygon(id, p, color);
     }
     catch(mc_rtc::Configuration::Exception & exc)
