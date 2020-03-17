@@ -10,14 +10,19 @@
 namespace mc_tvm
 {
 
-Robot::Robot(Clock & clock, const std::shared_ptr<mc_rbdyn::RobotModule> module) : Robot(clock, module->name, module) {}
+Robot::Robot(const std::shared_ptr<Clock> & clock, const std::shared_ptr<mc_rbdyn::RobotModule> & module)
+: Robot(clock, module->name, module)
+{
+}
 
-Robot::Robot(Clock & clock, const std::string & name, const std::shared_ptr<mc_rbdyn::RobotModule> module)
+Robot::Robot(const std::shared_ptr<Clock> & clock,
+             const std::string & name,
+             const std::shared_ptr<mc_rbdyn::RobotModule> & module)
 : Robot(clock, name, module, module->stance())
 {
 }
 
-Robot::Robot(Clock & clock,
+Robot::Robot(const std::shared_ptr<Clock> & clock,
              const std::string & name,
              const std::string & urdfPath,
              bool fixed,
@@ -29,7 +34,7 @@ Robot::Robot(Clock & clock,
           std::ifstream ifs(urdfPath);
           if(!ifs.good())
           {
-            LOG_ERROR_AND_THROW(tvm::exception::DataException, "Failed to open " + urdfPath + " for robot " + name);
+            LOG_ERROR_AND_THROW(Exception, "Failed to open " + urdfPath + " for robot " + name);
           }
           std::stringstream ss;
           ss << ifs.rdbuf();
@@ -41,11 +46,11 @@ Robot::Robot(Clock & clock,
 {
 }
 
-Robot::Robot(Clock & clock,
+Robot::Robot(const std::shared_ptr<Clock> & clock,
              const std::string & name,
-             const std::shared_ptr<mc_rbdyn::RobotModule> module,
+             const std::shared_ptr<mc_rbdyn::RobotModule> & module,
              const std::map<std::string, std::vector<double>> & q)
-: clock_(clock), last_tick_(clock.ticks()), module_(module), name_(name), mb_(module->mb), mbc_(module->mbc),
+: clock_(clock), last_tick_(clock->ticks()), module_(module), name_(name), mb_(module->mb), mbc_(module->mbc),
   normalAccB_(mbc_.bodyAccB.size()), fd_(mb_), bodyTransforms_(module->mbg.bodiesBaseTransform(mb_.body(0).name())),
   tau_(tvm::Space(mb_.nrDof()).createVariable("tau"))
 {
@@ -175,18 +180,18 @@ Robot::Robot(Clock & clock,
 
 void Robot::updateTimeDependency()
 {
-  if(last_tick_ != clock_.ticks())
+  if(last_tick_ != clock_->ticks())
   {
     auto ddq = ddq_.value();
     rbd::vectorToParam(ddq, mbc_.alphaD);
-    rbd::eulerIntegration(mb_, mbc_, clock_.dt());
+    rbd::eulerIntegration(mb_, mbc_, clock_->dt());
     auto dq = dq_.value();
     rbd::paramToVector(mbc_.alpha, dq);
     dq_.value(dq);
     auto q = q_.value();
     rbd::paramToVector(mbc_.q, q);
     q_.value(q);
-    last_tick_ = clock_.ticks();
+    last_tick_ = clock_->ticks();
   }
 }
 
@@ -247,6 +252,26 @@ void Robot::updateC()
 void Robot::updateCoM()
 {
   com_ = rbd::computeCoM(mb_, mbc_);
+}
+
+Robot::Exception::Exception(const std::string & msg) : msg(msg) {}
+
+Robot::Exception::~Exception() noexcept
+{
+  if(msg.size())
+  {
+    LOG_ERROR(msg)
+  }
+}
+
+const char * Robot::Exception::what() const noexcept
+{
+  return msg.c_str();
+}
+
+void Robot::Exception::silence() noexcept
+{
+  msg.resize(0);
 }
 
 } // namespace mc_tvm

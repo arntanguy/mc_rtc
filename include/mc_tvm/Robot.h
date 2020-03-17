@@ -57,16 +57,31 @@ namespace graph = tvm::graph;
  */
 struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
 {
-public:
   SET_OUTPUTS(Robot, FK, FV, FA, NormalAcceleration, tau, CoM, H, C, Geometry, Dynamics)
   SET_UPDATES(Robot, Time, FK, FV, FA, NormalAcceleration, CoM, H, C)
+
+  /*! \brief Exception thrown by this class when something bad occurs */
+  struct MC_RTC_UTILS_DLLAPI Exception : public std::exception
+  {
+    Exception(const std::string & msg);
+    ~Exception() noexcept;
+    virtual const char * what() const noexcept override;
+    void silence() noexcept;
+    std::string msg;
+  };
+
+  Robot(const Robot &) = default;
+  Robot(Robot &&) = default;
+  Robot & operator=(const Robot &) = default;
+  Robot & operator=(Robot &&) = default;
+  ~Robot() = default;
 
   /** Constructs a new robot instance
    *
    * \param clock Clock used in the ControlProblem
    * \param module RobotModule from which the Robot instance will be loaded
    */
-  Robot(Clock & clock, std::shared_ptr<mc_rbdyn::RobotModule> module);
+  Robot(const std::shared_ptr<Clock> & clock, const std::shared_ptr<mc_rbdyn::RobotModule> & module);
 
   /** Consts a new robot instance
    *
@@ -77,7 +92,9 @@ public:
    * \param name Robot name
    * \param module RobotModule from which the Robot instance will be loaded
    */
-  Robot(Clock & clock, const std::string & name, std::shared_ptr<mc_rbdyn::RobotModule> module);
+  Robot(const std::shared_ptr<Clock> & clock,
+        const std::string & name,
+        const std::shared_ptr<mc_rbdyn::RobotModule> & module);
 
   /** \brief Overload constructor to load a robot with a given initial stance
    *
@@ -86,9 +103,9 @@ public:
    * \param module RobotModule from which the Robot instance will be loaded
    * \param q Initial joint stance provided as a map of (joint name, joint value vector)
    */
-  Robot(Clock & clock,
+  Robot(const std::shared_ptr<Clock> & clock,
         const std::string & name,
-        std::shared_ptr<mc_rbdyn::RobotModule> module,
+        const std::shared_ptr<mc_rbdyn::RobotModule> & module,
         const std::map<std::string, std::vector<double>> & q);
 
   /** Create a robot directly from URDF
@@ -99,8 +116,9 @@ public:
    * @param fixed True for fixed-base robots
    * @param filteredLinks Ignore these links
    * @param q Initial joint stance provided as a map of (joint name, joint value vector)
+   * @thows If the urdf file cannot be loaded
    */
-  Robot(Clock & clock,
+  Robot(const std::shared_ptr<Clock> & clock,
         const std::string & name,
         const std::string & urdfPath,
         bool fixed,
@@ -293,7 +311,7 @@ public:
   }
 
 private:
-  Clock & clock_;
+  std::shared_ptr<Clock> clock_ = nullptr;
   uint64_t last_tick_ = 0;
   std::shared_ptr<mc_rbdyn::RobotModule> module_;
   std::string name_;
@@ -340,5 +358,4 @@ private:
   void updateC();
   void updateCoM();
 };
-
 } // namespace mc_tvm

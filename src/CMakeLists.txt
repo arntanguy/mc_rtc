@@ -179,10 +179,12 @@ install_mc_rtc_lib(mc_rbdyn)
 ############
 set(mc_tvm_SRC
 mc_tvm/Robot.cpp
+mc_tvm/Robots.cpp
 )
 
 set(mc_tvm_HDR
 ../include/mc_tvm/Robot.h
+../include/mc_tvm/Robots.h
 )
 
 add_library(mc_tvm SHARED ${mc_tvm_SRC} ${mc_tvm_HDR})
