@@ -14,6 +14,7 @@ RobotModule::RobotModule(const std::string & name, const mc_rbdyn_urdf::URDFPars
   mb = res.mb;
   mbc = res.mbc;
   mbg = res.mbg;
+  limits = res.limits;
   _collisionTransforms = res.collision_tf;
   boundsFromURDF(res.limits);
   _visual = res.visual;

@@ -17,6 +17,7 @@
 #include <RBDyn/MultiBodyConfig.h>
 #include <RBDyn/MultiBodyGraph.h>
 
+#include <mc_rbdyn/RobotModule.h>
 #include <mc_rbdyn_urdf/urdf.h>
 
 namespace mc_tvm
@@ -54,38 +55,68 @@ namespace graph = tvm::graph;
  * - Dynamics: depends on FA + normalAcceleration (i.e. everything)
  *
  */
-class MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
+struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
 {
 public:
   SET_OUTPUTS(Robot, FK, FV, FA, NormalAcceleration, tau, CoM, H, C, Geometry, Dynamics)
   SET_UPDATES(Robot, Time, FK, FV, FA, NormalAcceleration, CoM, H, C)
 
-  /** Constructor
+  /** Constructs a new robot instance
    *
    * \param clock Clock used in the ControlProblem
+   * \param module RobotModule from which the Robot instance will be loaded
+   */
+  Robot(Clock & clock, std::shared_ptr<mc_rbdyn::RobotModule> module);
+
+  /** Consts a new robot instance
    *
-   * \param name Name of the robot
+   * - The initial stance is initialized from RobotModule::stance()
+   * - Velocities and accelerations are initialized to zero
    *
-   * \param mbg MultiBodyGraph used to create mb/mbc
+   * \param clock Clock used in the ControlProblem
+   * \param name Robot name
+   * \param module RobotModule from which the Robot instance will be loaded
+   */
+  Robot(Clock & clock, const std::string & name, std::shared_ptr<mc_rbdyn::RobotModule> module);
+
+  /** \brief Overload constructor to load a robot with a given initial stance
    *
-   * \param mb MultiBody representing the robot's kinematic structure
-   *
-   * \param mbc MultiBodyConfig giving the robot's initial configuration
-   *
-   * \param limits Joint limits
-   *
+   * \param clock Clock used in the control problem
+   * \param name Robot name
+   * \param module RobotModule from which the Robot instance will be loaded
+   * \param q Initial joint stance provided as a map of (joint name, joint value vector)
    */
   Robot(Clock & clock,
         const std::string & name,
-        rbd::MultiBodyGraph & mbg,
-        rbd::MultiBody mb,
-        rbd::MultiBodyConfig mbc,
-        const mc_rbdyn_urdf::Limits & limits = {{}, {}, {}, {}});
+        std::shared_ptr<mc_rbdyn::RobotModule> module,
+        const std::map<std::string, std::vector<double>> & q);
+
+  /** Create a robot directly from URDF
+   *
+   * @param clock Clock used in the control problem
+   * @param name Robot name
+   * @param urdfPath Path to the robot's URDF model
+   * @param fixed True for fixed-base robots
+   * @param filteredLinks Ignore these links
+   * @param q Initial joint stance provided as a map of (joint name, joint value vector)
+   */
+  Robot(Clock & clock,
+        const std::string & name,
+        const std::string & urdfPath,
+        bool fixed,
+        const std::vector<std::string> & filteredLinks,
+        const std::map<std::string, std::vector<double>> & q);
 
   /** Access the robot's name */
   inline const std::string & name() const
   {
     return name_;
+  }
+
+  /** Returns the associated robot module */
+  inline const mc_rbdyn::RobotModule & module() const
+  {
+    return *module_;
   }
 
   /** Returns the robot's mass */
@@ -264,6 +295,7 @@ public:
 private:
   Clock & clock_;
   uint64_t last_tick_ = 0;
+  std::shared_ptr<mc_rbdyn::RobotModule> module_;
   std::string name_;
   double mass_;
   rbd::MultiBody mb_;

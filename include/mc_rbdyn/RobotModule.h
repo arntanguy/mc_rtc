@@ -327,7 +327,12 @@ struct MC_RBDYN_DLLAPI RobotModule
   rbd::MultiBodyConfig mbc;
   /** RBDyn graph representation of this robot */
   rbd::MultiBodyGraph mbg;
-  /** \see bounds() */
+  /** Bound limits */
+  mc_rbdyn_urdf::Limits limits;
+
+  /** \see bounds()
+   * XXX Not used by TVM
+   **/
   bounds_t _bounds;
   /** \see stance() */
   std::map<std::string, std::vector<double>> _stance;

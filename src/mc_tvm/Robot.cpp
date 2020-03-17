@@ -5,20 +5,53 @@
 #include <RBDyn/FK.h>
 #include <RBDyn/FV.h>
 #include <tvm/Space.h>
+#include <tvm/exception/exceptions.h>
 
 namespace mc_tvm
 {
 
+Robot::Robot(Clock & clock, const std::shared_ptr<mc_rbdyn::RobotModule> module) : Robot(clock, module->name, module) {}
+
+Robot::Robot(Clock & clock, const std::string & name, const std::shared_ptr<mc_rbdyn::RobotModule> module)
+: Robot(clock, name, module, module->stance())
+{
+}
+
 Robot::Robot(Clock & clock,
              const std::string & name,
-             rbd::MultiBodyGraph & mbg,
-             rbd::MultiBody mb,
-             rbd::MultiBodyConfig mbc,
-             const mc_rbdyn_urdf::Limits & limits)
-: clock_(clock), last_tick_(clock.ticks()), name_(name), mb_(mb), mbc_(mbc), normalAccB_(mbc_.bodyAccB.size()),
-  fd_(mb_), bodyTransforms_(mbg.bodiesBaseTransform(mb_.body(0).name())),
+             const std::string & urdfPath,
+             bool fixed,
+             const std::vector<std::string> & filteredLinks,
+             const std::map<std::string, std::vector<double>> & q)
+: Robot(clock,
+        name,
+        [&urdfPath, &name, fixed, &filteredLinks]() {
+          std::ifstream ifs(urdfPath);
+          if(!ifs.good())
+          {
+            LOG_ERROR_AND_THROW(tvm::exception::DataException, "Failed to open " + urdfPath + " for robot " + name);
+          }
+          std::stringstream ss;
+          ss << ifs.rdbuf();
+          auto res = mc_rbdyn_urdf::rbdyn_from_urdf(ss.str(), fixed, filteredLinks);
+          auto module = std::make_shared<mc_rbdyn::RobotModule>(name, std::move(res));
+          return module;
+        }(),
+        q)
+{
+}
+
+Robot::Robot(Clock & clock,
+             const std::string & name,
+             const std::shared_ptr<mc_rbdyn::RobotModule> module,
+             const std::map<std::string, std::vector<double>> & q)
+: clock_(clock), last_tick_(clock.ticks()), module_(module), name_(name), mb_(module->mb), mbc_(module->mbc),
+  normalAccB_(mbc_.bodyAccB.size()), fd_(mb_), bodyTransforms_(module->mbg.bodiesBaseTransform(mb_.body(0).name())),
   tau_(tvm::Space(mb_.nrDof()).createVariable("tau"))
 {
+  auto & mb = module->mb;
+  auto & limits = module->limits;
+
   if(mb.nrJoints() > 0 && mb.joint(0).type() == rbd::Joint::Free)
   {
     q_ff_ = tvm::Space(6, 7, 6).createVariable(name_ + "_qFreeFlyer");
@@ -46,17 +79,17 @@ Robot::Robot(Clock & clock,
     auto map2bound = [this, &jIndexByName](const std::map<std::string, std::vector<double>> & bound, double mul,
                                            Eigen::VectorXd & out, int ffOffset,
                                            int (rbd::MultiBody::*posMethod)(int) const) {
-      for(const auto & qi : bound)
+      for(const auto & [jName, qi] : bound)
       {
-        if(!jIndexByName.count(qi.first))
+        if(!jIndexByName.count(jName))
         {
           continue;
         }
-        auto jIndex = jIndexByName.at(qi.first);
+        auto jIndex = jIndexByName.at(jName);
         auto pos = (mb_.*posMethod)(jIndex)-ffOffset;
-        for(size_t i = 0; i < qi.second.size(); ++i)
+        for(size_t i = 0; i < qi.size(); ++i)
         {
-          out(pos + i) = mul * qi.second[i];
+          out(pos + i) = mul * qi[i];
         }
       }
     };
@@ -72,9 +105,24 @@ Robot::Robot(Clock & clock,
   q_.add(q_joints_);
   dq_ = dot(q_, 1);
   ddq_ = dot(q_, 2);
+  // Initialize joint values from the provided stance
   auto q_init = q_.value();
-  rbd::paramToVector(mbc_.q, q_init);
+  const auto & jIndexByName = mb_.jointIndexByName();
+  for(const auto & [jName, qi] : q)
+  {
+    if(!jIndexByName.count(jName))
+    {
+      continue;
+    }
+    auto jIndex = jIndexByName.at(jName);
+    auto jParam = mb.jointPosInParam(jIndex);
+    for(size_t i = 0; i < qi.size(); ++i)
+    {
+      q_init(jParam + static_cast<Eigen::Index>(i)) = qi[i];
+    }
+  }
   q_.value(q_init);
+  // Initialize joint derivatives and torques to zero
   dq_.value(Eigen::VectorXd::Zero(dq_.value().size()));
   ddq_.value(Eigen::VectorXd::Zero(ddq_.value().size()));
   tau_->value(Eigen::VectorXd::Zero(tau_->value().size()));
