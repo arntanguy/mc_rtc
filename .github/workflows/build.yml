@@ -125,6 +125,8 @@ jobs:
           - path: jrl-umi3218/mc_rbdyn_urdf
           - path: jrl-umi3218/mc_rtc_data
           - path: jrl-umi3218/eigen-quadprog
+          - path: arntanguy/tvm
+            ref: topic/mc_rtc
     - name: Build and test
       if: matrix.build-type != 'script'
       uses: jrl-umi3218/github-actions/build-cmake-project@master
