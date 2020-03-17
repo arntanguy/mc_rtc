@@ -310,6 +310,63 @@ struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
     return bodyTransforms_.at(b);
   }
 
+  inline const std::vector<sva::PTransformd> & bodyPosW() const
+  {
+    return mbc().bodyPosW;
+  }
+  inline const std::vector<sva::MotionVecd> & bodyVelW() const
+  {
+    return mbc().bodyVelW;
+  }
+  inline const std::vector<sva::MotionVecd> & bodyVelB() const
+  {
+    return mbc().bodyVelB;
+  }
+  inline const std::vector<sva::MotionVecd> & bodyAccB() const
+  {
+    return mbc().bodyAccB;
+  }
+
+  inline unsigned int bodyIndexByName(const std::string & name) const
+  {
+    return mb_.bodyIndexByName().at(name);
+  }
+
+  inline const sva::PTransformd & bodyPosW(const std::string & name) const
+  {
+    return bodyPosW()[bodyIndexByName(name)];
+  }
+
+  inline sva::PTransformd X_b1_b2(const std::string & b1, const std::string & b2) const
+  {
+    return bodyPosW()[bodyIndexByName(b2)] * bodyPosW()[bodyIndexByName(b1)].inv();
+  }
+
+  inline const sva::MotionVecd & bodyVelW(const std::string & name) const
+  {
+    return bodyVelW()[bodyIndexByName(name)];
+  }
+
+  inline const sva::MotionVecd & bodyVelB(const std::string & name) const
+  {
+    return bodyVelB()[bodyIndexByName(name)];
+  }
+
+  inline const sva::MotionVecd & bodyAccB(const std::string & name) const
+  {
+    return bodyAccB()[bodyIndexByName(name)];
+  }
+
+  inline bool hasJoint(const std::string & name) const
+  {
+    return mb().jointIndexByName().count(name) != 0;
+  }
+
+  inline unsigned int jointIndexByName(const std::string & name) const
+  {
+    return mb().jointIndexByName().at(name);
+  }
+
 private:
   std::shared_ptr<Clock> clock_ = nullptr;
   uint64_t last_tick_ = 0;

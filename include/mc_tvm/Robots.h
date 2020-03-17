@@ -92,12 +92,14 @@ struct MC_TVM_DLLAPI Robots
    * This is more efficient then calling add(const Robot & robot)
    *
    * @param args Arguments to pass to the Robot contructor
+   * @return Reference to the newly created robot
    */
   template<typename... ArgsT>
-  void create(ArgsT &&... args)
+  Robot & create(ArgsT &&... args)
   {
-    robots_.emplace_back(std::forward<ArgsT>(args)...);
-    indexByName_[robots_.back().name()] = robots_.size() - 1;
+    auto & r = robots_.emplace_back(std::forward<ArgsT>(args)...);
+    indexByName_[r.name()] = robots_.size() - 1;
+    return r;
   }
 
   /** Checks whether a robot exists
