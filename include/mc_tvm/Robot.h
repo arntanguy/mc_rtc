@@ -20,6 +20,8 @@
 #include <mc_rbdyn/RobotModule.h>
 #include <mc_rbdyn_urdf/urdf.h>
 
+#include <mc_sensors/Sensors.h>
+
 namespace mc_tvm
 {
 using VariableVector = tvm::VariableVector;
@@ -360,6 +362,39 @@ struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
     return mb().jointIndexByName().at(name);
   }
 
+  /** Helper to create a sensor */
+  template<typename SensorT, typename... ArgsT>
+  SensorT & createSensor(const std::string & name, ArgsT &&... args)
+  {
+    return sensors_.createSensor<SensorT>(name, std::forward<ArgsT>(args)...);
+  }
+
+  /** Helper to get a sensor */
+  template<typename SensorT>
+  SensorT & sensor(const std::string & name)
+  {
+    return sensors_.sensor<SensorT>(name);
+  }
+
+  /** Helper to get a sensor */
+  template<typename SensorT>
+  const SensorT & sensor(const std::string & name) const
+  {
+    return sensors_.sensor<SensorT>(name);
+  }
+
+  /** Access the sensors */
+  mc_sensors::Sensors & sensors()
+  {
+    return sensors_;
+  }
+
+  /** Const-access to all sensors */
+  const mc_sensors::Sensors & sensors() const
+  {
+    return sensors_;
+  }
+
 private:
   std::shared_ptr<Clock> clock_ = nullptr;
   uint64_t last_tick_ = 0;
@@ -385,7 +420,7 @@ private:
   VariablePtr tau_;
   Eigen::Vector3d com_;
 
-  std::vector<std::shared_ptr<mc_sensors::Sensor>> sensors_;
+  mc_sensors::Sensors sensors_;
 
 private:
   void computeNormalAccB();

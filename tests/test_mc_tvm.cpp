@@ -3,6 +3,8 @@
  */
 
 #include <mc_rbdyn/RobotLoader.h>
+#include <mc_sensors/BodySensor.h>
+#include <mc_sensors/ForceSensor.h>
 #include <mc_tvm/Robots.h>
 #include <boost/test/unit_test.hpp>
 #include "utils.h"
@@ -63,4 +65,52 @@ BOOST_AUTO_TEST_CASE(TestRobots)
   robots.remove("robot2");
   BOOST_REQUIRE(!robots.has("robot2"));
   BOOST_REQUIRE(robots.size() == 0);
+}
+
+BOOST_AUTO_TEST_CASE(TestSensors)
+{
+  auto rm = mc_rbdyn::RobotLoader::get_robot_module("JVRC1");
+  auto clock = std::make_shared<tvm::Clock>(0.005);
+  auto robot = mc_tvm::Robot(rm->name, clock, rm);
+
+  auto & bs = robot.createSensor<mc_sensors::BodySensor>("TestBodySensor", "ParentBody", sva::PTransformd::Identity());
+  BOOST_REQUIRE(robot.sensors().has("TestBodySensor"));
+  BOOST_REQUIRE(bs.name() == "TestBodySensor");
+  BOOST_REQUIRE(bs.parent() == "ParentBody");
+  BOOST_REQUIRE(bs.parentToSensor() == sva::PTransformd::Identity());
+
+  robot.createSensor<mc_sensors::ForceSensor>("TestForceSensor", "ParentBody", sva::PTransformd::Identity());
+  BOOST_REQUIRE(robot.sensors().has("TestForceSensor"));
+  auto & get_fs = robot.sensor<mc_sensors::ForceSensor>("TestForceSensor");
+  BOOST_REQUIRE(get_fs.name() == "TestForceSensor");
+  BOOST_REQUIRE(get_fs.parent() == "ParentBody");
+  BOOST_REQUIRE(get_fs.parentToSensor() == sva::PTransformd::Identity());
+  BOOST_REQUIRE(get_fs.wrench() == sva::ForceVecd::Zero());
+
+  struct PepperSpeaker : mc_sensors::Sensor
+  {
+    PepperSpeaker(const std::string & name, const std::string & parent, const sva::PTransformd & pose)
+    : Sensor(name, parent, pose)
+    {
+    }
+    /** Return the text to say and reset the internal state */
+    std::string consume()
+    {
+      std::string out = "";
+      std::swap(out, text_);
+      return out;
+    }
+    /** Set text to say */
+    void say(const std::string & text)
+    {
+      text_ = text;
+    }
+
+  protected:
+    std::string text_;
+  };
+  auto & speaker = robot.createSensor<PepperSpeaker>("PepperSpeaker", "ParentBody", sva::PTransformd::Identity());
+  BOOST_REQUIRE(robot.sensors().has("PepperSpeaker"));
+  speaker.say("Hello, world");
+  BOOST_REQUIRE(speaker.consume() == "Hello, world");
 }

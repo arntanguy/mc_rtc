@@ -191,26 +191,43 @@ set(mc_tvm_HDR
 
 add_library(mc_tvm SHARED ${mc_tvm_SRC} ${mc_tvm_HDR})
 set_target_properties(mc_tvm PROPERTIES COMPILE_FLAGS "-DMC_TVM_EXPORTS")
-target_link_libraries(mc_tvm PUBLIC TVM::TVM mc_rbdyn)
+target_link_libraries(mc_tvm PUBLIC TVM::TVM mc_rbdyn mc_sensors)
 install_mc_rtc_lib(mc_tvm)
 
 ################
 ## mc_sensors ##
 ################
-set(mc_sensors_SRC
-mc_sensors/ForceSensor.cpp
-)
+set(mc_sensors_HDR_DIR
+  $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/mc_sensors>$<INSTALL_INTERFACE:include/mc_sensors>)
 
 set(mc_sensors_HDR
-../include/mc_sensors/Sensor.h
+  ${mc_sensors_HDR_DIR}/Sensors.h
+  ${mc_sensors_HDR_DIR}/Sensor.h
+)
+
+add_library(mc_sensors INTERFACE)
+if(COMMAND target_sources)
+  target_sources(mc_sensors INTERFACE ${mc_sensors_HDR})
+endif()
+install_mc_rtc_header_lib(mc_sensors)
+
+#######################
+## mc_common_sensors ##
+#######################
+# Default implementation for some common sensors
+
+set(mc_common_sensors_SRC
+mc_sensors/ForceSensor.cpp
+)
+set(mc_common_sensors_HDR
 ../include/mc_sensors/BodySensor.h
 ../include/mc_sensors/ForceSensor.h
 )
 
-add_library(mc_sensors SHARED ${mc_sensors_SRC} ${mc_sensors_HDR})
-set_target_properties(mc_sensors PROPERTIES COMPILE_FLAGS "-DMC_SENSORS_EXPORTS")
-target_link_libraries(mc_sensors PUBLIC mc_tvm)
-install_mc_rtc_lib(mc_sensors)
+add_library(mc_common_sensors SHARED ${mc_common_sensors_SRC} ${mc_sensors_common_HDR})
+set_target_properties(mc_common_sensors PROPERTIES COMPILE_FLAGS "-DMC_SENSORS_EXPORTS")
+target_link_libraries(mc_common_sensors PUBLIC mc_tvm mc_sensors)
+install_mc_rtc_lib(mc_common_sensors)
 
 
 ################

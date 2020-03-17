@@ -111,7 +111,7 @@ endif()
 ####################
 # -- mc_tvm test --#
 ####################
-mc_rtc_test(test_mc_tvm mc_tvm)
+mc_rtc_test(test_mc_tvm mc_tvm mc_default_sensors)
 
 #######################
 # -- mc_rbdyn test -- #
