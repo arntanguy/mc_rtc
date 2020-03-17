@@ -126,10 +126,11 @@ mc_rbdyn/PolygonInterpolator.cpp
 mc_rbdyn/polygon_utils.cpp
 mc_rbdyn/RobotLoader.cpp
 mc_rbdyn/Collision.cpp
-mc_rbdyn/ForceSensor.cpp
 mc_rbdyn/RobotModule.cpp
 mc_rbdyn/configuration_io.cpp
 mc_rbdyn/ZMP.cpp
+# XXX to be removed
+mc_rbdyn/ForceSensor.cpp
 )
 
 set(mc_rbdyn_HDR
@@ -154,15 +155,16 @@ set(mc_rbdyn_HDR
 ../include/mc_rbdyn/surface_utils.h
 ../include/mc_rbdyn/Collision.h
 ../include/mc_rbdyn/CompoundJointConstraintDescription.h
-../include/mc_rbdyn/ForceSensor.h
 ../include/mc_rbdyn/Flexibility.h
 ../include/mc_rbdyn/Springs.h
 ../include/mc_rbdyn/Base.h
-../include/mc_rbdyn/BodySensor.h
 ../include/mc_rbdyn/configuration_io.h
 ../include/mc_rbdyn/lipm_stabilizer/StabilizerConfiguration.h
 ../include/mc_rbdyn/lipm_stabilizer/ZMPCCConfiguration.h
 ../include/mc_rbdyn/ZMP.h
+# XXX to be removed
+../include/mc_rbdyn/ForceSensor.h
+../include/mc_rbdyn/BodySensor.h
 )
 
 add_library(mc_rbdyn SHARED ${mc_rbdyn_SRC} ${mc_rbdyn_HDR})
@@ -191,6 +193,24 @@ add_library(mc_tvm SHARED ${mc_tvm_SRC} ${mc_tvm_HDR})
 set_target_properties(mc_tvm PROPERTIES COMPILE_FLAGS "-DMC_TVM_EXPORTS")
 target_link_libraries(mc_tvm PUBLIC TVM::TVM mc_rbdyn)
 install_mc_rtc_lib(mc_tvm)
+
+################
+## mc_sensors ##
+################
+set(mc_sensors_SRC
+mc_sensors/ForceSensor.cpp
+)
+
+set(mc_sensors_HDR
+../include/mc_sensors/Sensor.h
+../include/mc_sensors/BodySensor.h
+../include/mc_sensors/ForceSensor.h
+)
+
+add_library(mc_sensors SHARED ${mc_sensors_SRC} ${mc_sensors_HDR})
+set_target_properties(mc_sensors PROPERTIES COMPILE_FLAGS "-DMC_SENSORS_EXPORTS")
+target_link_libraries(mc_sensors PUBLIC mc_tvm)
+install_mc_rtc_lib(mc_sensors)
 
 
 ################

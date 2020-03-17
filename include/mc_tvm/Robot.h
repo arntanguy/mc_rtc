@@ -392,6 +392,8 @@ private:
   VariablePtr tau_;
   Eigen::Vector3d com_;
 
+  std::vector<std::shared_ptr<mc_sensors::Sensor>> sensors_;
+
 private:
   void computeNormalAccB();
 
