@@ -93,11 +93,17 @@ struct MC_TVM_DLLAPI Robots
    *
    * @param args Arguments to pass to the Robot contructor
    * @return Reference to the newly created robot
+   * @throws If a robot with the same name already exists
    */
   template<typename... ArgsT>
-  Robot & create(ArgsT &&... args)
+  Robot & create(const std::string & name, const std::shared_ptr<Clock> & clock, ArgsT &&... args)
   {
-    auto & r = robots_.emplace_back(std::forward<ArgsT>(args)...);
+    if(has(name))
+    {
+      LOG_ERROR_AND_THROW(Robot::Exception, "Failed to create robot named "
+                                                << name << " as another robot with the same name already exists");
+    }
+    auto & r = robots_.emplace_back(name, clock, std::forward<ArgsT>(args)...);
     indexByName_[r.name()] = robots_.size() - 1;
     return r;
   }

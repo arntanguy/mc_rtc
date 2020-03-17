@@ -10,26 +10,21 @@
 namespace mc_tvm
 {
 
-Robot::Robot(const std::shared_ptr<Clock> & clock, const std::shared_ptr<mc_rbdyn::RobotModule> & module)
-: Robot(clock, module->name, module)
-{
-}
-
-Robot::Robot(const std::shared_ptr<Clock> & clock,
-             const std::string & name,
+Robot::Robot(const std::string & name,
+             const std::shared_ptr<Clock> & clock,
              const std::shared_ptr<mc_rbdyn::RobotModule> & module)
-: Robot(clock, name, module, module->stance())
+: Robot(name, clock, module, module->stance())
 {
 }
 
-Robot::Robot(const std::shared_ptr<Clock> & clock,
-             const std::string & name,
+Robot::Robot(const std::string & name,
+             const std::shared_ptr<Clock> & clock,
              const std::string & urdfPath,
              bool fixed,
              const std::vector<std::string> & filteredLinks,
              const std::map<std::string, std::vector<double>> & q)
-: Robot(clock,
-        name,
+: Robot(name,
+        clock,
         [&urdfPath, &name, fixed, &filteredLinks]() {
           std::ifstream ifs(urdfPath);
           if(!ifs.good())
@@ -46,8 +41,8 @@ Robot::Robot(const std::shared_ptr<Clock> & clock,
 {
 }
 
-Robot::Robot(const std::shared_ptr<Clock> & clock,
-             const std::string & name,
+Robot::Robot(const std::string & name,
+             const std::shared_ptr<Clock> & clock,
              const std::shared_ptr<mc_rbdyn::RobotModule> & module,
              const std::map<std::string, std::vector<double>> & q)
 : clock_(clock), last_tick_(clock->ticks()), module_(module), name_(name), mb_(module->mb), mbc_(module->mbc),

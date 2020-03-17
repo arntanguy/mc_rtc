@@ -76,13 +76,6 @@ struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
   Robot & operator=(Robot &&) = default;
   ~Robot() = default;
 
-  /** Constructs a new robot instance
-   *
-   * \param clock Clock used in the ControlProblem
-   * \param module RobotModule from which the Robot instance will be loaded
-   */
-  Robot(const std::shared_ptr<Clock> & clock, const std::shared_ptr<mc_rbdyn::RobotModule> & module);
-
   /** Consts a new robot instance
    *
    * - The initial stance is initialized from RobotModule::stance()
@@ -92,8 +85,8 @@ struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
    * \param name Robot name
    * \param module RobotModule from which the Robot instance will be loaded
    */
-  Robot(const std::shared_ptr<Clock> & clock,
-        const std::string & name,
+  Robot(const std::string & name,
+        const std::shared_ptr<Clock> & clock,
         const std::shared_ptr<mc_rbdyn::RobotModule> & module);
 
   /** \brief Overload constructor to load a robot with a given initial stance
@@ -103,8 +96,8 @@ struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
    * \param module RobotModule from which the Robot instance will be loaded
    * \param q Initial joint stance provided as a map of (joint name, joint value vector)
    */
-  Robot(const std::shared_ptr<Clock> & clock,
-        const std::string & name,
+  Robot(const std::string & name,
+        const std::shared_ptr<Clock> & clock,
         const std::shared_ptr<mc_rbdyn::RobotModule> & module,
         const std::map<std::string, std::vector<double>> & q);
 
@@ -118,8 +111,8 @@ struct MC_TVM_DLLAPI Robot : public graph::abstract::Node<Robot>
    * @param q Initial joint stance provided as a map of (joint name, joint value vector)
    * @thows If the urdf file cannot be loaded
    */
-  Robot(const std::shared_ptr<Clock> & clock,
-        const std::string & name,
+  Robot(const std::string & name,
+        const std::shared_ptr<Clock> & clock,
         const std::string & urdfPath,
         bool fixed,
         const std::vector<std::string> & filteredLinks,
