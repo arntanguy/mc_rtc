@@ -201,11 +201,7 @@ void StateFactory::load(const std::string & name, const std::string & base, cons
     mc_rtc::log::info("New state from file: {} (base: {})", name, base);
   }
   states_.push_back(name);
-  states_factories_[name] = [config, base](StateFactory & f) {
-    auto ret = f.create(base);
-    ret->configure_(config);
-    return ret;
-  };
+  states_configurations_[name] = {base, "", config};
 }
 
 StatePtr StateFactory::create(const std::string & state, Controller & ctl, const mc_rtc::Configuration & config)
@@ -247,18 +243,27 @@ StatePtr StateFactory::create(const std::string & state, const mc_rtc::Configura
 StatePtr StateFactory::create(const std::string & state)
 {
   StatePtr ret = nullptr;
-  if(!hasState(state))
-  {
-    mc_rtc::log::error("Attempted to create unavailable state {}", state);
-    return nullptr;
-  }
   if(has_object(state))
   {
     ret = create_object(state);
   }
+  else if(states_configurations_.count(state))
+  {
+    const auto & config = states_configurations_[state];
+    if(config.arg.size())
+    {
+      ret = create_object(config.base, config.arg);
+    }
+    else
+    {
+      ret = create(config.base);
+    }
+    ret->configure_(config.config);
+  }
   else
   {
-    ret = states_factories_[state](*this);
+    LOG_ERROR("Attempted to create unavailable state " << state)
+    return nullptr;
   }
   if(!ret)
   {
@@ -293,7 +298,7 @@ bool StateFactory::load_with_loader(const std::string & state)
     mc_rtc::log::info("New state: {} provided by loader: {}", state, loader);
   }
   states_.push_back(state);
-  states_factories_[state] = [loader, arg](StateFactory & factory) { return factory.create_object(loader, arg); };
+  states_configurations_[state] = {loader, arg, {}};
   return true;
 }
 

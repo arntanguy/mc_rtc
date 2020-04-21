@@ -7,6 +7,8 @@
 #include <mc_control/fsm/State.h>
 #include <mc_rtc/loader.h>
 
+#include <unordered_map>
+
 namespace mc_rtc
 {
 struct Configuration;
@@ -99,6 +101,20 @@ struct MC_CONTROL_FSM_DLLAPI StateFactory : public mc_rtc::ObjectLoader<State>
   /** Load state using a loader state, returns true if a state was loaded */
   bool load_with_loader(const std::string & state);
 
+  /** Holds the configuration for a derived state */
+  struct StateConfiguration
+  {
+    /** Base state to use */
+    std::string base;
+    /** Arguments to pass down to the loader if any */
+    std::string arg;
+    /** Extra-configuration to apply on top of base configuration */
+    mc_rtc::Configuration config;
+  };
+
+  /** Returns the configuration of a specific state */
+  const StateConfiguration & configuration(const std::string & state) const;
+
 private:
   /** Implementation for create */
   StatePtr create(const std::string & state,
@@ -110,8 +126,7 @@ private:
 
 private:
   std::vector<std::string> states_;
-  using state_factory_fn = std::function<StatePtr(StateFactory &)>;
-  std::map<std::string, state_factory_fn> states_factories_;
+  std::unordered_map<std::string, StateConfiguration> states_configurations_;
 };
 
 } // namespace fsm
