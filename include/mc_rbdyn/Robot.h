@@ -14,7 +14,15 @@
 #include <RBDyn/MultiBodyConfig.h>
 #include <RBDyn/MultiBodyGraph.h>
 
+#include <sch/S_Object/S_Object.h>
+
+#include <tvm/Clock.h>
+#include <tvm/Variable.h>
+#include <tvm/VariableVector.h>
+#include <tvm/graph/abstract/Node.h>
+
 #include <memory>
+#include <string_view>
 #include <unordered_map>
 
 namespace mc_rbdyn
@@ -22,11 +30,23 @@ namespace mc_rbdyn
 
 struct Robots;
 
+struct Robot;
+using RobotPtr = std::shared_ptr<Robot>;
+using ConstRobotPtr = std::shared_ptr<const Robot>;
+
+/** Represent a robot managed by the optimization problem
+ *
+ * A Robot is created through a Robots container.
+ *
+ * It provides signals that are relevant for computing quantities related to the robot.
+ *
+ * It also acts as \ref Convex, \ref Frame and \ref Surface factories.
+ *
+ */
 struct MC_RBDYN_DLLAPI Robot
 {
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
   friend struct Robots;
-
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 public:
   using convex_pair_t = std::pair<std::string, S_ObjectPtr>;
 
@@ -883,7 +903,9 @@ public:
   }
 
 private:
-  Robots * robots_;
+  struct make_shared_token
+  {
+  };
   unsigned int robots_idx_;
   std::string name_;
   Eigen::Vector3d zmp_;
@@ -948,15 +970,20 @@ protected:
    * loaded. This is used when copying one robot into another.
    *
    */
-  Robot(const std::string & name,
-        Robots & robots,
-        unsigned int robots_idx,
+  Robot(make_shared_token,
+        const RobotModule & module,
+        std::string_view name,
         bool loadFiles,
-        const sva::PTransformd * base = nullptr,
-        const std::string & baseName = "");
+        const std::optional<sva::PTransformd> & base = std::nullopt,
+        const std::optional<std::string_view> & baseName = std::nullopt);
 
   /** Copy loaded data from this robot to a new robot **/
   void copyLoadedData(Robot & destination) const;
+
+  /** Copy existing Robot with a new base */
+  RobotPtr copy(const RobotModule & module, std::string_view name, const Base & base) const;
+  /** Copy existing Robot */
+  RobotPtr copy(const RobotModule & module, std::string_view name) const;
 
   /** Used to set the surfaces' X_b_s correctly */
   void fixSurfaces();
