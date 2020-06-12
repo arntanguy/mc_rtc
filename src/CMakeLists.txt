@@ -118,6 +118,8 @@ set(mc_rtc_utils_HDR
   ../include/mc_rtc/type_name.h
   ../include/mc_rtc/debug.h
   ../include/mc_rtc/pragma.h
+  ../include/mc_rtc/map.h
+  ../include/mc_rtc/robin_hood/robin_hood.h
 )
 
 add_library(mc_rtc_utils SHARED ${mc_rtc_utils_SRC} ${mc_rtc_utils_HDR})
@@ -181,6 +183,7 @@ mc_rbdyn/ZMP.cpp
 mc_control/generic_gripper.cpp
 mc_rbdyn/Device.cpp
 mc_rbdyn/BodySensor.cpp
+mc_rbdyn/Frame.cpp
 )
 
 set(mc_rbdyn_HDR
@@ -216,6 +219,7 @@ set(mc_rbdyn_HDR
 ../include/mc_rbdyn/ZMP.h
 ../include/mc_control/generic_gripper.h
 ../include/mc_rbdyn/Device.h
+../include/mc_rbdyn/Frame.h
 )
 
 add_library(mc_rbdyn SHARED ${mc_rbdyn_SRC} ${mc_rbdyn_HDR})
