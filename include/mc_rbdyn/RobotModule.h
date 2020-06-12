@@ -14,9 +14,10 @@
 #include <mc_rbdyn/api.h>
 #include <mc_rbdyn/lipm_stabilizer/StabilizerConfiguration.h>
 
-#include <mc/rtc/deprecated.hh>
-
 #include <mc_rtc/constants.h>
+#include <mc_rtc/map.h>
+
+#include <mc/rtc/deprecated.hh>
 
 #include <mc_rbdyn_urdf/urdf.h>
 
@@ -54,7 +55,7 @@ struct DevicePtrVector : public std::vector<DevicePtr>
  *
  * Provide a conversion operator for backward compatibility
  */
-struct VisualMap : public std::map<std::string, std::vector<rbd::parsers::Visual>>
+struct VisualMap : public mc_rtc::map<std::string, std::vector<rbd::parsers::Visual>>
 {
   inline VisualMap() = default;
 
@@ -64,7 +65,7 @@ struct VisualMap : public std::map<std::string, std::vector<rbd::parsers::Visual
   inline VisualMap(VisualMap && v) = default;
   inline VisualMap & operator=(VisualMap && v) = default;
 
-  using std::map<std::string, std::vector<rbd::parsers::Visual>>::operator=;
+  using mc_rtc::map<std::string, std::vector<rbd::parsers::Visual>>::operator=;
 
   MC_RTC_DEPRECATED MC_RBDYN_DLLAPI VisualMap(const std::map<std::string, std::vector<mc_rbdyn_urdf::Visual>> & rhs);
   MC_RTC_DEPRECATED MC_RBDYN_DLLAPI VisualMap & operator=(
@@ -84,7 +85,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * Each entry is a map joint name <-> bound
    */
-  using bounds_t = std::vector<std::map<std::string, std::vector<double>>>;
+  using bounds_t = std::vector<mc_rtc::map<std::string, std::vector<double>>>;
 
   /*! Holds information regarding the additional acceleration bounds (specified in addition to urdf limits)
    *
@@ -93,7 +94,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * Each entry is a map joint name <-> bound
    */
-  using accelerationBounds_t = std::vector<std::map<std::string, std::vector<double>>>;
+  using accelerationBounds_t = std::vector<mc_rtc::map<std::string, std::vector<double>>>;
 
   /*! Holds information regarding the additional jerk bounds (specified in addition to urdf limits)
    *
@@ -102,7 +103,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * Each entry is a map joint name <-> bound
    */
-  using jerkBounds_t = std::vector<std::map<std::string, std::vector<double>>>;
+  using jerkBounds_t = std::vector<mc_rtc::map<std::string, std::vector<double>>>;
 
   /*! Holds information regarding the additional torque-derivative bounds (specified in addition to urdf limits)
    *
@@ -111,7 +112,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * Each entry is a map joint name <-> bound
    */
-  using torqueDerivativeBounds_t = std::vector<std::map<std::string, std::vector<double>>>;
+  using torqueDerivativeBounds_t = std::vector<mc_rtc::map<std::string, std::vector<double>>>;
 
   /*! Holds necessary information to create a gripper */
   struct MC_RBDYN_DLLAPI Gripper
@@ -274,7 +275,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    * - velocity limits (lower/upper)
    * - torque limits (lower/upper)
    */
-  const std::vector<std::map<std::string, std::vector<double>>> & bounds() const
+  const std::vector<mc_rtc::map<std::string, std::vector<double>>> & bounds() const
   {
     return _bounds;
   }
@@ -331,7 +332,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * For the floating base see \ref default_attitude
    */
-  const std::map<std::string, std::vector<double>> & stance() const
+  const mc_rtc::map<std::string, std::vector<double>> & stance() const
   {
     return _stance;
   }
@@ -349,7 +350,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    * The transformation between the convex and the body it's attached to are
    * provided in a separate map see \ref collisionTransforms()
    */
-  const std::map<std::string, std::pair<std::string, std::string>> & convexHull() const
+  const mc_rtc::map<std::string, std::pair<std::string, std::string>> & convexHull() const
   {
     return _convexHull;
   }
@@ -367,34 +368,18 @@ struct MC_RBDYN_DLLAPI RobotModule
    * The transformation between the convex and the body it's attached to are
    * provided in a separate map see \ref collisionTransforms()
    */
-  const std::map<std::string, std::pair<std::string, S_ObjectPtr>> & collisionObjects() const
+  const mc_rtc::map<std::string, std::pair<std::string, S_ObjectPtr>> & collisionObjects() const
   {
     return _collisionObjects;
   }
 
-  /** Returns a map describing the STPBV hulls for the robot
-   *
-   * A key defines a valid collision name, a value is composed of two strings:
-   *
-   * 1. the name of the body the convex is attached to
-   *
-   * 2. the path to the file containing the STPBV description
-   *
-   * The transformation between the STPBV and the body it's attached to are
-   * provided in a separate map see \ref collisionTransforms()
-   */
-  const std::map<std::string, std::pair<std::string, std::string>> & stpbvHull() const
-  {
-    return _stpbvHull;
-  }
-
-  /** Returns a map describing the transformation between convex/STPBV hulls
+  /** Returns a map describing the transformation between convex hulls
    * and their parent bodies
    *
    * A key defines the collision name. The value is the transformation between
    * this collision object and its parent body
    */
-  const std::map<std::string, sva::PTransformd> & collisionTransforms() const
+  const mc_rtc::map<std::string, sva::PTransformd> & collisionTransforms() const
   {
     return _collisionTransforms;
   }
@@ -592,19 +577,17 @@ struct MC_RBDYN_DLLAPI RobotModule
   /** \see torqueDerivativeBounds() */
   torqueDerivativeBounds_t _torqueDerivativeBounds;
   /** \see stance() */
-  std::map<std::string, std::vector<double>> _stance;
+  mc_rtc::map<std::string, std::vector<double>> _stance;
   /** \see convexHull() */
-  std::map<std::string, std::pair<std::string, std::string>> _convexHull;
+  mc_rtc::map<std::string, std::pair<std::string, std::string>> _convexHull;
   /** \see collisionObjects() */
-  std::map<std::string, std::pair<std::string, S_ObjectPtr>> _collisionObjects;
-  /** \see stpbvHull() */
-  std::map<std::string, std::pair<std::string, std::string>> _stpbvHull;
+  mc_rtc::map<std::string, std::pair<std::string, S_ObjectPtr>> _collisionObjects;
   /** Holds visual representation of bodies in the robot */
   VisualMap _visual;
   /** Holds collision representation of bodies in the robot */
   VisualMap _collision;
   /** \see collisionTransforms() */
-  std::map<std::string, sva::PTransformd> _collisionTransforms;
+  mc_rtc::map<std::string, sva::PTransformd> _collisionTransforms;
   /** \see flexibility() */
   std::vector<Flexibility> _flexibility;
   /** \see forceSensors() */

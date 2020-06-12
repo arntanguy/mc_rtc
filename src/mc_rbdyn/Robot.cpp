@@ -93,7 +93,7 @@ bounds_t bounds(const rbd::MultiBody & mb, const rm_bounds_t & bounds)
  */
 accelerationBounds_t acceleration_bounds(const rbd::MultiBody & mb, const rm_bounds_t & bounds)
 {
-  rm_bound_t default_bound = {};
+  rm_bound_t default_bound;
   auto safe_bounds = [&bounds, &default_bound](size_t idx) -> const rm_bound_t & {
     if(idx < bounds.size())
     {
@@ -113,7 +113,7 @@ accelerationBounds_t acceleration_bounds(const rbd::MultiBody & mb, const rm_bou
  */
 jerkBounds_t jerk_bounds(const rbd::MultiBody & mb, const rm_bounds_t & bounds)
 {
-  rm_bound_t default_bound = {};
+  rm_bound_t default_bound;
   auto safe_bounds = [&bounds, &default_bound](size_t idx) -> const rm_bound_t & {
     if(idx < bounds.size())
     {
@@ -133,7 +133,7 @@ jerkBounds_t jerk_bounds(const rbd::MultiBody & mb, const rm_bounds_t & bounds)
  */
 torqueDerivativeBounds_t torqueDerivative_bounds(const rbd::MultiBody & mb, const rm_bounds_t & bounds)
 {
-  rm_bound_t default_bound = {};
+  rm_bound_t default_bound;
   auto safe_bounds = [&bounds, &default_bound](size_t idx) -> const rm_bound_t & {
     if(idx < bounds.size())
     {
@@ -822,103 +822,6 @@ Eigen::Vector3d Robot::zmp(const std::vector<std::string> & sensorNames,
   Eigen::Vector3d n = zmpFrame.rotation().row(2);
   Eigen::Vector3d p = zmpFrame.translation();
   return zmp(sensorNames, p, n, minimalNetNormalForce);
-}
-
-const std::vector<std::vector<double>> & Robot::ql() const
-{
-  return ql_;
-}
-const std::vector<std::vector<double>> & Robot::qu() const
-{
-  return qu_;
-}
-const std::vector<std::vector<double>> & Robot::vl() const
-{
-  return vl_;
-}
-const std::vector<std::vector<double>> & Robot::vu() const
-{
-  return vu_;
-}
-const std::vector<std::vector<double>> & Robot::al() const
-{
-  return al_;
-}
-const std::vector<std::vector<double>> & Robot::au() const
-{
-  return au_;
-}
-const std::vector<std::vector<double>> & Robot::jl() const
-{
-  return jl_;
-}
-const std::vector<std::vector<double>> & Robot::ju() const
-{
-  return ju_;
-}
-const std::vector<std::vector<double>> & Robot::tl() const
-{
-  return tl_;
-}
-const std::vector<std::vector<double>> & Robot::tu() const
-{
-  return tu_;
-}
-const std::vector<std::vector<double>> & Robot::tdl() const
-{
-  return tdl_;
-}
-const std::vector<std::vector<double>> & Robot::tdu() const
-{
-  return tdu_;
-}
-std::vector<std::vector<double>> & Robot::ql()
-{
-  return ql_;
-}
-std::vector<std::vector<double>> & Robot::qu()
-{
-  return qu_;
-}
-std::vector<std::vector<double>> & Robot::vl()
-{
-  return vl_;
-}
-std::vector<std::vector<double>> & Robot::vu()
-{
-  return vu_;
-}
-std::vector<std::vector<double>> & Robot::al()
-{
-  return al_;
-}
-std::vector<std::vector<double>> & Robot::au()
-{
-  return au_;
-}
-std::vector<std::vector<double>> & Robot::jl()
-{
-  return jl_;
-}
-std::vector<std::vector<double>> & Robot::ju()
-{
-  return ju_;
-}
-std::vector<std::vector<double>> & Robot::tl()
-{
-  return tl_;
-}
-std::vector<std::vector<double>> & Robot::tu()
-{
-  return tu_;
-}
-std::vector<std::vector<double>> & Robot::tdl()
-{
-  return tdl_;
-}
-std::vector<std::vector<double>> & Robot::tdu()
-{
-  return tdu_;
 }
 
 const std::vector<Flexibility> & Robot::flexibility() const
