@@ -140,3 +140,5 @@ mc_rtc_test(test_interpolation mc_control)
 # -- Temporary HMC-related tests -- #
 #####################################
 mc_rtc_test(test_hmc mc_planning)
+
+add_subdirectory(hmc)
