@@ -1,14 +1,7 @@
 var a01924 =
 [
-    [ "KinematicInertialObserver", "a01924.html#a165a77caf0652ffe0388127ceafe7ba6", null ],
-    [ "addToGUI", "a01924.html#a8d79052ede7702b4e1271aa45f8c17e4", null ],
-    [ "addToLogger", "a01924.html#a70349dda9da00837225afa919fdc9ce7", null ],
-    [ "removeFromGUI", "a01924.html#aee19bc2e4f9457e9df7e60fa5f562769", null ],
-    [ "removeFromLogger", "a01924.html#ab7a34a69d1337573093b19cce5f4442e", null ],
-    [ "reset", "a01924.html#ae964341c760e3f942152f39d4d596432", null ],
-    [ "reset", "a01924.html#a218d679b8851235ad18b2a49b2c71e01", null ],
-    [ "run", "a01924.html#a2c4b4fe83ab2ad282f02ad6c093e1be6", null ],
-    [ "updateBodySensor", "a01924.html#a70199d5e62d4869778cd91e5e1f1bdee", null ],
-    [ "updateRobots", "a01924.html#ae46ba5b39b85a8b8e271b8b9c63a9a3b", null ],
-    [ "velW", "a01924.html#a2c973c62cabf96b73042047669579a64", null ]
+    [ "ForceROImpl", "a01924.html#afdf45b2767925077d95a3ef1bd372864", null ],
+    [ "write", "a01924.html#a57c555bb17d91446dfa6fc4b3c3721f1", null ],
+    [ "write_size", "a01924.html#a482f092b89cba7f1e6441d796104d013", null ],
+    [ "type", "a01924.html#abb6a80d44f1efee54399c80f0486615c", null ]
 ];

@@ -1,7 +1,7 @@
 var a02176 =
 [
-    [ "ForceROImpl", "a02176.html#afdf45b2767925077d95a3ef1bd372864", null ],
-    [ "write", "a02176.html#a57c555bb17d91446dfa6fc4b3c3721f1", null ],
-    [ "write_size", "a02176.html#a482f092b89cba7f1e6441d796104d013", null ],
-    [ "type", "a02176.html#abb6a80d44f1efee54399c80f0486615c", null ]
+    [ "CoMIncPlaneConstr", "a02176.html#a36c14d8513aede45203f3113bca8866f", null ],
+    [ "addToSolver", "a02176.html#a7fe287ede6acc66b93ebc6e1a8f54882", null ],
+    [ "removeFromSolver", "a02176.html#aa6901fd29799bb8f88e639be2e2e06ac", null ],
+    [ "set_planes", "a02176.html#aae037f758b45e836e2ef33edbda90c58", null ]
 ];

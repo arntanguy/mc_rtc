@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['observer_2eh',['Observer.h',['../a00104.html',1,'']]],
-  ['observerloader_2eh',['ObserverLoader.h',['../a00107.html',1,'']]],
-  ['operators_2eh',['Operators.h',['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00050.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00050.html',1,'(Global Namespace)']]],
-  ['ordinate_2eh',['Ordinate.h',['../a00236.html',1,'']]],
-  ['orientationtask_2eh',['OrientationTask.h',['../a00410.html',1,'']]],
-  ['oserializer_2ehpp',['oserializer.hpp',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00002.html',1,'']]]
+  ['parallel_2eh',['Parallel.h',['../a00053.html',1,'']]],
+  ['pause_2eh',['Pause.h',['../a00056.html',1,'']]],
+  ['pendulum_2eh',['Pendulum.h',['../a00164.html',1,'']]],
+  ['planarsurface_2eh',['PlanarSurface.h',['../a00212.html',1,'']]],
+  ['plot_2eh',['plot.h',['../a00329.html',1,'']]],
+  ['point3d_2eh',['Point3D.h',['../a00332.html',1,'']]],
+  ['polygon_2eh',['Polygon.h',['../a03370.html',1,'(Global Namespace)'],['../a00320.html',1,'(Global Namespace)']]],
+  ['polygon_5futils_2eh',['polygon_utils.h',['../a00215.html',1,'']]],
+  ['polygoninterpolator_2eh',['PolygonInterpolator.h',['../a00218.html',1,'']]],
+  ['polygons_2eh',['Polygons.h',['../a00323.html',1,'']]],
+  ['positionbasedvisservotask_2eh',['PositionBasedVisServoTask.h',['../a00509.html',1,'']]],
+  ['positiontask_2eh',['PositionTask.h',['../a00512.html',1,'']]],
+  ['posturetask_2eh',['PostureTask.h',['../a00515.html',1,'']]],
+  ['pythonstate_2eh',['PythonState.h',['../a00026.html',1,'']]],
+  ['types_2eh',['types.h',['../a03385.html',1,'']]]
 ];

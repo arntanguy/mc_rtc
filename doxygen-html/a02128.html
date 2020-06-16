@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>mc_rtc::gui::CheckboxImpl&lt; GetT, Callback &gt; Struct Template Reference</title>
+<title>mc_rtc::Logger Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -70,138 +70,200 @@ $(document).ready(function(){initNavTree('a02128.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="a02125.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_rtc::gui::CheckboxImpl&lt; GetT, Callback &gt; Struct Template Reference</div>  </div>
+<div class="title">mc_rtc::Logger Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Checkbox display a toggable checkbox.  
+<p>Logs controller data to disk.  
  <a href="a02128.html#details">More...</a></p>
 
-<p><code>#include &lt;mc_rtc/gui/Checkbox.h&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for mc_rtc::gui::CheckboxImpl&lt; GetT, Callback &gt;:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a02128.png" usemap="#mc_5Frtc::gui::CheckboxImpl_3C_20GetT_2C_20Callback_20_3E_map" alt=""/>
-  <map id="mc_5Frtc::gui::CheckboxImpl_3C_20GetT_2C_20Callback_20_3E_map" name="mc_5Frtc::gui::CheckboxImpl_3C_20GetT_2C_20Callback_20_3E_map">
-<area href="a02172.html" alt="mc_rtc::gui::VoidCallbackElement&lt; DataElement&lt; GetT &gt;, Callback &gt;" shape="rect" coords="0,168,400,192"/>
-<area href="a02164.html" alt="mc_rtc::gui::CallbackElement&lt; DataElement&lt; GetT &gt;, Callback &gt;" shape="rect" coords="0,112,400,136"/>
-<area href="a02160.html" title="A generic element to write data to the GUI. " alt="mc_rtc::gui::DataElement&lt; GetT &gt;" shape="rect" coords="0,56,400,80"/>
-<area href="a02156.html" title="Element is the common class for every element&#39;s type available in the GUI. " alt="mc_rtc::gui::Element" shape="rect" coords="0,0,400,24"/>
-</map>
- </div></div>
+<p><code>#include &lt;mc_rtc/log/Logger.h&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0fefb36635930cf5a9db966442756b9b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b">Policy</a> { <br />
+&#160;&#160;<a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9ba1515271d5edd3952e5aa146109a98e78">Policy::NON_THREADED</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9ba1ba1ba2bd2141794d82c4363b7e533f7">Policy::THREADED</a> = 1
+<br />
+ }<tr class="memdesc:a0fefb36635930cf5a9db966442756b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines available policies for the logger.  <a href="a02128.html#a0fefb36635930cf5a9db966442756b9b">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a0fefb36635930cf5a9db966442756b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd0d1237a81647e462f7af2b4225d5e"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(<a class="el" href="a02152.html">mc_rtc::MessagePackBuilder</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a6fd0d1237a81647e462f7af2b4225d5e">serialize_fn</a></td></tr>
+<tr class="memdesc:a6fd0d1237a81647e462f7af2b4225d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that fills LogData vectors.  <a href="#a6fd0d1237a81647e462f7af2b4225d5e">More...</a><br /></td></tr>
+<tr class="separator:a6fd0d1237a81647e462f7af2b4225d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2be8a9d91abdab7867e3ef29903aa18a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a2be8a9d91abdab7867e3ef29903aa18a">CheckboxImpl</a> (const std::string &amp;<a class="el" href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">name</a>, GetT get_fn, Callback cb)</td></tr>
-<tr class="separator:a2be8a9d91abdab7867e3ef29903aa18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49e606784d3c5c64ebf3dc493491e99d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a49e606784d3c5c64ebf3dc493491e99d">CheckboxImpl</a> ()</td></tr>
-<tr class="memdesc:a49e606784d3c5c64ebf3dc493491e99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid element.  <a href="#a49e606784d3c5c64ebf3dc493491e99d">More...</a><br /></td></tr>
-<tr class="separator:a49e606784d3c5c64ebf3dc493491e99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a02172"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02172')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02172.html">mc_rtc::gui::VoidCallbackElement&lt; DataElement&lt; GetT &gt;, Callback &gt;</a></td></tr>
-<tr class="memitem:ab8cda0e74e03f5e56ae5bd42bb7b9b41 inherit pub_methods_a02172"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02172.html#ab8cda0e74e03f5e56ae5bd42bb7b9b41">handleRequest</a> (const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;)</td></tr>
-<tr class="separator:ab8cda0e74e03f5e56ae5bd42bb7b9b41 inherit pub_methods_a02172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d063c0de86c3ba0f038908d146ca298 inherit pub_methods_a02172"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02172.html#a9d063c0de86c3ba0f038908d146ca298">VoidCallbackElement</a> (const std::string &amp;<a class="el" href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">name</a>, Callback cb, Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a9d063c0de86c3ba0f038908d146ca298 inherit pub_methods_a02172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a350d19023027682fb550a84099cd96da inherit pub_methods_a02172"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02172.html#a350d19023027682fb550a84099cd96da">VoidCallbackElement</a> ()</td></tr>
-<tr class="memdesc:a350d19023027682fb550a84099cd96da inherit pub_methods_a02172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid element.  <a href="a02172.html#a350d19023027682fb550a84099cd96da">More...</a><br /></td></tr>
-<tr class="separator:a350d19023027682fb550a84099cd96da inherit pub_methods_a02172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a02164"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02164')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02164.html">mc_rtc::gui::CallbackElement&lt; DataElement&lt; GetT &gt;, Callback &gt;</a></td></tr>
-<tr class="memitem:a405f276989aeae1fd599f46e0458e10f inherit pub_methods_a02164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02164.html#a405f276989aeae1fd599f46e0458e10f">handleRequest</a> (const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;data)</td></tr>
-<tr class="separator:a405f276989aeae1fd599f46e0458e10f inherit pub_methods_a02164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26a8cb0f6a61d3442fca7f11d29f57d2 inherit pub_methods_a02164"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02164.html#a26a8cb0f6a61d3442fca7f11d29f57d2">CallbackElement</a> (const std::string &amp;<a class="el" href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">name</a>, Callback cb, Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a26a8cb0f6a61d3442fca7f11d29f57d2 inherit pub_methods_a02164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9ef12835522d27b5d1a55210b0c973c inherit pub_methods_a02164"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02164.html#ae9ef12835522d27b5d1a55210b0c973c">CallbackElement</a> ()</td></tr>
-<tr class="memdesc:ae9ef12835522d27b5d1a55210b0c973c inherit pub_methods_a02164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid element.  <a href="a02164.html#ae9ef12835522d27b5d1a55210b0c973c">More...</a><br /></td></tr>
-<tr class="separator:ae9ef12835522d27b5d1a55210b0c973c inherit pub_methods_a02164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a02160"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02160')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02160.html">mc_rtc::gui::DataElement&lt; GetT &gt;</a></td></tr>
-<tr class="memitem:a9f5405a5613389910551ed9e86e35b9b inherit pub_methods_a02160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02160.html#a9f5405a5613389910551ed9e86e35b9b">write</a> (<a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;builder)</td></tr>
-<tr class="separator:a9f5405a5613389910551ed9e86e35b9b inherit pub_methods_a02160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d486d790fd684f1fdd422a36a4b662 inherit pub_methods_a02160"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02160.html#a65d486d790fd684f1fdd422a36a4b662">DataElement</a> (const std::string &amp;<a class="el" href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">name</a>, GetT get_fn)</td></tr>
-<tr class="memdesc:a65d486d790fd684f1fdd422a36a4b662 inherit pub_methods_a02160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="a02160.html#a65d486d790fd684f1fdd422a36a4b662">More...</a><br /></td></tr>
-<tr class="separator:a65d486d790fd684f1fdd422a36a4b662 inherit pub_methods_a02160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c128617f3f6e4bc2257f811721e92d inherit pub_methods_a02160"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02160.html#a16c128617f3f6e4bc2257f811721e92d">DataElement</a> ()</td></tr>
-<tr class="memdesc:a16c128617f3f6e4bc2257f811721e92d inherit pub_methods_a02160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid element.  <a href="a02160.html#a16c128617f3f6e4bc2257f811721e92d">More...</a><br /></td></tr>
-<tr class="separator:a16c128617f3f6e4bc2257f811721e92d inherit pub_methods_a02160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a02156"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02156')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02156.html">mc_rtc::gui::Element</a></td></tr>
-<tr class="memitem:a4f1f84cbf9bafb94cd41824712565f5a inherit pub_methods_a02156"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">name</a> () const</td></tr>
-<tr class="memdesc:a4f1f84cbf9bafb94cd41824712565f5a inherit pub_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the element.  <a href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">More...</a><br /></td></tr>
-<tr class="separator:a4f1f84cbf9bafb94cd41824712565f5a inherit pub_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2e559a17ad52901a5e726ca03f300c6 inherit pub_methods_a02156"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#ad2e559a17ad52901a5e726ca03f300c6">id</a> () const</td></tr>
-<tr class="memdesc:ad2e559a17ad52901a5e726ca03f300c6 inherit pub_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the stack id of an element (also referred to as SID)  <a href="a02156.html#ad2e559a17ad52901a5e726ca03f300c6">More...</a><br /></td></tr>
-<tr class="separator:ad2e559a17ad52901a5e726ca03f300c6 inherit pub_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a000ffd25b2fe0b3b36ad02b44cd190c3 inherit pub_methods_a02156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a000ffd25b2fe0b3b36ad02b44cd190c3">id</a> (int idIn)</td></tr>
-<tr class="memdesc:a000ffd25b2fe0b3b36ad02b44cd190c3 inherit pub_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the stack id of an element.  <a href="a02156.html#a000ffd25b2fe0b3b36ad02b44cd190c3">More...</a><br /></td></tr>
-<tr class="separator:a000ffd25b2fe0b3b36ad02b44cd190c3 inherit pub_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8e71ecce7dab695777a1a11faf119f7 inherit pub_methods_a02156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#ab8e71ecce7dab695777a1a11faf119f7">write</a> (<a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;)</td></tr>
-<tr class="memdesc:ab8e71ecce7dab695777a1a11faf119f7 inherit pub_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the widget to a <a class="el" href="a02404.html" title="Helper class to build a MessagePack message. ">MessagePackBuilder</a>.  <a href="a02156.html#ab8e71ecce7dab695777a1a11faf119f7">More...</a><br /></td></tr>
-<tr class="separator:ab8e71ecce7dab695777a1a11faf119f7 inherit pub_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00f7fa6be59c8cc61304d35e7dd2a914 inherit pub_methods_a02156"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a00f7fa6be59c8cc61304d35e7dd2a914">handleRequest</a> (const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;)</td></tr>
-<tr class="memdesc:a00f7fa6be59c8cc61304d35e7dd2a914 inherit pub_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take care of answering request from the client.  <a href="a02156.html#a00f7fa6be59c8cc61304d35e7dd2a914">More...</a><br /></td></tr>
-<tr class="separator:a00f7fa6be59c8cc61304d35e7dd2a914 inherit pub_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a086e5b72ef29fb83ebba494135f0f579 inherit pub_methods_a02156"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a086e5b72ef29fb83ebba494135f0f579">Element</a> ()</td></tr>
-<tr class="memdesc:a086e5b72ef29fb83ebba494135f0f579 inherit pub_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid element, used for Python bindings.  <a href="a02156.html#a086e5b72ef29fb83ebba494135f0f579">More...</a><br /></td></tr>
-<tr class="separator:a086e5b72ef29fb83ebba494135f0f579 inherit pub_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ce85d2d7612f7029b47a3931c72316"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a18ce85d2d7612f7029b47a3931c72316">Logger</a> (const <a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b">Policy</a> &amp;policy, const std::string &amp;directory, const std::string &amp;tmpl)</td></tr>
+<tr class="memdesc:a18ce85d2d7612f7029b47a3931c72316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a18ce85d2d7612f7029b47a3931c72316">More...</a><br /></td></tr>
+<tr class="separator:a18ce85d2d7612f7029b47a3931c72316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7692f0ca12a02805cba83a9422de5a4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a7692f0ca12a02805cba83a9422de5a4e">~Logger</a> ()</td></tr>
+<tr class="memdesc:a7692f0ca12a02805cba83a9422de5a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a7692f0ca12a02805cba83a9422de5a4e">More...</a><br /></td></tr>
+<tr class="separator:a7692f0ca12a02805cba83a9422de5a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986b2719c1337aa9d1e84e2b0b34481c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a986b2719c1337aa9d1e84e2b0b34481c">setup</a> (const <a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b">Policy</a> &amp;policy, const std::string &amp;directory, const std::string &amp;tmpl)</td></tr>
+<tr class="memdesc:a986b2719c1337aa9d1e84e2b0b34481c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the constructor configuration.  <a href="#a986b2719c1337aa9d1e84e2b0b34481c">More...</a><br /></td></tr>
+<tr class="separator:a986b2719c1337aa9d1e84e2b0b34481c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6f0685999b14f4bf67cd30dce03413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a7a6f0685999b14f4bf67cd30dce03413">start</a> (const std::string &amp;ctl_name, double timestep, bool resume=false)</td></tr>
+<tr class="memdesc:a7a6f0685999b14f4bf67cd30dce03413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start logging.  <a href="#a7a6f0685999b14f4bf67cd30dce03413">More...</a><br /></td></tr>
+<tr class="separator:a7a6f0685999b14f4bf67cd30dce03413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec88caf27ebb9c9615ed4fd51d9ccd98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#aec88caf27ebb9c9615ed4fd51d9ccd98">log</a> ()</td></tr>
+<tr class="memdesc:aec88caf27ebb9c9615ed4fd51d9ccd98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log controller's data.  <a href="#aec88caf27ebb9c9615ed4fd51d9ccd98">More...</a><br /></td></tr>
+<tr class="separator:aec88caf27ebb9c9615ed4fd51d9ccd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe9ebf879c471ae7741170c9e0d6933"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1fe9ebf879c471ae7741170c9e0d6933"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02128.html#a1fe9ebf879c471ae7741170c9e0d6933">addLogEntry</a> (const std::string &amp;name, T get_fn, typename std::enable_if&lt; <a class="el" href="a02144.html">mc_rtc::log::callback_is_serializable</a>&lt; T &gt;::value &gt;::type *=0)</td></tr>
+<tr class="memdesc:a1fe9ebf879c471ae7741170c9e0d6933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a log entry into the log.  <a href="#a1fe9ebf879c471ae7741170c9e0d6933">More...</a><br /></td></tr>
+<tr class="separator:a1fe9ebf879c471ae7741170c9e0d6933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1427e1251ebbd90947468fc4bdf964"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a2b1427e1251ebbd90947468fc4bdf964">removeLogEntry</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a2b1427e1251ebbd90947468fc4bdf964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a log entry from the log.  <a href="#a2b1427e1251ebbd90947468fc4bdf964">More...</a><br /></td></tr>
+<tr class="separator:a2b1427e1251ebbd90947468fc4bdf964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0d9597ada6a67eb2a89fcda8c74e7d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#aeb0d9597ada6a67eb2a89fcda8c74e7d">t</a> () const</td></tr>
+<tr class="memdesc:aeb0d9597ada6a67eb2a89fcda8c74e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the time elapsed since the controller start.  <a href="#aeb0d9597ada6a67eb2a89fcda8c74e7d">More...</a><br /></td></tr>
+<tr class="separator:aeb0d9597ada6a67eb2a89fcda8c74e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a39f960415eb48979416b212d6f08c453"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#a39f960415eb48979416b212d6f08c453">type</a> = <a class="el" href="a00647.html#a32d283e5c35e7fd7dcddbc0199bfdc06a4f8222964f9a317cef99dddc23a121bd">Elements::Checkbox</a></td></tr>
-<tr class="separator:a39f960415eb48979416b212d6f08c453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_static_methods_a02160"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_a02160')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="a02160.html">mc_rtc::gui::DataElement&lt; GetT &gt;</a></td></tr>
-<tr class="memitem:af0401db3e91435848055af583ec602f4 inherit pub_static_methods_a02160"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02160.html#af0401db3e91435848055af583ec602f4">write_size</a> ()</td></tr>
-<tr class="separator:af0401db3e91435848055af583ec602f4 inherit pub_static_methods_a02160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_methods_a02156"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_a02156')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="a02156.html">mc_rtc::gui::Element</a></td></tr>
-<tr class="memitem:adb2f99cc312bfc645254b2cecd9f9c27 inherit pub_static_methods_a02156"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#adb2f99cc312bfc645254b2cecd9f9c27">write_size</a> ()</td></tr>
-<tr class="memdesc:adb2f99cc312bfc645254b2cecd9f9c27 inherit pub_static_methods_a02156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the array representing the widget in the MessagePack.  <a href="a02156.html#adb2f99cc312bfc645254b2cecd9f9c27">More...</a><br /></td></tr>
-<tr class="separator:adb2f99cc312bfc645254b2cecd9f9c27 inherit pub_static_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_a02156"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02156')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02156.html">mc_rtc::gui::Element</a></td></tr>
-<tr class="memitem:a6fcb5cd1168ebfd6b9dc8830df21956f inherit pro_methods_a02156"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a6fcb5cd1168ebfd6b9dc8830df21956f">Element</a> (const std::string &amp;<a class="el" href="a02156.html#a4f1f84cbf9bafb94cd41824712565f5a">name</a>)</td></tr>
-<tr class="separator:a6fcb5cd1168ebfd6b9dc8830df21956f inherit pro_methods_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_a02164"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02164')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02164.html">mc_rtc::gui::CallbackElement&lt; DataElement&lt; GetT &gt;, Callback &gt;</a></td></tr>
-<tr class="memitem:a872fb77b757c4074529ce4847ba4dc17 inherit pro_attribs_a02164"><td class="memItemLeft" align="right" valign="top">Callback&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02164.html#a872fb77b757c4074529ce4847ba4dc17">cb_</a></td></tr>
-<tr class="separator:a872fb77b757c4074529ce4847ba4dc17 inherit pro_attribs_a02164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_a02160"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02160')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02160.html">mc_rtc::gui::DataElement&lt; GetT &gt;</a></td></tr>
-<tr class="memitem:a8a959ac2e5e7551b29b81b77034ea255 inherit pro_attribs_a02160"><td class="memItemLeft" align="right" valign="top">GetT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02160.html#a8a959ac2e5e7551b29b81b77034ea255">get_fn_</a></td></tr>
-<tr class="separator:a8a959ac2e5e7551b29b81b77034ea255 inherit pro_attribs_a02160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_a02156"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02156')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02156.html">mc_rtc::gui::Element</a></td></tr>
-<tr class="memitem:a7b365cbe4764d76aafa03495be0ecd5d inherit pro_attribs_a02156"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a7b365cbe4764d76aafa03495be0ecd5d">name_</a></td></tr>
-<tr class="separator:a7b365cbe4764d76aafa03495be0ecd5d inherit pro_attribs_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a208ba439700a31e9ff94abc76a466472 inherit pro_attribs_a02156"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02156.html#a208ba439700a31e9ff94abc76a466472">id_</a></td></tr>
-<tr class="separator:a208ba439700a31e9ff94abc76a466472 inherit pro_attribs_a02156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70a958cf17138f9b726740deab0d34c"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02128.html#ae70a958cf17138f9b726740deab0d34c">magic</a> [4]</td></tr>
+<tr class="memdesc:ae70a958cf17138f9b726740deab0d34c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magic number used to identify binary logs.  <a href="#ae70a958cf17138f9b726740deab0d34c">More...</a><br /></td></tr>
+<tr class="separator:ae70a958cf17138f9b726740deab0d34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename GetT, typename Callback&gt;<br />
-struct mc_rtc::gui::CheckboxImpl&lt; GetT, Callback &gt;</h3>
-
-<p>Checkbox display a toggable checkbox. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">GetT</td><td>Should return a boolean providing the state of the button</td></tr>
-    <tr><td class="paramname">Callback</td><td>When the checkbox is called, this is called </td></tr>
-  </table>
-  </dd>
-</dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2be8a9d91abdab7867e3ef29903aa18a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2be8a9d91abdab7867e3ef29903aa18a">&#9670;&nbsp;</a></span>CheckboxImpl() <span class="overload">[1/2]</span></h2>
+<div class="textblock"><p>Logs controller data to disk. </p>
+<p>The user can select a desired logging policy that will impact the behaviour of this class.</p>
+<p>See <a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b" title="Defines available policies for the logger. ">mc_rtc::Logger::Policy</a> documentation for details on available policies </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a6fd0d1237a81647e462f7af2b4225d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd0d1237a81647e462f7af2b4225d5e">&#9670;&nbsp;</a></span>serialize_fn</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename GetT, typename Callback&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;void(<a class="el" href="a02152.html">mc_rtc::MessagePackBuilder</a> &amp;)&gt; <a class="el" href="a02128.html#a6fd0d1237a81647e462f7af2b4225d5e">mc_rtc::Logger::serialize_fn</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function that fills LogData vectors. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a0fefb36635930cf5a9db966442756b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fefb36635930cf5a9db966442756b9b">&#9670;&nbsp;</a></span>Policy</h2>
+
+<div class="memitem">
+<div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02128.html">mc_rtc::gui::CheckboxImpl</a>&lt; GetT, Callback &gt;::<a class="el" href="a02128.html">CheckboxImpl</a> </td>
+          <td class="memname">enum <a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b">mc_rtc::Logger::Policy</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Defines available policies for the logger. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0fefb36635930cf5a9db966442756b9ba1515271d5edd3952e5aa146109a98e78"></a>NON_THREADED&#160;</td><td class="fielddoc"><p>Non-threaded policy. </p>
+<p>Using this policy, the logging disk operations are done in the same thread as the global controller running thread, this is well suited for simulations and environments where you can guarantee a very fast access to the disk (e.g. logging to a ramdisk) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0fefb36635930cf5a9db966442756b9ba1ba1ba2bd2141794d82c4363b7e533f7"></a>THREADED&#160;</td><td class="fielddoc"><p>Threaded policy. </p>
+<p>Using this policy, the logging disk operations are done in a separate thread from the global controller running thread. As a result, some buffering occurs and you might lose some data if the controller crashes. This is intended for real-time environments. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a18ce85d2d7612f7029b47a3931c72316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ce85d2d7612f7029b47a3931c72316">&#9670;&nbsp;</a></span>Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mc_rtc::Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b">Policy</a> &amp;&#160;</td>
+          <td class="paramname"><em>policy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tmpl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">policy</td><td>The chosen logging policy</td></tr>
+    <tr><td class="paramname">directory</td><td>Path to the directory where log files will be stored</td></tr>
+    <tr><td class="paramname">tmpl</td><td>Log file template </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7692f0ca12a02805cba83a9422de5a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7692f0ca12a02805cba83a9422de5a4e">&#9670;&nbsp;</a></span>~Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mc_rtc::Logger::~Logger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1fe9ebf879c471ae7741170c9e0d6933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fe9ebf879c471ae7741170c9e0d6933">&#9670;&nbsp;</a></span>addLogEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_rtc::Logger::addLogEntry </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -209,14 +271,14 @@ template&lt;typename GetT, typename Callback&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GetT&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>get_fn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Callback&#160;</td>
-          <td class="paramname"><em>cb</em>&#160;</td>
+          <td class="paramtype">typename std::enable_if&lt; <a class="el" href="a02144.html">mc_rtc::log::callback_is_serializable</a>&lt; T &gt;::value &gt;::type *&#160;</td>
+          <td class="paramname"> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -231,51 +293,187 @@ template&lt;typename GetT, typename Callback&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Add a log entry into the log. </p>
+<p>This function only accepts callable objects that returns a l/rvalue to a serializable object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the log entry, this should be unique at any given time but the same key can be re-used during the logger's life</td></tr>
+    <tr><td class="paramname">get_fn</td><td>A function that provides data that should be logged </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="a00789.html#aa189b2ec856ad8f96d632d635efc05ce">mc_rtc::log::error()</a>, and <a class="el" href="a02148.html#ac76dfb54b68fb04d65d6fcb1cb6e061d">mc_rtc::log::LogWriter&lt; T &gt;::write()</a>.</p>
+
 </div>
 </div>
-<a id="a49e606784d3c5c64ebf3dc493491e99d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49e606784d3c5c64ebf3dc493491e99d">&#9670;&nbsp;</a></span>CheckboxImpl() <span class="overload">[2/2]</span></h2>
+<a id="aec88caf27ebb9c9615ed4fd51d9ccd98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec88caf27ebb9c9615ed4fd51d9ccd98">&#9670;&nbsp;</a></span>log()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename GetT, typename Callback&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02128.html">mc_rtc::gui::CheckboxImpl</a>&lt; GetT, Callback &gt;::<a class="el" href="a02128.html">CheckboxImpl</a> </td>
+          <td class="memname">void mc_rtc::Logger::log </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Invalid element. </p>
+<p>Log controller's data. </p>
+<p>Print controller data to the log. </p>
+
+</div>
+</div>
+<a id="a2b1427e1251ebbd90947468fc4bdf964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1427e1251ebbd90947468fc4bdf964">&#9670;&nbsp;</a></span>removeLogEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_rtc::Logger::removeLogEntry </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove a log entry from the log. </p>
+<p>This has no effect if the log entry does not exist.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the entry </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a986b2719c1337aa9d1e84e2b0b34481c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986b2719c1337aa9d1e84e2b0b34481c">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_rtc::Logger::setup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02128.html#a0fefb36635930cf5a9db966442756b9b">Policy</a> &amp;&#160;</td>
+          <td class="paramname"><em>policy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tmpl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setup the constructor configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">policy</td><td>The chosen logging policy</td></tr>
+    <tr><td class="paramname">directory</td><td>Path to the directory where log files will be stored</td></tr>
+    <tr><td class="paramname">tmpl</td><td>Log file template </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a6f0685999b14f4bf67cd30dce03413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6f0685999b14f4bf67cd30dce03413">&#9670;&nbsp;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_rtc::Logger::start </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ctl_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timestep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>resume</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start logging. </p>
+<p>Print the file header to the log. This should be called at initialization or when a controller switch occurs</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctl_name</td><td>Name of the running controller</td></tr>
+    <tr><td class="paramname">timestep</td><td>Time increment for the log time entry</td></tr>
+    <tr><td class="paramname">resume</td><td>If true, start the time entry at the current value, otherwise, start at 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb0d9597ada6a67eb2a89fcda8c74e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0d9597ada6a67eb2a89fcda8c74e7d">&#9670;&nbsp;</a></span>t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mc_rtc::Logger::t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the time elapsed since the controller start. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a39f960415eb48979416b212d6f08c453"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39f960415eb48979416b212d6f08c453">&#9670;&nbsp;</a></span>type</h2>
+<a id="ae70a958cf17138f9b726740deab0d34c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70a958cf17138f9b726740deab0d34c">&#9670;&nbsp;</a></span>magic</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename GetT, typename Callback&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto <a class="el" href="a02128.html">mc_rtc::gui::CheckboxImpl</a>&lt; GetT, Callback &gt;::type = <a class="el" href="a00647.html#a32d283e5c35e7fd7dcddbc0199bfdc06a4f8222964f9a317cef99dddc23a121bd">Elements::Checkbox</a></td>
+          <td class="memname">const uint8_t mc_rtc::Logger::magic[4]</td>
         </tr>
       </table>
   </td>
@@ -285,6 +483,8 @@ template&lt;typename GetT, typename Callback&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Magic number used to identify binary logs. </p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -293,8 +493,8 @@ template&lt;typename GetT, typename Callback&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00636.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a00647.html">gui</a></li><li class="navelem"><a class="el" href="a02128.html">CheckboxImpl</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00763.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a02128.html">Logger</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:03 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

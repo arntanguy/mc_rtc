@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['unique_5fptr',['unique_ptr',['../a02344.html#a78852c55af0f996b628466db4f6ae828',1,'mc_rtc::ObjectLoader']]],
-  ['unique_5fvoid_5fptr',['unique_void_ptr',['../a02372.html#a4e556fb8cf1154c39f535f18bbbbf2a0',1,'mc_rtc::log::FlatLog::record']]],
-  ['updatelambda',['UpdateLambda',['../a00655.html#a51609ca39a4099935af3983ff08a0c50',1,'mc_solver::utils']]],
-  ['updaterobot',['UpdateRobot',['../a00655.html#a3fef857fcf6a819b7f8061f33248d0b5',1,'mc_solver::utils']]]
+  ['value_5ftype',['value_type',['../a01768.html#a857c321c4be0d8fa2443e4a8c2afaa27',1,'mc_rbdyn::Robots']]],
+  ['vector2',['Vector2',['../a01580.html#a3f685436fab11fa264d9444a25b4fdcf',1,'mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum']]]
 ];

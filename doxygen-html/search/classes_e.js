@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['node',['Node',['https://jrl-umi3218.github.io/RBDyn/doxygen/HEAD/a01023.html',1,'rbd::MultiBodyGraph']]],
-  ['non_5fabstract',['non_abstract',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00735.html',1,'boost::archive::detail::save_pointer_type']]],
-  ['non_5fpolymorphic',['non_polymorphic',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00739.html',1,'boost::archive::detail::save_pointer_type']]],
-  ['norm',['Norm',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00807.html',1,'CD_Matrix']]],
-  ['norm_3c_20scalar_2c_20normoptimization_20_3e',['Norm&lt; Scalar, normOptimization &gt;',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00807.html',1,'']]],
-  ['norm_3c_20t_2c_20false_20_3e',['Norm&lt; T, false &gt;',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00811.html',1,'CD_Matrix']]],
-  ['numberinputimpl',['NumberInputImpl',['../a02216.html',1,'mc_rtc::gui']]],
-  ['numbersliderimpl',['NumberSliderImpl',['../a02220.html',1,'mc_rtc::gui']]]
+  ['objectdeleter',['ObjectDeleter',['../a02108.html',1,'mc_rtc::ObjectLoader']]],
+  ['objectloader',['ObjectLoader',['../a02092.html',1,'mc_rtc']]],
+  ['objectloader_3c_20mc_5fcontrol_3a_3aglobalplugin_20_3e',['ObjectLoader&lt; mc_control::GlobalPlugin &gt;',['../a02092.html',1,'mc_rtc']]],
+  ['objectloader_3c_20mc_5fcontrol_3a_3amccontroller_20_3e',['ObjectLoader&lt; mc_control::MCController &gt;',['../a02092.html',1,'mc_rtc']]],
+  ['objectloader_3c_20mc_5fobservers_3a_3aobserver_20_3e',['ObjectLoader&lt; mc_observers::Observer &gt;',['../a02092.html',1,'mc_rtc']]],
+  ['objectloader_3c_20mc_5frbdyn_3a_3arobotmodule_20_3e',['ObjectLoader&lt; mc_rbdyn::RobotModule &gt;',['../a02092.html',1,'mc_rtc']]],
+  ['objectloader_3c_20state_20_3e',['ObjectLoader&lt; State &gt;',['../a02092.html',1,'mc_rtc']]],
+  ['observer',['Observer',['../a01552.html',1,'mc_observers']]],
+  ['observerloader',['ObserverLoader',['../a01556.html',1,'mc_observers']]],
+  ['ordinate',['Ordinate',['../a01984.html',1,'mc_rtc::gui::plot::impl']]],
+  ['ordinatewithcolor',['OrdinateWithColor',['../a01988.html',1,'mc_rtc::gui::plot::impl']]],
+  ['orientationtask',['OrientationTask',['../a02416.html',1,'mc_tasks']]]
 ];

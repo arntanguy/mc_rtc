@@ -1,7 +1,7 @@
 var a00335 =
 [
-    [ "EqualityConstraint", "a02460.html", "a02460" ],
-    [ "EqualityConstraintForce", "a00335.html#a3e427d1f0a009404c8630c4be1941233", null ],
-    [ "EqualityConstraintLambda", "a00335.html#aea7ab23b8e38e9c02e6b71d418fd167f", null ],
-    [ "EqualityConstraintRobot", "a00335.html#a17602a72509b520fc967c3b55868d28f", null ]
+    [ "RotationROImpl", "a02024.html", "a02024" ],
+    [ "RotationImpl", "a02028.html", "a02028" ],
+    [ "Rotation", "a00335.html#a9dc809d7e99978fe3f5e2439d1a20771", null ],
+    [ "Rotation", "a00335.html#a6440392ea4b48778f6d4012e0400ee5b", null ]
 ];

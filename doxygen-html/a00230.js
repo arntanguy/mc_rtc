@@ -1,7 +1,7 @@
 var a00230 =
 [
-    [ "Abscissa", "a02224.html", "a02224" ],
-    [ "X", "a00230.html#a13155e82e2012b946c5c973369b1db56", null ],
-    [ "X", "a00230.html#ac22eeca55379fb5c66be97b783a8bd32", null ],
-    [ "X", "a00230.html#ac2f689ceed9f080a4ccc49a6a70aeb4c", null ]
+    [ "ROBOT_MODULE_CANONIC_CONSTRUCTOR", "a00230.html#a835eb9cb28d7a07e5fb285241d7e7b08", null ],
+    [ "ROBOT_MODULE_CHECK_VERSION", "a00230.html#a8ff1f95ceab073746f8203ca23fbb3cd", null ],
+    [ "ROBOT_MODULE_COMMON", "a00230.html#aefdd7a13affe8001b4bf38b8e94fcd50", null ],
+    [ "ROBOT_MODULE_DEFAULT_CONSTRUCTOR", "a00230.html#a61416168a2a0e73c18a99a7da049df9a", null ]
 ];

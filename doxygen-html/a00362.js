@@ -1,9 +1,10 @@
 var a00362 =
 [
-    [ "UpdateTag", "a02508.html", null ],
-    [ "Update", "a02512.html", "a02512" ],
-    [ "IsUpdate", "a02516.html", null ],
-    [ "UpdateForce", "a02520.html", "a02520" ],
-    [ "UpdateLambda", "a00362.html#a51609ca39a4099935af3983ff08a0c50", null ],
-    [ "UpdateRobot", "a00362.html#a3fef857fcf6a819b7f8061f33248d0b5", null ]
+    [ "ObjectLoader", "a02092.html", "a02092" ],
+    [ "LoaderException", "a02096.html", "a02096" ],
+    [ "LTDLHandle", "a02100.html", "a02100" ],
+    [ "Loader", "a02104.html", "a02104" ],
+    [ "ObjectLoader", "a02092.html", "a02092" ],
+    [ "ObjectDeleter", "a02108.html", "a02108" ],
+    [ "LTDLHandlePtr", "a00362.html#a04f4430d990b320f494b3a21112c7e3a", null ]
 ];

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Mimic.h File Reference</title>
+<title>InterpolatorBase.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -71,24 +71,37 @@ $(document).ready(function(){initNavTree('a00143.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">Mimic.h File Reference</div>  </div>
+<div class="title">InterpolatorBase.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a03504.html">mc_rbdyn/api.h</a>&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;deque&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02004.html">mc_rbdyn::Mimic</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores mimic joint information.  <a href="a02004.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01572.html">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00637"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00637.html">mc_rbdyn</a></td></tr>
+<tr class="memitem:a00770"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00770.html">mc_planning</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00771"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00771.html">mc_planning::motion_interpolator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a7ea0c29c7e1dd0f17827e74bc06e12cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">mc_planning::motion_interpolator::interpolator_type</a> { <br />
+&#160;&#160;<a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cda4187d8ccd4ca751d4bdb993070c5dc60">mc_planning::motion_interpolator::NOT_SELECTED</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cda36a380d3e85fe7f8b6cb9afabf8cb187">mc_planning::motion_interpolator::CLAMPED_CUBIC_SPLINE</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7ea0c29c7e1dd0f17827e74bc06e12cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -96,8 +109,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_314ec80f2fc36a4630429f4d5408038e.html">mc_rbdyn</a></li><li class="navelem"><a class="el" href="a00143.html">Mimic.h</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_07d3c227ab2f47ab361e8e4c5a7f6b3c.html">mc_planning</a></li><li class="navelem"><a class="el" href="a00143.html">InterpolatorBase.h</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

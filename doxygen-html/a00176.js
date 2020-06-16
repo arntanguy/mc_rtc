@@ -1,5 +1,6 @@
 var a00176 =
 [
-    [ "Surface", "a02064.html", "a02064" ],
-    [ "SurfacePtr", "a00176.html#a848cf0b2e8f6ca6f18ceba1769d9a426", null ]
+    [ "CompoundJointConstraintDescription", "a01628.html", "a01628" ],
+    [ "ConfigurationLoader< mc_rbdyn::CompoundJointConstraintDescription >", "a01632.html", "a01632" ],
+    [ "CompoundJointConstraintDescriptionVector", "a00176.html#a96a35f8f44c0b0eb301fabc4af2bd978", null ]
 ];

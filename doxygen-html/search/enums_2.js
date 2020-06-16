@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['elements',['Elements',['../a00647.html#a32d283e5c35e7fd7dcddbc0199bfdc06',1,'mc_rtc::gui']]],
-  ['elementsstacking',['ElementsStacking',['../a00647.html#a649ddcaedb769dede3922fa845e71ca4',1,'mc_rtc::gui']]]
+  ['interpolator_5ftype',['interpolator_type',['../a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd',1,'mc_planning::motion_interpolator']]]
 ];

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>mc_rtc::gui::plot::Range Struct Reference</title>
+<title>mc_solver::InequalityConstraintRobot Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -71,48 +71,101 @@ $(document).ready(function(){initNavTree('a02252.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="a02249.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_rtc::gui::plot::Range Struct Reference</div>  </div>
+<div class="title">mc_solver::InequalityConstraintRobot Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="a02252.html" title="Range for abscissa or ordinate display. ">Range</a> for abscissa or ordinate display.  
+<p>Helper class to write an inequality constraint for Tasks.  
  <a href="a02252.html#details">More...</a></p>
 
-<p><code>#include &lt;mc_rtc/gui/plot/types.h&gt;</code></p>
+<p><code>#include &lt;mc_solver/InequalityConstraint.h&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mc_solver::InequalityConstraintRobot:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a02252.png" usemap="#mc_5Fsolver::InequalityConstraintRobot_map" alt=""/>
+  <map id="mc_5Fsolver::InequalityConstraintRobot_map" name="mc_5Fsolver::InequalityConstraintRobot_map">
+<area href="a02248.html" alt="mc_solver::utils::InequalityConstraint&lt; utils::UpdateRobot &gt;" shape="rect" coords="204,168,603,192"/>
+<area href="a02288.html" alt="mc_solver::utils::Constraint&lt; tasks::qp::Inequality, utils::UpdateRobot &gt;" shape="rect" coords="204,112,603,136"/>
+<area href="a02300.html" alt="mc_solver::utils::Update&lt; UpdateNrVars &gt;" shape="rect" coords="409,56,808,80"/>
+<area href="a02296.html" alt="mc_solver::utils::UpdateTag" shape="rect" coords="613,0,1012,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aead20688a3c041cd852dd71c98cfc15b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#aead20688a3c041cd852dd71c98cfc15b">Range</a> ()=default</td></tr>
-<tr class="separator:aead20688a3c041cd852dd71c98cfc15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae57efd48b0202aac88fd98578af24993"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#ae57efd48b0202aac88fd98578af24993">Range</a> (double <a class="el" href="a02252.html#a3626d90084b55cd8a94307e620a09062">min</a>, double <a class="el" href="a02252.html#a85f2d2500191f058985f2d32ea40583d">max</a>)</td></tr>
-<tr class="separator:ae57efd48b0202aac88fd98578af24993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad303c48ab81bc362a13995c1b2464d0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#ad303c48ab81bc362a13995c1b2464d0b">load</a> (const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;config)</td></tr>
-<tr class="separator:ad303c48ab81bc362a13995c1b2464d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6b749d005afc464c84b138a2d72ae79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#aa6b749d005afc464c84b138a2d72ae79">write</a> (<a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;builder) const</td></tr>
-<tr class="separator:aa6b749d005afc464c84b138a2d72ae79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a76371902953809f84f92a1c642a75b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#a3a76371902953809f84f92a1c642a75b">InequalityConstraintRobot</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:a3a76371902953809f84f92a1c642a75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a02248"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02248')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02248.html">mc_solver::utils::InequalityConstraint&lt; utils::UpdateRobot &gt;</a></td></tr>
+<tr class="memitem:a2cc88eb4c1dbe254f3c849c0e76b0e03 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#a2cc88eb4c1dbe254f3c849c0e76b0e03">InequalityConstraint</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:a2cc88eb4c1dbe254f3c849c0e76b0e03 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b71fe257e26cc49bb153daa02b32d1 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#a94b71fe257e26cc49bb153daa02b32d1">InequalityConstraint</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:a94b71fe257e26cc49bb153daa02b32d1 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a4f382d3a67a6c728632e4f3189cb0 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#aa1a4f382d3a67a6c728632e4f3189cb0">InequalityConstraint</a> (const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:aa1a4f382d3a67a6c728632e4f3189cb0 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8d6cb3fdbcb0dbf3a598f5db0db67d inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#a2f8d6cb3fdbcb0dbf3a598f5db0db67d">AInEq</a> () const override</td></tr>
+<tr class="separator:a2f8d6cb3fdbcb0dbf3a598f5db0db67d inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32d4e6549d14ef03faa5b61294a9161 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#ad32d4e6549d14ef03faa5b61294a9161">descInEq</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;, int i) override</td></tr>
+<tr class="separator:ad32d4e6549d14ef03faa5b61294a9161 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3626d90084b55cd8a94307e620a09062"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#a3626d90084b55cd8a94307e620a09062">min</a> = -<a class="el" href="a02252.html#ab995e2707a19a7b8beb6b05bbeffa3b9">inf</a></td></tr>
-<tr class="separator:a3626d90084b55cd8a94307e620a09062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85f2d2500191f058985f2d32ea40583d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#a85f2d2500191f058985f2d32ea40583d">max</a> = <a class="el" href="a02252.html#ab995e2707a19a7b8beb6b05bbeffa3b9">inf</a></td></tr>
-<tr class="separator:a85f2d2500191f058985f2d32ea40583d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:ab995e2707a19a7b8beb6b05bbeffa3b9"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02252.html#ab995e2707a19a7b8beb6b05bbeffa3b9">inf</a> = std::numeric_limits&lt;double&gt;::<a class="elRef" doxygen="https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/sch-core.doxytag:https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/" href="https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00145.html#a27f844328430dc3778ba427657947cd2">infinity</a>()</td></tr>
-<tr class="separator:ab995e2707a19a7b8beb6b05bbeffa3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_a02248"><td colspan="2" onclick="javascript:toggleInherit('pub_types_a02248')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="a02248.html">mc_solver::utils::InequalityConstraint&lt; utils::UpdateRobot &gt;</a></td></tr>
+<tr class="memitem:aa303f3fb9dbf88ece28ef6ee013af8a8 inherit pub_types_a02248"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#aa303f3fb9dbf88ece28ef6ee013af8a8">Base</a> = <a class="el" href="a02288.html">Constraint</a>&lt; tasks::qp::Inequality, <a class="el" href="a00793.html#a3fef857fcf6a819b7f8061f33248d0b5">utils::UpdateRobot</a> &gt;</td></tr>
+<tr class="separator:aa303f3fb9dbf88ece28ef6ee013af8a8 inherit pub_types_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_a02288"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02288')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02288.html">mc_solver::utils::Constraint&lt; tasks::qp::Inequality, utils::UpdateRobot &gt;</a></td></tr>
+<tr class="memitem:adcc2b9ec9fbd3b47e0183ef0ce034c73 inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#adcc2b9ec9fbd3b47e0183ef0ce034c73">Constraint</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:adcc2b9ec9fbd3b47e0183ef0ce034c73 inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a2073ed0b8b0432593221fec955e4e inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#ae5a2073ed0b8b0432593221fec955e4e">Constraint</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:ae5a2073ed0b8b0432593221fec955e4e inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0cc49bca85557519c9a110b54c65ca inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#aab0cc49bca85557519c9a110b54c65ca">Constraint</a> (const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:aab0cc49bca85557519c9a110b54c65ca inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819dd76da2909a4c88efcca1cb9aaf69 inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#a819dd76da2909a4c88efcca1cb9aaf69">~Constraint</a> ()</td></tr>
+<tr class="memdesc:a819dd76da2909a4c88efcca1cb9aaf69 inherit pro_methods_a02288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="a02288.html#a819dd76da2909a4c88efcca1cb9aaf69">More...</a><br /></td></tr>
+<tr class="separator:a819dd76da2909a4c88efcca1cb9aaf69 inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab383394a69ab62c4fab23378e64868de inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#ab383394a69ab62c4fab23378e64868de">updateNrVars</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, const tasks::qp::SolverData &amp;data) override</td></tr>
+<tr class="separator:ab383394a69ab62c4fab23378e64868de inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7693804807033e3718c4ba01a58d3a58 inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#a7693804807033e3718c4ba01a58d3a58">update</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, const std::vector&lt; rbd::MultiBodyConfig &gt; &amp;mbcs, const tasks::qp::SolverData &amp;data) override</td></tr>
+<tr class="separator:a7693804807033e3718c4ba01a58d3a58 inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_a02300"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02300')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02300.html">mc_solver::utils::Update&lt; UpdateNrVars &gt;</a></td></tr>
+<tr class="memitem:ad172325243564a16279d9392bd86efa5 inherit pro_methods_a02300"><td class="memTemplParams" colspan="2">template&lt;typename U  = UpdateNrVars, typename  = typename std::enable_if&lt;std::is_same&lt;U, UpdateNrVarsRobot&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:ad172325243564a16279d9392bd86efa5 inherit pro_methods_a02300"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02300.html#ad172325243564a16279d9392bd86efa5">Update</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:ad172325243564a16279d9392bd86efa5 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806d3dc017b28e570dfa268a32a55600 inherit pro_methods_a02300"><td class="memTemplParams" colspan="2">template&lt;typename U  = UpdateNrVars, typename  = typename std::enable_if&lt;std::is_same&lt;U, UpdateNrVarsLambda&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a806d3dc017b28e570dfa268a32a55600 inherit pro_methods_a02300"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02300.html#a806d3dc017b28e570dfa268a32a55600">Update</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:a806d3dc017b28e570dfa268a32a55600 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ad71dd3414ee8bccc766c7bc8b4dc3 inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#ab8ad71dd3414ee8bccc766c7bc8b4dc3">~Update</a> ()</td></tr>
+<tr class="separator:ab8ad71dd3414ee8bccc766c7bc8b4dc3 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f658eb01d91768ab6a4e9b095a894de inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#a8f658eb01d91768ab6a4e9b095a894de">compute</a> ()=0</td></tr>
+<tr class="memdesc:a8f658eb01d91768ab6a4e9b095a894de inherit pro_methods_a02300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be overriden to update the constraint matrix and vector(s)  <a href="a02300.html#a8f658eb01d91768ab6a4e9b095a894de">More...</a><br /></td></tr>
+<tr class="separator:a8f658eb01d91768ab6a4e9b095a894de inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc1dc8dc0563b2e14f962f26afbfa5f inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">virtual const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#adcc1dc8dc0563b2e14f962f26afbfa5f">A</a> () const =0</td></tr>
+<tr class="memdesc:adcc1dc8dc0563b2e14f962f26afbfa5f inherit pro_methods_a02300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be overriden to provide A in the desired operation space.  <a href="a02300.html#adcc1dc8dc0563b2e14f962f26afbfa5f">More...</a><br /></td></tr>
+<tr class="separator:adcc1dc8dc0563b2e14f962f26afbfa5f inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab889dcd5361a420fe976146c40f56533 inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#ab889dcd5361a420fe976146c40f56533">updateImpl</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;, const std::vector&lt; rbd::MultiBodyConfig &gt; &amp;, const tasks::qp::SolverData &amp;)</td></tr>
+<tr class="separator:ab889dcd5361a420fe976146c40f56533 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a02300"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02300')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02300.html">mc_solver::utils::Update&lt; UpdateNrVars &gt;</a></td></tr>
+<tr class="memitem:a6ba3138c342b7e4efa2328ac11930706 inherit pro_attribs_a02300"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#a6ba3138c342b7e4efa2328ac11930706">AFull_</a></td></tr>
+<tr class="memdesc:a6ba3138c342b7e4efa2328ac11930706 inherit pro_attribs_a02300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the full size matrix.  <a href="a02300.html#a6ba3138c342b7e4efa2328ac11930706">More...</a><br /></td></tr>
+<tr class="separator:a6ba3138c342b7e4efa2328ac11930706 inherit pro_attribs_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a02252.html" title="Range for abscissa or ordinate display. ">Range</a> for abscissa or ordinate display. </p>
-<p>Setting the min to -inf or max to +inf tells the client to compute the related limit (default) </p>
+<div class="textblock"><p>Helper class to write an inequality constraint for Tasks. </p>
+<p>This constraint applies to alphaD for a given robot.</p>
+<p>This implements \( A * \ddot{\mathbf{q}}_{rI} \le b \)</p>
+<p>Where \(rI\) is the robot index you provide at construction.</p>
+<p>You must implement the following functions:</p><ul>
+<li><code>const Eigen::MatrixXd &amp; <a class="el" href="a02300.html#adcc1dc8dc0563b2e14f962f26afbfa5f" title="Should be overriden to provide A in the desired operation space. ">A() const </a>override;</code> returns \(A\), must be of size (nrLines, alphaD.size())</li>
+<li><code>void <a class="el" href="a02300.html#a8f658eb01d91768ab6a4e9b095a894de" title="Should be overriden to update the constraint matrix and vector(s) ">compute()</a> override;</code> update constraint matrix and bounds</li>
+<li><code>int maxInEq() const override;</code> number of inequality lines</li>
+<li><code>std::string nameInEq() const override;</code> descriptive name of the constraint</li>
+<li><code>const Eigen::VectorXd &amp; bInEq() const override;</code> returns \(b\) </li>
+</ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aead20688a3c041cd852dd71c98cfc15b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aead20688a3c041cd852dd71c98cfc15b">&#9670;&nbsp;</a></span>Range() <span class="overload">[1/2]</span></h2>
+<a id="a3a76371902953809f84f92a1c642a75b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a76371902953809f84f92a1c642a75b">&#9670;&nbsp;</a></span>InequalityConstraintRobot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,168 +174,19 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mc_rtc::gui::plot::Range::Range </td>
+          <td class="memname">mc_solver::InequalityConstraintRobot::InequalityConstraintRobot </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>rIndex</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae57efd48b0202aac88fd98578af24993"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae57efd48b0202aac88fd98578af24993">&#9670;&nbsp;</a></span>Range() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mc_rtc::gui::plot::Range::Range </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad303c48ab81bc362a13995c1b2464d0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad303c48ab81bc362a13995c1b2464d0b">&#9670;&nbsp;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mc_rtc::gui::plot::Range::load </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;&#160;</td>
-          <td class="paramname"><em>config</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a02256.html#a0c01d0dfa7133defe27e167dc147689f">mc_rtc::gui::plot::AxisConfiguration::load()</a>.</p>
-
-</div>
-</div>
-<a id="aa6b749d005afc464c84b138a2d72ae79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6b749d005afc464c84b138a2d72ae79">&#9670;&nbsp;</a></span>write()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mc_rtc::gui::plot::Range::write </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;&#160;</td>
-          <td class="paramname"><em>builder</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02404.html#a296dff689d0fe65aa0925fce937d25c0">mc_rtc::MessagePackBuilder::finish_array()</a>, <a class="el" href="a02404.html#a1251bf6d65a490f2e149f2edfb2a956f">mc_rtc::MessagePackBuilder::start_array()</a>, and <a class="el" href="a02404.html#ab7c6cb64330027b2fec8e69d218a866d">mc_rtc::MessagePackBuilder::write()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a02256.html#a4b812f4837d01d6a931c415e518f67fb">mc_rtc::gui::plot::AxisConfiguration::write()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab995e2707a19a7b8beb6b05bbeffa3b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab995e2707a19a7b8beb6b05bbeffa3b9">&#9670;&nbsp;</a></span>inf</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double mc_rtc::gui::plot::Range::inf = std::numeric_limits&lt;double&gt;::<a class="elRef" doxygen="https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/sch-core.doxytag:https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/" href="https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00145.html#a27f844328430dc3778ba427657947cd2">infinity</a>()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a85f2d2500191f058985f2d32ea40583d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85f2d2500191f058985f2d32ea40583d">&#9670;&nbsp;</a></span>max</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double mc_rtc::gui::plot::Range::max = <a class="el" href="a02252.html#ab995e2707a19a7b8beb6b05bbeffa3b9">inf</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a02224.html#a190355057411d2e31f821dbb45afcf96">mc_rtc::gui::plot::impl::Abscissa&lt; GetT &gt;::max()</a>, and <a class="el" href="a02256.html#a57dec2715d846f093cfdd059378880f9">mc_rtc::gui::plot::AxisConfiguration::max()</a>.</p>
-
-</div>
-</div>
-<a id="a3626d90084b55cd8a94307e620a09062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3626d90084b55cd8a94307e620a09062">&#9670;&nbsp;</a></span>min</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double mc_rtc::gui::plot::Range::min = -<a class="el" href="a02252.html#ab995e2707a19a7b8beb6b05bbeffa3b9">inf</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a02224.html#aabf95601f4cd3af4b63249bd327f2148">mc_rtc::gui::plot::impl::Abscissa&lt; GetT &gt;::min()</a>, and <a class="el" href="a02256.html#af4a1ad6155619aa6f1d2ab8feec617c3">mc_rtc::gui::plot::AxisConfiguration::min()</a>.</p>
 
 </div>
 </div>
@@ -292,8 +196,8 @@ Static Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00636.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a00647.html">gui</a></li><li class="navelem"><a class="el" href="a00649.html">plot</a></li><li class="navelem"><a class="el" href="a02252.html">Range</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:15 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00773.html">mc_solver</a></li><li class="navelem"><a class="el" href="a02252.html">InequalityConstraintRobot</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:03 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

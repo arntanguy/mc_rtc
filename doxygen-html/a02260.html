@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>mc_rtc::gui::plot::PolygonDescription Struct Reference</title>
+<title>mc_solver::InequalityConstraintForce Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -73,63 +73,118 @@ $(document).ready(function(){initNavTree('a02260.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="a02257.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_rtc::gui::plot::PolygonDescription Struct Reference</div>  </div>
+<div class="title">mc_solver::InequalityConstraintForce Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Describe a polygon to be plotted.  
+<p>Helper class to write an inequality constraint for Tasks.  
  <a href="a02260.html#details">More...</a></p>
 
-<p><code>#include &lt;mc_rtc/gui/plot/types.h&gt;</code></p>
+<p><code>#include &lt;mc_solver/InequalityConstraint.h&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mc_solver::InequalityConstraintForce:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a02260.png" usemap="#mc_5Fsolver::InequalityConstraintForce_map" alt=""/>
+  <map id="mc_5Fsolver::InequalityConstraintForce_map" name="mc_5Fsolver::InequalityConstraintForce_map">
+<area href="a02248.html" alt="mc_solver::utils::InequalityConstraint&lt; utils::UpdateForce &gt;" shape="rect" coords="205,280,606,304"/>
+<area href="a02288.html" alt="mc_solver::utils::Constraint&lt; tasks::qp::Inequality, utils::UpdateForce &gt;" shape="rect" coords="205,224,606,248"/>
+<area href="a02308.html" alt="mc_solver::utils::UpdateForce" shape="rect" coords="411,168,812,192"/>
+<area href="a02300.html" alt="mc_solver::utils::Update&lt; UpdateNrVarsLambda &gt;" shape="rect" coords="411,112,812,136"/>
+<area href="a02320.html" title="This struct provides an implement for updateNrVars for a lambda-based constraint. ..." alt="mc_solver::utils::UpdateNrVarsLambda" shape="rect" coords="205,56,606,80"/>
+<area href="a02296.html" alt="mc_solver::utils::UpdateTag" shape="rect" coords="616,56,1017,80"/>
+<area href="a02312.html" title="This struct provides common data for UpdateNrVars* classes. " alt="mc_solver::utils::UpdateNrVarsData" shape="rect" coords="205,0,606,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5be9ba163395960fd1d95bc337b64f2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a5be9ba163395960fd1d95bc337b64f2b">PolygonDescription</a> ()</td></tr>
-<tr class="separator:a5be9ba163395960fd1d95bc337b64f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45ab1398054c73f857e813161bb32c62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a45ab1398054c73f857e813161bb32c62">PolygonDescription</a> (const std::vector&lt; std::array&lt; double, 2 &gt;&gt; &amp;<a class="el" href="a02260.html#aa204e03fc3c231dd512ad16a49dad13e">points</a>, <a class="el" href="a02316.html">Color</a> <a class="el" href="a02260.html#a11b53d1bd311213f34519625ef36294c">outline</a>)</td></tr>
-<tr class="separator:a45ab1398054c73f857e813161bb32c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986eec4f659dde33b1f088dcd6eb6a76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a986eec4f659dde33b1f088dcd6eb6a76">operator==</a> (const <a class="el" href="a02260.html">PolygonDescription</a> &amp;rhs) const</td></tr>
-<tr class="separator:a986eec4f659dde33b1f088dcd6eb6a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7884ac843c48bb36e535e47536ed5760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a7884ac843c48bb36e535e47536ed5760">operator!=</a> (const <a class="el" href="a02260.html">PolygonDescription</a> &amp;rhs) const</td></tr>
-<tr class="separator:a7884ac843c48bb36e535e47536ed5760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa204e03fc3c231dd512ad16a49dad13e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::array&lt; double, 2 &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#aa204e03fc3c231dd512ad16a49dad13e">points</a> ()</td></tr>
-<tr class="separator:aa204e03fc3c231dd512ad16a49dad13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11b53d1bd311213f34519625ef36294c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02316.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a11b53d1bd311213f34519625ef36294c">outline</a> ()</td></tr>
-<tr class="separator:a11b53d1bd311213f34519625ef36294c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a7628372d8f7a8fcb4ae2532c8ca86"><td class="memItemLeft" align="right" valign="top">Style &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a00a7628372d8f7a8fcb4ae2532c8ca86">style</a> ()</td></tr>
-<tr class="separator:a00a7628372d8f7a8fcb4ae2532c8ca86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc0a5ccc455b33de968ad47b6a7c3304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02316.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#acc0a5ccc455b33de968ad47b6a7c3304">fill</a> ()</td></tr>
-<tr class="separator:acc0a5ccc455b33de968ad47b6a7c3304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99a003e4a0d4e2ce48862fecfb0a88d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a99a003e4a0d4e2ce48862fecfb0a88d9">closed</a> ()</td></tr>
-<tr class="separator:a99a003e4a0d4e2ce48862fecfb0a88d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8fe64b962d6123e29fbf76b29b281c9"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::array&lt; double, 2 &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#aa8fe64b962d6123e29fbf76b29b281c9">points</a> () const</td></tr>
-<tr class="separator:aa8fe64b962d6123e29fbf76b29b281c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affe6dfc002b26a7d843a7d38d820e6ae"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a02316.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#affe6dfc002b26a7d843a7d38d820e6ae">outline</a> () const</td></tr>
-<tr class="separator:affe6dfc002b26a7d843a7d38d820e6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4968cba9d0023d60683f78c1d1cd02eb"><td class="memItemLeft" align="right" valign="top">const Style &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a4968cba9d0023d60683f78c1d1cd02eb">style</a> () const</td></tr>
-<tr class="separator:a4968cba9d0023d60683f78c1d1cd02eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e66484a0090462d342bac31950af58"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a02316.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a21e66484a0090462d342bac31950af58">fill</a> () const</td></tr>
-<tr class="separator:a21e66484a0090462d342bac31950af58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ecd84419861a68c359818643062aa52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a5ecd84419861a68c359818643062aa52">closed</a> () const</td></tr>
-<tr class="separator:a5ecd84419861a68c359818643062aa52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a999e059af7743423fd58768dc17e2994"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02260.html">PolygonDescription</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a999e059af7743423fd58768dc17e2994">outline</a> (const <a class="el" href="a02316.html">Color</a> &amp;outline)</td></tr>
-<tr class="separator:a999e059af7743423fd58768dc17e2994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac77e54fdbd9679a2ee38b3386fd0a227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02260.html">PolygonDescription</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#ac77e54fdbd9679a2ee38b3386fd0a227">style</a> (const Style &amp;style)</td></tr>
-<tr class="separator:ac77e54fdbd9679a2ee38b3386fd0a227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48bd152b874c8b3afbda87b671f0a7f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02260.html">PolygonDescription</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a48bd152b874c8b3afbda87b671f0a7f4">fill</a> (const <a class="el" href="a02316.html">Color</a> &amp;fill)</td></tr>
-<tr class="separator:a48bd152b874c8b3afbda87b671f0a7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb8f660f859e833c99de6513966fe4bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02260.html">PolygonDescription</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#acb8f660f859e833c99de6513966fe4bb">closed</a> (bool closed)</td></tr>
-<tr class="separator:acb8f660f859e833c99de6513966fe4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5518c764a0f7ac6430c872e56e287ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#ae5518c764a0f7ac6430c872e56e287ca">load</a> (const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;data)</td></tr>
-<tr class="separator:ae5518c764a0f7ac6430c872e56e287ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a698a8c16a8dfd0a6c16e00f13ab3b914"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#a698a8c16a8dfd0a6c16e00f13ab3b914">write</a> (<a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;builder) const</td></tr>
-<tr class="separator:a698a8c16a8dfd0a6c16e00f13ab3b914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02dd7575c860883c51f5de6bd94b677"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02260.html#aa02dd7575c860883c51f5de6bd94b677">InequalityConstraintForce</a> (const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:aa02dd7575c860883c51f5de6bd94b677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a02248"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02248')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02248.html">mc_solver::utils::InequalityConstraint&lt; utils::UpdateForce &gt;</a></td></tr>
+<tr class="memitem:a2cc88eb4c1dbe254f3c849c0e76b0e03 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#a2cc88eb4c1dbe254f3c849c0e76b0e03">InequalityConstraint</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:a2cc88eb4c1dbe254f3c849c0e76b0e03 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b71fe257e26cc49bb153daa02b32d1 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#a94b71fe257e26cc49bb153daa02b32d1">InequalityConstraint</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:a94b71fe257e26cc49bb153daa02b32d1 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a4f382d3a67a6c728632e4f3189cb0 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#aa1a4f382d3a67a6c728632e4f3189cb0">InequalityConstraint</a> (const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:aa1a4f382d3a67a6c728632e4f3189cb0 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8d6cb3fdbcb0dbf3a598f5db0db67d inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#a2f8d6cb3fdbcb0dbf3a598f5db0db67d">AInEq</a> () const override</td></tr>
+<tr class="separator:a2f8d6cb3fdbcb0dbf3a598f5db0db67d inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32d4e6549d14ef03faa5b61294a9161 inherit pub_methods_a02248"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#ad32d4e6549d14ef03faa5b61294a9161">descInEq</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;, int i) override</td></tr>
+<tr class="separator:ad32d4e6549d14ef03faa5b61294a9161 inherit pub_methods_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_a02248"><td colspan="2" onclick="javascript:toggleInherit('pub_types_a02248')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="a02248.html">mc_solver::utils::InequalityConstraint&lt; utils::UpdateForce &gt;</a></td></tr>
+<tr class="memitem:aa303f3fb9dbf88ece28ef6ee013af8a8 inherit pub_types_a02248"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02248.html#aa303f3fb9dbf88ece28ef6ee013af8a8">Base</a> = <a class="el" href="a02288.html">Constraint</a>&lt; tasks::qp::Inequality, <a class="el" href="a02308.html">utils::UpdateForce</a> &gt;</td></tr>
+<tr class="separator:aa303f3fb9dbf88ece28ef6ee013af8a8 inherit pub_types_a02248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_a02288"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02288')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02288.html">mc_solver::utils::Constraint&lt; tasks::qp::Inequality, utils::UpdateForce &gt;</a></td></tr>
+<tr class="memitem:adcc2b9ec9fbd3b47e0183ef0ce034c73 inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#adcc2b9ec9fbd3b47e0183ef0ce034c73">Constraint</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:adcc2b9ec9fbd3b47e0183ef0ce034c73 inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a2073ed0b8b0432593221fec955e4e inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#ae5a2073ed0b8b0432593221fec955e4e">Constraint</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:ae5a2073ed0b8b0432593221fec955e4e inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0cc49bca85557519c9a110b54c65ca inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#aab0cc49bca85557519c9a110b54c65ca">Constraint</a> (const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:aab0cc49bca85557519c9a110b54c65ca inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819dd76da2909a4c88efcca1cb9aaf69 inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#a819dd76da2909a4c88efcca1cb9aaf69">~Constraint</a> ()</td></tr>
+<tr class="memdesc:a819dd76da2909a4c88efcca1cb9aaf69 inherit pro_methods_a02288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="a02288.html#a819dd76da2909a4c88efcca1cb9aaf69">More...</a><br /></td></tr>
+<tr class="separator:a819dd76da2909a4c88efcca1cb9aaf69 inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab383394a69ab62c4fab23378e64868de inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#ab383394a69ab62c4fab23378e64868de">updateNrVars</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, const tasks::qp::SolverData &amp;data) override</td></tr>
+<tr class="separator:ab383394a69ab62c4fab23378e64868de inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7693804807033e3718c4ba01a58d3a58 inherit pro_methods_a02288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02288.html#a7693804807033e3718c4ba01a58d3a58">update</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, const std::vector&lt; rbd::MultiBodyConfig &gt; &amp;mbcs, const tasks::qp::SolverData &amp;data) override</td></tr>
+<tr class="separator:a7693804807033e3718c4ba01a58d3a58 inherit pro_methods_a02288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_a02308"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02308')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02308.html">mc_solver::utils::UpdateForce</a></td></tr>
+<tr class="memitem:ac7cfe8520ea50dc9cbf285f433769d11 inherit pro_methods_a02308"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02308.html#ac7cfe8520ea50dc9cbf285f433769d11">UpdateForce</a> (const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:ac7cfe8520ea50dc9cbf285f433769d11 inherit pro_methods_a02308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147dd26742af4a2879ffdead8b3ab93d inherit pro_methods_a02308"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02308.html#a147dd26742af4a2879ffdead8b3ab93d">updateImpl</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;, const std::vector&lt; rbd::MultiBodyConfig &gt; &amp;, const tasks::qp::SolverData &amp;)</td></tr>
+<tr class="separator:a147dd26742af4a2879ffdead8b3ab93d inherit pro_methods_a02308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_a02300"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02300')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02300.html">mc_solver::utils::Update&lt; UpdateNrVarsLambda &gt;</a></td></tr>
+<tr class="memitem:ad172325243564a16279d9392bd86efa5 inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#ad172325243564a16279d9392bd86efa5">Update</a> (unsigned int rIndex)</td></tr>
+<tr class="separator:ad172325243564a16279d9392bd86efa5 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806d3dc017b28e570dfa268a32a55600 inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#a806d3dc017b28e570dfa268a32a55600">Update</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:a806d3dc017b28e570dfa268a32a55600 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ad71dd3414ee8bccc766c7bc8b4dc3 inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#ab8ad71dd3414ee8bccc766c7bc8b4dc3">~Update</a> ()</td></tr>
+<tr class="separator:ab8ad71dd3414ee8bccc766c7bc8b4dc3 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f658eb01d91768ab6a4e9b095a894de inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#a8f658eb01d91768ab6a4e9b095a894de">compute</a> ()=0</td></tr>
+<tr class="memdesc:a8f658eb01d91768ab6a4e9b095a894de inherit pro_methods_a02300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be overriden to update the constraint matrix and vector(s)  <a href="a02300.html#a8f658eb01d91768ab6a4e9b095a894de">More...</a><br /></td></tr>
+<tr class="separator:a8f658eb01d91768ab6a4e9b095a894de inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc1dc8dc0563b2e14f962f26afbfa5f inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">virtual const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#adcc1dc8dc0563b2e14f962f26afbfa5f">A</a> () const=0</td></tr>
+<tr class="memdesc:adcc1dc8dc0563b2e14f962f26afbfa5f inherit pro_methods_a02300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be overriden to provide A in the desired operation space.  <a href="a02300.html#adcc1dc8dc0563b2e14f962f26afbfa5f">More...</a><br /></td></tr>
+<tr class="separator:adcc1dc8dc0563b2e14f962f26afbfa5f inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab889dcd5361a420fe976146c40f56533 inherit pro_methods_a02300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#ab889dcd5361a420fe976146c40f56533">updateImpl</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;, const std::vector&lt; rbd::MultiBodyConfig &gt; &amp;, const tasks::qp::SolverData &amp;)</td></tr>
+<tr class="separator:ab889dcd5361a420fe976146c40f56533 inherit pro_methods_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_a02320"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02320')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02320.html">mc_solver::utils::UpdateNrVarsLambda</a></td></tr>
+<tr class="memitem:a9d6f46e4b6e93b51903495758aecd406 inherit pro_methods_a02320"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02320.html#a9d6f46e4b6e93b51903495758aecd406">UpdateNrVarsLambda</a> (const tasks::qp::ContactId &amp;cid)</td></tr>
+<tr class="separator:a9d6f46e4b6e93b51903495758aecd406 inherit pro_methods_a02320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c7ce960742e1844186550b503af6207 inherit pro_methods_a02320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02320.html#a3c7ce960742e1844186550b503af6207">updateNrVarsImpl</a> (const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, const tasks::qp::SolverData &amp;data)</td></tr>
+<tr class="separator:a3c7ce960742e1844186550b503af6207 inherit pro_methods_a02320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a02300"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02300')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02300.html">mc_solver::utils::Update&lt; UpdateNrVarsLambda &gt;</a></td></tr>
+<tr class="memitem:a6ba3138c342b7e4efa2328ac11930706 inherit pro_attribs_a02300"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02300.html#a6ba3138c342b7e4efa2328ac11930706">AFull_</a></td></tr>
+<tr class="memdesc:a6ba3138c342b7e4efa2328ac11930706 inherit pro_attribs_a02300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the full size matrix.  <a href="a02300.html#a6ba3138c342b7e4efa2328ac11930706">More...</a><br /></td></tr>
+<tr class="separator:a6ba3138c342b7e4efa2328ac11930706 inherit pro_attribs_a02300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a02320"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02320')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02320.html">mc_solver::utils::UpdateNrVarsLambda</a></td></tr>
+<tr class="memitem:a855dd9e41399b5a6271e9b4e02576b23 inherit pro_attribs_a02320"><td class="memItemLeft" align="right" valign="top">tasks::qp::ContactId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02320.html#a855dd9e41399b5a6271e9b4e02576b23">cid_</a></td></tr>
+<tr class="separator:a855dd9e41399b5a6271e9b4e02576b23 inherit pro_attribs_a02320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a02312"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02312')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02312.html">mc_solver::utils::UpdateNrVarsData</a></td></tr>
+<tr class="memitem:a3c4a15ad329aedecdfd932aaffe4ff76 inherit pro_attribs_a02312"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02312.html#a3c4a15ad329aedecdfd932aaffe4ff76">nrVars_</a></td></tr>
+<tr class="separator:a3c4a15ad329aedecdfd932aaffe4ff76 inherit pro_attribs_a02312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7940f913dbc5037ed042609f685bfaa inherit pro_attribs_a02312"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02312.html#ac7940f913dbc5037ed042609f685bfaa">ABegin_</a></td></tr>
+<tr class="separator:ac7940f913dbc5037ed042609f685bfaa inherit pro_attribs_a02312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Describe a polygon to be plotted. </p>
+<div class="textblock"><p>Helper class to write an inequality constraint for Tasks. </p>
+<p>This constraint applies to the wrench associated with a given contact.</p>
+<p>This implements \( A * \mathbf{f}_{cI} \le b \)</p>
+<p>Where \(cI\) is the contact id you provide at construction.</p>
+<p>You must implement the following functions:</p><ul>
+<li><code>const Eigen::MatrixXd &amp; <a class="el" href="a02300.html#adcc1dc8dc0563b2e14f962f26afbfa5f" title="Should be overriden to provide A in the desired operation space. ">A() const </a>override;</code> returns \(A\), must be of size (nrLines, 6)</li>
+<li><code>void <a class="el" href="a02300.html#a8f658eb01d91768ab6a4e9b095a894de" title="Should be overriden to update the constraint matrix and vector(s) ">compute()</a> override;</code> update constraint matrix and bounds</li>
+<li><code>int maxInEq() const override;</code> number of inequality lines</li>
+<li><code>std::string nameInEq() const override;</code> descriptive name of the constraint</li>
+<li><code>const Eigen::VectorXd &amp; bInEq() const override;</code> returns \(b\) </li>
+</ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5be9ba163395960fd1d95bc337b64f2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5be9ba163395960fd1d95bc337b64f2b">&#9670;&nbsp;</a></span>PolygonDescription() <span class="overload">[1/2]</span></h2>
+<a id="aa02dd7575c860883c51f5de6bd94b677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02dd7575c860883c51f5de6bd94b677">&#9670;&nbsp;</a></span>InequalityConstraintForce()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,41 +193,16 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mc_rtc::gui::plot::PolygonDescription::PolygonDescription </td>
+          <td class="memname">mc_solver::InequalityConstraintForce::InequalityConstraintForce </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a45ab1398054c73f857e813161bb32c62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45ab1398054c73f857e813161bb32c62">&#9670;&nbsp;</a></span>PolygonDescription() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mc_rtc::gui::plot::PolygonDescription::PolygonDescription </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::array&lt; double, 2 &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>points</em>, </td>
+          <td class="paramtype">const <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;&#160;</td>
+          <td class="paramname"><em>solver</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a02316.html">Color</a>&#160;</td>
-          <td class="paramname"><em>outline</em>&#160;</td>
+          <td class="paramtype">const tasks::qp::ContactId &amp;&#160;</td>
+          <td class="paramname"><em>cid</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,493 +219,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a99a003e4a0d4e2ce48862fecfb0a88d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99a003e4a0d4e2ce48862fecfb0a88d9">&#9670;&nbsp;</a></span>closed() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mc_rtc::gui::plot::PolygonDescription::closed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ecd84419861a68c359818643062aa52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ecd84419861a68c359818643062aa52">&#9670;&nbsp;</a></span>closed() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mc_rtc::gui::plot::PolygonDescription::closed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acb8f660f859e833c99de6513966fe4bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb8f660f859e833c99de6513966fe4bb">&#9670;&nbsp;</a></span>closed() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02260.html">PolygonDescription</a>&amp; mc_rtc::gui::plot::PolygonDescription::closed </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>closed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02260.html#acb8f660f859e833c99de6513966fe4bb">closed()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a02260.html#acb8f660f859e833c99de6513966fe4bb">closed()</a>.</p>
-
-</div>
-</div>
-<a id="acc0a5ccc455b33de968ad47b6a7c3304"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc0a5ccc455b33de968ad47b6a7c3304">&#9670;&nbsp;</a></span>fill() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02316.html">Color</a>&amp; mc_rtc::gui::plot::PolygonDescription::fill </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a21e66484a0090462d342bac31950af58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21e66484a0090462d342bac31950af58">&#9670;&nbsp;</a></span>fill() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a02316.html">Color</a>&amp; mc_rtc::gui::plot::PolygonDescription::fill </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a48bd152b874c8b3afbda87b671f0a7f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48bd152b874c8b3afbda87b671f0a7f4">&#9670;&nbsp;</a></span>fill() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02260.html">PolygonDescription</a>&amp; mc_rtc::gui::plot::PolygonDescription::fill </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a02316.html">Color</a> &amp;&#160;</td>
-          <td class="paramname"><em>fill</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02260.html#a48bd152b874c8b3afbda87b671f0a7f4">fill()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a02260.html#a48bd152b874c8b3afbda87b671f0a7f4">fill()</a>.</p>
-
-</div>
-</div>
-<a id="ae5518c764a0f7ac6430c872e56e287ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5518c764a0f7ac6430c872e56e287ca">&#9670;&nbsp;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mc_rtc::gui::plot::PolygonDescription::load </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a02092.html">mc_rtc::Configuration</a> &amp;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02092.html#ad0a580d2b8dfb6896f79005eccb8f400">mc_rtc::Configuration::load()</a>.</p>
-
-</div>
-</div>
-<a id="a7884ac843c48bb36e535e47536ed5760"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7884ac843c48bb36e535e47536ed5760">&#9670;&nbsp;</a></span>operator!=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mc_rtc::gui::plot::PolygonDescription::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a02260.html">PolygonDescription</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a986eec4f659dde33b1f088dcd6eb6a76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a986eec4f659dde33b1f088dcd6eb6a76">&#9670;&nbsp;</a></span>operator==()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mc_rtc::gui::plot::PolygonDescription::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a02260.html">PolygonDescription</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a11b53d1bd311213f34519625ef36294c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11b53d1bd311213f34519625ef36294c">&#9670;&nbsp;</a></span>outline() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02316.html">Color</a>&amp; mc_rtc::gui::plot::PolygonDescription::outline </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="affe6dfc002b26a7d843a7d38d820e6ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affe6dfc002b26a7d843a7d38d820e6ae">&#9670;&nbsp;</a></span>outline() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a02316.html">Color</a>&amp; mc_rtc::gui::plot::PolygonDescription::outline </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a999e059af7743423fd58768dc17e2994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a999e059af7743423fd58768dc17e2994">&#9670;&nbsp;</a></span>outline() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02260.html">PolygonDescription</a>&amp; mc_rtc::gui::plot::PolygonDescription::outline </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a02316.html">Color</a> &amp;&#160;</td>
-          <td class="paramname"><em>outline</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02260.html#a999e059af7743423fd58768dc17e2994">outline()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a02260.html#a999e059af7743423fd58768dc17e2994">outline()</a>.</p>
-
-</div>
-</div>
-<a id="aa204e03fc3c231dd512ad16a49dad13e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa204e03fc3c231dd512ad16a49dad13e">&#9670;&nbsp;</a></span>points() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::array&lt;double, 2&gt; &gt;&amp; mc_rtc::gui::plot::PolygonDescription::points </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa8fe64b962d6123e29fbf76b29b281c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8fe64b962d6123e29fbf76b29b281c9">&#9670;&nbsp;</a></span>points() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt;std::array&lt;double, 2&gt; &gt;&amp; mc_rtc::gui::plot::PolygonDescription::points </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a00a7628372d8f7a8fcb4ae2532c8ca86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a7628372d8f7a8fcb4ae2532c8ca86">&#9670;&nbsp;</a></span>style() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Style&amp; mc_rtc::gui::plot::PolygonDescription::style </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4968cba9d0023d60683f78c1d1cd02eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4968cba9d0023d60683f78c1d1cd02eb">&#9670;&nbsp;</a></span>style() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Style&amp; mc_rtc::gui::plot::PolygonDescription::style </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac77e54fdbd9679a2ee38b3386fd0a227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac77e54fdbd9679a2ee38b3386fd0a227">&#9670;&nbsp;</a></span>style() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02260.html">PolygonDescription</a>&amp; mc_rtc::gui::plot::PolygonDescription::style </td>
-          <td>(</td>
-          <td class="paramtype">const Style &amp;&#160;</td>
-          <td class="paramname"><em>style</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02260.html#ac77e54fdbd9679a2ee38b3386fd0a227">style()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a02260.html#ac77e54fdbd9679a2ee38b3386fd0a227">style()</a>.</p>
-
-</div>
-</div>
-<a id="a698a8c16a8dfd0a6c16e00f13ab3b914"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a698a8c16a8dfd0a6c16e00f13ab3b914">&#9670;&nbsp;</a></span>write()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mc_rtc::gui::plot::PolygonDescription::write </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;&#160;</td>
-          <td class="paramname"><em>builder</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a02404.html#a296dff689d0fe65aa0925fce937d25c0">mc_rtc::MessagePackBuilder::finish_array()</a>, <a class="el" href="a00647.html#a23166295a3983f35cb0fa510b4c156c9ae41480b6bbfbf7407974a88d3d34f4fa">mc_rtc::gui::Solid</a>, <a class="el" href="a02404.html#a1251bf6d65a490f2e149f2edfb2a956f">mc_rtc::MessagePackBuilder::start_array()</a>, and <a class="el" href="a02404.html#ab7c6cb64330027b2fec8e69d218a866d">mc_rtc::MessagePackBuilder::write()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00636.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a00647.html">gui</a></li><li class="navelem"><a class="el" href="a00649.html">plot</a></li><li class="navelem"><a class="el" href="a02260.html">PolygonDescription</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:15 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00773.html">mc_solver</a></li><li class="navelem"><a class="el" href="a02260.html">InequalityConstraintForce</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:03 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

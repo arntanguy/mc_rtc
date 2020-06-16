@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['eigen',['Eigen',['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00069.html',1,'']]]
+  ['geom',['geom',['../a00777.html',1,'geos']]],
+  ['geos',['geos',['../a00776.html',1,'']]]
 ];

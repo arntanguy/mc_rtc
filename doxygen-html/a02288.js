@@ -1,23 +1,9 @@
 var a02288 =
 [
-    [ "StateBuilder", "a02288.html#a3aa8133f132bbcedc5520b0b69ee7e89", null ],
-    [ "addElement", "a02288.html#aed8f9f487c0f4c2eb629bccfdf262bd0", null ],
-    [ "addElement", "a02288.html#a34dca1ccbd1c170433f4265d4952d89c", null ],
-    [ "addElement", "a02288.html#a46ae231a115404bd810b7d3c3477d048", null ],
-    [ "addElement", "a02288.html#a78762a4504185f92715143948ddd37e5", null ],
-    [ "addPlot", "a02288.html#a6416827891d83ecc4f45db66072c59a4", null ],
-    [ "addPlot", "a02288.html#ad6961d06ac675bd1229a7ca91b8ae20e", null ],
-    [ "addPlot", "a02288.html#a03129def93d1437c326595686cba93ef", null ],
-    [ "addXYPlot", "a02288.html#a400d3e9949fb4856b4e37ea8b9904210", null ],
-    [ "addXYPlot", "a02288.html#a1b1094572270ec977ddbe805dd4a85b4", null ],
-    [ "addXYPlot", "a02288.html#a0bb64442811706a8b932a6c5c53c39d0", null ],
-    [ "addXYPlot", "a02288.html#a5244426886f56ab4589d19c9a237f488", null ],
-    [ "data", "a02288.html#ac8808344c0006e52d845f38ed202afd9", null ],
-    [ "handleRequest", "a02288.html#a42d3a738f1e4e019d740b8b6870d3a6c", null ],
-    [ "removeCategory", "a02288.html#a3c57321e693a7631a5f06800817bbe5d", null ],
-    [ "removeElement", "a02288.html#a1b626d1b71f63fe2741232e8e3881db8", null ],
-    [ "removePlot", "a02288.html#a8988ff74a597f9a7aa546524e6287e9c", null ],
-    [ "reset", "a02288.html#a6668b50fa6ceaf6beaa730f401ab553c", null ],
-    [ "update", "a02288.html#aa251549720e40fd68b267308e5fdc765", null ],
-    [ "PROTOCOL_VERSION", "a02288.html#a2b426f74f8ce2efd0a881684a8eaa52e", null ]
+    [ "Constraint", "a02288.html#adcc2b9ec9fbd3b47e0183ef0ce034c73", null ],
+    [ "Constraint", "a02288.html#ae5a2073ed0b8b0432593221fec955e4e", null ],
+    [ "Constraint", "a02288.html#aab0cc49bca85557519c9a110b54c65ca", null ],
+    [ "~Constraint", "a02288.html#a819dd76da2909a4c88efcca1cb9aaf69", null ],
+    [ "update", "a02288.html#a7693804807033e3718c4ba01a58d3a58", null ],
+    [ "updateNrVars", "a02288.html#ab383394a69ab62c4fab23378e64868de", null ]
 ];

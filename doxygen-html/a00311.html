@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>CollisionsConstraint.h File Reference</title>
+<title>Abscissa.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -71,31 +71,47 @@ $(document).ready(function(){initNavTree('a00311.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">CollisionsConstraint.h File Reference</div>  </div>
+<div class="title">Abscissa.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a00116.html">mc_rbdyn/Collision.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a03528.html">mc_rbdyn/Contact.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00164.html">mc_rbdyn/Robots.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00323.html">mc_solver/ConstraintSet.h</a>&gt;</code><br />
-<code>#include &lt;<a class="elRef" doxygen="https://jrl-umi3218.github.io/Tasks/doxygen/HEAD/Tasks.doxytag:https://jrl-umi3218.github.io/Tasks/doxygen/HEAD/" href="https://jrl-umi3218.github.io/Tasks/doxygen/HEAD/a00038.html">Tasks/QPConstr.h</a>&gt;</code><br />
-<code>#include &lt;set&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="a00287.html">mc_rtc/gui/details/traits.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a03385.html">mc_rtc/gui/plot/types.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02416.html">mc_solver::CollisionsConstraint</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a collision constraint between two robots.  <a href="a02416.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02420.html">mc_solver::RobotEnvCollisionsConstraint</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class for the very common-case of (robot,env) scenarios.  <a href="a02420.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01972.html">mc_rtc::gui::plot::impl::Abscissa&lt; GetT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given plot, this holds options on the abscissa axis and a callback that returns the current abscissa value.  <a href="a01972.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00639"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html">mc_solver</a></td></tr>
+<tr class="memitem:a00763"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html">mc_rtc</a></td></tr>
+<tr class="memdesc:a00763"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file holds all <a class="el" href="a01804.html" title="Simplify access to values hold within a JSON file. ">mc_rtc::Configuration</a> based serialization operation for <a class="el" href="a00766.html">mc_rbdyn</a> objects. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00784"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html">mc_rtc::gui</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00786"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00786.html">mc_rtc::gui::plot</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00787"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html">mc_rtc::gui::plot::impl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a13155e82e2012b946c5c973369b1db56"><td class="memTemplParams" colspan="2">template&lt;typename GetT &gt; </td></tr>
+<tr class="memitem:a13155e82e2012b946c5c973369b1db56"><td class="memTemplItemLeft" align="right" valign="top">impl::Abscissa&lt; GetT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00786.html#a13155e82e2012b946c5c973369b1db56">mc_rtc::gui::plot::X</a> (AxisConfiguration config, GetT get_fn)</td></tr>
+<tr class="memdesc:a13155e82e2012b946c5c973369b1db56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to create an <a class="el" href="a01972.html" title="For a given plot, this holds options on the abscissa axis and a callback that returns the current abs...">impl::Abscissa</a>.  <a href="a00786.html#a13155e82e2012b946c5c973369b1db56">More...</a><br /></td></tr>
+<tr class="separator:a13155e82e2012b946c5c973369b1db56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac22eeca55379fb5c66be97b783a8bd32"><td class="memTemplParams" colspan="2">template&lt;typename GetT &gt; </td></tr>
+<tr class="memitem:ac22eeca55379fb5c66be97b783a8bd32"><td class="memTemplItemLeft" align="right" valign="top">impl::Abscissa&lt; GetT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00786.html#ac22eeca55379fb5c66be97b783a8bd32">mc_rtc::gui::plot::X</a> (const std::string &amp;legend, GetT get_fn)</td></tr>
+<tr class="memdesc:ac22eeca55379fb5c66be97b783a8bd32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to create an <a class="el" href="a01972.html" title="For a given plot, this holds options on the abscissa axis and a callback that returns the current abs...">impl::Abscissa</a> without limits.  <a href="a00786.html#ac22eeca55379fb5c66be97b783a8bd32">More...</a><br /></td></tr>
+<tr class="separator:ac22eeca55379fb5c66be97b783a8bd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f689ceed9f080a4ccc49a6a70aeb4c"><td class="memTemplParams" colspan="2">template&lt;typename GetT &gt; </td></tr>
+<tr class="memitem:ac2f689ceed9f080a4ccc49a6a70aeb4c"><td class="memTemplItemLeft" align="right" valign="top">impl::Abscissa&lt; GetT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00786.html#ac2f689ceed9f080a4ccc49a6a70aeb4c">mc_rtc::gui::plot::X</a> (const char *legend, GetT get_fn)</td></tr>
+<tr class="memdesc:ac2f689ceed9f080a4ccc49a6a70aeb4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to create an <a class="el" href="a01972.html" title="For a given plot, this holds options on the abscissa axis and a callback that returns the current abs...">impl::Abscissa</a> without limits (C-string overload)  <a href="a00786.html#ac2f689ceed9f080a4ccc49a6a70aeb4c">More...</a><br /></td></tr>
+<tr class="separator:ac2f689ceed9f080a4ccc49a6a70aeb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -103,8 +119,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_fad12f0f0b10f75a80792b958ab0d808.html">mc_solver</a></li><li class="navelem"><a class="el" href="a00311.html">CollisionsConstraint.h</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_379a22462e4fb075f5428ea3ff528930.html">mc_rtc</a></li><li class="navelem"><a class="el" href="dir_dda95c61bc807ada3674ae2fc67687f0.html">gui</a></li><li class="navelem"><a class="el" href="dir_db09ff38bdf4a48089498df3a23be2f9.html">plot</a></li><li class="navelem"><a class="el" href="a00311.html">Abscissa.h</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

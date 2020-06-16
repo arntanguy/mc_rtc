@@ -1,7 +1,9 @@
 var a00272 =
 [
-    [ "XYThetaROImpl", "a02336.html", "a02336" ],
-    [ "XYThetaImpl", "a02340.html", "a02340" ],
-    [ "XYTheta", "a00272.html#aaaa2ebe2ecb490f266fe541318646561", null ],
-    [ "XYTheta", "a00272.html#a98fa40132858d1d9c0091acb36ce9f32", null ]
+    [ "ArrowROImpl", "a01864.html", "a01864" ],
+    [ "ArrowImpl", "a01868.html", "a01868" ],
+    [ "Arrow", "a00272.html#aae7d8d2d90a01712f0f57ba5f5ec0faf", null ],
+    [ "Arrow", "a00272.html#ab5cef94f254edfaaa52e300ef9d9287b", null ],
+    [ "Arrow", "a00272.html#a910fc94e100370b4eaa72737398268aa", null ],
+    [ "Arrow", "a00272.html#a35479664be1d4b8d4c55baf5e76e16ae", null ]
 ];

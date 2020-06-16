@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['linestyle',['LineStyle',['../a00647.html#a23166295a3983f35cb0fa510b4c156c9',1,'mc_rtc::gui']]],
-  ['logtype',['LogType',['../a00651.html#ae623e7dc6e6722fd48752713664b3549',1,'mc_rtc::log']]]
+  ['phase',['Phase',['../a01460.html#a28b4bbcf2a082a21bdb917678feda880',1,'mc_control::fsm::SlidingFootContactState']]],
+  ['plot',['Plot',['../a00786.html#ae8d436e1212bee55dfdb14d50b0d6be9',1,'mc_rtc::gui::plot']]],
+  ['policy',['Policy',['../a02128.html#a0fefb36635930cf5a9db966442756b9b',1,'mc_rtc::Logger']]]
 ];

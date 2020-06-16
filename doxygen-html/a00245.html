@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>types.h File Reference</title>
+<title>Surface.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -72,45 +72,32 @@ $(document).ready(function(){initNavTree('a00245.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">types.h File Reference</div>  </div>
+<div class="title">Surface.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a03525.html">mc_rtc/Configuration.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a03510.html">mc_rtc/gui/api.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00299.html">mc_rtc/logging.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="a03337.html">mc_rbdyn/api.h</a>&gt;</code><br />
+<code>#include &lt;RBDyn/MultiBodyConfig.h&gt;</code><br />
+<code>#include &lt;SpaceVecAlg/SpaceVecAlg&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02316.html">mc_rtc::gui::Color</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02320.html">mc_rtc::gui::LineConfig</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02324.html">mc_rtc::gui::ArrowConfig</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02328.html">mc_rtc::gui::ForceConfig</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02332.html">mc_rtc::gui::PointConfig</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01776.html">mc_rbdyn::Surface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00636"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00636.html">mc_rtc</a></td></tr>
-<tr class="memdesc:a00636"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file holds all <a class="el" href="a02092.html" title="Simplify access to values hold within a JSON file. ">mc_rtc::Configuration</a> based serialization operation for <a class="el" href="a00637.html">mc_rbdyn</a> objects. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00647"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html">mc_rtc::gui</a></td></tr>
+<tr class="memitem:a00766"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00766.html">mc_rbdyn</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a23166295a3983f35cb0fa510b4c156c9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a23166295a3983f35cb0fa510b4c156c9">mc_rtc::gui::LineStyle</a> { <br />
-&#160;&#160;<a class="el" href="a00647.html#a23166295a3983f35cb0fa510b4c156c9ae41480b6bbfbf7407974a88d3d34f4fa">mc_rtc::gui::LineStyle::Solid</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00647.html#a23166295a3983f35cb0fa510b4c156c9a90c09393a4c0970bc9a6703ad527781c">mc_rtc::gui::LineStyle::Dotted</a>
-<br />
- }</td></tr>
-<tr class="separator:a23166295a3983f35cb0fa510b4c156c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a848cf0b2e8f6ca6f18ceba1769d9a426"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; Surface &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00766.html#a848cf0b2e8f6ca6f18ceba1769d9a426">mc_rbdyn::SurfacePtr</a></td></tr>
+<tr class="separator:a848cf0b2e8f6ca6f18ceba1769d9a426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -118,8 +105,8 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_379a22462e4fb075f5428ea3ff528930.html">mc_rtc</a></li><li class="navelem"><a class="el" href="dir_dda95c61bc807ada3674ae2fc67687f0.html">gui</a></li><li class="navelem"><a class="el" href="a00245.html">types.h</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_314ec80f2fc36a4630429f4d5408038e.html">mc_rbdyn</a></li><li class="navelem"><a class="el" href="a00245.html">Surface.h</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

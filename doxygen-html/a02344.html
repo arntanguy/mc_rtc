@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>mc_rtc::ObjectLoader&lt; T &gt; Class Template Reference</title>
+<title>mc_tasks::force::ComplianceTask Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -70,155 +70,243 @@ $(document).ready(function(){initNavTree('a02344.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="a02341.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_rtc::ObjectLoader&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">mc_tasks::force::ComplianceTask Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>ltdl wrapper for factory-like classes  
+<p>Add a contact in a compliant manner.  
  <a href="a02344.html#details">More...</a></p>
 
-<p><code>#include &lt;mc_rtc/loader.h&gt;</code></p>
+<p><code>#include &lt;mc_tasks/ComplianceTask.h&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for mc_rtc::ObjectLoader&lt; T &gt;:</div>
+Inheritance diagram for mc_tasks::force::ComplianceTask:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a02344.png" usemap="#mc_5Frtc::ObjectLoader_3C_20T_20_3E_map" alt=""/>
-  <map id="mc_5Frtc::ObjectLoader_3C_20T_20_3E_map" name="mc_5Frtc::ObjectLoader_3C_20T_20_3E_map">
+  <img src="a02344.png" usemap="#mc_5Ftasks::force::ComplianceTask_map" alt=""/>
+  <map id="mc_5Ftasks::force::ComplianceTask_map" name="mc_5Ftasks::force::ComplianceTask_map">
+<area href="a02404.html" title="Represents a generic task. " alt="mc_tasks::MetaTask" shape="rect" coords="0,0,197,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02360.html">ObjectDeleter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a78852c55af0f996b628466db4f6ae828"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a78852c55af0f996b628466db4f6ae828">unique_ptr</a> = std::unique_ptr&lt; T, <a class="el" href="a02360.html">ObjectDeleter</a> &gt;</td></tr>
-<tr class="separator:a78852c55af0f996b628466db4f6ae828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af60c459a8ffc58fb8329669bd3967bcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#af60c459a8ffc58fb8329669bd3967bcb">ObjectLoader</a> (const std::string &amp;<a class="el" href="a02344.html#aab1c409baa5b97ec1e5b58242c572fbe">class_name</a>, const std::vector&lt; std::string &gt; &amp;paths, bool <a class="el" href="a02344.html#a2ed489dea742157c337ac078e99f6dc3">enable_sandbox</a>, bool <a class="el" href="a02344.html#ac2b5e003d3ccd4958a32a83f1981754c">verbose</a>, <a class="el" href="a02356.html#ae88a2f28e5fa458257316949fd08a539">Loader::callback_t</a> cb=<a class="el" href="a02356.html#a2569410b656743e1d955a9aafc7ee793">Loader::default_cb</a>)</td></tr>
-<tr class="memdesc:af60c459a8ffc58fb8329669bd3967bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="a02344.html" title="ltdl wrapper for factory-like classes ">ObjectLoader</a> instance.  <a href="#af60c459a8ffc58fb8329669bd3967bcb">More...</a><br /></td></tr>
-<tr class="separator:af60c459a8ffc58fb8329669bd3967bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd305a8add6473f847951f6fcc6bf0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a8dd305a8add6473f847951f6fcc6bf0c">~ObjectLoader</a> ()</td></tr>
-<tr class="memdesc:a8dd305a8add6473f847951f6fcc6bf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a8dd305a8add6473f847951f6fcc6bf0c">More...</a><br /></td></tr>
-<tr class="separator:a8dd305a8add6473f847951f6fcc6bf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0739f917476b8d1af3c3de7b32c1d1b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#aa0739f917476b8d1af3c3de7b32c1d1b">has_object</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:aa0739f917476b8d1af3c3de7b32c1d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the loader has the name object.  <a href="#aa0739f917476b8d1af3c3de7b32c1d1b">More...</a><br /></td></tr>
-<tr class="separator:aa0739f917476b8d1af3c3de7b32c1d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acab918dfa002205a257be3c638f94ff2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#acab918dfa002205a257be3c638f94ff2">objects</a> () const</td></tr>
-<tr class="memdesc:acab918dfa002205a257be3c638f94ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of available objects.  <a href="#acab918dfa002205a257be3c638f94ff2">More...</a><br /></td></tr>
-<tr class="separator:acab918dfa002205a257be3c638f94ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d500b49baacc44c189bb53264a5185"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a42d500b49baacc44c189bb53264a5185">load_libraries</a> (const std::vector&lt; std::string &gt; &amp;paths, <a class="el" href="a02356.html#ae88a2f28e5fa458257316949fd08a539">Loader::callback_t</a> cb=<a class="el" href="a02356.html#a2569410b656743e1d955a9aafc7ee793">Loader::default_cb</a>)</td></tr>
-<tr class="memdesc:a42d500b49baacc44c189bb53264a5185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load libraries from the paths provided.  <a href="#a42d500b49baacc44c189bb53264a5185">More...</a><br /></td></tr>
-<tr class="separator:a42d500b49baacc44c189bb53264a5185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33bbdbec8644e9b0e09077f076c88b0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a33bbdbec8644e9b0e09077f076c88b0b">clear</a> ()</td></tr>
-<tr class="memdesc:a33bbdbec8644e9b0e09077f076c88b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all loaded libraries.  <a href="#a33bbdbec8644e9b0e09077f076c88b0b">More...</a><br /></td></tr>
-<tr class="separator:a33bbdbec8644e9b0e09077f076c88b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6747e5d8a42e424da0e89f2f2ed8363"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ae6747e5d8a42e424da0e89f2f2ed8363">enable_sandboxing</a> (bool <a class="el" href="a02344.html#a2ed489dea742157c337ac078e99f6dc3">enable_sandbox</a>)</td></tr>
-<tr class="memdesc:ae6747e5d8a42e424da0e89f2f2ed8363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable sandboxing.  <a href="#ae6747e5d8a42e424da0e89f2f2ed8363">More...</a><br /></td></tr>
-<tr class="separator:ae6747e5d8a42e424da0e89f2f2ed8363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae9bc7b4461a90a191a7c1bd8f82fc7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#aae9bc7b4461a90a191a7c1bd8f82fc7e">set_verbosity</a> (bool <a class="el" href="a02344.html#ac2b5e003d3ccd4958a32a83f1981754c">verbose</a>)</td></tr>
-<tr class="memdesc:aae9bc7b4461a90a191a7c1bd8f82fc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the verbosity.  <a href="#aae9bc7b4461a90a191a7c1bd8f82fc7e">More...</a><br /></td></tr>
-<tr class="separator:aae9bc7b4461a90a191a7c1bd8f82fc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0fb7a187ae96e784f32978127824fd8"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:ab0fb7a187ae96e784f32978127824fd8"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02344.html#ab0fb7a187ae96e784f32978127824fd8">create_object</a> (const std::string &amp;name, Args... args)</td></tr>
-<tr class="memdesc:ab0fb7a187ae96e784f32978127824fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new object of type name.  <a href="#ab0fb7a187ae96e784f32978127824fd8">More...</a><br /></td></tr>
-<tr class="separator:ab0fb7a187ae96e784f32978127824fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0215e4d220b8e17862a1f1e0dcc42ad"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:af0215e4d220b8e17862a1f1e0dcc42ad"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a02344.html#a78852c55af0f996b628466db4f6ae828">unique_ptr</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02344.html#af0215e4d220b8e17862a1f1e0dcc42ad">create_unique_object</a> (const std::string &amp;name, Args... args)</td></tr>
-<tr class="memdesc:af0215e4d220b8e17862a1f1e0dcc42ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new object of type name.  <a href="#af0215e4d220b8e17862a1f1e0dcc42ad">More...</a><br /></td></tr>
-<tr class="separator:af0215e4d220b8e17862a1f1e0dcc42ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeac2349008fb866484434e051af4eba"><td class="memItemLeft" align="right" valign="top">EIGEN_MAKE_ALIGNED_OPERATOR_NEW&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#abeac2349008fb866484434e051af4eba">ComplianceTask</a> (const <a class="el" href="a01768.html">mc_rbdyn::Robots</a> &amp;robots, unsigned int robotIndex, const std::string &amp;body, double timestep, const Eigen::Matrix6d &amp;<a class="el" href="a02344.html#a25d158e3ea17507fe4ba679818e8d71a">dof</a>=Eigen::Matrix6d::Identity(), double <a class="el" href="a02344.html#a449d3d8ab18b84bb0d12b932b8aea91a">stiffness</a>=5.0, double <a class="el" href="a02344.html#a04018b7471bd13a2a53488805bbb4c00">weight</a>=1000.0, double <a class="el" href="a02344.html#afdc2f323bda36fb60212f95f6671d22a">forceThresh</a>=3., double <a class="el" href="a02344.html#a044c1fedcaef27af30b4c40b3722cc8c">torqueThresh</a>=1., std::pair&lt; double, double &gt; <a class="el" href="a02344.html#a85fd09f0aa44d74d7ea178a1a854aa4d">forceGain</a>=defaultFGain, std::pair&lt; double, double &gt; <a class="el" href="a02344.html#a5177a999dfcd172f539b6c74cf786dae">torqueGain</a>=defaultTGain)</td></tr>
+<tr class="memdesc:abeac2349008fb866484434e051af4eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with dof restrictions.  <a href="#abeac2349008fb866484434e051af4eba">More...</a><br /></td></tr>
+<tr class="separator:abeac2349008fb866484434e051af4eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a859869df35e31dd54e09a1a2e25f602c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a859869df35e31dd54e09a1a2e25f602c">ComplianceTask</a> (const <a class="el" href="a01768.html">mc_rbdyn::Robots</a> &amp;robots, unsigned int robotIndex, const std::string &amp;body, double timestep, double <a class="el" href="a02344.html#a449d3d8ab18b84bb0d12b932b8aea91a">stiffness</a>=5.0, double <a class="el" href="a02344.html#a04018b7471bd13a2a53488805bbb4c00">weight</a>=1000.0, double <a class="el" href="a02344.html#afdc2f323bda36fb60212f95f6671d22a">forceThresh</a>=3., double <a class="el" href="a02344.html#a044c1fedcaef27af30b4c40b3722cc8c">torqueThresh</a>=1., std::pair&lt; double, double &gt; <a class="el" href="a02344.html#a85fd09f0aa44d74d7ea178a1a854aa4d">forceGain</a>=defaultFGain, std::pair&lt; double, double &gt; <a class="el" href="a02344.html#a5177a999dfcd172f539b6c74cf786dae">torqueGain</a>=defaultTGain)</td></tr>
+<tr class="memdesc:a859869df35e31dd54e09a1a2e25f602c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a859869df35e31dd54e09a1a2e25f602c">More...</a><br /></td></tr>
+<tr class="separator:a859869df35e31dd54e09a1a2e25f602c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b7d4df6aeeff1f359b6465dadb29d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#af4b7d4df6aeeff1f359b6465dadb29d4">reset</a> () override</td></tr>
+<tr class="memdesc:af4b7d4df6aeeff1f359b6465dadb29d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the task.  <a href="#af4b7d4df6aeeff1f359b6465dadb29d4">More...</a><br /></td></tr>
+<tr class="separator:af4b7d4df6aeeff1f359b6465dadb29d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89bd5b9501d970f3fc4b847ffa084592"><td class="memItemLeft" align="right" valign="top">sva::ForceVecd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a89bd5b9501d970f3fc4b847ffa084592">getFilteredWrench</a> () const</td></tr>
+<tr class="memdesc:a89bd5b9501d970f3fc4b847ffa084592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the filtered wrench used by the task as a measure.  <a href="#a89bd5b9501d970f3fc4b847ffa084592">More...</a><br /></td></tr>
+<tr class="separator:a89bd5b9501d970f3fc4b847ffa084592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b45259a30107a6204afe29de4789d5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a2b45259a30107a6204afe29de4789d5e">setTargetWrench</a> (const sva::ForceVecd &amp;wrench)</td></tr>
+<tr class="memdesc:a2b45259a30107a6204afe29de4789d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modify the target wrench.  <a href="#a2b45259a30107a6204afe29de4789d5e">More...</a><br /></td></tr>
+<tr class="separator:a2b45259a30107a6204afe29de4789d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978e9f71933578108ec5eff13b09de0e"><td class="memItemLeft" align="right" valign="top">sva::ForceVecd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a978e9f71933578108ec5eff13b09de0e">getTargetWrench</a> ()</td></tr>
+<tr class="memdesc:a978e9f71933578108ec5eff13b09de0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current target wrench.  <a href="#a978e9f71933578108ec5eff13b09de0e">More...</a><br /></td></tr>
+<tr class="separator:a978e9f71933578108ec5eff13b09de0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a449d3d8ab18b84bb0d12b932b8aea91a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a449d3d8ab18b84bb0d12b932b8aea91a">stiffness</a> (double s)</td></tr>
+<tr class="memdesc:a449d3d8ab18b84bb0d12b932b8aea91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the task stiffness.  <a href="#a449d3d8ab18b84bb0d12b932b8aea91a">More...</a><br /></td></tr>
+<tr class="separator:a449d3d8ab18b84bb0d12b932b8aea91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa97e6e109aed6c749c86c3e52ff734f7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#aa97e6e109aed6c749c86c3e52ff734f7">stiffness</a> ()</td></tr>
+<tr class="memdesc:aa97e6e109aed6c749c86c3e52ff734f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the task stiffness.  <a href="#aa97e6e109aed6c749c86c3e52ff734f7">More...</a><br /></td></tr>
+<tr class="separator:aa97e6e109aed6c749c86c3e52ff734f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04018b7471bd13a2a53488805bbb4c00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a04018b7471bd13a2a53488805bbb4c00">weight</a> (double w)</td></tr>
+<tr class="memdesc:a04018b7471bd13a2a53488805bbb4c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the task weight.  <a href="#a04018b7471bd13a2a53488805bbb4c00">More...</a><br /></td></tr>
+<tr class="separator:a04018b7471bd13a2a53488805bbb4c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac7d3a0f032a28664f341b111ea9b2a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a2ac7d3a0f032a28664f341b111ea9b2a">weight</a> ()</td></tr>
+<tr class="memdesc:a2ac7d3a0f032a28664f341b111ea9b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the task weight.  <a href="#a2ac7d3a0f032a28664f341b111ea9b2a">More...</a><br /></td></tr>
+<tr class="separator:a2ac7d3a0f032a28664f341b111ea9b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc2f323bda36fb60212f95f6671d22a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#afdc2f323bda36fb60212f95f6671d22a">forceThresh</a> (double t)</td></tr>
+<tr class="memdesc:afdc2f323bda36fb60212f95f6671d22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the force threshold.  <a href="#afdc2f323bda36fb60212f95f6671d22a">More...</a><br /></td></tr>
+<tr class="separator:afdc2f323bda36fb60212f95f6671d22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ec1f3e8d39f7eb5968584b8386b860"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a72ec1f3e8d39f7eb5968584b8386b860">forceThresh</a> ()</td></tr>
+<tr class="memdesc:a72ec1f3e8d39f7eb5968584b8386b860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the force threshold.  <a href="#a72ec1f3e8d39f7eb5968584b8386b860">More...</a><br /></td></tr>
+<tr class="separator:a72ec1f3e8d39f7eb5968584b8386b860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a044c1fedcaef27af30b4c40b3722cc8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a044c1fedcaef27af30b4c40b3722cc8c">torqueThresh</a> (double t)</td></tr>
+<tr class="memdesc:a044c1fedcaef27af30b4c40b3722cc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the torque threshold.  <a href="#a044c1fedcaef27af30b4c40b3722cc8c">More...</a><br /></td></tr>
+<tr class="separator:a044c1fedcaef27af30b4c40b3722cc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c058f1eb7eea9a1a96a4aecedf2522"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a31c058f1eb7eea9a1a96a4aecedf2522">torqueThresh</a> ()</td></tr>
+<tr class="memdesc:a31c058f1eb7eea9a1a96a4aecedf2522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the torque threshold.  <a href="#a31c058f1eb7eea9a1a96a4aecedf2522">More...</a><br /></td></tr>
+<tr class="separator:a31c058f1eb7eea9a1a96a4aecedf2522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fd09f0aa44d74d7ea178a1a854aa4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a85fd09f0aa44d74d7ea178a1a854aa4d">forceGain</a> (std::pair&lt; double, double &gt; t)</td></tr>
+<tr class="memdesc:a85fd09f0aa44d74d7ea178a1a854aa4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the force gain.  <a href="#a85fd09f0aa44d74d7ea178a1a854aa4d">More...</a><br /></td></tr>
+<tr class="separator:a85fd09f0aa44d74d7ea178a1a854aa4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60763dc6de33680b62268e34965da2a"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ab60763dc6de33680b62268e34965da2a">forceGain</a> ()</td></tr>
+<tr class="memdesc:ab60763dc6de33680b62268e34965da2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the force gain.  <a href="#ab60763dc6de33680b62268e34965da2a">More...</a><br /></td></tr>
+<tr class="separator:ab60763dc6de33680b62268e34965da2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5177a999dfcd172f539b6c74cf786dae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a5177a999dfcd172f539b6c74cf786dae">torqueGain</a> (std::pair&lt; double, double &gt; t)</td></tr>
+<tr class="memdesc:a5177a999dfcd172f539b6c74cf786dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the torque gain.  <a href="#a5177a999dfcd172f539b6c74cf786dae">More...</a><br /></td></tr>
+<tr class="separator:a5177a999dfcd172f539b6c74cf786dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49b7e1b18ab7cca6e79a0b49ba55ce1"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ae49b7e1b18ab7cca6e79a0b49ba55ce1">torqueGain</a> ()</td></tr>
+<tr class="memdesc:ae49b7e1b18ab7cca6e79a0b49ba55ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the torque gain.  <a href="#ae49b7e1b18ab7cca6e79a0b49ba55ce1">More...</a><br /></td></tr>
+<tr class="separator:ae49b7e1b18ab7cca6e79a0b49ba55ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d158e3ea17507fe4ba679818e8d71a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a25d158e3ea17507fe4ba679818e8d71a">dof</a> (const Eigen::Matrix6d &amp;dof)</td></tr>
+<tr class="memdesc:a25d158e3ea17507fe4ba679818e8d71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current dof matrix.  <a href="#a25d158e3ea17507fe4ba679818e8d71a">More...</a><br /></td></tr>
+<tr class="separator:a25d158e3ea17507fe4ba679818e8d71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db01beff8250952ae3b0f853020e8c3"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix6d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a4db01beff8250952ae3b0f853020e8c3">dof</a> ()</td></tr>
+<tr class="memdesc:a4db01beff8250952ae3b0f853020e8c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current dof matrix.  <a href="#a4db01beff8250952ae3b0f853020e8c3">More...</a><br /></td></tr>
+<tr class="separator:a4db01beff8250952ae3b0f853020e8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29f3468d90160d16cdc8d7c8188c074"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#af29f3468d90160d16cdc8d7c8188c074">dimWeight</a> (const Eigen::VectorXd &amp;dimW) override</td></tr>
+<tr class="memdesc:af29f3468d90160d16cdc8d7c8188c074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the task's dimension weight vector.  <a href="#af29f3468d90160d16cdc8d7c8188c074">More...</a><br /></td></tr>
+<tr class="separator:af29f3468d90160d16cdc8d7c8188c074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade42094d33ea2b4967c7c7c49b10e953"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ade42094d33ea2b4967c7c7c49b10e953">dimWeight</a> () const override</td></tr>
+<tr class="memdesc:ade42094d33ea2b4967c7c7c49b10e953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current task's dim weight vector.  <a href="#ade42094d33ea2b4967c7c7c49b10e953">More...</a><br /></td></tr>
+<tr class="separator:ade42094d33ea2b4967c7c7c49b10e953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac916be1434dee468c5924ad903a3b609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ac916be1434dee468c5924ad903a3b609">selectActiveJoints</a> (<a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const std::vector&lt; std::string &gt; &amp;activeJointsName, const std::map&lt; std::string, std::vector&lt; std::array&lt; int, 2 &gt;&gt;&gt; &amp;activeDofs={}) override</td></tr>
+<tr class="memdesc:ac916be1434dee468c5924ad903a3b609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an active joints selector.  <a href="#ac916be1434dee468c5924ad903a3b609">More...</a><br /></td></tr>
+<tr class="separator:ac916be1434dee468c5924ad903a3b609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab673c6f1104ed69eecc72f9a236ba2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#abab673c6f1104ed69eecc72f9a236ba2">selectUnactiveJoints</a> (<a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const std::vector&lt; std::string &gt; &amp;unactiveJointsName, const std::map&lt; std::string, std::vector&lt; std::array&lt; int, 2 &gt;&gt;&gt; &amp;unactiveDofs={}) override</td></tr>
+<tr class="memdesc:abab673c6f1104ed69eecc72f9a236ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup an unactive joints selector.  <a href="#abab673c6f1104ed69eecc72f9a236ba2">More...</a><br /></td></tr>
+<tr class="separator:abab673c6f1104ed69eecc72f9a236ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f9dd57c39cef2bdcffafeea3404702"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ad1f9dd57c39cef2bdcffafeea3404702">resetJointsSelector</a> (<a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver) override</td></tr>
+<tr class="memdesc:ad1f9dd57c39cef2bdcffafeea3404702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset active joints selection.  <a href="#ad1f9dd57c39cef2bdcffafeea3404702">More...</a><br /></td></tr>
+<tr class="separator:ad1f9dd57c39cef2bdcffafeea3404702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2ffbb255464894b2254af872876957"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a1e2ffbb255464894b2254af872876957">eval</a> () const override</td></tr>
+<tr class="memdesc:a1e2ffbb255464894b2254af872876957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the task error.  <a href="#a1e2ffbb255464894b2254af872876957">More...</a><br /></td></tr>
+<tr class="separator:a1e2ffbb255464894b2254af872876957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d74b5d04bac21cde53bfc0b3c29350"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a54d74b5d04bac21cde53bfc0b3c29350">speed</a> () const override</td></tr>
+<tr class="memdesc:a54d74b5d04bac21cde53bfc0b3c29350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the task velocity.  <a href="#a54d74b5d04bac21cde53bfc0b3c29350">More...</a><br /></td></tr>
+<tr class="separator:a54d74b5d04bac21cde53bfc0b3c29350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a02404"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02404')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a02404.html">mc_tasks::MetaTask</a></td></tr>
+<tr class="memitem:aea3e513dfe137830b38272336451b8cc inherit pub_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#aea3e513dfe137830b38272336451b8cc">~MetaTask</a> ()</td></tr>
+<tr class="separator:aea3e513dfe137830b38272336451b8cc inherit pub_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac090b29eae1954585e32572d40731ca1 inherit pub_methods_a02404"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#ac090b29eae1954585e32572d40731ca1">type</a> () const</td></tr>
+<tr class="memdesc:ac090b29eae1954585e32572d40731ca1 inherit pub_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of the task.  <a href="a02404.html#ac090b29eae1954585e32572d40731ca1">More...</a><br /></td></tr>
+<tr class="separator:ac090b29eae1954585e32572d40731ca1 inherit pub_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98468771424ad14d60915a6b52e927b inherit pub_methods_a02404"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#aa98468771424ad14d60915a6b52e927b">name</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:aa98468771424ad14d60915a6b52e927b inherit pub_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a name for the task.  <a href="a02404.html#aa98468771424ad14d60915a6b52e927b">More...</a><br /></td></tr>
+<tr class="separator:aa98468771424ad14d60915a6b52e927b inherit pub_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94831a7f067fdd5b05e03e83bfc4166b inherit pub_methods_a02404"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a94831a7f067fdd5b05e03e83bfc4166b">name</a> () const</td></tr>
+<tr class="memdesc:a94831a7f067fdd5b05e03e83bfc4166b inherit pub_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the task.  <a href="a02404.html#a94831a7f067fdd5b05e03e83bfc4166b">More...</a><br /></td></tr>
+<tr class="separator:a94831a7f067fdd5b05e03e83bfc4166b inherit pub_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27dbee0df32ae7f803184cb6222fc427 inherit pub_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a27dbee0df32ae7f803184cb6222fc427">load</a> (<a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver, const <a class="el" href="a01804.html">mc_rtc::Configuration</a> &amp;config)</td></tr>
+<tr class="memdesc:a27dbee0df32ae7f803184cb6222fc427 inherit pub_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load parameters from a Configuration object.  <a href="a02404.html#a27dbee0df32ae7f803184cb6222fc427">More...</a><br /></td></tr>
+<tr class="separator:a27dbee0df32ae7f803184cb6222fc427 inherit pub_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a0dce6e455c174537d988c115dc31ce80"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a0dce6e455c174537d988c115dc31ce80"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02344.html#a0dce6e455c174537d988c115dc31ce80">create</a> (const std::string &amp;name, Args... args)</td></tr>
-<tr class="memdesc:a0dce6e455c174537d988c115dc31ce80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function creates a raw pointer then build a shared or unique pointer accordingly.  <a href="#a0dce6e455c174537d988c115dc31ce80">More...</a><br /></td></tr>
-<tr class="separator:a0dce6e455c174537d988c115dc31ce80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aab1c409baa5b97ec1e5b58242c572fbe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#aab1c409baa5b97ec1e5b58242c572fbe">class_name</a></td></tr>
-<tr class="separator:aab1c409baa5b97ec1e5b58242c572fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ed489dea742157c337ac078e99f6dc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a2ed489dea742157c337ac078e99f6dc3">enable_sandbox</a></td></tr>
-<tr class="separator:a2ed489dea742157c337ac078e99f6dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2b5e003d3ccd4958a32a83f1981754c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#ac2b5e003d3ccd4958a32a83f1981754c">verbose</a></td></tr>
-<tr class="separator:ac2b5e003d3ccd4958a32a83f1981754c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c219f5a809cfc139409874145d76a20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02356.html#a9c2401890571dbbde00eda2fb1e87710">Loader::handle_map_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a5c219f5a809cfc139409874145d76a20">handles_</a></td></tr>
-<tr class="separator:a5c219f5a809cfc139409874145d76a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a716eefa0204ce8e39886323aaad00a02"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="a02360.html">ObjectDeleter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02344.html#a716eefa0204ce8e39886323aaad00a02">deleters_</a></td></tr>
-<tr class="separator:a716eefa0204ce8e39886323aaad00a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_a02404"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a02404')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a02404.html">mc_tasks::MetaTask</a></td></tr>
+<tr class="memitem:a19bd5d3b7b1b36dae48b516457de16a8 inherit pro_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a19bd5d3b7b1b36dae48b516457de16a8">addToLogger</a> (<a class="el" href="a02128.html">mc_rtc::Logger</a> &amp;)</td></tr>
+<tr class="memdesc:a19bd5d3b7b1b36dae48b516457de16a8 inherit pro_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add entries to the logger.  <a href="a02404.html#a19bd5d3b7b1b36dae48b516457de16a8">More...</a><br /></td></tr>
+<tr class="separator:a19bd5d3b7b1b36dae48b516457de16a8 inherit pro_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db4ea4e03d00823e7ee10b444a697b1 inherit pro_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a1db4ea4e03d00823e7ee10b444a697b1">removeFromLogger</a> (<a class="el" href="a02128.html">mc_rtc::Logger</a> &amp;)</td></tr>
+<tr class="memdesc:a1db4ea4e03d00823e7ee10b444a697b1 inherit pro_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove entries from the logger.  <a href="a02404.html#a1db4ea4e03d00823e7ee10b444a697b1">More...</a><br /></td></tr>
+<tr class="separator:a1db4ea4e03d00823e7ee10b444a697b1 inherit pro_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6be5d66b0aba0cac4f65093d5d3b7c7f inherit pro_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a6be5d66b0aba0cac4f65093d5d3b7c7f">addToGUI</a> (<a class="el" href="a02036.html">mc_rtc::gui::StateBuilder</a> &amp;)</td></tr>
+<tr class="memdesc:a6be5d66b0aba0cac4f65093d5d3b7c7f inherit pro_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add elements to the GUI through the helper.  <a href="a02404.html#a6be5d66b0aba0cac4f65093d5d3b7c7f">More...</a><br /></td></tr>
+<tr class="separator:a6be5d66b0aba0cac4f65093d5d3b7c7f inherit pro_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d85f3f65abc8a5f8965efec40ebe7d inherit pro_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a44d85f3f65abc8a5f8965efec40ebe7d">removeFromGUI</a> (<a class="el" href="a02036.html">mc_rtc::gui::StateBuilder</a> &amp;)</td></tr>
+<tr class="memdesc:a44d85f3f65abc8a5f8965efec40ebe7d inherit pro_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove elements from the GUI through the helper.  <a href="a02404.html#a44d85f3f65abc8a5f8965efec40ebe7d">More...</a><br /></td></tr>
+<tr class="separator:a44d85f3f65abc8a5f8965efec40ebe7d inherit pro_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a753237535cc3e200e44ae0fa276f733e inherit pro_methods_a02404"><td class="memItemLeft" align="right" valign="top">virtual std::function&lt; bool(const <a class="el" href="a02404.html">mc_tasks::MetaTask</a> &amp;task, std::string &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a753237535cc3e200e44ae0fa276f733e">buildCompletionCriteria</a> (double dt, const <a class="el" href="a01804.html">mc_rtc::Configuration</a> &amp;config) const</td></tr>
+<tr class="memdesc:a753237535cc3e200e44ae0fa276f733e inherit pro_methods_a02404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add additional completion criterias to <a class="el" href="a01372.html" title="A generic MetaTask completion criteria. ">mc_control::CompletionCriteria</a> object.  <a href="a02404.html#a753237535cc3e200e44ae0fa276f733e">More...</a><br /></td></tr>
+<tr class="separator:a753237535cc3e200e44ae0fa276f733e inherit pro_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_a02404"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_a02404')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="a02404.html">mc_tasks::MetaTask</a></td></tr>
+<tr class="memitem:a6f753630a5e0aca76308b4d652e62277 inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a6f753630a5e0aca76308b4d652e62277">addToSolver</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver)</td></tr>
+<tr class="separator:a6f753630a5e0aca76308b4d652e62277 inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af374c0658624a4cb7a6a9f900ab9f69a inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#af374c0658624a4cb7a6a9f900ab9f69a">removeFromSolver</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver)</td></tr>
+<tr class="separator:af374c0658624a4cb7a6a9f900ab9f69a inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570ef153c01abad5d5642b7a16f44d79 inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a570ef153c01abad5d5642b7a16f44d79">update</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;solver)</td></tr>
+<tr class="separator:a570ef153c01abad5d5642b7a16f44d79 inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29af31e9eb526d06b6d4ec1d2f3d5bb inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#ac29af31e9eb526d06b6d4ec1d2f3d5bb">addToLogger</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02128.html">mc_rtc::Logger</a> &amp;logger)</td></tr>
+<tr class="separator:ac29af31e9eb526d06b6d4ec1d2f3d5bb inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256b3b8d5c00bc81ef7726f536f79bfb inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a256b3b8d5c00bc81ef7726f536f79bfb">removeFromLogger</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02128.html">mc_rtc::Logger</a> &amp;logger)</td></tr>
+<tr class="separator:a256b3b8d5c00bc81ef7726f536f79bfb inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ce0e373c9cf7f5b8db6745c46c3ef4 inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a73ce0e373c9cf7f5b8db6745c46c3ef4">addToGUI</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02036.html">mc_rtc::gui::StateBuilder</a> &amp;gui)</td></tr>
+<tr class="separator:a73ce0e373c9cf7f5b8db6745c46c3ef4 inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780d496b8148d863b2aa0462abcba525 inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a780d496b8148d863b2aa0462abcba525">removeFromGUI</a> (<a class="el" href="a02404.html">MetaTask</a> &amp;t, <a class="el" href="a02036.html">mc_rtc::gui::StateBuilder</a> &amp;gui)</td></tr>
+<tr class="separator:a780d496b8148d863b2aa0462abcba525 inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d90bfa419602be569c6098e822cdb0d inherit pro_static_methods_a02404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a5d90bfa419602be569c6098e822cdb0d">ensureHasJoints</a> (const <a class="el" href="a01728.html">mc_rbdyn::Robot</a> &amp;robot, const std::vector&lt; std::string &gt; &amp;joints, const std::string &amp;prefix)</td></tr>
+<tr class="separator:a5d90bfa419602be569c6098e822cdb0d inherit pro_static_methods_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a02404"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a02404')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a02404.html">mc_tasks::MetaTask</a></td></tr>
+<tr class="memitem:addf8dbe10befa2b37c8e7ea386561775 inherit pro_attribs_a02404"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#addf8dbe10befa2b37c8e7ea386561775">type_</a></td></tr>
+<tr class="separator:addf8dbe10befa2b37c8e7ea386561775 inherit pro_attribs_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e55f0bff9a3d49ba0b92e0a4dff9a6f inherit pro_attribs_a02404"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02404.html#a6e55f0bff9a3d49ba0b92e0a4dff9a6f">name_</a></td></tr>
+<tr class="separator:a6e55f0bff9a3d49ba0b92e0a4dff9a6f inherit pro_attribs_a02404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T&gt;<br />
-class mc_rtc::ObjectLoader&lt; T &gt;</h3>
-
-<p>ltdl wrapper for factory-like classes </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a78852c55af0f996b628466db4f6ae828"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78852c55af0f996b628466db4f6ae828">&#9670;&nbsp;</a></span>unique_ptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::<a class="el" href="a02344.html#a78852c55af0f996b628466db4f6ae828">unique_ptr</a> =  std::unique_ptr&lt;T, <a class="el" href="a02360.html">ObjectDeleter</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af60c459a8ffc58fb8329669bd3967bcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af60c459a8ffc58fb8329669bd3967bcb">&#9670;&nbsp;</a></span>ObjectLoader()</h2>
+<div class="textblock"><p>Add a contact in a compliant manner. </p>
+<p>Uses an <a class="el" href="a02360.html" title="Controls an end-effector. ">mc_tasks::EndEffectorTask</a> to drive the selected body until certain force and torque thresholds are reached.</p>
+<p>This is a force-compliant variant of <a class="el" href="a02328.html" title="Add a contact. ">mc_tasks::AddContactTask</a> that should be used when a force sensor is available. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abeac2349008fb866484434e051af4eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeac2349008fb866484434e051af4eba">&#9670;&nbsp;</a></span>ComplianceTask() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::<a class="el" href="a02344.html">ObjectLoader</a> </td>
+          <td class="memname">EIGEN_MAKE_ALIGNED_OPERATOR_NEW mc_tasks::force::ComplianceTask::ComplianceTask </td>
           <td>(</td>
+          <td class="paramtype">const <a class="el" href="a01768.html">mc_rbdyn::Robots</a> &amp;&#160;</td>
+          <td class="paramname"><em>robots</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>robotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>class_name</em>, </td>
+          <td class="paramname"><em>body</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>paths</em>, </td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timestep</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable_sandbox</em>, </td>
+          <td class="paramtype">const Eigen::Matrix6d &amp;&#160;</td>
+          <td class="paramname"><em>dof</em> = <code>Eigen::Matrix6d::Identity()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>verbose</em>, </td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>stiffness</em> = <code>5.0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a02356.html#ae88a2f28e5fa458257316949fd08a539">Loader::callback_t</a>&#160;</td>
-          <td class="paramname"><em>cb</em> = <code><a class="el" href="a02356.html#a2569410b656743e1d955a9aafc7ee793">Loader::default_cb</a></code>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>weight</em> = <code>1000.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>forceThresh</em> = <code>3.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>torqueThresh</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramname"><em>forceGain</em> = <code>defaultFGain</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramname"><em>torqueGain</em> = <code>defaultTGain</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -228,276 +316,531 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Create <a class="el" href="a02344.html" title="ltdl wrapper for factory-like classes ">ObjectLoader</a> instance. </p>
+<p>Constructor with dof restrictions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">class_name</td><td>Symbol used to distinguish the relevant libraries</td></tr>
-    <tr><td class="paramname">paths</td><td>directories searched for libraries</td></tr>
-    <tr><td class="paramname">enable_sandbox</td><td>If true, creation function called from the loaded modules are sandboxed allowing to recover from otherwise fatal crashes</td></tr>
-    <tr><td class="paramname">verbose</td><td>If true, output some warning information</td></tr>
-    <tr><td class="paramname">cb</td><td>Function called when a new object is loaded </td></tr>
+    <tr><td class="paramname">robots</td><td>Robots where the task will be applied</td></tr>
+    <tr><td class="paramname">robotIndex</td><td>Which robot among the robots</td></tr>
+    <tr><td class="paramname">body</td><td>Name of the body controlled by this task.</td></tr>
+    <tr><td class="paramname">timestep</td><td>Timestep of the controller</td></tr>
+    <tr><td class="paramname">dof</td><td>Allows to enable/disable some axis in the control/wrench monitoring</td></tr>
+    <tr><td class="paramname">stiffness</td><td>Stiffness of the task</td></tr>
+    <tr><td class="paramname">weight</td><td>Weight of the task</td></tr>
+    <tr><td class="paramname">forceThresh</td><td>Force threshold to reach</td></tr>
+    <tr><td class="paramname">Torque</td><td>threshold to reach</td></tr>
+    <tr><td class="paramname">forceGain</td><td>PD gains on the force part</td></tr>
+    <tr><td class="paramname">torqueGain</td><td>PD gains on the torque part</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">If</td><td>the body the task is attempting to control does not have a sensor attached to it </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8dd305a8add6473f847951f6fcc6bf0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dd305a8add6473f847951f6fcc6bf0c">&#9670;&nbsp;</a></span>~ObjectLoader()</h2>
+<a id="a859869df35e31dd54e09a1a2e25f602c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a859869df35e31dd54e09a1a2e25f602c">&#9670;&nbsp;</a></span>ComplianceTask() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::~<a class="el" href="a02344.html">ObjectLoader</a> </td>
+          <td class="memname">mc_tasks::force::ComplianceTask::ComplianceTask </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a01768.html">mc_rbdyn::Robots</a> &amp;&#160;</td>
+          <td class="paramname"><em>robots</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>robotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>timestep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>stiffness</em> = <code>5.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>weight</em> = <code>1000.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>forceThresh</em> = <code>3.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>torqueThresh</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramname"><em>forceGain</em> = <code>defaultFGain</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramname"><em>torqueGain</em> = <code>defaultTGain</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destructor. </p>
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">robots</td><td>Robots where the task will be applied</td></tr>
+    <tr><td class="paramname">robotIndex</td><td>Which robot among the robots</td></tr>
+    <tr><td class="paramname">body</td><td>Name of the body controlled by this task.</td></tr>
+    <tr><td class="paramname">timestep</td><td>Timestep of the controller</td></tr>
+    <tr><td class="paramname">stiffness</td><td>Stiffness of the task</td></tr>
+    <tr><td class="paramname">weight</td><td>Weight of the task</td></tr>
+    <tr><td class="paramname">forceThresh</td><td>Force threshold to reach</td></tr>
+    <tr><td class="paramname">Torque</td><td>threshold to reach</td></tr>
+    <tr><td class="paramname">forceGain</td><td>PD gains on the force part</td></tr>
+    <tr><td class="paramname">torqueGain</td><td>PD gains on the torque part</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">If</td><td>the body the task is attempting to control does not have a sensor attached to it </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a33bbdbec8644e9b0e09077f076c88b0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33bbdbec8644e9b0e09077f076c88b0b">&#9670;&nbsp;</a></span>clear()</h2>
+<a id="af29f3468d90160d16cdc8d7c8188c074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29f3468d90160d16cdc8d7c8188c074">&#9670;&nbsp;</a></span>dimWeight() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::clear </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Remove all loaded libraries. </p>
-
-</div>
-</div>
-<a id="a0dce6e455c174537d988c115dc31ce80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dce6e455c174537d988c115dc31ce80">&#9670;&nbsp;</a></span>create()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::create </td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::dimWeight </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>dimW</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">Args...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Internal function creates a raw pointer then build a shared or unique pointer accordingly. </p>
-
-</div>
-</div>
-<a id="ab0fb7a187ae96e784f32978127824fd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0fb7a187ae96e784f32978127824fd8">&#9670;&nbsp;</a></span>create_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::create_object </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Create a new object of type name. </p>
+<p>Set the task's dimension weight vector. </p>
+<p>It is the caller responsibility to ensure the dimensionality fits the underlying tasks' error function</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>the object's name </td></tr>
-    <tr><td class="paramname">Args</td><td>argument required by the constructor </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a shared pointer properly equipped to destroy the pointer </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a02348.html" title="Exception thrown by loader interface. ">LoaderException</a></td><td>throw if the name does not exist or if symbol resolution fails </td></tr>
+    <tr><td class="paramname">dimW</td><td>The new tasks's dimension weight vector </td></tr>
   </table>
   </dd>
 </dl>
 
+<p>Implements <a class="el" href="a02404.html#a98221b876dab3cc67fbd60036213eb46">mc_tasks::MetaTask</a>.</p>
+
 </div>
 </div>
-<a id="af0215e4d220b8e17862a1f1e0dcc42ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0215e4d220b8e17862a1f1e0dcc42ad">&#9670;&nbsp;</a></span>create_unique_object()</h2>
+<a id="ade42094d33ea2b4967c7c7c49b10e953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade42094d33ea2b4967c7c7c49b10e953">&#9670;&nbsp;</a></span>dimWeight() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02344.html#a78852c55af0f996b628466db4f6ae828">unique_ptr</a> <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::create_unique_object </td>
+          <td class="memname">Eigen::VectorXd mc_tasks::force::ComplianceTask::dimWeight </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Create a new object of type name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>the object's name</td></tr>
-    <tr><td class="paramname">Args</td><td>arguments required by the constructor</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a unique pointer with a destructor provided by the library</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a02348.html" title="Exception thrown by loader interface. ">LoaderException</a></td><td>if the name does not exist or if symbol resolution fails </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get the current task's dim weight vector. </p>
+
+<p>Implements <a class="el" href="a02404.html#ae6437fb02541a7c63e177ee13170b5a4">mc_tasks::MetaTask</a>.</p>
 
 </div>
 </div>
-<a id="ae6747e5d8a42e424da0e89f2f2ed8363"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6747e5d8a42e424da0e89f2f2ed8363">&#9670;&nbsp;</a></span>enable_sandboxing()</h2>
+<a id="a25d158e3ea17507fe4ba679818e8d71a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d158e3ea17507fe4ba679818e8d71a">&#9670;&nbsp;</a></span>dof() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::enable_sandboxing </td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::dof </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable_sandbox</em></td><td>)</td>
+          <td class="paramtype">const Eigen::Matrix6d &amp;&#160;</td>
+          <td class="paramname"><em>dof</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Enable/disable sandboxing. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable_sandbox</td><td>If true, object's creation is done in a sandbox environment </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Set the current dof matrix. </p>
 
 </div>
 </div>
-<a id="aa0739f917476b8d1af3c3de7b32c1d1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0739f917476b8d1af3c3de7b32c1d1b">&#9670;&nbsp;</a></span>has_object()</h2>
+<a id="a4db01beff8250952ae3b0f853020e8c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db01beff8250952ae3b0f853020e8c3">&#9670;&nbsp;</a></span>dof() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::has_object </td>
+          <td class="memname">Eigen::Matrix6d mc_tasks::force::ComplianceTask::dof </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current dof matrix. </p>
+
+</div>
+</div>
+<a id="a1e2ffbb255464894b2254af872876957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2ffbb255464894b2254af872876957">&#9670;&nbsp;</a></span>eval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd mc_tasks::force::ComplianceTask::eval </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the task error. </p>
+<p>The vector's dimensions depend on the underlying task </p>
+
+<p>Implements <a class="el" href="a02404.html#ad6451130cee8c71e4045d48f7b8b7a18">mc_tasks::MetaTask</a>.</p>
+
+</div>
+</div>
+<a id="a85fd09f0aa44d74d7ea178a1a854aa4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fd09f0aa44d74d7ea178a1a854aa4d">&#9670;&nbsp;</a></span>forceGain() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_tasks::force::ComplianceTask::forceGain </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the force gain. </p>
+
+</div>
+</div>
+<a id="ab60763dc6de33680b62268e34965da2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab60763dc6de33680b62268e34965da2a">&#9670;&nbsp;</a></span>forceGain() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;double, double&gt; mc_tasks::force::ComplianceTask::forceGain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the force gain. </p>
+
+</div>
+</div>
+<a id="afdc2f323bda36fb60212f95f6671d22a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc2f323bda36fb60212f95f6671d22a">&#9670;&nbsp;</a></span>forceThresh() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_tasks::force::ComplianceTask::forceThresh </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the force threshold. </p>
+
+</div>
+</div>
+<a id="a72ec1f3e8d39f7eb5968584b8386b860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ec1f3e8d39f7eb5968584b8386b860">&#9670;&nbsp;</a></span>forceThresh() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mc_tasks::force::ComplianceTask::forceThresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the force threshold. </p>
+
+</div>
+</div>
+<a id="a89bd5b9501d970f3fc4b847ffa084592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bd5b9501d970f3fc4b847ffa084592">&#9670;&nbsp;</a></span>getFilteredWrench()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sva::ForceVecd mc_tasks::force::ComplianceTask::getFilteredWrench </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns true if the loader has the name object. </p>
+<p>Get the filtered wrench used by the task as a measure. </p>
+
+</div>
+</div>
+<a id="a978e9f71933578108ec5eff13b09de0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978e9f71933578108ec5eff13b09de0e">&#9670;&nbsp;</a></span>getTargetWrench()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sva::ForceVecd mc_tasks::force::ComplianceTask::getTargetWrench </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current target wrench. </p>
+
+</div>
+</div>
+<a id="af4b7d4df6aeeff1f359b6465dadb29d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b7d4df6aeeff1f359b6465dadb29d4">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_tasks::force::ComplianceTask::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the task. </p>
+<p>Set the end effector objective to the current position of the end-effector </p>
+
+<p>Implements <a class="el" href="a02404.html#a7821083f6def1d54f22ea7c0e223e21a">mc_tasks::MetaTask</a>.</p>
+
+</div>
+</div>
+<a id="ad1f9dd57c39cef2bdcffafeea3404702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f9dd57c39cef2bdcffafeea3404702">&#9670;&nbsp;</a></span>resetJointsSelector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_tasks::force::ComplianceTask::resetJointsSelector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;&#160;</td>
+          <td class="paramname"><em>solver</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset active joints selection. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Name to be tested </td></tr>
+    <tr><td class="paramname">solver</td><td>Solver where the task is involved </td></tr>
   </table>
   </dd>
 </dl>
 
+<p>Implements <a class="el" href="a02404.html#a745e75d72133feaf9b7aef649485168f">mc_tasks::MetaTask</a>.</p>
+
 </div>
 </div>
-<a id="a42d500b49baacc44c189bb53264a5185"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42d500b49baacc44c189bb53264a5185">&#9670;&nbsp;</a></span>load_libraries()</h2>
+<a id="ac916be1434dee468c5924ad903a3b609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac916be1434dee468c5924ad903a3b609">&#9670;&nbsp;</a></span>selectActiveJoints()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::load_libraries </td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::selectActiveJoints </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;&#160;</td>
+          <td class="paramname"><em>solver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>paths</em>, </td>
+          <td class="paramname"><em>activeJointsName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a02356.html#ae88a2f28e5fa458257316949fd08a539">Loader::callback_t</a>&#160;</td>
-          <td class="paramname"><em>cb</em> = <code><a class="el" href="a02356.html#a2569410b656743e1d955a9aafc7ee793">Loader::default_cb</a></code>&#160;</td>
+          <td class="paramtype">const std::map&lt; std::string, std::vector&lt; std::array&lt; int, 2 &gt;&gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>activeDofs</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -505,187 +848,360 @@ template&lt;typename T&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Load libraries from the paths provided. </p>
+<p>Setup an active joints selector. </p>
+<p>This function setups a tasks::qp;:JointsSelector for the task. Only the provided joints will be used to solve the task.</p>
+<dl class="section note"><dt>Note</dt><dd>Calling this method or the related selectUnactiveJoints should reset the current joints' selection</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">paths</td><td>directories searched for libraries </td></tr>
-    <tr><td class="paramname">verbose</td><td>If true, output some warning information </td></tr>
+    <tr><td class="paramname">solver</td><td>Solver where the task is involved</td></tr>
+    <tr><td class="paramname">activeJointsName</td><td>Active joints in the task</td></tr>
+    <tr><td class="paramname">activeDofs</td><td>Allow to select only part of the dofs of a joint </td></tr>
   </table>
   </dd>
 </dl>
 
+<p>Implements <a class="el" href="a02404.html#a2fd93334634a24c2955f83cbf71926c1">mc_tasks::MetaTask</a>.</p>
+
 </div>
 </div>
-<a id="acab918dfa002205a257be3c638f94ff2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acab918dfa002205a257be3c638f94ff2">&#9670;&nbsp;</a></span>objects()</h2>
+<a id="abab673c6f1104ed69eecc72f9a236ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab673c6f1104ed69eecc72f9a236ba2">&#9670;&nbsp;</a></span>selectUnactiveJoints()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::objects </td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::selectUnactiveJoints </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02284.html">mc_solver::QPSolver</a> &amp;&#160;</td>
+          <td class="paramname"><em>solver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>unactiveJointsName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, std::vector&lt; std::array&lt; int, 2 &gt;&gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>unactiveDofs</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup an unactive joints selector. </p>
+<p>This function setups a tasks::qp;:JointsSelector for the task. All joints will be used to realize the task except those provided here.</p>
+<dl class="section note"><dt>Note</dt><dd>Calling this method or the related selectActiveJoints should reset the current joints' selection</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">solver</td><td>Solver where the task is involved</td></tr>
+    <tr><td class="paramname">unactiveJointsName</td><td>Active joints in the task</td></tr>
+    <tr><td class="paramname">unactiveDofs</td><td>Allow to select only part of the dofs of a joint </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="a02404.html#aa4d582c6cd1934d8a4ac2fed6fb296da">mc_tasks::MetaTask</a>.</p>
+
+</div>
+</div>
+<a id="a2b45259a30107a6204afe29de4789d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b45259a30107a6204afe29de4789d5e">&#9670;&nbsp;</a></span>setTargetWrench()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_tasks::force::ComplianceTask::setTargetWrench </td>
+          <td>(</td>
+          <td class="paramtype">const sva::ForceVecd &amp;&#160;</td>
+          <td class="paramname"><em>wrench</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modify the target wrench. </p>
+
+</div>
+</div>
+<a id="a54d74b5d04bac21cde53bfc0b3c29350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d74b5d04bac21cde53bfc0b3c29350">&#9670;&nbsp;</a></span>speed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd mc_tasks::force::ComplianceTask::speed </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Returns the list of available objects. </p>
-<dl class="section return"><dt>Returns</dt><dd>A list of available objects </dd></dl>
+<p>Returns the task velocity. </p>
+<p>The vector's dimensions depend on the underlying task </p>
+
+<p>Implements <a class="el" href="a02404.html#a2f04c2bc3c4806a13bd383826127f7e1">mc_tasks::MetaTask</a>.</p>
 
 </div>
 </div>
-<a id="aae9bc7b4461a90a191a7c1bd8f82fc7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae9bc7b4461a90a191a7c1bd8f82fc7e">&#9670;&nbsp;</a></span>set_verbosity()</h2>
+<a id="a449d3d8ab18b84bb0d12b932b8aea91a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a449d3d8ab18b84bb0d12b932b8aea91a">&#9670;&nbsp;</a></span>stiffness() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::set_verbosity </td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::stiffness </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>verbose</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Set the verbosity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">verbose</td><td>If true, loader will be more verbose </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Set the task stiffness. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aab1c409baa5b97ec1e5b58242c572fbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab1c409baa5b97ec1e5b58242c572fbe">&#9670;&nbsp;</a></span>class_name</h2>
+<a id="aa97e6e109aed6c749c86c3e52ff734f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97e6e109aed6c749c86c3e52ff734f7">&#9670;&nbsp;</a></span>stiffness() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::class_name</td>
+          <td class="memname">double mc_tasks::force::ComplianceTask::stiffness </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the task stiffness. </p>
+
 </div>
 </div>
-<a id="a716eefa0204ce8e39886323aaad00a02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a716eefa0204ce8e39886323aaad00a02">&#9670;&nbsp;</a></span>deleters_</h2>
+<a id="a5177a999dfcd172f539b6c74cf786dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5177a999dfcd172f539b6c74cf786dae">&#9670;&nbsp;</a></span>torqueGain() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;std::string, <a class="el" href="a02360.html">ObjectDeleter</a>&gt; <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::deleters_</td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::torqueGain </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the torque gain. </p>
+
 </div>
 </div>
-<a id="a2ed489dea742157c337ac078e99f6dc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ed489dea742157c337ac078e99f6dc3">&#9670;&nbsp;</a></span>enable_sandbox</h2>
+<a id="ae49b7e1b18ab7cca6e79a0b49ba55ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49b7e1b18ab7cca6e79a0b49ba55ce1">&#9670;&nbsp;</a></span>torqueGain() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::enable_sandbox</td>
+          <td class="memname">std::pair&lt;double, double&gt; mc_tasks::force::ComplianceTask::torqueGain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the torque gain. </p>
+
 </div>
 </div>
-<a id="a5c219f5a809cfc139409874145d76a20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c219f5a809cfc139409874145d76a20">&#9670;&nbsp;</a></span>handles_</h2>
+<a id="a044c1fedcaef27af30b4c40b3722cc8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044c1fedcaef27af30b4c40b3722cc8c">&#9670;&nbsp;</a></span>torqueThresh() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02356.html#a9c2401890571dbbde00eda2fb1e87710">Loader::handle_map_t</a> <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::handles_</td>
+          <td class="memname">void mc_tasks::force::ComplianceTask::torqueThresh </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the torque threshold. </p>
+
 </div>
 </div>
-<a id="ac2b5e003d3ccd4958a32a83f1981754c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2b5e003d3ccd4958a32a83f1981754c">&#9670;&nbsp;</a></span>verbose</h2>
+<a id="a31c058f1eb7eea9a1a96a4aecedf2522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c058f1eb7eea9a1a96a4aecedf2522">&#9670;&nbsp;</a></span>torqueThresh() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="a02344.html">mc_rtc::ObjectLoader</a>&lt; T &gt;::verbose</td>
+          <td class="memname">double mc_tasks::force::ComplianceTask::torqueThresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get the torque threshold. </p>
+
+</div>
+</div>
+<a id="a04018b7471bd13a2a53488805bbb4c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04018b7471bd13a2a53488805bbb4c00">&#9670;&nbsp;</a></span>weight() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_tasks::force::ComplianceTask::weight </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the task weight. </p>
+
+</div>
+</div>
+<a id="a2ac7d3a0f032a28664f341b111ea9b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac7d3a0f032a28664f341b111ea9b2a">&#9670;&nbsp;</a></span>weight() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mc_tasks::force::ComplianceTask::weight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the task weight. </p>
 
 </div>
 </div>
@@ -695,8 +1211,8 @@ template&lt;typename T&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00636.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a02344.html">ObjectLoader</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00764.html">mc_tasks</a></li><li class="navelem"><a class="el" href="a00794.html">force</a></li><li class="navelem"><a class="el" href="a02344.html">ComplianceTask</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:03 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

@@ -1,14 +1,20 @@
 var annotated_dup =
 [
-    [ "geos", "a00641.html", null ],
-    [ "mc_control", "a00634.html", "a00634" ],
-    [ "mc_observers", "a00638.html", "a00638" ],
-    [ "mc_rbdyn", "a00637.html", "a00637" ],
-    [ "mc_rtc", "a00636.html", "a00636" ],
-    [ "mc_solver", "a00639.html", "a00639" ],
-    [ "mc_tasks", "a00654.html", "a00654" ],
-    [ "mc_trajectory", "a00658.html", "a00658" ],
-    [ "sch", "a00644.html", null ],
-    [ "Collision", "a02660.html", null ],
-    [ "Global", "a02656.html", null ]
+    [ "fmt", "a00782.html", "a00782" ],
+    [ "geos", "a00776.html", null ],
+    [ "mc_control", "a00761.html", "a00761" ],
+    [ "mc_filter", "a00767.html", "a00767" ],
+    [ "mc_observers", "a00769.html", "a00769" ],
+    [ "mc_planning", "a00770.html", "a00770" ],
+    [ "mc_rbdyn", "a00766.html", "a00766" ],
+    [ "mc_rtc", "a00763.html", "a00763" ],
+    [ "mc_solver", "a00773.html", "a00773" ],
+    [ "mc_tasks", "a00764.html", "a00764" ],
+    [ "mc_trajectory", "a00797.html", "a00797" ],
+    [ "sch", "a00779.html", null ],
+    [ "std", null, [
+      [ "hash< mc_control::fsm::Contact >", "a01392.html", "a01392" ]
+    ] ],
+    [ "Collision", "a02476.html", null ],
+    [ "Global", "a02472.html", null ]
 ];

@@ -39,6 +39,8 @@
 
     
 
+    
+
     <link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
   </head>
 
@@ -77,7 +79,7 @@
           
           
         </div>
-        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
       </div>
     </header>
 
@@ -182,6 +184,10 @@
               
             
               
+              <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
+              
+            
+              
               <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
               
             
@@ -190,7 +196,15 @@
               
             
               
+              <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
+              
+            
+              
               <li><a href="/mc_rtc/tutorials/recipes/observers.html">Using the observers pipeline</a></li>
+              
+            
+              
+              <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
               
             
               
@@ -238,6 +252,10 @@
               <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
               
             
+              
+              <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
+              
+            
           </ul>
           
         </ul>
@@ -283,15 +301,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="constructorC++cppTab" data-toggle="tab" href="#constructorC++cppTabContent" role="tab" aria-controls="constructorC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="constructorc-cppTab" data-toggle="tab" href="#constructorc-cppTabContent" role="tab" aria-controls="constructorc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="constructorPythonpythonTab" data-toggle="tab" href="#constructorPythonpythonTabContent" role="tab" aria-controls="constructorPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="constructorpythonpythonTab" data-toggle="tab" href="#constructorpythonpythonTabContent" role="tab" aria-controls="constructorpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -299,8 +315,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="constructorC++cppTabContent" role="tabpanel" arial-labelledby="constructorC++cppTab">
+    <div class="tab-pane show active" id="constructorc-cppTabContent" role="tabpanel" arial-labelledby="constructorc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -320,16 +335,15 @@
   
     
     
-    
-    <div class="tab-pane" id="constructorPythonpythonTabContent" role="tabpanel" arial-labelledby="constructorPythonpythonTab">
+    <div class="tab-pane" id="constructorpythonpythonTabContent" role="tabpanel" arial-labelledby="constructorpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">@</span><span class="nb">staticmethod</span>
 <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="n">door</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="o">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span> <span class="o">+</span> <span class="s">"/../mc_int_obj_description"</span><span class="p">,</span> <span class="s">"door"</span><span class="p">)</span>
-    <span class="n">ground</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="o">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
+    <span class="n">door</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="p">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span> <span class="o">+</span> <span class="s">"/../mc_int_obj_description"</span><span class="p">,</span> <span class="s">"door"</span><span class="p">)</span>
+    <span class="n">ground</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="p">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">MyFirstController</span><span class="p">([</span><span class="n">robot</span><span class="p">,</span> <span class="n">door</span><span class="p">,</span> <span class="n">ground</span><span class="p">],</span> <span class="n">dt</span><span class="p">)</span></code></pre></figure>
 
   </div>
@@ -350,15 +364,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="set_contactC++cppTab" data-toggle="tab" href="#set_contactC++cppTabContent" role="tab" aria-controls="set_contactC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="set-contactc-cppTab" data-toggle="tab" href="#set-contactc-cppTabContent" role="tab" aria-controls="set-contactc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="set_contactPythonpythonTab" data-toggle="tab" href="#set_contactPythonpythonTabContent" role="tab" aria-controls="set_contactPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="set-contactpythonpythonTab" data-toggle="tab" href="#set-contactpythonpythonTabContent" role="tab" aria-controls="set-contactpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -366,8 +378,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="set_contactC++cppTabContent" role="tabpanel" arial-labelledby="set_contactC++cppTab">
+    <div class="tab-pane show active" id="set-contactc-cppTabContent" role="tabpanel" arial-labelledby="set-contactc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -385,15 +396,14 @@
   
     
     
-    
-    <div class="tab-pane" id="set_contactPythonpythonTabContent" role="tabpanel" arial-labelledby="set_contactPythonpythonTab">
+    <div class="tab-pane" id="set-contactpythonpythonTabContent" role="tabpanel" arial-labelledby="set-contactpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">setContacts</span><span class="p">([</span>
-  <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">Contact</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"LeftFoot"</span><span class="p">,</span> <span class="s">"AllGround"</span><span class="p">),</span>
-  <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">Contact</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"RightFoot"</span><span class="p">,</span> <span class="s">"AllGround"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">setContacts</span><span class="p">([</span>
+  <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">Contact</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"LeftFoot"</span><span class="p">,</span> <span class="s">"AllGround"</span><span class="p">),</span>
+  <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">Contact</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"RightFoot"</span><span class="p">,</span> <span class="s">"AllGround"</span><span class="p">)</span>
 <span class="p">])</span></code></pre></figure>
 
   </div>
@@ -414,15 +424,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="reposition_doorC++cppTab" data-toggle="tab" href="#reposition_doorC++cppTabContent" role="tab" aria-controls="reposition_doorC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="reposition-doorc-cppTab" data-toggle="tab" href="#reposition-doorc-cppTabContent" role="tab" aria-controls="reposition-doorc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="reposition_doorPythonpythonTab" data-toggle="tab" href="#reposition_doorPythonpythonTabContent" role="tab" aria-controls="reposition_doorPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="reposition-doorpythonpythonTab" data-toggle="tab" href="#reposition-doorpythonpythonTabContent" role="tab" aria-controls="reposition-doorpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -430,8 +438,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="reposition_doorC++cppTabContent" role="tabpanel" arial-labelledby="reposition_doorC++cppTab">
+    <div class="tab-pane show active" id="reposition-doorc-cppTabContent" role="tabpanel" arial-labelledby="reposition-doorc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -447,14 +454,13 @@
   
     
     
-    
-    <div class="tab-pane" id="reposition_doorPythonpythonTabContent" role="tabpanel" arial-labelledby="reposition_doorPythonpythonTab">
+    <div class="tab-pane" id="reposition-doorpythonpythonTabContent" role="tabpanel" arial-labelledby="reposition-doorpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># In the reset callback
-</span><span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">()</span><span class="o">.</span><span class="n">robot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">posW</span><span class="p">(</span><span class="n">sva</span><span class="o">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">sva</span><span class="o">.</span><span class="n">RotZ</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">eigen</span><span class="o">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span></code></pre></figure>
+</span><span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">().</span><span class="n">robot</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">posW</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">RotZ</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">eigen</span><span class="p">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span></code></pre></figure>
 
   </div>
 </div>
@@ -474,15 +480,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="add_door_tasksC++cppTab" data-toggle="tab" href="#add_door_tasksC++cppTabContent" role="tab" aria-controls="add_door_tasksC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="add-door-tasksc-cppTab" data-toggle="tab" href="#add-door-tasksc-cppTabContent" role="tab" aria-controls="add-door-tasksc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="add_door_tasksPythonpythonTab" data-toggle="tab" href="#add_door_tasksPythonpythonTabContent" role="tab" aria-controls="add_door_tasksPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="add-door-taskspythonpythonTab" data-toggle="tab" href="#add-door-taskspythonpythonTabContent" role="tab" aria-controls="add-door-taskspythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -490,8 +494,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="add_door_tasksC++cppTabContent" role="tabpanel" arial-labelledby="add_door_tasksC++cppTab">
+    <div class="tab-pane show active" id="add-door-tasksc-cppTabContent" role="tabpanel" arial-labelledby="add-door-tasksc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -513,18 +516,17 @@
   
     
     
-    
-    <div class="tab-pane" id="add_door_tasksPythonpythonTabContent" role="tabpanel" arial-labelledby="add_door_tasksPythonpythonTab">
+    <div class="tab-pane" id="add-door-taskspythonpythonTabContent" role="tabpanel" arial-labelledby="add-door-taskspythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># In the reset callback
-</span><span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">()</span><span class="o">.</span><span class="n">robot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">posW</span><span class="p">(</span><span class="n">sva</span><span class="o">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">sva</span><span class="o">.</span><span class="n">RotZ</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">eigen</span><span class="o">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">doorKinematics</span> <span class="o">=</span> <span class="n">mc_solver</span><span class="o">.</span><span class="n">KinematicsConstraint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">timeStep</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doorKinematics</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">doorPosture</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="o">.</span><span class="n">PostureTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doorPosture</span><span class="p">)</span></code></pre></figure>
+</span><span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">().</span><span class="n">robot</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">posW</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">RotZ</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">eigen</span><span class="p">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">doorKinematics</span> <span class="o">=</span> <span class="n">mc_solver</span><span class="p">.</span><span class="n">KinematicsConstraint</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">timeStep</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">doorKinematics</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">doorPosture</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="p">.</span><span class="n">PostureTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">doorPosture</span><span class="p">)</span></code></pre></figure>
 
   </div>
 </div>
@@ -554,15 +556,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="logic_setupC++cppTab" data-toggle="tab" href="#logic_setupC++cppTabContent" role="tab" aria-controls="logic_setupC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="logic-setupc-cppTab" data-toggle="tab" href="#logic-setupc-cppTabContent" role="tab" aria-controls="logic-setupc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="logic_setupPythonpythonTab" data-toggle="tab" href="#logic_setupPythonpythonTabContent" role="tab" aria-controls="logic_setupPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="logic-setuppythonpythonTab" data-toggle="tab" href="#logic-setuppythonpythonTabContent" role="tab" aria-controls="logic-setuppythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -570,8 +570,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="logic_setupC++cppTabContent" role="tabpanel" arial-labelledby="logic_setupC++cppTab">
+    <div class="tab-pane show active" id="logic-setupc-cppTabContent" role="tabpanel" arial-labelledby="logic-setupc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -614,8 +613,7 @@
   
     
     
-    
-    <div class="tab-pane" id="logic_setupPythonpythonTabContent" role="tabpanel" arial-labelledby="logic_setupPythonpythonTab">
+    <div class="tab-pane" id="logic-setuppythonpythonTabContent" role="tabpanel" arial-labelledby="logic-setuppythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -625,18 +623,18 @@
 <span class="n">HANDLE</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">OPEN</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="c1"># In constructor
-</span><span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">APPROACH</span>
+</span><span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">APPROACH</span>
 <span class="c1"># New method for our controller
 </span><span class="k">def</span> <span class="nf">switch_phase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-  <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">APPROACH</span> <span class="ow">and</span> <span class="bp">False</span><span class="p">:</span> <span class="c1"># We write this condition later
+  <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">APPROACH</span> <span class="ow">and</span> <span class="bp">False</span><span class="p">:</span> <span class="c1"># We write this condition later
 </span>    <span class="c1"># Setup the HANDLE phase
-</span>    <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">HANDLE</span>
-  <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">HANDLE</span> <span class="ow">and</span> <span class="bp">False</span><span class="p">:</span> <span class="c1"># We write this condition later
+</span>    <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">HANDLE</span>
+  <span class="k">elif</span> <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">HANDLE</span> <span class="ow">and</span> <span class="bp">False</span><span class="p">:</span> <span class="c1"># We write this condition later
 </span>    <span class="c1"># Setup the OPEN phase
-</span>    <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">OPEN</span>
+</span>    <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">OPEN</span>
 <span class="c1"># Call this in the run callback
 </span><span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">switch_phase</span><span class="p">()</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">switch_phase</span><span class="p">()</span>
     <span class="k">return</span> <span class="bp">True</span></code></pre></figure>
 
   </div>
@@ -657,15 +655,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="p1C++cppTab" data-toggle="tab" href="#p1C++cppTabContent" role="tab" aria-controls="p1C++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="p1c-cppTab" data-toggle="tab" href="#p1c-cppTabContent" role="tab" aria-controls="p1c-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="p1PythonpythonTab" data-toggle="tab" href="#p1PythonpythonTabContent" role="tab" aria-controls="p1PythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="p1pythonpythonTab" data-toggle="tab" href="#p1pythonpythonTabContent" role="tab" aria-controls="p1pythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -673,8 +669,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="p1C++cppTabContent" role="tabpanel" arial-labelledby="p1C++cppTab">
+    <div class="tab-pane show active" id="p1c-cppTabContent" role="tabpanel" arial-labelledby="p1c-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -698,18 +693,17 @@
   
     
     
-    
-    <div class="tab-pane" id="p1PythonpythonTabContent" role="tabpanel" arial-labelledby="p1PythonpythonTab">
+    <div class="tab-pane" id="p1pythonpythonTabContent" role="tabpanel" arial-labelledby="p1pythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># In the reset callback
 # Create the task and add it to the solver
-</span><span class="bp">self</span><span class="o">.</span><span class="n">handTask</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="o">.</span><span class="n">SurfaceTransformTask</span><span class="p">(</span><span class="s">"RightGripper"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handTask</span><span class="p">)</span>
+</span><span class="bp">self</span><span class="p">.</span><span class="n">handTask</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="p">.</span><span class="n">SurfaceTransformTask</span><span class="p">(</span><span class="s">"RightGripper"</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">handTask</span><span class="p">)</span>
 <span class="c1"># Set a target relative to the handle position
-</span><span class="bp">self</span><span class="o">.</span><span class="n">handTask</span><span class="o">.</span><span class="n">target</span><span class="p">(</span><span class="n">sva</span><span class="o">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">eigen</span><span class="o">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.025</span><span class="p">))</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">()</span><span class="o">.</span><span class="n">robot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">surfacePose</span><span class="p">(</span><span class="s">"Handle"</span><span class="p">))</span></code></pre></figure>
+</span><span class="bp">self</span><span class="p">.</span><span class="n">handTask</span><span class="p">.</span><span class="n">target</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">eigen</span><span class="p">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.025</span><span class="p">))</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">().</span><span class="n">robot</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">surfacePose</span><span class="p">(</span><span class="s">"Handle"</span><span class="p">))</span></code></pre></figure>
 
   </div>
 </div>
@@ -736,15 +730,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="p2C++cppTab" data-toggle="tab" href="#p2C++cppTabContent" role="tab" aria-controls="p2C++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="p2c-cppTab" data-toggle="tab" href="#p2c-cppTabContent" role="tab" aria-controls="p2c-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="p2PythonpythonTab" data-toggle="tab" href="#p2PythonpythonTabContent" role="tab" aria-controls="p2PythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="p2pythonpythonTab" data-toggle="tab" href="#p2pythonpythonTabContent" role="tab" aria-controls="p2pythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -752,8 +744,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="p2C++cppTabContent" role="tabpanel" arial-labelledby="p2C++cppTab">
+    <div class="tab-pane show active" id="p2c-cppTabContent" role="tabpanel" arial-labelledby="p2c-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -770,6 +761,8 @@
   <span class="c1">// Keep the robot in its current posture</span>
   <span class="n">postureTask</span><span class="o">-&gt;</span><span class="n">reset</span><span class="p">();</span>
   <span class="n">comTask</span><span class="o">-&gt;</span><span class="n">reset</span><span class="p">();</span>
+  <span class="c1">// Target new handle position</span>
+  <span class="n">doorPosture</span><span class="o">-&gt;</span><span class="n">target</span><span class="p">({{</span><span class="s">"handle"</span><span class="p">,</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}}});</span>
   <span class="c1">// Switch phase</span>
   <span class="n">phase</span> <span class="o">=</span> <span class="n">HANDLE</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
@@ -782,27 +775,26 @@
   
     
     
-    
-    <div class="tab-pane" id="p2PythonpythonTabContent" role="tabpanel" arial-labelledby="p2PythonpythonTab">
+    <div class="tab-pane" id="p2pythonpythonTabContent" role="tabpanel" arial-labelledby="p2pythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Modify switch_phase(self)
-</span><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">APPROACH</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">handTask</span><span class="o">.</span><span class="nb">eval</span><span class="p">()</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">handTask</span><span class="o">.</span><span class="n">speed</span><span class="p">()</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">:</span>
+</span><span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">APPROACH</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">handTask</span><span class="p">.</span><span class="nb">eval</span><span class="p">().</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">handTask</span><span class="p">.</span><span class="n">speed</span><span class="p">().</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">:</span>
   <span class="c1"># Add a new contact
-</span>  <span class="n">contacts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">contacts</span><span class="p">()</span>
-  <span class="n">contacts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">Contact</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"RightGripper"</span><span class="p">,</span> <span class="s">"Handle"</span><span class="p">))</span>
-  <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">setContacts</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span>
+</span>  <span class="n">contacts</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">contacts</span><span class="p">()</span>
+  <span class="n">contacts</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">Contact</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"RightGripper"</span><span class="p">,</span> <span class="s">"Handle"</span><span class="p">))</span>
+  <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">setContacts</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span>
   <span class="c1"># Remove the surface transform task
-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">removeTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handTask</span><span class="p">)</span>
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">removeTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">handTask</span><span class="p">)</span>
   <span class="c1"># Keep the robot in its current posture
-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">postureTask</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-  <span class="bp">self</span><span class="o">.</span><span class="n">comTask</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">reset</span><span class="p">()</span>
+  <span class="bp">self</span><span class="p">.</span><span class="n">comTask</span><span class="p">.</span><span class="n">reset</span><span class="p">()</span>
   <span class="c1"># Target new handle position
-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">doorPosture</span><span class="o">.</span><span class="n">target</span><span class="p">({</span><span class="s">"handle"</span><span class="p">:</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}})</span>
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">doorPosture</span><span class="p">.</span><span class="n">target</span><span class="p">({</span><span class="s">"handle"</span><span class="p">:</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}})</span>
   <span class="c1"># Switch phase
-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">HANDLE</span></code></pre></figure>
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">HANDLE</span></code></pre></figure>
 
   </div>
 </div>
@@ -822,15 +814,13 @@
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="p3C++cppTab" data-toggle="tab" href="#p3C++cppTabContent" role="tab" aria-controls="p3C++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="p3c-cppTab" data-toggle="tab" href="#p3c-cppTabContent" role="tab" aria-controls="p3c-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="p3PythonpythonTab" data-toggle="tab" href="#p3PythonpythonTabContent" role="tab" aria-controls="p3PythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="p3pythonpythonTab" data-toggle="tab" href="#p3pythonpythonTabContent" role="tab" aria-controls="p3pythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -838,8 +828,7 @@
   
     
     
-    
-    <div class="tab-pane show active" id="p3C++cppTabContent" role="tabpanel" arial-labelledby="p3C++cppTab">
+    <div class="tab-pane show active" id="p3c-cppTabContent" role="tabpanel" arial-labelledby="p3c-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -860,17 +849,16 @@
   
     
     
-    
-    <div class="tab-pane" id="p3PythonpythonTabContent" role="tabpanel" arial-labelledby="p3PythonpythonTab">
+    <div class="tab-pane" id="p3pythonpythonTabContent" role="tabpanel" arial-labelledby="p3pythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">HANDLE</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">doorPosture</span><span class="o">.</span><span class="nb">eval</span><span class="p">()</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">:</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">elif</span> <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">==</span> <span class="n">HANDLE</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">doorPosture</span><span class="p">.</span><span class="nb">eval</span><span class="p">().</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">:</span>
   <span class="c1"># Update door opening target
-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">doorPosture</span><span class="o">.</span><span class="n">target</span><span class="p">({</span><span class="s">"door"</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">]})</span>
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">doorPosture</span><span class="p">.</span><span class="n">target</span><span class="p">({</span><span class="s">"door"</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">]})</span>
   <span class="c1"># Switch phase
-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">OPEN</span></code></pre></figure>
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">OPEN</span></code></pre></figure>
 
   </div>
 </div>
@@ -896,7 +884,7 @@
 
 <h3>Introducing the FSM facilities</h3>
 
-<p>This tutorial concludes the introduction of mc_rtc controllers. The next tutorials are focused on the advanced tools available in the framework to help you program and debug complex controllers. However, you might have noticed we have used a very crude approach to program the logic of our controller. The framework provides a much more powerful way to deal with such scenarios as introduced in the <a href="/mc_rtc/tutorials/recipes/fsm.html">tutorial introducing the FSM facilties</a> and the <a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM in practice tutorial</a>. The later will re-program this tutorial using the FSM facilities.</p>
+<p>This tutorial concludes the introduction of mc_rtc controllers. The next tutorials are focused on the advanced tools available in the framework to help you program and debug complex controllers. However, you might have noticed we have used a very crude approach to program the logic of our controller. The framework provides a much more powerful way to deal with such scenarios as introduced in the <a href="/mc_rtc/tutorials/recipes/fsm.html">tutorial introducing the FSM facilties</a> and the <a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM in practice tutorial</a>. The latter will re-program this tutorial using the FSM facilities.</p>
 
 <p>The full sources for this controller are available <a href="sources/multi-robot-controller.html">here</a>.</p>
 
@@ -916,7 +904,7 @@
         <hr>
         <div class="row">
           <div class="col-8 offset-lg-2 col-lg-6">
-            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2019
+            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
           </div>
           <div class="col-4 col-lg-2 text-right">
             <a href="/mc_rtc/credits.html">Credits</a>

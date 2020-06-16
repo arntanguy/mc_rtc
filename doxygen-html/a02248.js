@@ -1,7 +1,9 @@
 var a02248 =
 [
-    [ "Polygons", "a02248.html#af5c1dd31a2d012206f2915a07a9f792c", null ],
-    [ "side", "a02248.html#ac8a95deed7837d208505cbe7d949844b", null ],
-    [ "write", "a02248.html#a881d4f1ec50acb6bb79e8db1605ac1ac", null ],
-    [ "type", "a02248.html#a9bac28b142bf3360b5d6a15aa09197fa", null ]
+    [ "Base", "a02248.html#aa303f3fb9dbf88ece28ef6ee013af8a8", null ],
+    [ "InequalityConstraint", "a02248.html#a2cc88eb4c1dbe254f3c849c0e76b0e03", null ],
+    [ "InequalityConstraint", "a02248.html#a94b71fe257e26cc49bb153daa02b32d1", null ],
+    [ "InequalityConstraint", "a02248.html#aa1a4f382d3a67a6c728632e4f3189cb0", null ],
+    [ "AInEq", "a02248.html#a2f8d6cb3fdbcb0dbf3a598f5db0db67d", null ],
+    [ "descInEq", "a02248.html#ad32d4e6549d14ef03faa5b61294a9161", null ]
 ];

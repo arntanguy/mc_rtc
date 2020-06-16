@@ -1,5 +1,5 @@
 var a01980 =
 [
-    [ "points", "a01980.html#a0b18450a98acf02d8b5b56b0c74e84a1", null ],
-    [ "qpcontact_ptr", "a01980.html#a18f4220244dc364488e15a5b6fc7bdf6", null ]
+    [ "AbscissaOrdinateWithColor", "a01980.html#abd61cc0d2ea75882f75a5f54f9047a0f", null ],
+    [ "write", "a01980.html#a3d6f033510ac8d8a5a05b56adf3c19e2", null ]
 ];

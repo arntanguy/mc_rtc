@@ -1,7 +1,13 @@
 var a02004 =
 [
-    [ "joint", "a02004.html#a4d23695d0cbacd0471313e1323d9e4b1", null ],
-    [ "multiplier", "a02004.html#acae914e7c2302757339b3f4624394c11", null ],
-    [ "name", "a02004.html#a461c2efe0da4d17cc75ce43837a0503f", null ],
-    [ "offset", "a02004.html#a07938e029fb7d951388c0b1ad64642b5", null ]
+    [ "AxisConfiguration", "a02004.html#a6a8051c2000069f6e38ef3f25d8a4086", null ],
+    [ "AxisConfiguration", "a02004.html#a656136780fbda0d82b1ff16905c46f5e", null ],
+    [ "AxisConfiguration", "a02004.html#a82913efc5cd9675f38e17f98bde85e7f", null ],
+    [ "AxisConfiguration", "a02004.html#a9e0fde8a6e63e1f3a21bbb9f946b9dcc", null ],
+    [ "load", "a02004.html#a0c01d0dfa7133defe27e167dc147689f", null ],
+    [ "max", "a02004.html#a57dec2715d846f093cfdd059378880f9", null ],
+    [ "min", "a02004.html#af4a1ad6155619aa6f1d2ab8feec617c3", null ],
+    [ "write", "a02004.html#a4b812f4837d01d6a931c415e518f67fb", null ],
+    [ "name", "a02004.html#a639c7393b6f1f870cb1a6128ba9536ce", null ],
+    [ "range", "a02004.html#a1d461d7275261bd5c496e415a523bd89", null ]
 ];

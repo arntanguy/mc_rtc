@@ -1,5 +1,5 @@
 var a00257 =
 [
-    [ "SchemaImpl", "a02284.html", "a02284" ],
-    [ "Schema", "a00257.html#a0c892f6b2ba9e06d4bda32a16b76b75b", null ]
+    [ "fromVectorOrElement", "a00257.html#ac1107b5d5bcf197a41add86ce445c866", null ],
+    [ "fromVectorOrElement", "a00257.html#a9c308b4400fb83031251be1f6ab0adb2", null ]
 ];

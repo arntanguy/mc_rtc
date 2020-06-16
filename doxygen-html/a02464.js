@@ -1,13 +1,10 @@
 var a02464 =
 [
-    [ "Handle", "a02468.html", "a02468" ],
-    [ "load_fun", "a02464.html#a02dbea2e4a083ed146cea53d7b648483", null ],
-    [ "storage_t", "a02464.html#afc58a28dae04a63aa3ed180a654ec223", null ],
-    [ "T_ptr", "a02464.html#adb735279d914086553de0a21285126e4", null ],
-    [ "load", "a02464.html#a5da6be5874e61bd328a5452dda08950c", null ],
-    [ "load", "a02464.html#a13b1f947ca0b22d2985f580ec57caf85", null ],
-    [ "load", "a02464.html#a5236104825bda3a24cc3645e0e3bf448", null ],
-    [ "load", "a02464.html#ab10c87faa2a1fb4721163c6a479fdd78", null ],
-    [ "register_load_function", "a02464.html#ac24012d951d6a04490b05a64f5ccf620", null ],
-    [ "unregister_load_function", "a02464.html#a35fcd3b9f4280a31049089aa57b54330", null ]
+    [ "waypoint_t", "a02464.html#acbce3f9de05b28314ad0f61bb753d940", null ],
+    [ "InterpolatedRotation", "a02464.html#a35aa6707fcb6b62d7be8daa9df9991eb", null ],
+    [ "eval", "a02464.html#a3848a3c1a1d3796760025d7504c0e7a7", null ],
+    [ "update", "a02464.html#a00b27ba3e5f5c5028a5c3f1b18552617", null ],
+    [ "waypoint", "a02464.html#aa0cdeef0cd6d5a0f7daea52f53bac171", null ],
+    [ "waypoint", "a02464.html#a6188c9c45b2e7b836e82d911131c6f71", null ],
+    [ "all_waypoints_", "a02464.html#a3a83a147d6040fd550d83b1fa2a5e37c", null ]
 ];

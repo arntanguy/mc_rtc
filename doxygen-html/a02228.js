@@ -1,14 +1,10 @@
 var a02228 =
 [
-    [ "AbscissaOrdinate", "a02228.html#a59782a8bb1c04dbaf888856985d7273d", null ],
-    [ "side", "a02228.html#ac412c96504ea09d32b3f19e18e0fca0b", null ],
-    [ "style", "a02228.html#a9298450fcf5a9549db2df14dc6223e4a", null ],
-    [ "write", "a02228.html#a3356c8e13777a41231e4a53f60a0e14c", null ],
-    [ "color_", "a02228.html#a86c83c91843a11a26a3404ddb7b4437b", null ],
-    [ "get_x_fn_", "a02228.html#a06bb63c46c89243d82cbcb4a7323a3cb", null ],
-    [ "get_y_fn_", "a02228.html#ade656f6138f2fd579ad5670c5afac13b", null ],
-    [ "name_", "a02228.html#af7bfde3739ae017ceb6db526762ca6aa", null ],
-    [ "side_", "a02228.html#ae33beeb0efca412dd64fcbad5e984c48", null ],
-    [ "style_", "a02228.html#ad56c269ffbd0cbf144af4b4ff066bd59", null ],
-    [ "type", "a02228.html#a13fb99d2e08099b6c7d7738e8bdd31fa", null ]
+    [ "Handle", "a02228.html#a38ff1a03e3d23844851fbb6945052b6e", null ],
+    [ "Handle", "a02228.html#a3abf3568270608f66c2f3d8f42b158c5", null ],
+    [ "~Handle", "a02228.html#acb9b93dfdd948310129a694363b1d018", null ],
+    [ "Handle", "a02228.html#ad1354d6ec1298c55743594d5f7e959d7", null ],
+    [ "Handle", "a02228.html#a8d34eedd99c2441236c01717b2ec7291", null ],
+    [ "operator=", "a02228.html#a7bcd67bfff206e0063212e99dca891bc", null ],
+    [ "operator=", "a02228.html#a1002f0272ae3957fe636d3b06dc34148", null ]
 ];

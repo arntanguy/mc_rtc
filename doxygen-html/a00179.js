@@ -1,8 +1,7 @@
 var a00179 =
 [
-    [ "cylindrical_hull", "a00179.html#adcd59f0c2e8c9cd94a6f9800c164e723", null ],
-    [ "gripper_hull", "a00179.html#a70b7277a0499a32774e608f8def99043", null ],
-    [ "planar_hull", "a00179.html#a96cab2abc78656a41b2b56987c5fbbfa", null ],
-    [ "sch_polyhedron", "a00179.html#a3db1776d4f8f36e1eb2a8c51bc157867", null ],
-    [ "surface_to_sch", "a00179.html#adf1399b68c68126e373f564e95bc7531", null ]
+    [ "ConfigurationLoader< mc_rbdyn::RobotModule >", "a01636.html", "a01636" ],
+    [ "ConfigurationLoader< mc_rbdyn::RobotModulePtr >", "a01640.html", "a01640" ],
+    [ "ConfigurationLoader< mc_rbdyn::Contact >", "a01644.html", "a01644" ],
+    [ "DECLARE_IO", "a00179.html#a839325e1d657147f6c746b3043b0b1b0", null ]
 ];

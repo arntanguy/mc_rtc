@@ -1,8 +1,8 @@
 var a01908 =
 [
-    [ "MCPythonController", "a01908.html#a032e887f83331f4138a8b4125010930a", null ],
-    [ "reset", "a01908.html#a9f6c69c9b96a4fadd5f94d7500d633d7", null ],
-    [ "run", "a01908.html#a3700ef59c7492c0be19158e991ccf6e6", null ],
-    [ "reset_callback", "a01908.html#a912a0dc9659948113b9eca0605c2cd12", null ],
-    [ "run_callback", "a01908.html#ac76e53f48809f9cede138425a0b7aac9", null ]
+    [ "DataElement", "a01908.html#a65d486d790fd684f1fdd422a36a4b662", null ],
+    [ "DataElement", "a01908.html#a16c128617f3f6e4bc2257f811721e92d", null ],
+    [ "write", "a01908.html#a9f5405a5613389910551ed9e86e35b9b", null ],
+    [ "write_size", "a01908.html#af0401db3e91435848055af583ec602f4", null ],
+    [ "get_fn_", "a01908.html#a8a959ac2e5e7551b29b81b77034ea255", null ]
 ];

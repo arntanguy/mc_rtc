@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>FlatLog.h File Reference</title>
+<title>traits.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -71,36 +71,43 @@ $(document).ready(function(){initNavTree('a00287.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">FlatLog.h File Reference</div>  </div>
+<div class="title">traits.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a03546.html">mc_rtc/log/utils.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00305.html">mc_rtc/utils_api.h</a>&gt;</code><br />
-<code>#include &lt;SpaceVecAlg/SpaceVecAlg&gt;</code><br />
-<code>#include &lt;stdexcept&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;unordered_map&gt;</code><br />
-<code>#include &quot;FlatLog.hpp&quot;</code><br />
+<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02368.html">mc_rtc::log::FlatLog</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">From an on-disk binary log recorded by <a class="el" href="a00636.html" title="This file holds all mc_rtc::Configuration based serialization operation for mc_rbdyn objects...">mc_rtc</a>, return a flat structure.  <a href="a02368.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01888.html">mc_rtc::gui::details::ReturnType&lt; GetT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the return type of a getter function.  <a href="a01888.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02372.html">mc_rtc::log::FlatLog::record</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01892.html">mc_rtc::gui::details::CheckReturnType&lt; GetT, Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the return type of a getter function.  <a href="a01892.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02376.html">mc_rtc::log::FlatLog::entry</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01896.html">mc_rtc::gui::details::CheckReturnType&lt; GetT, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01900.html">mc_rtc::gui::details::CheckReturnType&lt; GetT, T, Args... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00636"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00636.html">mc_rtc</a></td></tr>
-<tr class="memdesc:a00636"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file holds all <a class="el" href="a02092.html" title="Simplify access to values hold within a JSON file. ">mc_rtc::Configuration</a> based serialization operation for <a class="el" href="a00637.html">mc_rbdyn</a> objects. <br /></td></tr>
+<tr class="memitem:a00763"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html">mc_rtc</a></td></tr>
+<tr class="memdesc:a00763"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file holds all <a class="el" href="a01804.html" title="Simplify access to values hold within a JSON file. ">mc_rtc::Configuration</a> based serialization operation for <a class="el" href="a00766.html">mc_rbdyn</a> objects. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00651"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html">mc_rtc::log</a></td></tr>
+<tr class="memitem:a00784"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html">mc_rtc::gui</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00785"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00785.html">mc_rtc::gui::details</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a62d70a1c5467de8404eceee15a80da68"><td class="memTemplParams" colspan="2">template&lt;typename GetT &gt; </td></tr>
+<tr class="memitem:a62d70a1c5467de8404eceee15a80da68"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00785.html#a62d70a1c5467de8404eceee15a80da68">mc_rtc::gui::details::ReturnTypeT</a> = typename ReturnType&lt; GetT &gt;::type</td></tr>
+<tr class="memdesc:a62d70a1c5467de8404eceee15a80da68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper.  <a href="a00785.html#a62d70a1c5467de8404eceee15a80da68">More...</a><br /></td></tr>
+<tr class="separator:a62d70a1c5467de8404eceee15a80da68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -108,8 +115,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_379a22462e4fb075f5428ea3ff528930.html">mc_rtc</a></li><li class="navelem"><a class="el" href="dir_b6742d8caace21cd527a100fbd03062c.html">log</a></li><li class="navelem"><a class="el" href="a00287.html">FlatLog.h</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_379a22462e4fb075f5428ea3ff528930.html">mc_rtc</a></li><li class="navelem"><a class="el" href="dir_dda95c61bc807ada3674ae2fc67687f0.html">gui</a></li><li class="navelem"><a class="el" href="dir_f60bbde16662fb0dce970d667851b692.html">details</a></li><li class="navelem"><a class="el" href="a00287.html">traits.h</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>iterate_binary_log.h File Reference</title>
+<title>elements.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -70,41 +70,90 @@ $(document).ready(function(){initNavTree('a00290.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">iterate_binary_log.h File Reference</div>  </div>
+<div class="title">elements.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a00302.html">mc_rtc/MessagePackBuilder.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00287.html">mc_rtc/log/FlatLog.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="a00386.html">mc_rtc/MessagePackBuilder.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a03343.html">mc_rtc/gui/api.h</a>&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01904.html">mc_rtc::gui::Element</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a01904.html" title="Element is the common class for every element&#39;s type available in the GUI. ">Element</a> is the common class for every element's type available in the GUI.  <a href="a01904.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01908.html">mc_rtc::gui::DataElement&lt; GetT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic element to write data to the GUI.  <a href="a01908.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01912.html">mc_rtc::gui::CallbackElement&lt; ElementT, Callback &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic element to handle request from the client.  <a href="a01912.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01916.html">mc_rtc::gui::CommonInputImpl&lt; GetT, SetT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves typing for the most common case.  <a href="a01916.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01920.html">mc_rtc::gui::VoidCallbackElement&lt; ElementT, Callback &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic element to handle request from the client when no data is required.  <a href="a01920.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00636"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00636.html">mc_rtc</a></td></tr>
-<tr class="memdesc:a00636"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file holds all <a class="el" href="a02092.html" title="Simplify access to values hold within a JSON file. ">mc_rtc::Configuration</a> based serialization operation for <a class="el" href="a00637.html">mc_rbdyn</a> objects. <br /></td></tr>
+<tr class="memitem:a00763"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html">mc_rtc</a></td></tr>
+<tr class="memdesc:a00763"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file holds all <a class="el" href="a01804.html" title="Simplify access to values hold within a JSON file. ">mc_rtc::Configuration</a> based serialization operation for <a class="el" href="a00766.html">mc_rbdyn</a> objects. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00651"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html">mc_rtc::log</a></td></tr>
+<tr class="memitem:a00784"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html">mc_rtc::gui</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a2e5bbb4664bc287ec78732a63a7cd646"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html#a2e5bbb4664bc287ec78732a63a7cd646">mc_rtc::log::binary_log_callback</a> = std::function&lt; bool(const std::vector&lt; std::string &gt; &amp;, std::vector&lt; FlatLog::record &gt; &amp;, double)&gt;</td></tr>
-<tr class="separator:a2e5bbb4664bc287ec78732a63a7cd646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c09aed839e3ee87a5be3e286a3e8903"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html#a9c09aed839e3ee87a5be3e286a3e8903">mc_rtc::log::copy_callback</a> = std::function&lt; void(<a class="el" href="a02404.html">mc_rtc::MessagePackBuilder</a> &amp;, const std::vector&lt; std::string &gt; &amp;)&gt;</td></tr>
-<tr class="separator:a9c09aed839e3ee87a5be3e286a3e8903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c86e8f30b914960080029679897a749"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html#a1c86e8f30b914960080029679897a749">mc_rtc::log::binary_log_copy_callback</a> = std::function&lt; bool(const std::vector&lt; std::string &gt; &amp;, std::vector&lt; FlatLog::record &gt; &amp;, double, const copy_callback &amp;, const char *, uint64_t)&gt;</td></tr>
-<tr class="separator:a1c86e8f30b914960080029679897a749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ae939074ac3cce1fde0bb5e0ea7e90c86"><td class="memItemLeft" align="right" valign="top">bool <a class="el" href="a00305.html#a797d67eb3213978212928ed90cf0dff2">MC_RTC_UTILS_DLLAPI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html#ae939074ac3cce1fde0bb5e0ea7e90c86">mc_rtc::log::iterate_binary_log</a> (const std::string &amp;fpath, const binary_log_copy_callback &amp;callback, bool extract, const std::string &amp;time=&quot;t&quot;)</td></tr>
-<tr class="memdesc:ae939074ac3cce1fde0bb5e0ea7e90c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over a given binary log data.  <a href="a00651.html#ae939074ac3cce1fde0bb5e0ea7e90c86">More...</a><br /></td></tr>
-<tr class="separator:ae939074ac3cce1fde0bb5e0ea7e90c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51b18863af2ea7f3e981b32be6b2174f"><td class="memItemLeft" align="right" valign="top">bool <a class="el" href="a00305.html#a797d67eb3213978212928ed90cf0dff2">MC_RTC_UTILS_DLLAPI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html#a51b18863af2ea7f3e981b32be6b2174f">mc_rtc::log::iterate_binary_log</a> (const std::string &amp;fpath, const binary_log_callback &amp;callback, bool extract, const std::string &amp;time=&quot;t&quot;)</td></tr>
-<tr class="memdesc:a51b18863af2ea7f3e981b32be6b2174f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over a given binary log data.  <a href="a00651.html#a51b18863af2ea7f3e981b32be6b2174f">More...</a><br /></td></tr>
-<tr class="separator:a51b18863af2ea7f3e981b32be6b2174f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a32d283e5c35e7fd7dcddbc0199bfdc06"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06">mc_rtc::gui::Elements</a> { <br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06ab021df6aac4654c454f46c77646e745f">mc_rtc::gui::Elements::Label</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a93bead7e77b18cbfc7d0c892eb65a69f">mc_rtc::gui::Elements::ArrayLabel</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a87b7760f14fbff78d8819291f36ab9a0">mc_rtc::gui::Elements::Button</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a4f8222964f9a317cef99dddc23a121bd">mc_rtc::gui::Elements::Checkbox</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a6e2d1c6d37623990d2d3e0919ee03ff1">mc_rtc::gui::Elements::StringInput</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06ad9da16a5098cfbf3002491c43df151af">mc_rtc::gui::Elements::IntegerInput</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a7be1677ccab64a74bebea1ab86131da8">mc_rtc::gui::Elements::NumberInput</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a2e9c5f285f5ff6be9348942eac1cc6ad">mc_rtc::gui::Elements::NumberSlider</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a2ed2cbbe9de17e308d54422d43f3deaf">mc_rtc::gui::Elements::ArrayInput</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06ad7e38bc04789bd7093fa285ba7a91f4d">mc_rtc::gui::Elements::ComboInput</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06aa8aea7afab217ab8095ef9c7404aa6c9">mc_rtc::gui::Elements::DataComboInput</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a1685c4cb9754df6a8c65c8564d8d0d74">mc_rtc::gui::Elements::Point3D</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a2c1f43c429c5e00feaef7ba3327375dc">mc_rtc::gui::Elements::Trajectory</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06af1a42bd417390fc63b030a519624607a">mc_rtc::gui::Elements::Rotation</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a2ff4148554480a37f85efd299df04850">mc_rtc::gui::Elements::Transform</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a7146a60667b422e69fd050fe1df6859a">mc_rtc::gui::Elements::Schema</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06ad359c6df99b25183d81f7d728b71de0e">mc_rtc::gui::Elements::Form</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a4c0a11247d92f73fb84baa51e37a3263">mc_rtc::gui::Elements::Polygon</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a9eb6b78a99cdb6ffd3d40d18621d9f80">mc_rtc::gui::Elements::Force</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a0f4e1aaabd074689b7d3ead824d1ee8e">mc_rtc::gui::Elements::Arrow</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06a93b34e4f6ff555f9cc248bae9cd00386">mc_rtc::gui::Elements::XYTheta</a>
+<br />
+ }<tr class="memdesc:a32d283e5c35e7fd7dcddbc0199bfdc06"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enumeration of available elements.  <a href="a00784.html#a32d283e5c35e7fd7dcddbc0199bfdc06">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a32d283e5c35e7fd7dcddbc0199bfdc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -112,8 +161,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_379a22462e4fb075f5428ea3ff528930.html">mc_rtc</a></li><li class="navelem"><a class="el" href="dir_b6742d8caace21cd527a100fbd03062c.html">log</a></li><li class="navelem"><a class="el" href="a00290.html">iterate_binary_log.h</a></li>
-    <li class="footer">Generated on Mon Jan 6 2020 12:40:14 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_379a22462e4fb075f5428ea3ff528930.html">mc_rtc</a></li><li class="navelem"><a class="el" href="dir_dda95c61bc807ada3674ae2fc67687f0.html">gui</a></li><li class="navelem"><a class="el" href="a00290.html">elements.h</a></li>
+    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

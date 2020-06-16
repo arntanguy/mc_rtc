@@ -1,13 +1,8 @@
 var a01928 =
 [
-    [ "KinematicInertialPoseObserver", "a01928.html#a0fe74faab4da1913b5e271bbf6a7d1ed", null ],
-    [ "addToLogger", "a01928.html#a2ef97a314ad3f21392694e585ff89582", null ],
-    [ "estimateOrientation", "a01928.html#a6b6a2d32b41691feec87fbff77276731", null ],
-    [ "estimatePosition", "a01928.html#af4516c687fb2683eea570e5afc926165", null ],
-    [ "posW", "a01928.html#ae0059d688bf9a9864199b4f8bece7e3e", null ],
-    [ "removeFromLogger", "a01928.html#adbd72a6d4f7f24086bb399c556aef15c", null ],
-    [ "reset", "a01928.html#a5564591fc150e119fbfe35991031c7da", null ],
-    [ "run", "a01928.html#a91574e17a50e7d77a05835335accc0ec", null ],
-    [ "updateBodySensor", "a01928.html#a143ebfe1847c460ee63c5ec2b8ec5047", null ],
-    [ "updateRobots", "a01928.html#a4c4e67e7605e46a446caaf2fd6525b7c", null ]
+    [ "ForceRO", "a01928.html#a2ea650ce54d73f9bb231f2cce99163ea", null ],
+    [ "ForceImpl", "a01928.html#a7c1e5d0c24fad518cbb13c6949dba69e", null ],
+    [ "handleRequest", "a01928.html#a5a2a4971fe40e6b8805eb914392fb508", null ],
+    [ "write", "a01928.html#a19167cf6d2a2c0f0f14195e94098a11f", null ],
+    [ "type", "a01928.html#a797c984faf37cff730edb2391a106968", null ]
 ];

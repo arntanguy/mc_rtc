@@ -1,10 +1,8 @@
 var a01944 =
 [
-    [ "available_observers", "a01944.html#ac104339befa76e8673940c1a86ad2847", null ],
-    [ "clear", "a01944.html#a8649f98bfdfa69a7b1c76bea9897c933", null ],
-    [ "enable_sandboxing", "a01944.html#a8182bc3bc5952e68b6dd9d7ea8435478", null ],
-    [ "get_observer", "a01944.html#a3d1ff69617f71a1eb0aea7aedc13caa9", null ],
-    [ "has_observer", "a01944.html#aac203ca60191fa7e4041339a52baf625", null ],
-    [ "set_verbosity", "a01944.html#afc7d5d833c4d4ce520be8fa81a0b1b63", null ],
-    [ "update_module_path", "a01944.html#a56fc6c53c0487328ed16473706e82df6", null ]
+    [ "FormArrayInput", "a01944.html#ac44ff19657b3b081eeca2d0d26d86de8", null ],
+    [ "FormArrayInput", "a01944.html#ab1cac61405d81079609b79e20b161e84", null ],
+    [ "FormArrayInput", "a01944.html#a8135cc835db7f0042986ebdffdf1dcb4", null ],
+    [ "write_", "a01944.html#a8d28567b0f786205b0c8576bbe3e6fbe", null ],
+    [ "write_size_", "a01944.html#a01110150f9466130d28ba25ef10c9db2", null ]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['geometrytype',['GeometryType',['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00875.html#a589fcbf549a272b3a643c861b284d27f',1,'sch::Geometry']]]
+  ['linestyle',['LineStyle',['../a00784.html#a23166295a3983f35cb0fa510b4c156c9',1,'mc_rtc::gui']]],
+  ['logtype',['LogType',['../a00789.html#ae623e7dc6e6722fd48752713664b3549',1,'mc_rtc::log']]]
 ];

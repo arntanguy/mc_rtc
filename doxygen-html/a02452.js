@@ -1,14 +1,17 @@
 var a02452 =
 [
-    [ "ContactType", "a02452.html#aa1038fc325c517503d2f68a3feec1c30", [
-      [ "Acceleration", "a02452.html#aa1038fc325c517503d2f68a3feec1c30acbc392a30777e1fa953eea2c011ea2c3", null ],
-      [ "Velocity", "a02452.html#aa1038fc325c517503d2f68a3feec1c30a15d06b5b0997a0a5e17eccd053c7c652", null ],
-      [ "Position", "a02452.html#aa1038fc325c517503d2f68a3feec1c30a75ced229938828d7cf205928657fd137", null ]
-    ] ],
-    [ "ContactConstraint", "a02452.html#a2226b4449ee6faeb3f6d70cfdfb13b4f", null ],
-    [ "ContactConstraint", "a02452.html#ad4a4d2baaacb8b1d914d66a0110c99ab", null ],
-    [ "addToSolver", "a02452.html#a3e94d3c790da36671345692cbf14e81d", null ],
-    [ "removeFromSolver", "a02452.html#af72efeda2c9cd6af2e4626f32ab7583d", null ],
-    [ "contactConstr", "a02452.html#ad8b6359d4d1a771db2fd8bad433acf1f", null ],
-    [ "posLambdaConstr", "a02452.html#a4456741f8ae0b07c199415fda9b9aecf", null ]
+    [ "VectorOrientationTask", "a02452.html#ac24b6093fa849811dd07a0ab2ace17c0", null ],
+    [ "VectorOrientationTask", "a02452.html#a60f2e467ea49160a0037f8aa2470bdbc", null ],
+    [ "actual", "a02452.html#a0755b43ee0cbc12ba4fccd7008098ecf", null ],
+    [ "addToGUI", "a02452.html#aef3c3a8b836ba15e7bd062d841399ad4", null ],
+    [ "addToLogger", "a02452.html#ae2ea06fdeee5903edcbfb8da2bd55af4", null ],
+    [ "body", "a02452.html#a9531e6144e6dd8823951374d95397d27", null ],
+    [ "bodyVector", "a02452.html#ae066b3584e94bfca4abe3f93e2d826c4", null ],
+    [ "bodyVector", "a02452.html#a92edeb5ec1b0291f9909f98e8522c37e", null ],
+    [ "removeFromLogger", "a02452.html#a077b7176cf69a042e7c31b7dd5a76490", null ],
+    [ "reset", "a02452.html#a04b7aba6c4e4d4abd746c19e12c650e6", null ],
+    [ "targetVector", "a02452.html#a8a2c67e86c6867c837129bb81834ccf4", null ],
+    [ "targetVector", "a02452.html#a9773f23cd1f91fa767b7c3ae49b6cb3d", null ],
+    [ "bIndex", "a02452.html#a59e4464e07872bfd5e5cbe19cb6b2948", null ],
+    [ "bodyName", "a02452.html#aff910f1c3ed3b698c50408dfb66eb7c0", null ]
 ];

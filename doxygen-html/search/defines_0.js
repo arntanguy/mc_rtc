@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['controller_5fcheck_5fversion',['CONTROLLER_CHECK_VERSION',['../a00074.html#a53b7790e199f0eb693195a9e0f3183fa',1,'mc_controller.h']]],
-  ['controller_5fconstructor',['CONTROLLER_CONSTRUCTOR',['../a00074.html#abe63c9c89a7762fc5ef9a7589218978c',1,'mc_controller.h']]],
-  ['controller_5fmodule_5fapi',['CONTROLLER_MODULE_API',['../a00074.html#a26817757133aa8127df9f7c6a90bafb1',1,'mc_controller.h']]]
+  ['_5f_5fattribute_5falways_5finline_5f_5f',['__ATTRIBUTE_ALWAYS_INLINE__',['../a00161.html#a5fc59f416eb5c91f0175b49f7af5e753',1,'MathFunction.h']]]
 ];

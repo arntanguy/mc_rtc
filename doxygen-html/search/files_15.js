@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vectororientationtask_2eh',['VectorOrientationTask.h',['../a00437.html',1,'']]],
-  ['visservo_2eh',['VisServo.h',['https://jrl-umi3218.github.io/RBDyn/doxygen/HEAD/a00374.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/RBDyn/doxygen/HEAD/a00374.html',1,'(Global Namespace)']]]
+  ['xytheta_2eh',['XYTheta.h',['../a00353.html',1,'']]]
 ];

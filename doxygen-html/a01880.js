@@ -1,8 +1,8 @@
 var a01880 =
 [
-    [ "~GlobalPlugin", "a01880.html#ae68386345dfc2a1820747a566d37c4af", null ],
-    [ "after", "a01880.html#ab661e381f418ad5f9afa4adf25b4f282", null ],
-    [ "before", "a01880.html#a83ce36f99de7b4a3e7af152ed88e0f5b", null ],
-    [ "init", "a01880.html#acd8832c0335bbf2493bd04697b721bd7", null ],
-    [ "reset", "a01880.html#a034ddfcb8958c36c5812cdb7e0a2e9ca", null ]
+    [ "ComboInputImpl", "a01880.html#a878cc6bcd8c591901875a5bc50ca3d8d", null ],
+    [ "ComboInputImpl", "a01880.html#a9a8d446bb306476504480f7b0438905d", null ],
+    [ "write", "a01880.html#a8634db0eae6c2bb845b8521c2866676d", null ],
+    [ "write_size", "a01880.html#a8227eaf335ae36ca1739cfc97eabe8f2", null ],
+    [ "type", "a01880.html#af26181127e4bd175ee0e474d79b41b91", null ]
 ];

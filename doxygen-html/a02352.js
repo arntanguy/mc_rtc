@@ -1,11 +1,19 @@
 var a02352 =
 [
-    [ "LTDLHandle", "a02352.html#a1d2ebbcff7e52decbb18a9dc96b7671b", null ],
-    [ "~LTDLHandle", "a02352.html#ac3f676e1ef23ac13767069ebf1018af7", null ],
-    [ "LTDLHandle", "a02352.html#aeb254d88dad0c357ba003eb2ef458556", null ],
-    [ "classes", "a02352.html#a5027f7059635b26c598d8547787c70da", null ],
-    [ "get_symbol", "a02352.html#ac9e807398c51fe641aa12610ee1d35fc", null ],
-    [ "operator=", "a02352.html#ab5ad49d16629787bd61589dbf4924c4e", null ],
-    [ "path", "a02352.html#aab506987ae59f5623e4875126b3ad06b", null ],
-    [ "valid", "a02352.html#aad84c0ae1a67095338adf0205ee6cbfe", null ]
+    [ "CoPTask", "a02352.html#a3dedcf002fe1b00d9245ebfa8991e203", null ],
+    [ "addToGUI", "a02352.html#a29acffdd2df70a8ec753054414951586", null ],
+    [ "addToLogger", "a02352.html#a88921c026455b21462952325fe1a0737", null ],
+    [ "buildCompletionCriteria", "a02352.html#a7467766fa42546e99c0d253aac7af98d", null ],
+    [ "measuredCoP", "a02352.html#acf756c0e7e6aa1fbb60feb6491427411", null ],
+    [ "measuredCoPW", "a02352.html#a16f95e7ea6a037950ea6b8eb5e57b58d", null ],
+    [ "removeFromLogger", "a02352.html#ae2ff4b29d342493a03388741d940106b", null ],
+    [ "reset", "a02352.html#a08e79c703fb2f70db56a7c64e27acd02", null ],
+    [ "setZeroTargetWrench", "a02352.html#ae95ca91c45eb45a1946e84377ddffa8b", null ],
+    [ "targetCoP", "a02352.html#a4ace3b81e36d8ac60271b68b78c4f58a", null ],
+    [ "targetCoP", "a02352.html#ac56ea4b1b75de8e99ed5e51bf919c7fb", null ],
+    [ "targetCoPW", "a02352.html#a62f7869ba91d79176a54e1c8a8cf5aaf", null ],
+    [ "targetForce", "a02352.html#aa452d416c7f6df4f3b5ddc511db246a2", null ],
+    [ "targetForce", "a02352.html#af250603b7c162ce5dd654825dea2af7e", null ],
+    [ "targetForceW", "a02352.html#a9f7344de19e35fda42d0dc3c493b8f11", null ],
+    [ "targetWrench", "a02352.html#a58ef8d30ea6ea9f78d7d36340975d985", null ]
 ];

@@ -1,6 +1,8 @@
 var a02052 =
 [
-    [ "joints", "a02052.html#a8ed52bd8f3d7ce552f62843c352b3d9c", null ],
-    [ "name", "a02052.html#a4c63d69cf61ff0c5ae634a549eadecd1", null ],
-    [ "reverse_limits", "a02052.html#a61df660109da82ecf0cb5cb476525045", null ]
+    [ "TrajectoryImpl", "a02052.html#aa5739c5b73ee002d3bd0857c1daf5695", null ],
+    [ "TrajectoryImpl", "a02052.html#ad07155be02930a5f4ca5ad25527f5180", null ],
+    [ "write", "a02052.html#ab4ad9750f804e593ee1fcc52e35ff0e1", null ],
+    [ "write_size", "a02052.html#addbe3e273eb652e9b31e8fb2d15d0738", null ],
+    [ "type", "a02052.html#ad6c1b7129408a35fa938b3a4e594e669", null ]
 ];

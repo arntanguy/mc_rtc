@@ -1,5 +1,5 @@
 var a02376 =
 [
-    [ "name", "a02376.html#a67fbc08c9538e65ac214472f795e8dc9", null ],
-    [ "records", "a02376.html#abf3c8af81db34096910a6167aa54266c", null ]
+    [ "first", "a02376.html#a720106ef8ea5446eee2a582d7d52eb2c", null ],
+    [ "second", "a02376.html#a8dad298937c721041146a906fdbddb68", null ]
 ];

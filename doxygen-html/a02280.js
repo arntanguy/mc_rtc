@@ -1,8 +1,6 @@
 var a02280 =
 [
-    [ "RotationImpl", "a02280.html#a7661413981acb1ca272bd40dcbdfec76", null ],
-    [ "RotationImpl", "a02280.html#ad38cdbde21b335061f261683a3540046", null ],
-    [ "write", "a02280.html#a5db74bd06e02788dcf943ecb1ba51267", null ],
-    [ "write_size", "a02280.html#a90964aa0cd30be5f543ca7a75433d17a", null ],
-    [ "type", "a02280.html#acc77cdef75bb1767eb3e80c2db36afc0", null ]
+    [ "x", "a02280.html#aa979cfc7765a146ead01123e495c5975", null ],
+    [ "y", "a02280.html#a8ebbc2b867780670fbc08d80f4aea2cb", null ],
+    [ "z", "a02280.html#a0eedbcf95ebb3248a39c8c66e92d7b77", null ]
 ];

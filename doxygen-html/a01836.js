@@ -1,9 +1,6 @@
 var a01836 =
 [
-    [ "configure", "a01836.html#a6feb7d14cdd9ac944f2311e83a786cbc", null ],
-    [ "run", "a01836.html#a62babf4e58b81ce358e6cb43779c564b", null ],
-    [ "start", "a01836.html#a6ba0f75a698bceabed668835046d382f", null ],
-    [ "teardown", "a01836.html#ae05d422fa90c06b058c890323d792581", null ],
-    [ "config_", "a01836.html#ab4479382513e35667a4c0e3fd6d08d5f", null ],
-    [ "grippers_", "a01836.html#a25907cec1ae5bf56775a0034ec672d4c", null ]
+    [ "decay_t", "a01836.html#a5b8154625caf14c4dcc919d071c7ba46", null ],
+    [ "type", "a01836.html#a0b4ee875f9490a7d6bef544143160904", null ],
+    [ "is_arithmetic", "a01836.html#a63d9d0405b36451f9c9441f71e3642f6", null ]
 ];

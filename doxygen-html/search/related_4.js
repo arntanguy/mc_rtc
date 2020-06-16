@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['qpsolver',['QPSolver',['https://jrl-umi3218.github.io/Tasks/doxygen/HEAD/a01112.html#ab0c5d51bf80dcd62721abff05ce12961',1,'tasks::qp::SolverData']]]
+  ['splinetrajectorytask_3c_20bsplinetrajectorytask_20_3e',['SplineTrajectoryTask&lt; BSplineTrajectoryTask &gt;',['../a02340.html#ac5eeec3b2af2e5d3a329daf981453a2e',1,'mc_tasks::BSplineTrajectoryTask']]],
+  ['splinetrajectorytask_3c_20exactcubictrajectorytask_20_3e',['SplineTrajectoryTask&lt; ExactCubicTrajectoryTask &gt;',['../a02364.html#a9bf87cb2f5679ce3181d696adad0a9d6',1,'mc_tasks::ExactCubicTrajectoryTask']]]
 ];

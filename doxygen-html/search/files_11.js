@@ -1,11 +1,23 @@
 var searchData=
 [
-  ['rbinertia_2eh',['RBInertia.h',['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00056.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00056.html',1,'(Global Namespace)']]],
-  ['readme_2emd',['README.md',['../a00629.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/Tasks/doxygen/HEAD/a00065.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/RBDyn/doxygen/HEAD/a00083.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00062.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/sch-core/doxygen/HEAD/a00137.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/RBDyn/doxygen/HEAD/a00083.html',1,'(Global Namespace)'],['https://jrl-umi3218.github.io/SpaceVecAlg/doxygen/HEAD/a00062.html',1,'(Global Namespace)']]],
-  ['relativeendeffectortask_2eh',['RelativeEndEffectorTask.h',['../a00422.html',1,'']]],
-  ['robotloader_2eh',['RobotLoader.h',['../a00158.html',1,'']]],
-  ['robotmodule_2eh',['RobotModule.h',['../a00161.html',1,'']]],
-  ['robots_2eh',['Robots.h',['../a00164.html',1,'']]],
-  ['rotation_2eh',['Rotation.h',['../a00254.html',1,'']]],
-  ['rpy_5futils_2eh',['rpy_utils.h',['../a00167.html',1,'']]]
+  ['schaddon_2eh',['SCHAddon.h',['../a00239.html',1,'']]],
+  ['schema_2eh',['Schema.h',['../a00338.html',1,'']]],
+  ['simulationcontactpair_2eh',['SimulationContactPair.h',['../a00095.html',1,'']]],
+  ['slidingfootcontact_2eh',['SlidingFootContact.h',['../a00059.html',1,'']]],
+  ['smoothtask_2eh',['SmoothTask.h',['../a00521.html',1,'']]],
+  ['spline_2eh',['Spline.h',['../a00545.html',1,'']]],
+  ['spline_5futils_2eh',['spline_utils.h',['../a00548.html',1,'']]],
+  ['splinetrajectorytask_2eh',['SplineTrajectoryTask.h',['../a00524.html',1,'']]],
+  ['springs_2eh',['Springs.h',['../a00242.html',1,'']]],
+  ['stabilizerconfiguration_2eh',['StabilizerConfiguration.h',['../a00203.html',1,'']]],
+  ['stabilizerstandingstate_2eh',['StabilizerStandingState.h',['../a00062.html',1,'']]],
+  ['stabilizertask_2eh',['StabilizerTask.h',['../a00485.html',1,'']]],
+  ['statebuilder_2eh',['StateBuilder.h',['../a00341.html',1,'']]],
+  ['statefactory_2eh',['StateFactory.h',['../a00032.html',1,'']]],
+  ['stationaryoffset_2eh',['StationaryOffset.h',['../a00110.html',1,'']]],
+  ['stringinput_2eh',['StringInput.h',['../a00344.html',1,'']]],
+  ['surface_2eh',['Surface.h',['../a00245.html',1,'']]],
+  ['surface_5fhull_2eh',['surface_hull.h',['../a00248.html',1,'']]],
+  ['surface_5futils_2eh',['surface_utils.h',['../a00251.html',1,'']]],
+  ['surfacetransformtask_2eh',['SurfaceTransformTask.h',['../a00527.html',1,'']]]
 ];

@@ -1,6 +1,5 @@
 var a01788 =
 [
-    [ "completed", "a01788.html#a6b2c61033f0f8d2d7f45aeb6e8fb028e", null ],
-    [ "configure", "a01788.html#a7cf119e44a4a74ad734dc2fe34f2fff6", null ],
-    [ "output", "a01788.html#a2485b806e905c84cd087fb47287f2240", null ]
+    [ "test", "a01788.html#a7df8b2b030c0677a4cea0ea0a86c3e22", null ],
+    [ "test", "a01788.html#aaf07ac07f94d666ac90926acc0816ee5", null ]
 ];

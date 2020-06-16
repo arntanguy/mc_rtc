@@ -39,6 +39,8 @@
 
     
 
+    
+
     <link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
   </head>
 
@@ -77,7 +79,7 @@
           
           
         </div>
-        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
       </div>
     </header>
 
@@ -182,6 +184,10 @@
               
             
               
+              <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
+              
+            
+              
               <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
               
             
@@ -190,7 +196,15 @@
               
             
               
+              <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
+              
+            
+              
               <li><a href="/mc_rtc/tutorials/recipes/observers.html">Using the observers pipeline</a></li>
+              
+            
+              
+              <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
               
             
               
@@ -236,6 +250,10 @@
             
               
               <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
+              
+            
+              
+              <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
               
             
           </ul>
@@ -371,19 +389,19 @@ optional arguments:
 <span class="kn">import</span> <span class="nn">mc_rbdyn</span>
 <span class="kn">import</span> <span class="nn">mc_rtc</span>
 
-<span class="k">class</span> <span class="nc">MyFirstController</span><span class="p">(</span><span class="n">mc_control</span><span class="o">.</span><span class="n">MCPythonController</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MyFirstController</span><span class="p">(</span><span class="n">mc_control</span><span class="p">.</span><span class="n">MCPythonController</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contactConstraint</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">postureTask</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">setContacts</span><span class="p">([])</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">contactConstraint</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">setContacts</span><span class="p">([])</span>
     <span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">True</span>
     <span class="k">def</span> <span class="nf">reset_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="k">pass</span>
     <span class="o">@</span><span class="nb">staticmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-        <span class="n">env</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="o">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="p">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">MyFirstController</span><span class="p">([</span><span class="n">robot</span><span class="p">,</span><span class="n">env</span><span class="p">],</span> <span class="n">dt</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
@@ -405,7 +423,7 @@ optional arguments:
 <p>For this to work, we need to make sure the <code>my_first_controller</code> folder is on the Python path. In fact, given this configuration, mc_rtc will create your controller this way:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">my_first_controller</span> <span class="kn">import</span> <span class="n">MyFirstController</span>
-<span class="n">controller</span> <span class="o">=</span> <span class="n">MyFirstController</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">rm</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<span class="n">controller</span> <span class="o">=</span> <span class="n">MyFirstController</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">rm</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 <span class="k">return</span> <span class="n">controller</span></code></pre></figure>
 
 <p>Typically, if you run <code>mc_rtc_ticker</code> and the <code>my_first_controller</code> folder is in <code>$HOME/my_python_controllers</code>, then you should run as follows:</p>
@@ -430,15 +448,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="constructorC++cppTab" data-toggle="tab" href="#constructorC++cppTabContent" role="tab" aria-controls="constructorC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="constructorc-cppTab" data-toggle="tab" href="#constructorc-cppTabContent" role="tab" aria-controls="constructorc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="constructorPythonpythonTab" data-toggle="tab" href="#constructorPythonpythonTabContent" role="tab" aria-controls="constructorPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="constructorpythonpythonTab" data-toggle="tab" href="#constructorpythonpythonTabContent" role="tab" aria-controls="constructorpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -446,8 +462,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="constructorC++cppTabContent" role="tabpanel" arial-labelledby="constructorC++cppTab">
+    <div class="tab-pane show active" id="constructorc-cppTabContent" role="tabpanel" arial-labelledby="constructorc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -465,16 +480,15 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="constructorPythonpythonTabContent" role="tabpanel" arial-labelledby="constructorPythonpythonTab">
+    <div class="tab-pane" id="constructorpythonpythonTabContent" role="tabpanel" arial-labelledby="constructorpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contactConstraint</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">postureTask</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">qpsolver</span><span class="o">.</span><span class="n">setContacts</span><span class="p">([])</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">contactConstraint</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">)</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">setContacts</span><span class="p">([])</span></code></pre></figure>
 
   </div>
 </div>
@@ -501,15 +515,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="resetC++cppTab" data-toggle="tab" href="#resetC++cppTabContent" role="tab" aria-controls="resetC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="resetc-cppTab" data-toggle="tab" href="#resetc-cppTabContent" role="tab" aria-controls="resetc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="resetPythonpythonTab" data-toggle="tab" href="#resetPythonpythonTabContent" role="tab" aria-controls="resetPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="resetpythonpythonTab" data-toggle="tab" href="#resetpythonpythonTabContent" role="tab" aria-controls="resetpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -517,8 +529,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="resetC++cppTabContent" role="tabpanel" arial-labelledby="resetC++cppTab">
+    <div class="tab-pane show active" id="resetc-cppTabContent" role="tabpanel" arial-labelledby="resetc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -536,8 +547,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="resetPythonpythonTabContent" role="tabpanel" arial-labelledby="resetPythonpythonTab">
+    <div class="tab-pane" id="resetpythonpythonTabContent" role="tabpanel" arial-labelledby="resetpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -563,15 +573,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="runC++cppTab" data-toggle="tab" href="#runC++cppTabContent" role="tab" aria-controls="runC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="runc-cppTab" data-toggle="tab" href="#runc-cppTabContent" role="tab" aria-controls="runc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="runPythonpythonTab" data-toggle="tab" href="#runPythonpythonTabContent" role="tab" aria-controls="runPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="runpythonpythonTab" data-toggle="tab" href="#runpythonpythonTabContent" role="tab" aria-controls="runpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -579,8 +587,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="runC++cppTabContent" role="tabpanel" arial-labelledby="runC++cppTab">
+    <div class="tab-pane show active" id="runc-cppTabContent" role="tabpanel" arial-labelledby="runc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -598,8 +605,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="runPythonpythonTabContent" role="tabpanel" arial-labelledby="runPythonpythonTab">
+    <div class="tab-pane" id="runpythonpythonTabContent" role="tabpanel" arial-labelledby="runpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -625,15 +631,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="createControllerC++cppTab" data-toggle="tab" href="#createControllerC++cppTabContent" role="tab" aria-controls="createControllerC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="createcontrollerc-cppTab" data-toggle="tab" href="#createcontrollerc-cppTabContent" role="tab" aria-controls="createcontrollerc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="createControllerPythonpythonTab" data-toggle="tab" href="#createControllerPythonpythonTabContent" role="tab" aria-controls="createControllerPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="createcontrollerpythonpythonTab" data-toggle="tab" href="#createcontrollerpythonpythonTabContent" role="tab" aria-controls="createcontrollerpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -641,8 +645,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="createControllerC++cppTabContent" role="tabpanel" arial-labelledby="createControllerC++cppTab">
+    <div class="tab-pane show active" id="createcontrollerc-cppTabContent" role="tabpanel" arial-labelledby="createcontrollerc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -658,15 +661,14 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="createControllerPythonpythonTabContent" role="tabpanel" arial-labelledby="createControllerPythonpythonTab">
+    <div class="tab-pane" id="createcontrollerpythonpythonTabContent" role="tabpanel" arial-labelledby="createcontrollerpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">@</span><span class="nb">staticmethod</span>
 <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="o">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="p">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">MyFirstController</span><span class="p">([</span><span class="n">robot</span><span class="p">,</span><span class="n">env</span><span class="p">],</span> <span class="n">dt</span><span class="p">)</span></code></pre></figure>
 
   </div>
@@ -689,15 +691,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="propertiesC++cppTab" data-toggle="tab" href="#propertiesC++cppTabContent" role="tab" aria-controls="propertiesC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="propertiesc-cppTab" data-toggle="tab" href="#propertiesc-cppTabContent" role="tab" aria-controls="propertiesc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="propertiesPythonpythonTab" data-toggle="tab" href="#propertiesPythonpythonTabContent" role="tab" aria-controls="propertiesPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="propertiespythonpythonTab" data-toggle="tab" href="#propertiespythonpythonTabContent" role="tab" aria-controls="propertiespythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -705,8 +705,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="propertiesC++cppTabContent" role="tabpanel" arial-labelledby="propertiesC++cppTab">
+    <div class="tab-pane show active" id="propertiesc-cppTabContent" role="tabpanel" arial-labelledby="propertiesc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -723,15 +722,14 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="propertiesPythonpythonTabContent" role="tabpanel" arial-labelledby="propertiesPythonpythonTab">
+    <div class="tab-pane" id="propertiespythonpythonTabContent" role="tabpanel" arial-labelledby="propertiespythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Added inside MyFirstController __init__ method
-</span><span class="bp">self</span><span class="o">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">goingLeft</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
+</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
 
   </div>
 </div>
@@ -749,15 +747,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="init_jindexC++cppTab" data-toggle="tab" href="#init_jindexC++cppTabContent" role="tab" aria-controls="init_jindexC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="init-jindexc-cppTab" data-toggle="tab" href="#init-jindexc-cppTabContent" role="tab" aria-controls="init-jindexc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="init_jindexPythonpythonTab" data-toggle="tab" href="#init_jindexPythonpythonTabContent" role="tab" aria-controls="init_jindexPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="init-jindexpythonpythonTab" data-toggle="tab" href="#init-jindexpythonpythonTabContent" role="tab" aria-controls="init-jindexpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -765,8 +761,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="init_jindexC++cppTabContent" role="tabpanel" arial-labelledby="init_jindexC++cppTab">
+    <div class="tab-pane show active" id="init-jindexc-cppTabContent" role="tabpanel" arial-labelledby="init-jindexc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -781,13 +776,12 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="init_jindexPythonpythonTabContent" role="tabpanel" arial-labelledby="init_jindexPythonpythonTab">
+    <div class="tab-pane" id="init-jindexpythonpythonTabContent" role="tabpanel" arial-labelledby="init-jindexpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="o">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">()</span><span class="o">.</span><span class="n">jointIndexByName</span><span class="p">(</span><span class="s">"NECK_Y"</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">jointIndexByName</span><span class="p">(</span><span class="s">"NECK_Y"</span><span class="p">)</span></code></pre></figure>
 
   </div>
 </div>
@@ -805,15 +799,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="switch_targetC++cppTab" data-toggle="tab" href="#switch_targetC++cppTabContent" role="tab" aria-controls="switch_targetC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="switch-targetc-cppTab" data-toggle="tab" href="#switch-targetc-cppTabContent" role="tab" aria-controls="switch-targetc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="switch_targetPythonpythonTab" data-toggle="tab" href="#switch_targetPythonpythonTabContent" role="tab" aria-controls="switch_targetPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="switch-targetpythonpythonTab" data-toggle="tab" href="#switch-targetpythonpythonTabContent" role="tab" aria-controls="switch-targetpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -821,8 +813,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="switch_targetC++cppTabContent" role="tabpanel" arial-labelledby="switch_targetC++cppTab">
+    <div class="tab-pane show active" id="switch-targetc-cppTabContent" role="tabpanel" arial-labelledby="switch-targetc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -848,18 +839,17 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="switch_targetPythonpythonTabContent" role="tabpanel" arial-labelledby="switch_targetPythonpythonTab">
+    <div class="tab-pane" id="switch-targetpythonpythonTabContent" role="tabpanel" arial-labelledby="switch-targetpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">switch_target</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">goingLeft</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postureTask</span><span class="o">.</span><span class="n">target</span><span class="p">({</span><span class="s">"NECK_Y"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">()</span><span class="o">.</span><span class="n">qu</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">jointIndex</span><span class="p">]})</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">target</span><span class="p">({</span><span class="s">"NECK_Y"</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">qu</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">]})</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postureTask</span><span class="o">.</span><span class="n">target</span><span class="p">({</span><span class="s">"NECK_Y"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">()</span><span class="o">.</span><span class="n">ql</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">jointIndex</span><span class="p">]})</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">goingLeft</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">goingLeft</span></code></pre></figure>
+        <span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">target</span><span class="p">({</span><span class="s">"NECK_Y"</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">ql</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">]})</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span></code></pre></figure>
 
   </div>
 </div>
@@ -879,15 +869,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="update_targetC++cppTab" data-toggle="tab" href="#update_targetC++cppTabContent" role="tab" aria-controls="update_targetC++cppTabContent" aria-selected="true">C++</a>
+      <a class="nav-link active" id="update-targetc-cppTab" data-toggle="tab" href="#update-targetc-cppTabContent" role="tab" aria-controls="update-targetc-cppTabContent" aria-selected="true">C++</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="update_targetPythonpythonTab" data-toggle="tab" href="#update_targetPythonpythonTabContent" role="tab" aria-controls="update_targetPythonpythonTabContent" aria-selected="false">Python</a>
+      <a class="nav-link" id="update-targetpythonpythonTab" data-toggle="tab" href="#update-targetpythonpythonTabContent" role="tab" aria-controls="update-targetpythonpythonTabContent" aria-selected="false">Python</a>
     </li>
   
 </ul>
@@ -895,8 +883,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="update_targetC++cppTabContent" role="tabpanel" arial-labelledby="update_targetC++cppTab">
+    <div class="tab-pane show active" id="update-targetc-cppTabContent" role="tabpanel" arial-labelledby="update-targetc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -918,15 +905,14 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="update_targetPythonpythonTabContent" role="tabpanel" arial-labelledby="update_targetPythonpythonTab">
+    <div class="tab-pane" id="update-targetpythonpythonTabContent" role="tabpanel" arial-labelledby="update-targetpythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">postureTask</span><span class="o">.</span><span class="n">posture</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">()</span><span class="o">.</span><span class="n">mbc</span><span class="o">.</span><span class="n">q</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">switch_target</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">posture</span><span class="p">()[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">mbc</span><span class="p">.</span><span class="n">q</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">switch_target</span><span class="p">()</span>
     <span class="k">return</span> <span class="bp">True</span></code></pre></figure>
 
   </div>
@@ -953,15 +939,13 @@ optional arguments:
     <li class="nav-item">
       
       
-      
-      <a class="nav-link active" id="show_jointsPythonpythonTab" data-toggle="tab" href="#show_jointsPythonpythonTabContent" role="tab" aria-controls="show_jointsPythonpythonTabContent" aria-selected="true">Python</a>
+      <a class="nav-link active" id="show-jointspythonpythonTab" data-toggle="tab" href="#show-jointspythonpythonTabContent" role="tab" aria-controls="show-jointspythonpythonTabContent" aria-selected="true">Python</a>
     </li>
   
     <li class="nav-item">
       
       
-      
-      <a class="nav-link" id="show_jointsC++cppTab" data-toggle="tab" href="#show_jointsC++cppTabContent" role="tab" aria-controls="show_jointsC++cppTabContent" aria-selected="false">C++</a>
+      <a class="nav-link" id="show-jointsc-cppTab" data-toggle="tab" href="#show-jointsc-cppTabContent" role="tab" aria-controls="show-jointsc-cppTabContent" aria-selected="false">C++</a>
     </li>
   
 </ul>
@@ -969,16 +953,15 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane show active" id="show_jointsPythonpythonTabContent" role="tabpanel" arial-labelledby="show_jointsPythonpythonTab">
+    <div class="tab-pane show active" id="show-jointspythonpythonTabContent" role="tabpanel" arial-labelledby="show-jointspythonpythonTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">mc_rbdyn</span>
 <span class="c1"># Here you can change the robot module name with your own robot
-</span><span class="n">rm</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="o">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"JVRC1"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">"- {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">name</span><span class="p">())</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">rm</span><span class="o">.</span><span class="n">mb</span><span class="o">.</span><span class="n">joints</span><span class="p">()</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">dof</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]))</span></code></pre></figure>
+</span><span class="n">rm</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"JVRC1"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="s">"- {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="p">())</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">rm</span><span class="p">.</span><span class="n">mb</span><span class="p">.</span><span class="n">joints</span><span class="p">()</span> <span class="k">if</span> <span class="n">j</span><span class="p">.</span><span class="n">dof</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]))</span></code></pre></figure>
 
   </div>
 </div>
@@ -988,8 +971,7 @@ optional arguments:
   
     
     
-    
-    <div class="tab-pane" id="show_jointsC++cppTabContent" role="tabpanel" arial-labelledby="show_jointsC++cppTab">
+    <div class="tab-pane" id="show-jointsc-cppTabContent" role="tabpanel" arial-labelledby="show-jointsc-cppTab">
       
 <div class="card bg-light card-source">
   <div class="card-body">
@@ -1034,7 +1016,7 @@ optional arguments:
         <hr>
         <div class="row">
           <div class="col-8 offset-lg-2 col-lg-6">
-            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2019
+            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
           </div>
           <div class="col-4 col-lg-2 text-right">
             <a href="/mc_rtc/credits.html">Credits</a>

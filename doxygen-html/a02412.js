@@ -1,11 +1,12 @@
 var a02412 =
 [
-    [ "BoundedSpeedConstr", "a02412.html#a43af0872dd664d13d864053d3ecfda18", null ],
-    [ "addBoundedSpeed", "a02412.html#abcd47fff771a0c7357bd5b682398b3df", null ],
-    [ "addBoundedSpeed", "a02412.html#aff11f05b8b3f2139db8ae2d95ce4afee", null ],
-    [ "addToSolver", "a02412.html#a54adcdc90cc41a64a9723b693f8beb1b", null ],
-    [ "nrBoundedSpeeds", "a02412.html#a70c84d6defba583690d9175ca4cf192d", null ],
-    [ "removeBoundedSpeed", "a02412.html#a5b85799a5bb8df9c5344cd9d3f630708", null ],
-    [ "removeFromSolver", "a02412.html#a0214a46d2452e2dcf610bbf44f863019", null ],
-    [ "reset", "a02412.html#ab0fffcd8e01c61ced64cf5371999acb7", null ]
+    [ "TrajectoryBase", "a02412.html#ab8b59fbe836201537d6a5d4616a845f2", null ],
+    [ "MomentumTask", "a02412.html#ad208d3c2d0ec9d8a1db4a3b16bb6b0b9", null ],
+    [ "addToGUI", "a02412.html#ac4048a9a19001b1f81ee6a39bf75677d", null ],
+    [ "addToLogger", "a02412.html#ac09760de5c209d12568dac6817e79395", null ],
+    [ "load", "a02412.html#a722bd3ba35066d38f9d301126f46e8fc", null ],
+    [ "momentum", "a02412.html#a6ba0b4c9ecf9da4571b8c052b325c5d3", null ],
+    [ "momentum", "a02412.html#a288104247dc5c93a7915300458da2f06", null ],
+    [ "removeFromLogger", "a02412.html#a4e64f81c801d988a04027e39769daca2", null ],
+    [ "reset", "a02412.html#acafe35db18c7d7d1956aeea5b23927ef", null ]
 ];

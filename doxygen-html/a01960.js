@@ -1,7 +1,6 @@
 var a01960 =
 [
-    [ "j1", "a01960.html#a4fc963a5996bfafc4e1e0675e9db6b6a", null ],
-    [ "j2", "a01960.html#ac9819775fec0daea6ce39b6979ef153d", null ],
-    [ "p1", "a01960.html#a8c937c01687684763d1d040626ca9dcb", null ],
-    [ "p2", "a01960.html#a0cc1f94178b76862c60dd6d6c86ddb07", null ]
+    [ "LabelImpl", "a01960.html#a8d875328b3e6dcc3d22287cdc7b65d9f", null ],
+    [ "LabelImpl", "a01960.html#aa27962fafec53add87be74c45388891a", null ],
+    [ "type", "a01960.html#a4701d75e61153ae03eb9137a254e603f", null ]
 ];

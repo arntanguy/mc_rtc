@@ -1,5 +1,8 @@
 var a01968 =
 [
-    [ "load", "a01968.html#a27d2d736e80c235652f7576f9bd95e2a", null ],
-    [ "save", "a01968.html#a6081d5cb189f9b7439d8eced06fce954", null ]
+    [ "NumberSliderImpl", "a01968.html#ad32d76eae5aae6d20a58743e4744947d", null ],
+    [ "NumberSliderImpl", "a01968.html#a63a81dc88237bae8b029eaf615b0acdb", null ],
+    [ "write", "a01968.html#a8e216317bf0a49f9f776b0a81d708c71", null ],
+    [ "write_size", "a01968.html#a3a7ce274a193ddbde40a23f4391e38eb", null ],
+    [ "type", "a01968.html#ad6ef847b456858e8283667379b82dda0", null ]
 ];
