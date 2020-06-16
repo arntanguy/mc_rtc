@@ -26,6 +26,7 @@
 namespace bfs = boost::filesystem;
 
 #include <fstream>
+#include <numeric>
 #include <tuple>
 
 namespace
@@ -254,19 +255,17 @@ namespace mc_rbdyn
 MC_RTC_diagnostic_push
 MC_RTC_diagnostic_ignored(GCC, "-Wsign-conversion", ClangOnly, "-Wshorten-64-to-32")
 
-Robot::Robot(const std::string & name,
-             Robots & robots,
-             unsigned int robots_idx,
+Robot::Robot(make_shared_token,
+             RobotModule module,
+             std::string_view name,
              bool loadFiles,
-             const sva::PTransformd * base,
-             const std::string & bName)
-: robots_(&robots), robots_idx_(robots_idx), name_(name)
+             const std::optional<sva::PTransformd> & base,
+             const std::optional<std::string_view> & bName)
+: name_(name), module_(std::move(module))
 {
-  const auto & module_ = module();
-
   if(base)
   {
-    std::string baseName = bName.empty() ? mb().body(0).name() : bName;
+    std::string baseName = bName ? mb().body(0).name() : std::string(bName.value());
     mb() = mbg().makeMultiBody(baseName, mb().joint(0).type() == rbd::Joint::Fixed, *base);
     mbc() = rbd::MultiBodyConfig(mb());
   }
@@ -297,7 +296,7 @@ Robot::Robot(const std::string & name,
       initQ[0] = {std::begin(attitude), std::end(attitude)};
     }
     mbc().q = initQ;
-    forwardKinematics();
+    rbd::forwardKinematics(mb(), mbc());
   }
 
   bodyTransforms_.resize(mb().bodies().size());
@@ -315,7 +314,6 @@ Robot::Robot(const std::string & name,
                                                         "instead of 6 (ql, qu, vl, vu, tl, tu).",
                                                         module_.name, module_.bounds().size());
   }
-  std::tie(ql_, qu_, vl_, vu_, tl_, tu_) = bounds(mb(), module_.bounds());
 
   if(module_.accelerationBounds().size() != 0 && module_.accelerationBounds().size() != 2)
   {
@@ -344,28 +342,32 @@ Robot::Robot(const std::string & name,
   }
   std::tie(tdl_, tdu_) = torqueDerivative_bounds(mb(), module_.torqueDerivativeBounds());
 
+
   if(loadFiles)
   {
-    loadSCH(*this, module_.convexHull(), &sch::mc_rbdyn::Polyhedron, convexes_, collisionTransforms_);
-    for(const auto & c : module_._collision)
+    const auto & cTransforms = module_.collisionTransforms();
+    for(const auto & ch : module_.convexHull())
     {
-      const auto & body = c.first;
-      const auto & collisions = c.second;
-      if(collisions.size() == 1)
+      const auto & cName = ch.first;
+      const auto & parent = ch.second.first;
+      const auto & cURI = ch.second.second;
+      if(!hasBody(parent))
       {
-        VisualToConvex(name_, body, body, collisions[0], convexes_, collisionTransforms_);
+        mc_rtc::log::warning("Cannot load convex {} for {} since the parent body ({}) does not exist", cName,
+                             this->name(), parent);
         continue;
       }
-      size_t added = 0;
-      for(const auto & col : collisions)
+      if(!bfs::exists(cURI))
       {
-        if(VisualToConvex(name_, body + "_" + std::to_string(added), body, col, convexes_, collisionTransforms_))
-        {
-          added++;
-        }
+        mc_rtc::log::warning("Cannot load convex {} for {} as the associated file ({}) does not exist", cName,
+                             this->name(), cURI);
+        continue;
       }
+      auto transform_it = cTransforms.find(cName);
+      const auto & cTransform = transform_it == cTransforms.end() ? sva::PTransformd::Identity() : transform_it->second;
+      this->addConvex(cName, sch::mc_rbdyn::make_polyhedron(cURI), parent, cTransform);
     }
-    for(const auto & o : module_.collisionObjects())
+    for(const auto & o : module_._collisionObjects)
     {
       if(convexes_.count(o.first) != 0)
       {
@@ -374,26 +376,28 @@ Robot::Robot(const std::string & name,
                              name_, o.first);
         continue;
       }
-      convexes_[o.first] = {o.second.first, S_ObjectPtr(o.second.second->clone())};
-      auto it = module_.collisionTransforms().find(o.first);
-      if(it != module_.collisionTransforms().end())
-      {
-        collisionTransforms_[o.first] = it->second;
-      }
-      else
-      {
-        collisionTransforms_[o.first] = sva::PTransformd::Identity();
-      }
+      auto transform_it = cTransforms.find(o.first);
+      const auto & cTransform = transform_it == cTransforms.end() ? sva::PTransformd::Identity() : transform_it->second;
+      this->addConvex(o.first, o.second.second->clone(), o.second.first, cTransform);
     }
-    for(const auto & b : mb().bodies())
+    for(const auto & c : module_._collision)
     {
-      collisionTransforms_[b.name()] = sva::PTransformd::Identity();
+      const auto & body = c.first;
+      const auto & collisions = c.second;
+      if(collisions.size() == 1)
+      {
+        VisualToConvex(*this, body, body, collisions[0]);
+        continue;
+      }
+      size_t added = 0;
+      for(const auto & col : collisions)
+      {
+        if(VisualToConvex(*this, body + "_" + std::to_string(added), body, col))
+        {
+          added++;
+        }
+      }
     }
-    for(const auto & p : module_.collisionTransforms())
-    {
-      collisionTransforms_[p.first] = p.second;
-    }
-    fixCollisionTransforms();
   }
 
   if(loadFiles)
@@ -404,9 +408,13 @@ Robot::Robot(const std::string & name,
     }
     else if(module_.rsdf_dir.size())
     {
-      mc_rtc::log::error("RSDF directory ({}) specified by RobotModule for {} does not exist.", module_.rsdf_dir,
-                         module_.name);
+      mc_rtc::log::warning("RSDF directory ({}) specified by RobotModule for {} does not exist.", module_.rsdf_dir,
+                           module_.name);
     }
+  }
+  else
+  {
+    // FIXME Deep copy of surface vector?
   }
 
   forceSensors_ = module_.forceSensors();
@@ -424,8 +432,6 @@ Robot::Robot(const std::string & name,
     forceSensorsIndex_[fs.name()] = i;
     bodyForceSensors_[fs.parentBody()] = i;
   }
-
-  stance_ = module_.stance();
 
   bodySensors_ = module_.bodySensors();
   // Add a single default sensor if no sensor on the robot
@@ -451,7 +457,7 @@ Robot::Robot(const std::string & name,
     devicesIndex_[d->name()] = i;
   }
 
-  refJointOrder_ = module_.ref_joint_order();
+  const auto & refJointOrder_ = module_.ref_joint_order();
   refJointIndexToMBCIndex_.resize(refJointOrder_.size());
   for(size_t i = 0; i < refJointOrder_.size(); ++i)
   {
@@ -469,8 +475,6 @@ Robot::Robot(const std::string & name,
 
   springs_ = module_.springs();
   flexibility_ = module_.flexibility();
-
-  zmp_ = Eigen::Vector3d::Zero();
 
   std::string urdf;
   auto loadUrdf = [&module_, &urdf]() -> const std::string & {
@@ -509,6 +513,10 @@ Robot::Robot(const std::string & name,
   {
     grippersRef_.push_back(std::ref(*g.second));
   }
+
+  mass_ = std::accumulate(mb().bodies().begin(), mb().bodies().end(), 0.0,
+                          [](double m, const auto & body) { return m + body.inertia().mass(); });
+  com_ = std::make_shared<CoM>(CoM::ctor_token{}, shared_from_this());
 }
 
 const std::string & Robot::name() const
@@ -516,14 +524,9 @@ const std::string & Robot::name() const
   return name_;
 }
 
-void Robot::name(const std::string & name)
-{
-  name_ = name;
-}
-
 const RobotModule & Robot::module() const
 {
-  return robots_->robotModule(robots_idx_);
+  return module_;
 }
 
 BodySensor & Robot::bodySensor()
@@ -536,7 +539,7 @@ const BodySensor & Robot::bodySensor() const
   return bodySensors_[0];
 }
 
-bool Robot::hasBodySensor(const std::string & name) const
+bool Robot::hasBodySensor(std::string_view name) const
 {
   return bodySensorsIndex_.count(name) != 0;
 }
@@ -716,19 +719,6 @@ const sva::MotionVecd & Robot::bodyVelB(const std::string & name) const
 const sva::MotionVecd & Robot::bodyAccB(const std::string & name) const
 {
   return bodyAccB()[bodyIndexByName(name)];
-}
-
-Eigen::Vector3d Robot::com() const
-{
-  return rbd::computeCoM(mb(), mbc());
-}
-Eigen::Vector3d Robot::comVelocity() const
-{
-  return rbd::computeCoMVelocity(mb(), mbc());
-}
-Eigen::Vector3d Robot::comAcceleration() const
-{
-  return rbd::computeCoMAcceleration(mb(), mbc());
 }
 
 sva::ForceVecd Robot::bodyWrench(const std::string & bodyName) const
