@@ -81,6 +81,53 @@ public:
   /** Retrieve the associated RobotModule */
   const RobotModule & module() const;
 
+  /** Returns true if the robot has the given frame */
+  bool hasFrame(std::string_view frame) const;
+
+  /** Access a frame
+   *
+   * \param frame Name of the frame to access
+   *
+   * \throws If the frame does not exist
+   */
+  ConstFramePtr frame(std::string_view frame) const;
+
+  /** Access a frame (non-const)
+   *
+   * \param frame Name of the frame to access
+   *
+   * \throws If the frame does not exist
+   */
+  FramePtr frame(std::string_view frame);
+
+  /** Create a new frame attached to this robot
+   *
+   * \param name Name of the frame
+   *
+   * \param body Parent body of the frame
+   *
+   * \param X_b_f1 Transformation from the parent body to the frame
+   *
+   * \returns The newly created frame
+   *
+   * \throws If a frame with this name already exists
+   */
+  FramePtr makeFrame(std::string_view name, std::string_view body, sva::PTransformd X_b_f);
+
+  /** Create a new frame attached to this robot
+   *
+   * \param name Name of the frame
+   *
+   * \param frame Parent frame of the frame
+   *
+   * \param X_p_f Transformation from the parent frame to the frame
+   *
+   * \returns The newly created frame
+   *
+   * \throws If a frame with this name already exists or the parent frame does not belong to this robot
+   */
+  FramePtr makeFrame(std::string_view name, ConstFramePtr parent, sva::PTransformd X_p_f);
+
   /** @name Body sensors
    *
    * These functions are related to force sensors
@@ -111,7 +158,7 @@ public:
    * @param body Body to query
    *
    */
-  bool bodyHasBodySensor(std::string_view body) const;
+  bool frameHasBodySensor(std::string_view body) const;
 
   /** Return a specific BobySensor by name
    *
@@ -132,10 +179,10 @@ public:
    * @throws If there is no sensor attached to the body
    *
    */
-  BodySensor & bodyBodySensor(std::string_view name);
+  BodySensor & frameBodySensor(std::string_view name);
 
   /** Return a specific BodySensor by body name (const) */
-  const BodySensor & bodyBodySensor(std::string_view name) const;
+  const BodySensor & frameBodySensor(std::string_view name) const;
 
   /** Return all body sensors */
   BodySensorVector & bodySensors();
@@ -230,38 +277,6 @@ public:
   /** Vector of normal acceleration in body coordinates */
   std::vector<sva::MotionVecd> & normalAccB();
 
-  /** Access the position of body \p name in world coordinates
-   *
-   * \throws If the body does not exist within the robot
-   */
-  const sva::PTransformd & bodyPosW(std::string_view name) const;
-
-  /** Relative transformation X_f1_f2 from frame f1 to frame f2
-   *
-   * \param f1 name of first frame
-   * \param f2 name of second frame
-   * \throws If f1 or f2 does not exist within the robot
-   */
-  sva::PTransformd X_f1_f2(std::string_view f1, std::string_view f2) const;
-
-  /** Access the velocity of frame \p name in world coordinates
-   *
-   * \throws If the frame does not exist within the robot
-   */
-  const sva::MotionVecd & frameVelW(std::string_view name) const;
-
-  /** Access the velocity of frame \p name in frame coordinates
-   *
-   * \throws If the frame does not exist within the robot
-   */
-  const sva::MotionVecd & frameVelB(std::string_view name) const;
-
-  /** Access the acceleration of frame \p name in frame coordinates
-   *
-   * \throws If the frame does not exist within the robot
-   */
-  const sva::MotionVecd & frameAccB(std::string_view name) const;
-
   /** Returns the CoM algorithm associated to this robot */
   inline const CoMPtr & com() const noexcept
   {
@@ -294,7 +309,7 @@ public:
    *
    * @throws If no sensor is attached to this frame or the frame does not exist
    */
-  Eigen::Vector2d cop(std::string_view surfaceName, double min_pressure = 0.5) const;
+  Eigen::Vector2d cop(std::string_view frameName, double min_pressure = 0.5) const;
 
   /** Compute the cop in inertial frame compute from gravity-free force measurements
    *
@@ -451,7 +466,10 @@ public:
   std::vector<Flexibility> & flexibility();
 
   /** Returns the mass of the robot */
-  double mass() const;
+  inline double mass() const noexcept
+  {
+    return mass_;
+  }
 
   /** @name Joint sensors
    *
@@ -484,9 +502,6 @@ public:
   /** Set joint torques from sensors */
   void jointTorques(const std::vector<double> & jointTorques);
 
-  /** Return the reference joint order for this robot */
-  const std::vector<std::string> & refJointOrder() const;
-
   /** @} */
   /* End Joints sensors section */
 
@@ -505,17 +520,22 @@ public:
    */
   bool hasForceSensor(std::string_view name) const;
 
-  /** Check if the body has a force sensor directly attached to it
+  /** Check if the frame has a force sensor attached to it
    *
-   * @param body Name of the body to which the sensor is directly attached
+   * @param frame Name of the frame
    *
-   * @see bodyHasIndirectForceSensor(const std::string &) if you wish to check whether a
-   * sensor is indirectly attached to a body
-   *
-   * @returns True if the body has a force sensor attached to it, false
+   * @returns True if the frame has a force sensor attached to it, false
    * otherwise
    */
-  bool bodyHasForceSensor(std::string_view body) const;
+  bool frameHasForceSensor(std::string_view frame) const;
+
+  /** Check if the frame has a force sensor indirectly attached to it
+   *
+   * \param frame Name of the frame
+   *
+   * \returns True if the frame has a force sensor indirectly attached to it, false otherwise
+   */
+  bool frameHasIndirectForceSensor(std::string_view frame) const;
 
   /**
    * @brief Checks if the surface has a force sensor directly attached to it
@@ -702,7 +722,7 @@ public:
   mc_rbdyn::Surface & copySurface(std::string_view oldName, std::string_view newName);
 
   /** Adds a surface */
-  void addSurface(mc_rbdyn::SurfacePtr surface);
+  void addSurface(mc_rbdyn::SurfacePtr surface, bool overwrite = false);
 
   /** Returns all available surfaces */
   const mc_rtc::map<std::string, mc_rbdyn::SurfacePtr> & surfaces() const;
@@ -739,10 +759,14 @@ public:
    *
    * \param convex Convex that will be added to the robot
    *
+   * \param parent Parent frame
+   *
+   * \param X_f_c Transformation from the parent frame to the convex
+   *
    * \throws If such a convex already exists within the robot
    *
    */
-  void addConvex(std::string_view name, ConvexPtr convex);
+  void addConvex(std::string_view name, S_ObjectPtr convex, std::string_view parent, sva::PTransformd X_f_c);
 
   /** Remove a given convex
    *
@@ -891,8 +915,8 @@ private:
   BodySensorVector bodySensors_;
   /** Correspondance between body sensor's name and body sensor index*/
   mc_rtc::map<std::string, size_t> bodySensorsIndex_;
-  /** Correspondance between bodies' names and attached body sensors */
-  mc_rtc::map<std::string, size_t> bodyBodySensors_;
+  /** Correspondance between frames' names and attached body sensors */
+  mc_rtc::map<std::string, size_t> frameBodySensors_;
   /** List of springs in a Robot */
   Springs springs_;
   /** List of flexibility in a Robot */
@@ -903,8 +927,10 @@ private:
   std::vector<ForceSensor> forceSensors_;
   /** Correspondance between force sensor's name and force sensor index */
   mc_rtc::map<std::string, size_t> forceSensorsIndex_;
-  /** Correspondance between bodies' names and attached force sensors */
-  mc_rtc::map<std::string, size_t> bodyForceSensors_;
+  /** Correspondance between frames' names and attached force sensors */
+  mc_rtc::map<std::string, size_t> frameForceSensors_;
+  /** Correspondance between frames' names and indirectly attached force sensors */
+  mc_rtc::map<std::string, size_t> frameIndirectForceSensors_;
   /** Grippers attached to this robot */
   mc_rtc::map<std::string, mc_control::GripperPtr> grippers_;
   /** Grippers reference for this robot */
@@ -927,9 +953,6 @@ protected:
         bool loadFiles,
         const std::optional<sva::PTransformd> & base = std::nullopt,
         const std::optional<std::string_view> & baseName = std::nullopt);
-
-  /** Copy loaded data from this robot to a new robot **/
-  void copyLoadedData(Robot & destination) const;
 
   /** Copy existing Robot with a new base */
   RobotPtr copy(RobotModule module, std::string_view name, const Base & base) const;
