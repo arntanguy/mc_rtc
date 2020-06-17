@@ -1,10 +1,7 @@
 var a00787 =
 [
-    [ "Abscissa", "a01972.html", "a01972" ],
-    [ "AbscissaOrdinate", "a01976.html", "a01976" ],
-    [ "AbscissaOrdinateWithColor", "a01980.html", "a01980" ],
-    [ "Ordinate", "a01984.html", "a01984" ],
-    [ "OrdinateWithColor", "a01988.html", "a01988" ],
-    [ "Polygon", "a01992.html", "a01992" ],
-    [ "Polygons", "a01996.html", "a01996" ]
+    [ "impl", "a00788.html", "a00788" ],
+    [ "AxisConfiguration", "a02013.html", "a02013" ],
+    [ "PolygonDescription", "a02017.html", "a02017" ],
+    [ "Range", "a02009.html", "a02009" ]
 ];

@@ -1,6 +1,8 @@
 var a00347 =
 [
-    [ "TrajectoryImpl", "a02052.html", "a02052" ],
-    [ "Trajectory", "a00347.html#a062a5442d4cabf7a31d7f83008751a6a", null ],
-    [ "Trajectory", "a00347.html#aa175899f8868d419050975dc9f79ed97", null ]
+    [ "StateBuilder", "a02045.html", "a02045" ],
+    [ "ElementsStacking", "a00347.html#a649ddcaedb769dede3922fa845e71ca4", [
+      [ "Vertical", "a00347.html#a649ddcaedb769dede3922fa845e71ca4a06ce2a25e5d12c166a36f654dbea6012", null ],
+      [ "Horizontal", "a00347.html#a649ddcaedb769dede3922fa845e71ca4ac1b5fa03ecdb95d4a45dd1c40b02527f", null ]
+    ] ]
 ];

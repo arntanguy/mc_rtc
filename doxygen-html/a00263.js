@@ -1,12 +1,10 @@
 var a00263 =
 [
-    [ "lambda_traits", "a01824.html", null ],
-    [ "lambda_traits< RetT(C::*)(Args...) const >", "a01828.html", "a01828" ],
-    [ "lambda_traits< RetT(C::*)(Args...)>", "a01832.html", "a01832" ],
-    [ "args_t", "a01836.html", "a01836" ],
-    [ "Allocator", "a01840.html", null ],
-    [ "Allocator< T, typename T::eigen_aligned_operator_new_marker_type >", "a01844.html", null ],
-    [ "DataStore", "a01848.html", "a01848" ],
-    [ "is_valid_hash", "a00263.html#a759676405e1815363e6d9094dd1919b1", null ],
-    [ "is_valid_hash", "a00263.html#a0f0cc0f5914bc62d93b19fda0ed53e75", null ]
+    [ "EIGEN_PI", "a00263.html#aebdd4427aa2148313c07b0eedad449ad", null ],
+    [ "toDeg", "a00263.html#a357fd1ef503f568cf436fbda923472cf", null ],
+    [ "toRad", "a00263.html#a2ca6e1fbd563bfd79d6484a3295d08bd", null ],
+    [ "GRAVITY", "a00263.html#a04b344c34834432afcfcc1ac86bff22c", null ],
+    [ "gravity", "a00263.html#acf271123cee2ac958b9ae0f9220ea422", null ],
+    [ "PI", "a00263.html#a8cb2b2837ea283890b185cfef0631602", null ],
+    [ "vertical", "a00263.html#aaaeaab7136aa7d17fa172fde905c2cc7", null ]
 ];

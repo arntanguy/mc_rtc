@@ -1,5 +1,5 @@
 var a00284 =
 [
-    [ "DataComboInputImpl", "a01884.html", "a01884" ],
-    [ "DataComboInput", "a00284.html#a5baa34dd8ac370b60f3ffbf0b2fd9dda", null ]
+    [ "CheckboxImpl", "a01885.html", "a01885" ],
+    [ "Checkbox", "a00284.html#afc7e12ae3accc04250d14da90634986b", null ]
 ];

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Member List</title>
+<title>mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -51,7 +51,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a01568.html','');});
+$(document).ready(function(){initNavTree('a01565.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -69,27 +69,532 @@ $(document).ready(function(){initNavTree('a01568.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="a01562.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt; Member List</div>  </div>
+<div class="title">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a01568.html#a74431c245af9ab445ce79f8c5fb5b844">acc</a></td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01568.html#a085bf8150e57ec845545c0f53f160bed">boundary</a></td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01568.html#a997ff09c1030f784050010a87b099c47">InterpolatorDataType</a>(T t_=0.0, double pos_=0.0, double vel_=0.0, double acc_=0.0, bool boundary_=false)</td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01568.html#afc4fcf7ed9b94e7a1c212d7b197ec02f">InterpolatorDataType</a>(const InterpolatorDataType&lt; T &gt; &amp;obj)</td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01568.html#a88bc2ae5fd443fe214a62af192c2434f">pos</a></td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01568.html#a7590cc3e112ae57ca57da0065e2ffb56">t</a></td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01568.html#acdfdfbf7f334abfd1fc31bac31d3d9bc">vel</a></td><td class="entry"><a class="el" href="a01568.html">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p><code>#include &lt;mc_planning/CubicSplineBase.h&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a01565.png" usemap="#mc_5Fplanning::motion_5Finterpolator::CubicSplineBase_3C_20T_20_3E_map" alt=""/>
+  <map id="mc_5Fplanning::motion_5Finterpolator::CubicSplineBase_3C_20T_20_3E_map" name="mc_5Fplanning::motion_5Finterpolator::CubicSplineBase_3C_20T_20_3E_map">
+<area href="a01577.html" alt="mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;" shape="rect" coords="0,0,350,24"/>
+<area href="a01561.html" alt="mc_planning::motion_interpolator::ClampedCubicSpline&lt; T &gt;" shape="rect" coords="0,112,350,136"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8d77b611ab8762abafca94c7ba42fff8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a8d77b611ab8762abafca94c7ba42fff8">CubicSplineBase</a> (const double &amp;<a class="el" href="a01577.html#a9af91cba48a4d47e150d092c2daf5ced">scale</a>=1.0, const double &amp;<a class="el" href="a01577.html#a2a5da6948f5ad4bc671234e626a0ea03">eps</a>=1.0e-3, interpolator_type ip_type_=NOT_SELECTED)</td></tr>
+<tr class="separator:a8d77b611ab8762abafca94c7ba42fff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c171b0fe3bdc65958cba40290672ac6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">get</a> (T t_, double &amp;p, double &amp;v, double &amp;a)</td></tr>
+<tr class="separator:a3c171b0fe3bdc65958cba40290672ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c10d56ce280630e14d0c26b318e80a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#af8c10d56ce280630e14d0c26b318e80a">update</a> (void)</td></tr>
+<tr class="separator:af8c10d56ce280630e14d0c26b318e80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b994349e4696644bfcb424260da0719"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a2b994349e4696644bfcb424260da0719">update</a> (T t_)</td></tr>
+<tr class="separator:a2b994349e4696644bfcb424260da0719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f710b6bdffac4b4d64250b64096da8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a75f710b6bdffac4b4d64250b64096da8">update</a> (T t_from, T t_to)</td></tr>
+<tr class="separator:a75f710b6bdffac4b4d64250b64096da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a01577"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a01577')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a></td></tr>
+<tr class="memitem:a6ea37a95677bbf5f109e22f370fa1fa1 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a6ea37a95677bbf5f109e22f370fa1fa1">InterpolatorBase</a> (const double &amp;scale_=1.0, const double &amp;<a class="el" href="a01577.html#a2a5da6948f5ad4bc671234e626a0ea03">eps</a>=0.001, <a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a> ip_type=<a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cda4187d8ccd4ca751d4bdb993070c5dc60">NOT_SELECTED</a>)</td></tr>
+<tr class="separator:a6ea37a95677bbf5f109e22f370fa1fa1 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5dd604c89caa48bd6101f461b879a7 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a1e5dd604c89caa48bd6101f461b879a7">~InterpolatorBase</a> ()</td></tr>
+<tr class="separator:a1e5dd604c89caa48bd6101f461b879a7 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab95106e25571e9bf6fe150cb5623a9d inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aab95106e25571e9bf6fe150cb5623a9d">InterpolatorType</a> (void) const</td></tr>
+<tr class="separator:aab95106e25571e9bf6fe150cb5623a9d inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673a10f5ef22ce4728563883cea186c3 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a673a10f5ef22ce4728563883cea186c3">clear</a> (void)</td></tr>
+<tr class="separator:a673a10f5ef22ce4728563883cea186c3 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd041ea1804a04bf80ac260cbeb50bf inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a1dd041ea1804a04bf80ac260cbeb50bf">size</a> (void)</td></tr>
+<tr class="separator:a1dd041ea1804a04bf80ac260cbeb50bf inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e69836f19cb6776095b17bb43dfa4fb inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a3e69836f19cb6776095b17bb43dfa4fb">resize</a> (unsigned int n)</td></tr>
+<tr class="separator:a3e69836f19cb6776095b17bb43dfa4fb inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144fd360574cd865790d0c1f89c3e1fb inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a144fd360574cd865790d0c1f89c3e1fb">empty</a> (void)</td></tr>
+<tr class="separator:a144fd360574cd865790d0c1f89c3e1fb inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca842ba4c9b1147acfcb31b11a47888 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a2ca842ba4c9b1147acfcb31b11a47888">getData</a> (void)</td></tr>
+<tr class="separator:a2ca842ba4c9b1147acfcb31b11a47888 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494bb24841b55569aafa50220bbe9e38 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a494bb24841b55569aafa50220bbe9e38">getData</a> (int n)</td></tr>
+<tr class="separator:a494bb24841b55569aafa50220bbe9e38 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47811c4065ca02e89ebcb6c2a811f0ec inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a47811c4065ca02e89ebcb6c2a811f0ec">front</a> (void)</td></tr>
+<tr class="separator:a47811c4065ca02e89ebcb6c2a811f0ec inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac5eba9f2415a58a3e696af6f3b5fa3 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a9ac5eba9f2415a58a3e696af6f3b5fa3">back</a> (void)</td></tr>
+<tr class="separator:a9ac5eba9f2415a58a3e696af6f3b5fa3 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea624095ead3d99abcfc68fa05603fda inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aea624095ead3d99abcfc68fa05603fda">isFinish</a> (const T &amp;t_)</td></tr>
+<tr class="separator:aea624095ead3d99abcfc68fa05603fda inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a492cab8197630f17d841af22d5f57 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a55a492cab8197630f17d841af22d5f57">pop_front</a> (void)</td></tr>
+<tr class="separator:a55a492cab8197630f17d841af22d5f57 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b943e5df6a27feb9e53fcd0d25eee8 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a72b943e5df6a27feb9e53fcd0d25eee8">pop_back</a> (void)</td></tr>
+<tr class="separator:a72b943e5df6a27feb9e53fcd0d25eee8 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb443614bf08565a7841f27d104ae082 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#acb443614bf08565a7841f27d104ae082">push_back</a> (const T &amp;t_, const double &amp;p)</td></tr>
+<tr class="separator:acb443614bf08565a7841f27d104ae082 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7623cfc145c9b05c3c1a14a89930d08 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#af7623cfc145c9b05c3c1a14a89930d08">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v)</td></tr>
+<tr class="separator:af7623cfc145c9b05c3c1a14a89930d08 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52db6bb446cd3930fd735f10fd54d2dc inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a52db6bb446cd3930fd735f10fd54d2dc">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a)</td></tr>
+<tr class="separator:a52db6bb446cd3930fd735f10fd54d2dc inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc18904248040883d5b31f79b5688179 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#acc18904248040883d5b31f79b5688179">push_back</a> (const T &amp;t_, const double &amp;p, bool boundary)</td></tr>
+<tr class="separator:acc18904248040883d5b31f79b5688179 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac082cdbe9850214df2feef6b7e78d380 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ac082cdbe9850214df2feef6b7e78d380">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v, bool boundary)</td></tr>
+<tr class="separator:ac082cdbe9850214df2feef6b7e78d380 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e8e0a2f0ee6c3e7cd35380ce126163 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a10e8e0a2f0ee6c3e7cd35380ce126163">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a, bool boundary)</td></tr>
+<tr class="separator:a10e8e0a2f0ee6c3e7cd35380ce126163 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306217ba8bb87aaddd3370e614dc63e3 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a306217ba8bb87aaddd3370e614dc63e3">push_front</a> (const T &amp;t_, const double &amp;p)</td></tr>
+<tr class="separator:a306217ba8bb87aaddd3370e614dc63e3 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48106a503fbde08aa145be99597e6436 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a48106a503fbde08aa145be99597e6436">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v)</td></tr>
+<tr class="separator:a48106a503fbde08aa145be99597e6436 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcef34dac2802ea51e0d6e5f79ea94b8 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#abcef34dac2802ea51e0d6e5f79ea94b8">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a)</td></tr>
+<tr class="separator:abcef34dac2802ea51e0d6e5f79ea94b8 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd5c450aa76c244813c094b2dfabef0 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a4cd5c450aa76c244813c094b2dfabef0">push_front</a> (const T &amp;t_, const double &amp;p, bool boundary)</td></tr>
+<tr class="separator:a4cd5c450aa76c244813c094b2dfabef0 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d525577cece800318eab5f3a3b95cd4 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a8d525577cece800318eab5f3a3b95cd4">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v, bool boundary)</td></tr>
+<tr class="separator:a8d525577cece800318eab5f3a3b95cd4 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f6a3ea435b32e9b5ee0b43edc1cf2e inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ab9f6a3ea435b32e9b5ee0b43edc1cf2e">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a, bool boundary)</td></tr>
+<tr class="separator:ab9f6a3ea435b32e9b5ee0b43edc1cf2e inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bcdd97f2f318c1713b79c5d73b8699 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a13bcdd97f2f318c1713b79c5d73b8699">set</a> (const int n, const T &amp;t, const double &amp;p)</td></tr>
+<tr class="separator:a13bcdd97f2f318c1713b79c5d73b8699 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a58550bd6d8b4668c2590e936c43f2d inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a5a58550bd6d8b4668c2590e936c43f2d">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v)</td></tr>
+<tr class="separator:a5a58550bd6d8b4668c2590e936c43f2d inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7c8caa34e9d6f72d31b788979eaaa3 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a7c7c8caa34e9d6f72d31b788979eaaa3">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v, const double &amp;a)</td></tr>
+<tr class="separator:a7c7c8caa34e9d6f72d31b788979eaaa3 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af143c0908924f8efcd57e8d492b1fcd6 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#af143c0908924f8efcd57e8d492b1fcd6">set</a> (const int n, const T &amp;t, const double &amp;p, bool boundary)</td></tr>
+<tr class="separator:af143c0908924f8efcd57e8d492b1fcd6 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade903d6fcb80bece74b659cca2c7af7a inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ade903d6fcb80bece74b659cca2c7af7a">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v, bool boundary)</td></tr>
+<tr class="separator:ade903d6fcb80bece74b659cca2c7af7a inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a880e961962c42436338d43c38ce820 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a2a880e961962c42436338d43c38ce820">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v, const double &amp;a, bool boundary)</td></tr>
+<tr class="separator:a2a880e961962c42436338d43c38ce820 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea257f5aa75a58b842caaac8219c92c inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a7ea257f5aa75a58b842caaac8219c92c">getValue</a> (T t_)</td></tr>
+<tr class="separator:a7ea257f5aa75a58b842caaac8219c92c inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25fc17ccf28375bd10cba541beccf6a1 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a25fc17ccf28375bd10cba541beccf6a1">get</a> (T t_, double &amp;p)</td></tr>
+<tr class="separator:a25fc17ccf28375bd10cba541beccf6a1 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fcc139a551ba939b7775fb729cb2928 inherit pub_methods_a01577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a0fcc139a551ba939b7775fb729cb2928">get</a> (T t_, double &amp;p, double &amp;v)</td></tr>
+<tr class="separator:a0fcc139a551ba939b7775fb729cb2928 inherit pub_methods_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aca6a6f2b0334ece0286d4aaa8f2920db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#aca6a6f2b0334ece0286d4aaa8f2920db">getPointToPoint</a> (T t_, double &amp;p, double &amp;v, double &amp;a, unsigned int n_segment)</td></tr>
+<tr class="separator:aca6a6f2b0334ece0286d4aaa8f2920db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4e8f51d5de3453ab788db83f594a6c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#a2f4e8f51d5de3453ab788db83f594a6c">makeSplineTable</a> (unsigned int n_base, unsigned int n_segment, unsigned int n_offset, const double &amp;qn, const double &amp;un)</td></tr>
+<tr class="separator:a2f4e8f51d5de3453ab788db83f594a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb12d2afaa46efc1c008feb194f3ac5d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#adb12d2afaa46efc1c008feb194f3ac5d">setSplineCoeff</a> (unsigned int n_base, unsigned int n_segment, unsigned int n_offset)=0</td></tr>
+<tr class="separator:adb12d2afaa46efc1c008feb194f3ac5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ade0b6d36ebca0b30aa4e003724813ab4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01565.html#ade0b6d36ebca0b30aa4e003724813ab4">coeff</a></td></tr>
+<tr class="separator:ade0b6d36ebca0b30aa4e003724813ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a01577"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a01577')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a></td></tr>
+<tr class="memitem:a9af91cba48a4d47e150d092c2daf5ced inherit pro_attribs_a01577"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a9af91cba48a4d47e150d092c2daf5ced">scale</a></td></tr>
+<tr class="separator:a9af91cba48a4d47e150d092c2daf5ced inherit pro_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5da6948f5ad4bc671234e626a0ea03 inherit pro_attribs_a01577"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a2a5da6948f5ad4bc671234e626a0ea03">eps</a></td></tr>
+<tr class="separator:a2a5da6948f5ad4bc671234e626a0ea03 inherit pro_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaebc4a869dbdd763f917a73013514f5 inherit pro_attribs_a01577"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">data</a></td></tr>
+<tr class="separator:afaebc4a869dbdd763f917a73013514f5 inherit pro_attribs_a01577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8d77b611ab8762abafca94c7ba42fff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d77b611ab8762abafca94c7ba42fff8">&#9670;&nbsp;</a></span>CubicSplineBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::<a class="el" href="a01565.html">CubicSplineBase</a> </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>eps</em> = <code>1.0e-3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a>&#160;</td>
+          <td class="paramname"><em>ip_type_</em> = <code><a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cda4187d8ccd4ca751d4bdb993070c5dc60">NOT_SELECTED</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3c171b0fe3bdc65958cba40290672ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c171b0fe3bdc65958cba40290672ac6">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a01577.html#af518e3ae68f6e87b38b632b59909779c">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a>.</p>
+
+<p class="reference">References <a class="el" href="a01577.html#a9ac5eba9f2415a58a3e696af6f3b5fa3">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::back()</a>, <a class="el" href="a01565.html#ade0b6d36ebca0b30aa4e003724813ab4">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::coeff</a>, <a class="el" href="a01577.html#a144fd360574cd865790d0c1f89c3e1fb">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::empty()</a>, <a class="el" href="a01577.html#a47811c4065ca02e89ebcb6c2a811f0ec">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::front()</a>, <a class="el" href="a01565.html#aca6a6f2b0334ece0286d4aaa8f2920db">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::getPointToPoint()</a>, and <a class="el" href="a01577.html#a1dd041ea1804a04bf80ac260cbeb50bf">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::size()</a>.</p>
+
+</div>
+</div>
+<a id="aca6a6f2b0334ece0286d4aaa8f2920db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6a6f2b0334ece0286d4aaa8f2920db">&#9670;&nbsp;</a></span>getPointToPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::getPointToPoint </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_segment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="a2f4e8f51d5de3453ab788db83f594a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4e8f51d5de3453ab788db83f594a6c">&#9670;&nbsp;</a></span>makeSplineTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::makeSplineTable </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_segment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>qn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>un</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01565.html#ade0b6d36ebca0b30aa4e003724813ab4">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::coeff</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a01561.html#a204ae47403bf002885988ac91e40d694">mc_planning::motion_interpolator::ClampedCubicSpline&lt; T &gt;::setSplineCoeff()</a>.</p>
+
+</div>
+</div>
+<a id="adb12d2afaa46efc1c008feb194f3ac5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb12d2afaa46efc1c008feb194f3ac5d">&#9670;&nbsp;</a></span>setSplineCoeff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::setSplineCoeff </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_segment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n_offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a01561.html#a204ae47403bf002885988ac91e40d694">mc_planning::motion_interpolator::ClampedCubicSpline&lt; T &gt;</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#af8c10d56ce280630e14d0c26b318e80a">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::update()</a>.</p>
+
+</div>
+</div>
+<a id="af8c10d56ce280630e14d0c26b318e80a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c10d56ce280630e14d0c26b318e80a">&#9670;&nbsp;</a></span>update() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="a01577.html#aee0a7d9c1be357aa2f576684931daa46">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a>.</p>
+
+<p class="reference">References <a class="el" href="a01565.html#ade0b6d36ebca0b30aa4e003724813ab4">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::coeff</a>, and <a class="el" href="a01565.html#adb12d2afaa46efc1c008feb194f3ac5d">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::setSplineCoeff()</a>.</p>
+
+</div>
+</div>
+<a id="a2b994349e4696644bfcb424260da0719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b994349e4696644bfcb424260da0719">&#9670;&nbsp;</a></span>update() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="a01577.html#ad005694117de077258bc06c9cfd6b726">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a>.</p>
+
+<p class="reference">References <a class="el" href="a01565.html#ade0b6d36ebca0b30aa4e003724813ab4">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::coeff</a>, and <a class="el" href="a01565.html#adb12d2afaa46efc1c008feb194f3ac5d">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::setSplineCoeff()</a>.</p>
+
+</div>
+</div>
+<a id="a75f710b6bdffac4b4d64250b64096da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f710b6bdffac4b4d64250b64096da8">&#9670;&nbsp;</a></span>update() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="a01577.html#ae7a22f3aa90c3b76ca619f61d77296de">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;</a>.</p>
+
+<p class="reference">References <a class="el" href="a01565.html#ade0b6d36ebca0b30aa4e003724813ab4">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::coeff</a>, and <a class="el" href="a01565.html#adb12d2afaa46efc1c008feb194f3ac5d">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::setSplineCoeff()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ade0b6d36ebca0b30aa4e003724813ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0b6d36ebca0b30aa4e003724813ab4">&#9670;&nbsp;</a></span>coeff</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; <a class="el" href="a01565.html">mc_planning::motion_interpolator::CubicSplineBase</a>&lt; T &gt;::coeff</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::get()</a>, <a class="el" href="a01565.html#a2f4e8f51d5de3453ab788db83f594a6c">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::makeSplineTable()</a>, and <a class="el" href="a01565.html#af8c10d56ce280630e14d0c26b318e80a">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::update()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00770.html">mc_planning</a></li><li class="navelem"><a class="el" href="a00771.html">motion_interpolator</a></li><li class="navelem"><a class="el" href="a01565.html">CubicSplineBase</a></li>
+    <li class="footer">Generated on Wed Jun 17 2020 10:47:05 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

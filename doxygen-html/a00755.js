@@ -1,8 +1,8 @@
 var a00755 =
 [
-    [ "ExponentialMovingAverage", "a01504.html", "a01504" ],
-    [ "LeakyIntegrator", "a01508.html", "a01508" ],
-    [ "LowPass", "a01512.html", "a01512" ],
-    [ "LowPassFiniteDifferences", "a01516.html", "a01516" ],
-    [ "StationaryOffset", "a01520.html", "a01520" ]
+    [ "ExponentialMovingAverage", "a01505.html", "a01505" ],
+    [ "LeakyIntegrator", "a01509.html", "a01509" ],
+    [ "LowPass", "a01513.html", "a01513" ],
+    [ "LowPassFiniteDifferences", "a01517.html", "a01517" ],
+    [ "StationaryOffset", "a01521.html", "a01521" ]
 ];

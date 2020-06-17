@@ -1,7 +1,7 @@
 var a00772 =
 [
-    [ "LinearControl3", "a01576.html", "a01576" ],
-    [ "LinearTimeVariantInvertedPendulum", "a01580.html", "a01580" ],
-    [ "LIPMControlByPoleAssign", "a01588.html", "a01588" ],
-    [ "LIPMControlByPoleAssignWithExternalForce", "a01592.html", "a01592" ]
+    [ "LinearControl3", "a01581.html", "a01581" ],
+    [ "LinearTimeVariantInvertedPendulum", "a01585.html", "a01585" ],
+    [ "LIPMControlByPoleAssign", "a01593.html", "a01593" ],
+    [ "LIPMControlByPoleAssignWithExternalForce", "a01597.html", "a01597" ]
 ];

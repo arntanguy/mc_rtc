@@ -10,6 +10,6 @@ var namespaces =
     [ "mc_rtc", "a00763.html", "a00763" ],
     [ "mc_solver", "a00773.html", "a00773" ],
     [ "mc_tasks", "a00764.html", "a00764" ],
-    [ "mc_trajectory", "a00797.html", null ],
+    [ "mc_trajectory", "a00798.html", null ],
     [ "sch", "a00779.html", "a00779" ]
 ];

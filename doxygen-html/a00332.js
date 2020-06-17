@@ -1,9 +1,12 @@
 var a00332 =
 [
-    [ "Point3DROImpl", "a02012.html", "a02012" ],
-    [ "Point3DImpl", "a02016.html", "a02016" ],
-    [ "Point3D", "a00332.html#ac40c7c59cc19e0fe7be9d8a5a8564f74", null ],
-    [ "Point3D", "a00332.html#a0c1802e2d8623ee22fffc408e69eaf56", null ],
-    [ "Point3D", "a00332.html#ad2db10f53541f7b6a925d724023de7ee", null ],
-    [ "Point3D", "a00332.html#a6a9e684830b60a463c848a290d2b910b", null ]
+    [ "Color", "a02073.html", "a02073" ],
+    [ "LineConfig", "a02077.html", "a02077" ],
+    [ "ArrowConfig", "a02081.html", "a02081" ],
+    [ "ForceConfig", "a02085.html", "a02085" ],
+    [ "PointConfig", "a02089.html", "a02089" ],
+    [ "LineStyle", "a00332.html#a23166295a3983f35cb0fa510b4c156c9", [
+      [ "Solid", "a00332.html#a23166295a3983f35cb0fa510b4c156c9ae41480b6bbfbf7407974a88d3d34f4fa", null ],
+      [ "Dotted", "a00332.html#a23166295a3983f35cb0fa510b4c156c9a90c09393a4c0970bc9a6703ad527781c", null ]
+    ] ]
 ];

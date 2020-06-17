@@ -10,11 +10,11 @@ var annotated_dup =
     [ "mc_rtc", "a00763.html", "a00763" ],
     [ "mc_solver", "a00773.html", "a00773" ],
     [ "mc_tasks", "a00764.html", "a00764" ],
-    [ "mc_trajectory", "a00797.html", "a00797" ],
+    [ "mc_trajectory", "a00798.html", "a00798" ],
     [ "sch", "a00779.html", null ],
     [ "std", null, [
-      [ "hash< mc_control::fsm::Contact >", "a01392.html", "a01392" ]
+      [ "hash< mc_control::fsm::Contact >", "a01393.html", "a01393" ]
     ] ],
-    [ "Collision", "a02476.html", null ],
-    [ "Global", "a02472.html", null ]
+    [ "Collision", "a02485.html", null ],
+    [ "Global", "a02481.html", null ]
 ];

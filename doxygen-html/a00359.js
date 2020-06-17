@@ -1,6 +1,7 @@
 var a00359 =
 [
-    [ "to_string", "a00359.html#af24adad562092ccd4f760a38c86fcf95", null ],
-    [ "to_string", "a00359.html#a38fc0c2f37aa3befdc6ab09b25c11f1f", null ],
-    [ "to_string", "a00359.html#a288c60b8869f856d23c8a94ac085438e", null ]
+    [ "XYThetaROImpl", "a02093.html", "a02093" ],
+    [ "XYThetaImpl", "a02097.html", "a02097" ],
+    [ "XYTheta", "a00359.html#aaaa2ebe2ecb490f266fe541318646561", null ],
+    [ "XYTheta", "a00359.html#a98fa40132858d1d9c0091acb36ce9f32", null ]
 ];

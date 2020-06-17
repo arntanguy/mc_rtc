@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Member List</title>
+<title>mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -51,7 +51,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a01580.html','');});
+$(document).ready(function(){initNavTree('a01577.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -69,51 +69,1721 @@ $(document).ready(function(){initNavTree('a01580.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="a01574.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum Member List</div>  </div>
+<div class="title">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a124e7cb9ae69c984acf3b79c13737ea8">chkTable_</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a5d3ebd9ea8d67d62d539e1452d4506ab">generate</a>(Eigen::VectorXd &amp;cog_pos, Eigen::VectorXd &amp;cog_vel, Eigen::VectorXd &amp;cog_acc, Eigen::VectorXd &amp;p_ref)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#ab84d807b96e903d5be87c6042c265979">getState</a>(int n_time) const</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#ac90eeaee06cf9c343222eb7eb8b6a43a">getState</a>(int n_time, double &amp;cog_pos, double &amp;cog_vel, double &amp;cog_acc, double &amp;p, double &amp;pdot)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a3e8f7c6aea4f0ad0627cad4598d1de85">Initialize</a>(double dt, unsigned n_preview=0, unsigned weight_resolution=20000, double minHeight=0.01, double maxHeight=2.5)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a47aa3c6c55b0d2e3452175ad1127c460">initMatrices</a>(double waist_height)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a9ff8694223841eb44de2058bdc8e07be">LinearTimeVariantInvertedPendulum</a>()</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a4a047d06a6a02227dab3c0778c4ec738">LinearTimeVariantInvertedPendulum</a>(double dt, unsigned n_preview=0, unsigned weight_resolution=20000, double minHeight=0.01, double maxHeight=2.5)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a2b01bb5cafce26b7596ef97b36584233">m_A</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#ac9ea04485d7ee4ce45999a165c2dee06">m_An</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#ac8121e1be72344e73db0512b7331a321">m_B</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a60ecd7d928ffc1ce55390aa33d076577">m_Bn</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a0d7d6b065bfa69d029309b718d985ee2">m_dt</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a2d895679ff0471b72e15524364322a40">m_n_current</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#ad727890e6903bf8c6aab5873a6afb17c">m_n_preview2</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#ad6982c89d9f0e353c99e579b25098bb6">m_p_ref</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a8664017837658b6e0f759cf44bfd9030">m_w</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a8d3112ea6d7338498af37ca939d19180">m_w2</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a46540fb3f78da79ec55b2bc96eba147e">m_X</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#af8f721030036eaf37bda9d2116f0a08d">Matrix22</a> typedef</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#aaaa9229d0d48a4ce5b3298da9199d4bb">p_ref</a>()</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a805b02627f193b596d43c6de3420d196">p_ref</a>(unsigned k)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#af8453bfc9d84353dbcd078938fe8d6c0">shkTable_</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a5d2fc8bd8439d82b712f56fd0e1848c6">update</a>()</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a3f685436fab11fa264d9444a25b4fdcf">Vector2</a> typedef</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#ae1deee5bc5016ab978874dd423968c39">w</a>() const</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a4aefe020440bec23336b24e632a0830f">w</a>(unsigned k) const</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a32e54cb2b655774f117c7a35ce65424a">w2</a>()</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a74e38a54de2bb643ff4b0eb1caee9326">w2</a>(unsigned k)</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01580.html#a1302ee5580c5e867ed2b5a9b8ee3e483">wTable_</a></td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01580.html#a45a506558787353a67a900c6518f894c">~LinearTimeVariantInvertedPendulum</a>()</td><td class="entry"><a class="el" href="a01580.html">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+<p><code>#include &lt;mc_planning/InterpolatorBase.h&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a01577.png" usemap="#mc_5Fplanning::motion_5Finterpolator::InterpolatorBase_3C_20T_20_3E_map" alt=""/>
+  <map id="mc_5Fplanning::motion_5Finterpolator::InterpolatorBase_3C_20T_20_3E_map" name="mc_5Fplanning::motion_5Finterpolator::InterpolatorBase_3C_20T_20_3E_map">
+<area href="a01565.html" alt="mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;" shape="rect" coords="0,56,350,80"/>
+<area href="a01561.html" alt="mc_planning::motion_interpolator::ClampedCubicSpline&lt; T &gt;" shape="rect" coords="0,112,350,136"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6ea37a95677bbf5f109e22f370fa1fa1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a6ea37a95677bbf5f109e22f370fa1fa1">InterpolatorBase</a> (const double &amp;scale_=1.0, const double &amp;<a class="el" href="a01577.html#a2a5da6948f5ad4bc671234e626a0ea03">eps</a>=0.001, <a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a> ip_type=<a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cda4187d8ccd4ca751d4bdb993070c5dc60">NOT_SELECTED</a>)</td></tr>
+<tr class="separator:a6ea37a95677bbf5f109e22f370fa1fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5dd604c89caa48bd6101f461b879a7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a1e5dd604c89caa48bd6101f461b879a7">~InterpolatorBase</a> ()</td></tr>
+<tr class="separator:a1e5dd604c89caa48bd6101f461b879a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab95106e25571e9bf6fe150cb5623a9d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aab95106e25571e9bf6fe150cb5623a9d">InterpolatorType</a> (void) const</td></tr>
+<tr class="separator:aab95106e25571e9bf6fe150cb5623a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673a10f5ef22ce4728563883cea186c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a673a10f5ef22ce4728563883cea186c3">clear</a> (void)</td></tr>
+<tr class="separator:a673a10f5ef22ce4728563883cea186c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd041ea1804a04bf80ac260cbeb50bf"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a1dd041ea1804a04bf80ac260cbeb50bf">size</a> (void)</td></tr>
+<tr class="separator:a1dd041ea1804a04bf80ac260cbeb50bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e69836f19cb6776095b17bb43dfa4fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a3e69836f19cb6776095b17bb43dfa4fb">resize</a> (unsigned int n)</td></tr>
+<tr class="separator:a3e69836f19cb6776095b17bb43dfa4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144fd360574cd865790d0c1f89c3e1fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a144fd360574cd865790d0c1f89c3e1fb">empty</a> (void)</td></tr>
+<tr class="separator:a144fd360574cd865790d0c1f89c3e1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca842ba4c9b1147acfcb31b11a47888"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a2ca842ba4c9b1147acfcb31b11a47888">getData</a> (void)</td></tr>
+<tr class="separator:a2ca842ba4c9b1147acfcb31b11a47888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494bb24841b55569aafa50220bbe9e38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a494bb24841b55569aafa50220bbe9e38">getData</a> (int n)</td></tr>
+<tr class="separator:a494bb24841b55569aafa50220bbe9e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47811c4065ca02e89ebcb6c2a811f0ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a47811c4065ca02e89ebcb6c2a811f0ec">front</a> (void)</td></tr>
+<tr class="separator:a47811c4065ca02e89ebcb6c2a811f0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac5eba9f2415a58a3e696af6f3b5fa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a9ac5eba9f2415a58a3e696af6f3b5fa3">back</a> (void)</td></tr>
+<tr class="separator:a9ac5eba9f2415a58a3e696af6f3b5fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea624095ead3d99abcfc68fa05603fda"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aea624095ead3d99abcfc68fa05603fda">isFinish</a> (const T &amp;t_)</td></tr>
+<tr class="separator:aea624095ead3d99abcfc68fa05603fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a492cab8197630f17d841af22d5f57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a55a492cab8197630f17d841af22d5f57">pop_front</a> (void)</td></tr>
+<tr class="separator:a55a492cab8197630f17d841af22d5f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b943e5df6a27feb9e53fcd0d25eee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a72b943e5df6a27feb9e53fcd0d25eee8">pop_back</a> (void)</td></tr>
+<tr class="separator:a72b943e5df6a27feb9e53fcd0d25eee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb443614bf08565a7841f27d104ae082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#acb443614bf08565a7841f27d104ae082">push_back</a> (const T &amp;t_, const double &amp;p)</td></tr>
+<tr class="separator:acb443614bf08565a7841f27d104ae082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7623cfc145c9b05c3c1a14a89930d08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#af7623cfc145c9b05c3c1a14a89930d08">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v)</td></tr>
+<tr class="separator:af7623cfc145c9b05c3c1a14a89930d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52db6bb446cd3930fd735f10fd54d2dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a52db6bb446cd3930fd735f10fd54d2dc">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a)</td></tr>
+<tr class="separator:a52db6bb446cd3930fd735f10fd54d2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc18904248040883d5b31f79b5688179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#acc18904248040883d5b31f79b5688179">push_back</a> (const T &amp;t_, const double &amp;p, bool boundary)</td></tr>
+<tr class="separator:acc18904248040883d5b31f79b5688179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac082cdbe9850214df2feef6b7e78d380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ac082cdbe9850214df2feef6b7e78d380">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v, bool boundary)</td></tr>
+<tr class="separator:ac082cdbe9850214df2feef6b7e78d380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e8e0a2f0ee6c3e7cd35380ce126163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a10e8e0a2f0ee6c3e7cd35380ce126163">push_back</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a, bool boundary)</td></tr>
+<tr class="separator:a10e8e0a2f0ee6c3e7cd35380ce126163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306217ba8bb87aaddd3370e614dc63e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a306217ba8bb87aaddd3370e614dc63e3">push_front</a> (const T &amp;t_, const double &amp;p)</td></tr>
+<tr class="separator:a306217ba8bb87aaddd3370e614dc63e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48106a503fbde08aa145be99597e6436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a48106a503fbde08aa145be99597e6436">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v)</td></tr>
+<tr class="separator:a48106a503fbde08aa145be99597e6436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcef34dac2802ea51e0d6e5f79ea94b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#abcef34dac2802ea51e0d6e5f79ea94b8">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a)</td></tr>
+<tr class="separator:abcef34dac2802ea51e0d6e5f79ea94b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd5c450aa76c244813c094b2dfabef0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a4cd5c450aa76c244813c094b2dfabef0">push_front</a> (const T &amp;t_, const double &amp;p, bool boundary)</td></tr>
+<tr class="separator:a4cd5c450aa76c244813c094b2dfabef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d525577cece800318eab5f3a3b95cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a8d525577cece800318eab5f3a3b95cd4">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v, bool boundary)</td></tr>
+<tr class="separator:a8d525577cece800318eab5f3a3b95cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f6a3ea435b32e9b5ee0b43edc1cf2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ab9f6a3ea435b32e9b5ee0b43edc1cf2e">push_front</a> (const T &amp;t_, const double &amp;p, const double &amp;v, const double &amp;a, bool boundary)</td></tr>
+<tr class="separator:ab9f6a3ea435b32e9b5ee0b43edc1cf2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bcdd97f2f318c1713b79c5d73b8699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a13bcdd97f2f318c1713b79c5d73b8699">set</a> (const int n, const T &amp;t, const double &amp;p)</td></tr>
+<tr class="separator:a13bcdd97f2f318c1713b79c5d73b8699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a58550bd6d8b4668c2590e936c43f2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a5a58550bd6d8b4668c2590e936c43f2d">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v)</td></tr>
+<tr class="separator:a5a58550bd6d8b4668c2590e936c43f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7c8caa34e9d6f72d31b788979eaaa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a7c7c8caa34e9d6f72d31b788979eaaa3">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v, const double &amp;a)</td></tr>
+<tr class="separator:a7c7c8caa34e9d6f72d31b788979eaaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af143c0908924f8efcd57e8d492b1fcd6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#af143c0908924f8efcd57e8d492b1fcd6">set</a> (const int n, const T &amp;t, const double &amp;p, bool boundary)</td></tr>
+<tr class="separator:af143c0908924f8efcd57e8d492b1fcd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade903d6fcb80bece74b659cca2c7af7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ade903d6fcb80bece74b659cca2c7af7a">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v, bool boundary)</td></tr>
+<tr class="separator:ade903d6fcb80bece74b659cca2c7af7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a880e961962c42436338d43c38ce820"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a2a880e961962c42436338d43c38ce820">set</a> (const int n, const T &amp;t, const double &amp;p, const double &amp;v, const double &amp;a, bool boundary)</td></tr>
+<tr class="separator:a2a880e961962c42436338d43c38ce820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea257f5aa75a58b842caaac8219c92c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a7ea257f5aa75a58b842caaac8219c92c">getValue</a> (T t_)</td></tr>
+<tr class="separator:a7ea257f5aa75a58b842caaac8219c92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25fc17ccf28375bd10cba541beccf6a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a25fc17ccf28375bd10cba541beccf6a1">get</a> (T t_, double &amp;p)</td></tr>
+<tr class="separator:a25fc17ccf28375bd10cba541beccf6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fcc139a551ba939b7775fb729cb2928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a0fcc139a551ba939b7775fb729cb2928">get</a> (T t_, double &amp;p, double &amp;v)</td></tr>
+<tr class="separator:a0fcc139a551ba939b7775fb729cb2928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af518e3ae68f6e87b38b632b59909779c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#af518e3ae68f6e87b38b632b59909779c">get</a> (T t_, double &amp;p, double &amp;v, double &amp;a)=0</td></tr>
+<tr class="separator:af518e3ae68f6e87b38b632b59909779c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0a7d9c1be357aa2f576684931daa46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#aee0a7d9c1be357aa2f576684931daa46">update</a> (void)</td></tr>
+<tr class="separator:aee0a7d9c1be357aa2f576684931daa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad005694117de077258bc06c9cfd6b726"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ad005694117de077258bc06c9cfd6b726">update</a> (T t_)</td></tr>
+<tr class="separator:ad005694117de077258bc06c9cfd6b726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a22f3aa90c3b76ca619f61d77296de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#ae7a22f3aa90c3b76ca619f61d77296de">update</a> (T t_from, T t_to)</td></tr>
+<tr class="separator:ae7a22f3aa90c3b76ca619f61d77296de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a9af91cba48a4d47e150d092c2daf5ced"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a9af91cba48a4d47e150d092c2daf5ced">scale</a></td></tr>
+<tr class="separator:a9af91cba48a4d47e150d092c2daf5ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5da6948f5ad4bc671234e626a0ea03"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#a2a5da6948f5ad4bc671234e626a0ea03">eps</a></td></tr>
+<tr class="separator:a2a5da6948f5ad4bc671234e626a0ea03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaebc4a869dbdd763f917a73013514f5"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="a01573.html">InterpolatorDataType</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">data</a></td></tr>
+<tr class="separator:afaebc4a869dbdd763f917a73013514f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6ea37a95677bbf5f109e22f370fa1fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea37a95677bbf5f109e22f370fa1fa1">&#9670;&nbsp;</a></span>InterpolatorBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::<a class="el" href="a01577.html">InterpolatorBase</a> </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scale_</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>eps</em> = <code>0.001</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a>&#160;</td>
+          <td class="paramname"><em>ip_type</em> = <code><a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cda4187d8ccd4ca751d4bdb993070c5dc60">NOT_SELECTED</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e5dd604c89caa48bd6101f461b879a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5dd604c89caa48bd6101f461b879a7">&#9670;&nbsp;</a></span>~InterpolatorBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::~<a class="el" href="a01577.html">InterpolatorBase</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9ac5eba9f2415a58a3e696af6f3b5fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac5eba9f2415a58a3e696af6f3b5fa3">&#9670;&nbsp;</a></span>back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt;T&gt;&amp; <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::back </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="a673a10f5ef22ce4728563883cea186c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673a10f5ef22ce4728563883cea186c3">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a144fd360574cd865790d0c1f89c3e1fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144fd360574cd865790d0c1f89c3e1fb">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="a47811c4065ca02e89ebcb6c2a811f0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47811c4065ca02e89ebcb6c2a811f0ec">&#9670;&nbsp;</a></span>front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt;T&gt;&amp; <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::front </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="a25fc17ccf28375bd10cba541beccf6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25fc17ccf28375bd10cba541beccf6a1">&#9670;&nbsp;</a></span>get() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fcc139a551ba939b7775fb729cb2928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fcc139a551ba939b7775fb729cb2928">&#9670;&nbsp;</a></span>get() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af518e3ae68f6e87b38b632b59909779c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af518e3ae68f6e87b38b632b59909779c">&#9670;&nbsp;</a></span>get() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2ca842ba4c9b1147acfcb31b11a47888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca842ba4c9b1147acfcb31b11a47888">&#9670;&nbsp;</a></span>getData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;<a class="el" href="a01573.html">InterpolatorDataType</a>&lt;T&gt; &gt;&amp; <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::getData </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a494bb24841b55569aafa50220bbe9e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494bb24841b55569aafa50220bbe9e38">&#9670;&nbsp;</a></span>getData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01573.html">InterpolatorDataType</a>&lt;T&gt;&amp; <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::getData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ea257f5aa75a58b842caaac8219c92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea257f5aa75a58b842caaac8219c92c">&#9670;&nbsp;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::getValue </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab95106e25571e9bf6fe150cb5623a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab95106e25571e9bf6fe150cb5623a9d">&#9670;&nbsp;</a></span>InterpolatorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00771.html#a7ea0c29c7e1dd0f17827e74bc06e12cd">interpolator_type</a>&amp; <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::InterpolatorType </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea624095ead3d99abcfc68fa05603fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea624095ead3d99abcfc68fa05603fda">&#9670;&nbsp;</a></span>isFinish()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::isFinish </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72b943e5df6a27feb9e53fcd0d25eee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b943e5df6a27feb9e53fcd0d25eee8">&#9670;&nbsp;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::pop_back </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55a492cab8197630f17d841af22d5f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a492cab8197630f17d841af22d5f57">&#9670;&nbsp;</a></span>pop_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::pop_front </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb443614bf08565a7841f27d104ae082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb443614bf08565a7841f27d104ae082">&#9670;&nbsp;</a></span>push_back() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7623cfc145c9b05c3c1a14a89930d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7623cfc145c9b05c3c1a14a89930d08">&#9670;&nbsp;</a></span>push_back() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52db6bb446cd3930fd735f10fd54d2dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52db6bb446cd3930fd735f10fd54d2dc">&#9670;&nbsp;</a></span>push_back() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc18904248040883d5b31f79b5688179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc18904248040883d5b31f79b5688179">&#9670;&nbsp;</a></span>push_back() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac082cdbe9850214df2feef6b7e78d380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac082cdbe9850214df2feef6b7e78d380">&#9670;&nbsp;</a></span>push_back() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10e8e0a2f0ee6c3e7cd35380ce126163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10e8e0a2f0ee6c3e7cd35380ce126163">&#9670;&nbsp;</a></span>push_back() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a306217ba8bb87aaddd3370e614dc63e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306217ba8bb87aaddd3370e614dc63e3">&#9670;&nbsp;</a></span>push_front() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48106a503fbde08aa145be99597e6436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48106a503fbde08aa145be99597e6436">&#9670;&nbsp;</a></span>push_front() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcef34dac2802ea51e0d6e5f79ea94b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcef34dac2802ea51e0d6e5f79ea94b8">&#9670;&nbsp;</a></span>push_front() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cd5c450aa76c244813c094b2dfabef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd5c450aa76c244813c094b2dfabef0">&#9670;&nbsp;</a></span>push_front() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d525577cece800318eab5f3a3b95cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d525577cece800318eab5f3a3b95cd4">&#9670;&nbsp;</a></span>push_front() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9f6a3ea435b32e9b5ee0b43edc1cf2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f6a3ea435b32e9b5ee0b43edc1cf2e">&#9670;&nbsp;</a></span>push_front() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01573.html#a085bf8150e57ec845545c0f53f160bed">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;::boundary</a>, and <a class="el" href="a01573.html#a7590cc3e112ae57ca57da0065e2ffb56">mc_planning::motion_interpolator::InterpolatorDataType&lt; T &gt;::t</a>.</p>
+
+</div>
+</div>
+<a id="a3e69836f19cb6776095b17bb43dfa4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e69836f19cb6776095b17bb43dfa4fb">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01561.html#a204ae47403bf002885988ac91e40d694">mc_planning::motion_interpolator::ClampedCubicSpline&lt; T &gt;::setSplineCoeff()</a>.</p>
+
+</div>
+</div>
+<a id="a13bcdd97f2f318c1713b79c5d73b8699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13bcdd97f2f318c1713b79c5d73b8699">&#9670;&nbsp;</a></span>set() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::data</a>.</p>
+
+</div>
+</div>
+<a id="a5a58550bd6d8b4668c2590e936c43f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a58550bd6d8b4668c2590e936c43f2d">&#9670;&nbsp;</a></span>set() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::data</a>.</p>
+
+</div>
+</div>
+<a id="a7c7c8caa34e9d6f72d31b788979eaaa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7c8caa34e9d6f72d31b788979eaaa3">&#9670;&nbsp;</a></span>set() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::data</a>.</p>
+
+</div>
+</div>
+<a id="af143c0908924f8efcd57e8d492b1fcd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af143c0908924f8efcd57e8d492b1fcd6">&#9670;&nbsp;</a></span>set() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::data</a>.</p>
+
+</div>
+</div>
+<a id="ade903d6fcb80bece74b659cca2c7af7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade903d6fcb80bece74b659cca2c7af7a">&#9670;&nbsp;</a></span>set() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::data</a>.</p>
+
+</div>
+</div>
+<a id="a2a880e961962c42436338d43c38ce820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a880e961962c42436338d43c38ce820">&#9670;&nbsp;</a></span>set() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a01577.html#afaebc4a869dbdd763f917a73013514f5">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::data</a>.</p>
+
+</div>
+</div>
+<a id="a1dd041ea1804a04bf80ac260cbeb50bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd041ea1804a04bf80ac260cbeb50bf">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01565.html#a3c171b0fe3bdc65958cba40290672ac6">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="aee0a7d9c1be357aa2f576684931daa46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0a7d9c1be357aa2f576684931daa46">&#9670;&nbsp;</a></span>update() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="a01565.html#af8c10d56ce280630e14d0c26b318e80a">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ad005694117de077258bc06c9cfd6b726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad005694117de077258bc06c9cfd6b726">&#9670;&nbsp;</a></span>update() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="a01565.html#a2b994349e4696644bfcb424260da0719">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ae7a22f3aa90c3b76ca619f61d77296de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a22f3aa90c3b76ca619f61d77296de">&#9670;&nbsp;</a></span>update() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t_to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="a01565.html#a75f710b6bdffac4b4d64250b64096da8">mc_planning::motion_interpolator::CubicSplineBase&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="afaebc4a869dbdd763f917a73013514f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaebc4a869dbdd763f917a73013514f5">&#9670;&nbsp;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;<a class="el" href="a01573.html">InterpolatorDataType</a>&lt;T&gt; &gt; <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a01577.html#a13bcdd97f2f318c1713b79c5d73b8699">mc_planning::motion_interpolator::InterpolatorBase&lt; T &gt;::set()</a>.</p>
+
+</div>
+</div>
+<a id="a2a5da6948f5ad4bc671234e626a0ea03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5da6948f5ad4bc671234e626a0ea03">&#9670;&nbsp;</a></span>eps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::eps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9af91cba48a4d47e150d092c2daf5ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af91cba48a4d47e150d092c2daf5ced">&#9670;&nbsp;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double <a class="el" href="a01577.html">mc_planning::motion_interpolator::InterpolatorBase</a>&lt; T &gt;::scale</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 16 2020 03:28:02 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00770.html">mc_planning</a></li><li class="navelem"><a class="el" href="a00771.html">motion_interpolator</a></li><li class="navelem"><a class="el" href="a01577.html">InterpolatorBase</a></li>
+    <li class="footer">Generated on Wed Jun 17 2020 10:47:05 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

@@ -1,6 +1,5 @@
 var a00176 =
 [
-    [ "CompoundJointConstraintDescription", "a01628.html", "a01628" ],
-    [ "ConfigurationLoader< mc_rbdyn::CompoundJointConstraintDescription >", "a01632.html", "a01632" ],
-    [ "CompoundJointConstraintDescriptionVector", "a00176.html#a96a35f8f44c0b0eb301fabc4af2bd978", null ]
+    [ "Collision", "a01629.html", "a01629" ],
+    [ "operator<<", "a00176.html#aca0a2bc620d221c02c834716d875c1e0", null ]
 ];
