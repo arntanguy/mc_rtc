@@ -6,6 +6,7 @@
 
 #include <mc_rbdyn/Base.h>
 #include <mc_rbdyn/CoM.h>
+#include <mc_rbdyn/Convex.h>
 #include <mc_rbdyn/Frame.h>
 #include <mc_rbdyn/RobotModule.h>
 #include <mc_rbdyn/Surface.h>
@@ -58,19 +59,17 @@ namespace mc_rbdyn
  *
  * Meta outputs:
  *   These outputs are provided for convenience sake
- * - Geometry: depends on CoM (i.e. CoM + FK)
+ * - Geometry: depends on FK
  * - Dynamics: depends on FA + normalAcceleration (i.e. everything)
  *
  */
 struct MC_RBDYN_DLLAPI Robot : public tvm::graph::abstract::Node<Robot>, std::enable_shared_from_this<Robot>
 {
-  SET_OUTPUTS(Robot, FK, FV, FA, NormalAcceleration, tau, H, C, Geometry, Dynamics)
+  SET_OUTPUTS(Robot, FK, FV, FA, NormalAcceleration, tau, H, C)
   SET_UPDATES(Robot, Time, FK, FV, FA, NormalAcceleration, H, C)
 
   friend struct Robots;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-public:
-  using convex_pair_t = std::pair<std::string, S_ObjectPtr>;
 
   Robot(Robot &&) = default;
   Robot & operator=(Robot &&) = default;
@@ -240,42 +239,54 @@ public:
   /** Access MultiBodyGraph that generated the robot's mb() (const) */
   const rbd::MultiBodyGraph & mbg() const;
 
-  /** Equivalent to robot.mbc().q (const) */
-  const std::vector<std::vector<double>> & q() const;
-  /** Equivalent to robot.mbc().alpha (const) */
-  const std::vector<std::vector<double>> & alpha() const;
-  /** Equivalent to robot.mbc().alphaD (const) */
-  const std::vector<std::vector<double>> & alphaD() const;
-  /** Equivalent to robot.mbc().jointTorque (const) */
-  const std::vector<std::vector<double>> & jointTorque() const;
-  /** Equivalent to robot.mbc().bodyPosW (const) */
-  const std::vector<sva::PTransformd> & bodyPosW() const;
-  /** Equivalent to robot.mbc().bodyVelW (const) */
-  const std::vector<sva::MotionVecd> & bodyVelW() const;
-  /** Equivalent to robot.mbc().bodyVelB (const) */
-  const std::vector<sva::MotionVecd> & bodyVelB() const;
-  /** Equivalent to robot.mbc().bodyAccB (const) */
-  const std::vector<sva::MotionVecd> & bodyAccB() const;
   /** Vector of normal acceleration in body coordinates */
   const std::vector<sva::MotionVecd> & normalAccB() const;
-  /** Equivalent to robot.mbc().q */
-  std::vector<std::vector<double>> & q();
-  /** Equivalent to robot.mbc().alpha */
-  std::vector<std::vector<double>> & alpha();
-  /** Equivalent to robot.mbc().alphaD */
-  std::vector<std::vector<double>> & alphaD();
-  /** Equivalent to robot.mbc().jointTorque */
-  std::vector<std::vector<double>> & jointTorque();
-  /** Equivalent to robot.mbc().bodyPosW */
-  std::vector<sva::PTransformd> & bodyPosW();
-  /** Equivalent to robot.mbc().bodyVelW */
-  std::vector<sva::MotionVecd> & bodyVelW();
-  /** Equivalent to robot.mbc().bodyVelB */
-  std::vector<sva::MotionVecd> & bodyVelB();
-  /** Equivalent to robot.mbc().bodyAccB */
-  std::vector<sva::MotionVecd> & bodyAccB();
   /** Vector of normal acceleration in body coordinates */
   std::vector<sva::MotionVecd> & normalAccB();
+
+  /** Access q variable (const) */
+  inline const tvm::VariableVector & q() const noexcept
+  {
+    return q_;
+  }
+  /** Access q variable */
+  inline tvm::VariableVector & q() noexcept
+  {
+    return q_;
+  }
+
+  /** Access floating-base variable (const) */
+  inline const tvm::VariablePtr & qFloatingBase() const noexcept
+  {
+    return q_fb_;
+  }
+  /** Access free-flyer variable */
+  inline tvm::VariablePtr & qFloatingBase() noexcept
+  {
+    return q_fb_;
+  }
+
+  /** Access joints variable (const) */
+  inline const tvm::VariablePtr & qJoints() const noexcept
+  {
+    return q_joints_;
+  }
+  /** Access joints variable */
+  inline tvm::VariablePtr & qJoints() noexcept
+  {
+    return q_joints_;
+  }
+
+  /** Access tau variable (const) */
+  inline const tvm::VariablePtr & tau() const noexcept
+  {
+    return tau_;
+  }
+  /** Access tau variable */
+  inline tvm::VariablePtr & tau()
+  {
+    return tau_;
+  }
 
   /** Returns the CoM algorithm associated to this robot */
   inline const CoMPtr & com() const noexcept
@@ -741,15 +752,18 @@ public:
    * \returns a pair giving the convex's parent body and the sch::Object
    * object
    */
-  Convex & convex(std::string_view cName);
+  ConvexPtr convex(std::string_view cName);
   /** Access a convex named \p cName (const) */
-  const Convex & convex(std::string_view cName) const;
+  ConstConvexPtr convex(std::string_view cName) const;
 
   /** Access all convexes available in this robot
    *
    * \returns a map where keys are the convex name and values are those returned by \ref convex
    */
-  const std::map<std::string, convex_pair_t> & convexes() const;
+  inline const mc_rtc::map<std::string, ConvexPtr> & convexes() const noexcept
+  {
+    return convexes_;
+  }
 
   /** Add a convex online
    *
@@ -757,7 +771,11 @@ public:
    *
    * \param name Name of the convex
    *
-   * \param convex Convex that will be added to the robot
+   * \param object Object used for collision detection
+   *
+   * \param parent Parent frame of the convex
+   *
+   * \param X_f_c Transformation between the convex and its frame
    *
    * \param parent Parent frame
    *
@@ -766,7 +784,10 @@ public:
    * \throws If such a convex already exists within the robot
    *
    */
-  void addConvex(std::string_view name, S_ObjectPtr convex, std::string_view parent, sva::PTransformd X_f_c);
+  ConvexPtr addConvex(std::string_view name,
+                      S_ObjectPtr object,
+                      std::string_view parent,
+                      sva::PTransformd X_f_c = sva::PTransformd::Identity());
 
   /** Remove a given convex
    *
@@ -873,6 +894,18 @@ private:
   std::string name_;
   /** RobotModule that was used to create this robot */
   RobotModule module_;
+  /** Floating-base variable */
+  tvm::VariablePtr q_fb_;
+  /** Joints variable */
+  tvm::VariablePtr q_joints_;
+  /** Generalized configuration variable */
+  tvm::VariableVector q_;
+  /** Derivative of q */
+  tvm::VariableVector dq_;
+  /** Double derivative of q */
+  tvm::VariableVector ddq_;
+  /** Tau variable */
+  tvm::VariablePtr tau_;
   /** Robot's mass */
   double mass_;
   /** Normal accelerations of the bodies */
@@ -955,15 +988,7 @@ protected:
         const std::optional<std::string_view> & baseName = std::nullopt);
 
   /** Copy existing Robot with a new base */
-  RobotPtr copy(RobotModule module, std::string_view name, const Base & base) const;
-  /** Copy existing Robot */
-  RobotPtr copy(RobotModule module, std::string_view name) const;
-
-  /** Used to set the surfaces' X_b_s correctly */
-  void fixSurfaces();
-
-  /** Used to set the collision transforms correctly */
-  void fixCollisionTransforms();
+  RobotPtr copy(std::string_view name, const std::optional<Base> & base = std::nullopt) const;
 
   /**
    * @brief Finds the name of the body to which a force sensor is attached,
@@ -979,12 +1004,20 @@ private:
   Robot(const Robot &) = delete;
   Robot & operator=(const Robot &) = delete;
 
-  /** Set the name of the robot
-   *
-   * \note It is not recommended to call this late in the life cycle of the
-   * Robot object as the change is not communicated in any way.
-   */
-  void name(const std::string & n);
+  void updateFK();
+  void updateFV();
+  void updateFA();
+  void updateNormalAcceleration();
+  void updateH();
+  void updateC();
+
+  void updateAll();
+
+  /** Used internally to access a frame safely and provide context information */
+  FramePtr frame(std::string_view, std::string_view context);
+
+  /** Used internally to access a frame safely and provide context information */
+  ConstFramePtr frame(std::string_view, std::string_view context) const;
 };
 
 } // namespace mc_rbdyn
