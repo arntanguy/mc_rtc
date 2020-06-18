@@ -657,13 +657,35 @@ protected:
   const mc_rbdyn::Robots & realRobots_;
   unsigned int robotIndex_;
 
-  /** Stabilizer targets */
-  Eigen::Vector3d comTarget_ = Eigen::Vector3d::Zero();
-  Eigen::Vector3d comdTarget_ = Eigen::Vector3d::Zero();
-  Eigen::Vector3d comddTarget_ = Eigen::Vector3d::Zero();
-  Eigen::Vector3d zmpTarget_ = Eigen::Vector3d::Zero();
-  Eigen::Vector3d dcmTarget_ = Eigen::Vector3d::Zero();
-  double omega_;
+  /**
+   * @name Stabilizer desired reference (only used for logging)
+   *
+   * These values are set by calling target() or staticTarget().
+   * @note This reference must follow a dynamically consistent trajectory
+   * @{
+   */
+  Eigen::Vector3d comRef_ = Eigen::Vector3d::Zero(); ///< Desired CoM position
+  Eigen::Vector3d comdRef_ = Eigen::Vector3d::Zero(); ///< Desired CoM velocity
+  Eigen::Vector3d comddRef_ = Eigen::Vector3d::Zero(); ///< Desired CoM acceleration
+  Eigen::Vector3d zmpRef_ = Eigen::Vector3d::Zero(); ///< Desired ZMP target
+  Eigen::Vector3d dcmRef_ = Eigen::Vector3d::Zero(); ///< Desired DCM
+  double omega_ = 0.; ///< Pendulum frequency
+  ///@}
+
+  /**
+   * @name Computed stabilized targets
+   *
+   * - comTarget_, comdTarget_ and comddTarget_ are modified by ZMPCC
+   * - zmpTarget_ is the result of wrench distribution
+   * - dcmTarget_ is computed from the above values
+   * @{
+   **/
+  Eigen::Vector3d comTarget_ = Eigen::Vector3d::Zero(); ///< Stabilized CoM position
+  Eigen::Vector3d comdTarget_ = Eigen::Vector3d::Zero(); ///< Stabilized CoM velocity
+  Eigen::Vector3d comddTarget_ = Eigen::Vector3d::Zero(); ///< Stabilized CoM acceleration
+  Eigen::Vector3d zmpTarget_ = Eigen::Vector3d::Zero(); ///< Stabilized ZMP (after wrench distribution)
+  Eigen::Vector3d dcmTarget_ = Eigen::Vector3d::Zero(); ///< Stabilized DCM
+  /// @}
 
   double t_ = 0.; /**< Time elapsed since the task is running */
 
@@ -689,6 +711,9 @@ protected:
   Eigen::Vector3d measuredZMP_ = Eigen::Vector3d::Zero();
   Eigen::Vector3d measuredDCM_ = Eigen::Vector3d::Zero();
   sva::ForceVecd measuredNetWrench_ = sva::ForceVecd::Zero();
+
+  Eigen::Vector3d desiredZMP_ = Eigen::Vector3d::Zero(); ///< Desired ZMP based on DCM error
+  Eigen::Vector3d distributedZMP_ = Eigen::Vector3d::Zero(); ///< Distributed desired ZMP (target)
 
   bool zmpccOnlyDS_ = true; /**< Only apply ZMPCC in double support */
   ZMPCC zmpcc_; /**< Compute CoM offset due to ZMPCC compensation */

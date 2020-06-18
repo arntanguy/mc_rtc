@@ -578,6 +578,13 @@ void StabilizerTask::target(const Eigen::Vector3d & com,
   zmpTarget_ = zmp;
   omega_ = std::sqrt(constants::gravity.z() / comTarget_.z());
   dcmTarget_ = comTarget_ + comdTarget_ / omega_;
+
+  // Only stored for logging purposes
+  comRef_ = com;
+  comdRef_ = comd;
+  comddRef_ = comdd;
+  zmpRef_ = zmp;
+  dcmRef_ = dcmTarget_;
 }
 
 void StabilizerTask::run()
@@ -625,7 +632,8 @@ void StabilizerTask::run()
     saturateWrench(desiredWrench, footTasks[ContactState::Right], contacts_.at(ContactState::Right));
     footTasks[ContactState::Left]->setZeroTargetWrench();
   }
-
+  // Distributed ZMP
+  zmpTarget_ = mc_rbdyn::zmp(desiredWrench, zmpFrame_, MIN_NET_TOTAL_FORCE_ZMP);
   updateCoMTaskZMPCC();
   updateFootForceDifferenceControl();
 
@@ -860,12 +868,14 @@ void StabilizerTask::updateCoMTaskZMPCC()
   }
   else
   {
-    auto distribZMP = mc_rbdyn::zmp(distribWrench_, zmpFrame_);
     zmpcc_.configure(c_.zmpcc);
     zmpcc_.enabled(enabled_);
-    zmpcc_.update(distribZMP, measuredZMP_, zmpFrame_, dt_);
+    // Distributed ZMP
+    zmpcc_.update(zmpTarget_, measuredZMP_, zmpFrame_, dt_);
   }
   zmpcc_.apply(comTarget_, comdTarget_, comddTarget_);
+  // Update the DCM target based on ZMPCC result
+  dcmTarget_ = comTarget_ + comdTarget_ / omega_;
 }
 
 void StabilizerTask::updateFootForceDifferenceControl()

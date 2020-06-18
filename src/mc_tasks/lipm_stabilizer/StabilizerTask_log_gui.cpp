@@ -265,12 +265,19 @@ void StabilizerTask::addToLogger(mc_rtc::Logger & logger)
   logger.addLogEntry(name_ + "_left_foot_ratio", [this]() { return leftFootRatio_; });
 
   // Stabilizer targets
-  logger.addLogEntry(name_ + "_target_pendulum_com", [this]() { return comTarget_; });
-  logger.addLogEntry(name_ + "_target_pendulum_comd", [this]() { return comdTarget_; });
-  logger.addLogEntry(name_ + "_target_pendulum_comdd", [this]() { return comddTarget_; });
-  logger.addLogEntry(name_ + "_target_pendulum_dcm", [this]() { return dcmTarget_; });
-  logger.addLogEntry(name_ + "_target_pendulum_omega", [this]() { return omega_; });
-  logger.addLogEntry(name_ + "_target_pendulum_zmp", [this]() { return zmpTarget_; });
+  logger.addLogEntry(name_ + "_reference_com", [this]() { return comRef_; });
+  logger.addLogEntry(name_ + "_reference_comd", [this]() { return comdRef_; });
+  logger.addLogEntry(name_ + "_reference_comdd", [this]() { return comddRef_; });
+  logger.addLogEntry(name_ + "_reference_dcm", [this]() { return dcmRef_; });
+  logger.addLogEntry(name_ + "_reference_omega", [this]() { return omega_; });
+  logger.addLogEntry(name_ + "_reference_zmp", [this]() { return zmpRef_; });
+
+  // Stabilizer results
+  logger.addLogEntry(name_ + "_stabilized_com", [this]() { return comTarget_; });
+  logger.addLogEntry(name_ + "_stabilized_comd", [this]() { return comdTarget_; });
+  logger.addLogEntry(name_ + "_stabilized_comdd", [this]() { return comddTarget_; });
+  logger.addLogEntry(name_ + "_stabilized_dcm", [this]() { return dcmTarget_; });
+  logger.addLogEntry(name_ + "_stabilized_zmp", [this]() { return zmpTarget_; });
 
   logger.addLogEntry(name_ + "_contactState", [this]() -> double {
     if(inDoubleSupport())
@@ -338,12 +345,18 @@ void StabilizerTask::removeFromLogger(mc_rtc::Logger & logger)
   logger.removeLogEntry(name_ + "_support_min");
   logger.removeLogEntry(name_ + "_support_max");
   logger.removeLogEntry(name_ + "_left_foot_ratio");
-  logger.removeLogEntry(name_ + "_target_pendulum_com");
-  logger.removeLogEntry(name_ + "_target_pendulum_comd");
-  logger.removeLogEntry(name_ + "_target_pendulum_comdd");
-  logger.removeLogEntry(name_ + "_target_pendulum_dcm");
-  logger.removeLogEntry(name_ + "_target_pendulum_omega");
-  logger.removeLogEntry(name_ + "_target_pendulum_zmp");
+  logger.removeLogEntry(name_ + "_reference_com");
+  logger.removeLogEntry(name_ + "_reference_comd");
+  logger.removeLogEntry(name_ + "_reference_comdd");
+  logger.removeLogEntry(name_ + "_reference_dcm");
+  logger.removeLogEntry(name_ + "_reference_omega");
+  logger.removeLogEntry(name_ + "_reference_zmp");
+  logger.removeLogEntry(name_ + "_stabilized_com");
+  logger.removeLogEntry(name_ + "_stabilized_comd");
+  logger.removeLogEntry(name_ + "_stabilized_comdd");
+  logger.removeLogEntry(name_ + "_stabilized_dcm");
+  logger.removeLogEntry(name_ + "_stabilized_omega");
+  logger.removeLogEntry(name_ + "_stabilized_zmp");
   logger.removeLogEntry(name_ + "_controlRobot_LeftFoot");
   logger.removeLogEntry(name_ + "_controlRobot_RightFoot");
   logger.removeLogEntry(name_ + "_controlRobot_com");
