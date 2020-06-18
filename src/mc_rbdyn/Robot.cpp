@@ -38,7 +38,7 @@ using accelerationBounds_t = std::tuple<bound_t, bound_t>;
 using jerkBounds_t = std::tuple<bound_t, bound_t>;
 using torqueDerivativeBounds_t = std::tuple<bound_t, bound_t>;
 using rm_bounds_t = mc_rbdyn::RobotModule::bounds_t;
-using rm_bound_t = rm_bounds_t::value_type;
+using rm_bound_t = mc_rbdyn::RobotModule::bound_t;;
 
 using jt_method = int (rbd::Joint::*)() const;
 
@@ -1126,12 +1126,13 @@ RobotPtr Robot::copy(std::string_view name, const std::optional<Base> & base) co
   std::shared_ptr<Robot> robot_ptr;
   if(base)
   {
-    robot_ptr = std::allocate_shared<Robot>(Eigen::aligned_allocator<Robot>{}, module_, name, false, base.value().X_0_s,
-                                            base.value().baseName);
+    robot_ptr = std::allocate_shared<Robot>(Eigen::aligned_allocator<Robot>{}, make_shared_token{}, module_, name,
+                                            false, base.value().X_0_s, base.value().baseName);
   }
   else
   {
-    robot_ptr = std::allocate_shared<Robot>(Eigen::aligned_allocator<Robot>{}, module_, name, false);
+    robot_ptr =
+        std::allocate_shared<Robot>(Eigen::aligned_allocator<Robot>{}, make_shared_token{}, module_, name, false);
   }
   auto & robot = *robot_ptr;
   for(const auto & f_it : frames_)

@@ -3,6 +3,7 @@
  */
 
 #pragma once
+
 /** This file holds all mc_rtc::Configuration based serialization operation for mc_rbdyn objects */
 
 #include <mc_rtc/Configuration.h>
@@ -18,18 +19,6 @@
 #include <mc_rbdyn/Springs.h>
 #include <mc_rbdyn/polygon_utils.h>
 
-#include <Tasks/QPTasks.h>
-
-/* Serialized/deserialized from/to shared pointers */
-#include <mc_rbdyn/CylindricalSurface.h>
-#include <mc_rbdyn/GripperSurface.h>
-#include <mc_rbdyn/PlanarSurface.h>
-
-/* Serialized/deserialized from/to shared pointers */
-#include <sch-core/S_Object.h>
-
-/* Require a Robots instance to be deserialized */
-#include <mc_rbdyn/Contact.h>
 #include <mc_rtc/logging.h>
 
 #include <fstream>
@@ -56,8 +45,6 @@ DECLARE_IO(rbd::Body)
 DECLARE_IO(rbd::MultiBody)
 DECLARE_IO(rbd::MultiBodyConfig)
 
-DECLARE_IO(tasks::qp::JointGains)
-
 DECLARE_IO(rbd::parsers::Geometry::Box)
 DECLARE_IO(rbd::parsers::Geometry::Cylinder)
 DECLARE_IO(rbd::parsers::Geometry::Sphere)
@@ -74,10 +61,6 @@ DECLARE_IO(mc_rbdyn::S_ObjectPtr)
 DECLARE_IO(mc_rbdyn::Base)
 DECLARE_IO(mc_rbdyn::BodySensor)
 DECLARE_IO(mc_rbdyn::Collision)
-DECLARE_IO(std::shared_ptr<mc_rbdyn::Surface>)
-DECLARE_IO(std::shared_ptr<mc_rbdyn::PlanarSurface>)
-DECLARE_IO(std::shared_ptr<mc_rbdyn::CylindricalSurface>)
-DECLARE_IO(std::shared_ptr<mc_rbdyn::GripperSurface>)
 DECLARE_IO(mc_rbdyn::Flexibility)
 DECLARE_IO(mc_rbdyn::ForceSensor)
 DECLARE_IO(mc_rbdyn::Plane)
@@ -107,13 +90,6 @@ struct MC_RBDYN_DLLAPI ConfigurationLoader<mc_rbdyn::RobotModulePtr>
                                     bool save_mbc = true,
                                     const std::vector<std::string> & filteredLinks = {},
                                     bool fixed = false);
-};
-
-template<>
-struct MC_RBDYN_DLLAPI ConfigurationLoader<mc_rbdyn::Contact>
-{
-  static mc_rbdyn::Contact load(const mc_rtc::Configuration &, const mc_rbdyn::Robots &);
-  static mc_rtc::Configuration save(const mc_rbdyn::Contact &);
 };
 
 } // namespace mc_rtc
