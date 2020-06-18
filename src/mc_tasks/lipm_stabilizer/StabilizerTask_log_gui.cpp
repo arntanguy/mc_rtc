@@ -355,7 +355,6 @@ void StabilizerTask::removeFromLogger(mc_rtc::Logger & logger)
   logger.removeLogEntry(name_ + "_stabilized_comd");
   logger.removeLogEntry(name_ + "_stabilized_comdd");
   logger.removeLogEntry(name_ + "_stabilized_dcm");
-  logger.removeLogEntry(name_ + "_stabilized_omega");
   logger.removeLogEntry(name_ + "_stabilized_zmp");
   logger.removeLogEntry(name_ + "_controlRobot_LeftFoot");
   logger.removeLogEntry(name_ + "_controlRobot_RightFoot");
