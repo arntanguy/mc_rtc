@@ -980,29 +980,41 @@ class MCLogUI(QtWidgets.QMainWindow):
     self.ui.tabWidget.currentWidget().activeCanvas.axesDialog()
 
   def load_csv(self, fpath):
-    self.data = Data(read_log(fpath))
-    self.data.data_updated.connect(self.update_data)
-    i = 0
-    while "qIn_{}".format(i) in self.data and "qOut_{}".format(i) in self.data:
-      self.data["error_q_{}".format(i)] = self.data["qOut_{}".format(i)] - self.data["qIn_{}".format(i)]
-      self.data["qIn_limits_lower_{}".format(i)] = np.full_like(self.data["qIn_{}".format(i)], 0)
-      self.data["qIn_limits_upper_{}".format(i)] = np.full_like(self.data["qIn_{}".format(i)], 0)
-      self.data["qOut_limits_lower_{}".format(i)] = self.data["qIn_limits_lower_{}".format(i)]
-      self.data["qOut_limits_upper_{}".format(i)] = self.data["qIn_limits_upper_{}".format(i)]
-      i += 1
-    i = 0
-    while "tauIn_{}".format(i) in self.data:
-      self.data["tauIn_limits_lower_{}".format(i)] = np.full_like(self.data["tauIn_{}".format(i)], 0)
-      self.data["tauIn_limits_upper_{}".format(i)] = np.full_like(self.data["tauIn_{}".format(i)], 0)
-      i += 1
-    while "tauOut_{}".format(i) in self.data:
-      self.data["tauOut_limits_lower_{}".format(i)] = np.full_like(self.data["tauOut_{}".format(i)], 0)
-      self.data["tauOut_limits_upper_{}".format(i)] = np.full_like(self.data["tauOut_{}".format(i)], 0)
-      i += 1
-    if 'perf_SolverBuildAndSolve' in self.data and 'perf_SolverSolve' in self.data:
-      self.data['perf_SolverBuild'] = self.data['perf_SolverBuildAndSolve'] - self.data['perf_SolverSolve']
-    self.update_data()
-    self.setWindowTitle("MC Log Plotter - {}".format(os.path.basename(fpath)))
+    self.data = read_log(fpath)
+    if len(self.data) <= 1:
+      error = "Error: invalid log file {}\nThe log file must containt more than one entry (current keys: {})".format(fpath,self.data.keys())
+      if self.isVisible():
+        err_diag = QtWidgets.QMessageBox(self)
+        err_diag.setModal(True)
+        err_diag.setText(error)
+        err_diag.exec_()
+      else:
+        print(error)
+        self.close()
+        exit(1)
+    else:
+      self.data.data_updated.connect(self.update_data)
+      i = 0
+      while "qIn_{}".format(i) in self.data and "qOut_{}".format(i) in self.data:
+        self.data["error_q_{}".format(i)] = self.data["qOut_{}".format(i)] - self.data["qIn_{}".format(i)]
+        self.data["qIn_limits_lower_{}".format(i)] = np.full_like(self.data["qIn_{}".format(i)], 0)
+        self.data["qIn_limits_upper_{}".format(i)] = np.full_like(self.data["qIn_{}".format(i)], 0)
+        self.data["qOut_limits_lower_{}".format(i)] = self.data["qIn_limits_lower_{}".format(i)]
+        self.data["qOut_limits_upper_{}".format(i)] = self.data["qIn_limits_upper_{}".format(i)]
+        i += 1
+      i = 0
+      while "tauIn_{}".format(i) in self.data:
+        self.data["tauIn_limits_lower_{}".format(i)] = np.full_like(self.data["tauIn_{}".format(i)], 0)
+        self.data["tauIn_limits_upper_{}".format(i)] = np.full_like(self.data["tauIn_{}".format(i)], 0)
+        i += 1
+      while "tauOut_{}".format(i) in self.data:
+        self.data["tauOut_limits_lower_{}".format(i)] = np.full_like(self.data["tauOut_{}".format(i)], 0)
+        self.data["tauOut_limits_upper_{}".format(i)] = np.full_like(self.data["tauOut_{}".format(i)], 0)
+        i += 1
+      if 'perf_SolverBuildAndSolve' in self.data and 'perf_SolverSolve' in self.data:
+        self.data['perf_SolverBuild'] = self.data['perf_SolverBuildAndSolve'] - self.data['perf_SolverSolve']
+      self.update_data()
+      self.setWindowTitle("MC Log Plotter - {}".format(os.path.basename(fpath)))
 
   def setColorsScheme(self, scheme):
     self.colorsScheme = scheme
