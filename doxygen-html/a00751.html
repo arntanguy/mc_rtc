@@ -124,7 +124,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01633.html">ConfigurationLoader&lt; mc_rbdyn::RobotModulePtr &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02377.html">ConfigurationLoader&lt; mc_tasks::lipm_stabilizer::ContactState &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02381.html">ConfigurationLoader&lt; mc_tasks::lipm_stabilizer::ContactState &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01777.html">ConfigurationLoader&lt; void &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,13 +147,16 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around lt_dlhandle.  <a href="a02097.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02153.html">measure</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">@ class measure @ brief Class to measure the execution time of a callable  <a href="a02153.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to measure the execution time of a callable.  <a href="a02153.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02149.html">MessagePackBuilder</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to build a MessagePack message.  <a href="a02149.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02089.html">ObjectLoader</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ltdl wrapper for factory-like classes  <a href="a02089.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02157.html">Stopwatch</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to measure execution time.  <a href="a02157.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -164,8 +167,18 @@ Typedefs</h2></td></tr>
 <tr class="separator:a2553c85ef1b4ffa76b14a245d200b453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a852f3a96e5f08ba4981cc528501f1e8c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#a852f3a96e5f08ba4981cc528501f1e8c">measure_ms</a> = <a class="el" href="a02153.html">measure</a>&lt; std::chrono::duration&lt; double, std::milli &gt; &gt;</td></tr>
 <tr class="separator:a852f3a96e5f08ba4981cc528501f1e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb369274cec45cacdcb7374c1c7804b6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#acb369274cec45cacdcb7374c1c7804b6">measure_us</a> = <a class="el" href="a02153.html">measure</a>&lt; std::chrono::duration&lt; double, std::micro &gt; &gt;</td></tr>
+<tr class="separator:acb369274cec45cacdcb7374c1c7804b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec9c84f7ea66cc456dfa85636344fb9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#acec9c84f7ea66cc456dfa85636344fb9">measure_ns</a> = <a class="el" href="a02153.html">measure</a>&lt; std::chrono::duration&lt; double, std::nano &gt; &gt;</td></tr>
 <tr class="separator:acec9c84f7ea66cc456dfa85636344fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc48dbd13596ceb3d88a6933ef886458"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#adc48dbd13596ceb3d88a6933ef886458">Stopwatch_s</a> = <a class="el" href="a02157.html">Stopwatch</a>&lt; std::chrono::duration&lt; double &gt; &gt;</td></tr>
+<tr class="separator:adc48dbd13596ceb3d88a6933ef886458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39039334fed0bc8d6738bdd72ada5000"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#a39039334fed0bc8d6738bdd72ada5000">Stopwatch_ms</a> = <a class="el" href="a02157.html">Stopwatch</a>&lt; std::chrono::duration&lt; double, std::milli &gt; &gt;</td></tr>
+<tr class="separator:a39039334fed0bc8d6738bdd72ada5000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046b2155022f3bc75cabae91bba83fe7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#a046b2155022f3bc75cabae91bba83fe7">Stopwatch_us</a> = <a class="el" href="a02157.html">Stopwatch</a>&lt; std::chrono::duration&lt; double, std::micro &gt; &gt;</td></tr>
+<tr class="separator:a046b2155022f3bc75cabae91bba83fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2780be3eebf07a0b0b4a38418acc91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00751.html#abe2780be3eebf07a0b0b4a38418acc91">Stopwatch_ns</a> = <a class="el" href="a02157.html">Stopwatch</a>&lt; std::chrono::duration&lt; double, std::nano &gt; &gt;</td></tr>
+<tr class="separator:abe2780be3eebf07a0b0b4a38418acc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -264,6 +277,76 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="a00751.html#a2553c85ef1b4ffa76b14a245d200b453">mc_rtc::measure_s</a> = typedef <a class="el" href="a02153.html">measure</a>&lt;std::chrono::duration&lt;double&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb369274cec45cacdcb7374c1c7804b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb369274cec45cacdcb7374c1c7804b6">&#9670;&nbsp;</a></span>measure_us</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a00751.html#acb369274cec45cacdcb7374c1c7804b6">mc_rtc::measure_us</a> = typedef <a class="el" href="a02153.html">measure</a>&lt;std::chrono::duration&lt;double, std::micro&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39039334fed0bc8d6738bdd72ada5000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39039334fed0bc8d6738bdd72ada5000">&#9670;&nbsp;</a></span>Stopwatch_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a00751.html#a39039334fed0bc8d6738bdd72ada5000">mc_rtc::Stopwatch_ms</a> = typedef <a class="el" href="a02157.html">Stopwatch</a>&lt;std::chrono::duration&lt;double, std::milli&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe2780be3eebf07a0b0b4a38418acc91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2780be3eebf07a0b0b4a38418acc91">&#9670;&nbsp;</a></span>Stopwatch_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a00751.html#abe2780be3eebf07a0b0b4a38418acc91">mc_rtc::Stopwatch_ns</a> = typedef <a class="el" href="a02157.html">Stopwatch</a>&lt;std::chrono::duration&lt;double, std::nano&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc48dbd13596ceb3d88a6933ef886458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc48dbd13596ceb3d88a6933ef886458">&#9670;&nbsp;</a></span>Stopwatch_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a00751.html#adc48dbd13596ceb3d88a6933ef886458">mc_rtc::Stopwatch_s</a> = typedef <a class="el" href="a02157.html">Stopwatch</a>&lt;std::chrono::duration&lt;double&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a046b2155022f3bc75cabae91bba83fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046b2155022f3bc75cabae91bba83fe7">&#9670;&nbsp;</a></span>Stopwatch_us</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a00751.html#a046b2155022f3bc75cabae91bba83fe7">mc_rtc::Stopwatch_us</a> = typedef <a class="el" href="a02157.html">Stopwatch</a>&lt;std::chrono::duration&lt;double, std::micro&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -582,7 +665,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00751.html">mc_rtc</a></li>
-    <li class="footer">Generated on Wed Jun 17 2020 10:44:15 for mc_rtc by
+    <li class="footer">Generated on Fri Jun 19 2020 09:40:27 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

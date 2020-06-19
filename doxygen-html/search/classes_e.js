@@ -11,5 +11,5 @@ var searchData=
   ['observerloader',['ObserverLoader',['../a01557.html',1,'mc_observers']]],
   ['ordinate',['Ordinate',['../a01993.html',1,'mc_rtc::gui::plot::impl']]],
   ['ordinatewithcolor',['OrdinateWithColor',['../a01997.html',1,'mc_rtc::gui::plot::impl']]],
-  ['orientationtask',['OrientationTask',['../a02425.html',1,'mc_tasks']]]
+  ['orientationtask',['OrientationTask',['../a02429.html',1,'mc_tasks']]]
 ];

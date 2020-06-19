@@ -84,22 +84,43 @@ $(document).ready(function(){initNavTree('a01569.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3e2ccebf2866065e7ad809ef03b28471"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a3e2ccebf2866065e7ad809ef03b28471">generator</a> (int n_preview, double dt, double mass=60, double waist_height=0.8)</td></tr>
-<tr class="memdesc:a3e2ccebf2866065e7ad809ef03b28471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a simple trajectory generator.  <a href="#a3e2ccebf2866065e7ad809ef03b28471">More...</a><br /></td></tr>
-<tr class="separator:a3e2ccebf2866065e7ad809ef03b28471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a565933c7147f4ab0b1ce3cbf8419de3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a565933c7147f4ab0b1ce3cbf8419de3a">generate</a> (int n_time)</td></tr>
-<tr class="memdesc:a565933c7147f4ab0b1ce3cbf8419de3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the long and short term trajectories.  <a href="#a565933c7147f4ab0b1ce3cbf8419de3a">More...</a><br /></td></tr>
-<tr class="separator:a565933c7147f4ab0b1ce3cbf8419de3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e818bb019e6aa806a3cc923c5d0698a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; Eigen::Vector3d &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a7e818bb019e6aa806a3cc923c5d0698a">Steps</a> () const</td></tr>
-<tr class="memdesc:a7e818bb019e6aa806a3cc923c5d0698a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desired steps.  <a href="#a7e818bb019e6aa806a3cc923c5d0698a">More...</a><br /></td></tr>
-<tr class="separator:a7e818bb019e6aa806a3cc923c5d0698a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b2d43c1995b1c210c8601fdc337a460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a8b2d43c1995b1c210c8601fdc337a460">setSteps</a> (const std::vector&lt; Eigen::Vector3d &gt; &amp;steps)</td></tr>
-<tr class="memdesc:a8b2d43c1995b1c210c8601fdc337a460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets desired reference steps as (time, CoM X, CoM Y)  <a href="#a8b2d43c1995b1c210c8601fdc337a460">More...</a><br /></td></tr>
-<tr class="separator:a8b2d43c1995b1c210c8601fdc337a460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3334e1082e978f233ec380647f3d4865"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a3334e1082e978f233ec380647f3d4865">generator</a> (unsigned n_preview, double dt, double mass=60, double waist_height=0.8)</td></tr>
+<tr class="memdesc:a3334e1082e978f233ec380647f3d4865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a simple trajectory generator.  <a href="#a3334e1082e978f233ec380647f3d4865">More...</a><br /></td></tr>
+<tr class="separator:a3334e1082e978f233ec380647f3d4865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59095b464714920e5614711b25484d28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a59095b464714920e5614711b25484d28">generate</a> (unsigned n_time)</td></tr>
+<tr class="memdesc:a59095b464714920e5614711b25484d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the long and short term trajectories.  <a href="#a59095b464714920e5614711b25484d28">More...</a><br /></td></tr>
+<tr class="separator:a59095b464714920e5614711b25484d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af91378bd2c5122c5bc406b3195a0b0a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#af91378bd2c5122c5bc406b3195a0b0a8">addToLogger</a> (<a class="el" href="a02137.html">mc_rtc::Logger</a> &amp;logger)</td></tr>
+<tr class="memdesc:af91378bd2c5122c5bc406b3195a0b0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to Logger.  <a href="#af91378bd2c5122c5bc406b3195a0b0a8">More...</a><br /></td></tr>
+<tr class="separator:af91378bd2c5122c5bc406b3195a0b0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f09c7bc2f7a1bd911fda862411a7670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a8f09c7bc2f7a1bd911fda862411a7670">removeFromLogger</a> (<a class="el" href="a02137.html">mc_rtc::Logger</a> &amp;logger)</td></tr>
+<tr class="memdesc:a8f09c7bc2f7a1bd911fda862411a7670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove from Logger.  <a href="#a8f09c7bc2f7a1bd911fda862411a7670">More...</a><br /></td></tr>
+<tr class="separator:a8f09c7bc2f7a1bd911fda862411a7670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7139a70fcfa6120e02986f507cd508ae"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; Eigen::Vector3d &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a7139a70fcfa6120e02986f507cd508ae">steps</a> () const</td></tr>
+<tr class="memdesc:a7139a70fcfa6120e02986f507cd508ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desired steps.  <a href="#a7139a70fcfa6120e02986f507cd508ae">More...</a><br /></td></tr>
+<tr class="separator:a7139a70fcfa6120e02986f507cd508ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58ef808ce616d11b9cacadc739241ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#ad58ef808ce616d11b9cacadc739241ab">steps</a> (const std::vector&lt; Eigen::Vector3d &gt; &amp;steps)</td></tr>
+<tr class="memdesc:ad58ef808ce616d11b9cacadc739241ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets desired reference steps as (time, CoM X, CoM Y)  <a href="#ad58ef808ce616d11b9cacadc739241ab">More...</a><br /></td></tr>
+<tr class="separator:ad58ef808ce616d11b9cacadc739241ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c605aa30bc787c93efe260e0349ee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a65c605aa30bc787c93efe260e0349ee6">changeFutureSteps</a> (unsigned n_time, const std::vector&lt; Eigen::Vector3d &gt; &amp;futureSteps)</td></tr>
+<tr class="memdesc:a65c605aa30bc787c93efe260e0349ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">WIP: Change future steps and ensures continuous trajectory.  <a href="#a65c605aa30bc787c93efe260e0349ee6">More...</a><br /></td></tr>
+<tr class="separator:a65c605aa30bc787c93efe260e0349ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32216ece17ce98cbc4bf8dc5a118e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#ac32216ece17ce98cbc4bf8dc5a118e69">push_back</a> (const Eigen::Vector3d &amp;step)</td></tr>
 <tr class="memdesc:ac32216ece17ce98cbc4bf8dc5a118e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a step.  <a href="#ac32216ece17ce98cbc4bf8dc5a118e69">More...</a><br /></td></tr>
 <tr class="separator:ac32216ece17ce98cbc4bf8dc5a118e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Accessors</div></td></tr>
+<tr class="memitem:afb57c98a86e9dce1a76b3021fbde4ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#afb57c98a86e9dce1a76b3021fbde4ec8">polesX</a> (const Eigen::Vector3d &amp;poles)</td></tr>
+<tr class="memdesc:afb57c98a86e9dce1a76b3021fbde4ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the poles for the short-term trajectory.  <a href="#afb57c98a86e9dce1a76b3021fbde4ec8">More...</a><br /></td></tr>
+<tr class="separator:afb57c98a86e9dce1a76b3021fbde4ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3f946e65fa60393368d82e3d791986"><td class="memItemLeft" align="right" valign="top">const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#afc3f946e65fa60393368d82e3d791986">polesX</a> () const</td></tr>
+<tr class="memdesc:afc3f946e65fa60393368d82e3d791986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the short-term trajectory poles.  <a href="#afc3f946e65fa60393368d82e3d791986">More...</a><br /></td></tr>
+<tr class="separator:afc3f946e65fa60393368d82e3d791986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d72a39168321ccb40112ec319924a81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a8d72a39168321ccb40112ec319924a81">polesY</a> (const Eigen::Vector3d &amp;poles)</td></tr>
+<tr class="memdesc:a8d72a39168321ccb40112ec319924a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the poles for the short-term trajectory.  <a href="#a8d72a39168321ccb40112ec319924a81">More...</a><br /></td></tr>
+<tr class="separator:a8d72a39168321ccb40112ec319924a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bdb6659b701bb0a812692a90599027"><td class="memItemLeft" align="right" valign="top">const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a95bdb6659b701bb0a812692a90599027">polesY</a> () const</td></tr>
+<tr class="memdesc:a95bdb6659b701bb0a812692a90599027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the short-term trajectory poles.  <a href="#a95bdb6659b701bb0a812692a90599027">More...</a><br /></td></tr>
+<tr class="separator:a95bdb6659b701bb0a812692a90599027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26465fa9dd5ebe63e53208d4f15668f5"><td class="memItemLeft" align="right" valign="top">const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a26465fa9dd5ebe63e53208d4f15668f5">IdealCOGPosition</a> () const</td></tr>
 <tr class="separator:a26465fa9dd5ebe63e53208d4f15668f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72016f0cdf5a726bef638801ce932cc5"><td class="memItemLeft" align="right" valign="top">const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01569.html#a72016f0cdf5a726bef638801ce932cc5">IdealCOGVelocity</a> () const</td></tr>
@@ -131,10 +152,13 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility class to generate long and short term trajectories for the CoM. </p>
-<p>Generate trajectories as introduced in: <b>Online 3D CoM Trajectory Generation for Multi-Contact Locomotion Synchronizing Contact</b>, <em>Mitsuharu Morisawa et al., IROS 2018</em> </p>
+<p>Generate trajectories as introduced in: <b>Online 3D CoM Trajectory Generation for Multi-Contact Locomotion Synchronizing Contact</b>, <em>Mitsuharu Morisawa et al., IROS 2018</em></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01585.html" title="Reference CoM position and velocity trajectory generation. ">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum</a> long-term trajectory generation </dd>
+<dd>
+<a class="el" href="a01597.html">mc_planning::linear_control_system::LIPMControlByPoleAssignWithExternalForce</a> short-term trajectory generation to continuously track the long-term trajectory </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3e2ccebf2866065e7ad809ef03b28471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e2ccebf2866065e7ad809ef03b28471">&#9670;&nbsp;</a></span>generator()</h2>
+<a id="a3334e1082e978f233ec380647f3d4865"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3334e1082e978f233ec380647f3d4865">&#9670;&nbsp;</a></span>generator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +166,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">mc_planning::generator::generator </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>n_preview</em>, </td>
         </tr>
         <tr>
@@ -183,6 +207,71 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af91378bd2c5122c5bc406b3195a0b0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af91378bd2c5122c5bc406b3195a0b0a8">&#9670;&nbsp;</a></span>addToLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_planning::generator::addToLogger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02137.html">mc_rtc::Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add to Logger. </p>
+
+</div>
+</div>
+<a id="a65c605aa30bc787c93efe260e0349ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c605aa30bc787c93efe260e0349ee6">&#9670;&nbsp;</a></span>changeFutureSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_planning::generator::changeFutureSteps </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>n_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Eigen::Vector3d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>futureSteps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>WIP: Change future steps and ensures continuous trajectory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n_time</td><td>Start of the preview window </td></tr>
+    <tr><td class="paramname">futureSteps</td><td>Future steps </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6f6b2b43da874bf1a59dfec48d37ce48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f6b2b43da874bf1a59dfec48d37ce48">&#9670;&nbsp;</a></span>CompensatedCOGAcceleration()</h2>
 
@@ -308,8 +397,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a565933c7147f4ab0b1ce3cbf8419de3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a565933c7147f4ab0b1ce3cbf8419de3a">&#9670;&nbsp;</a></span>generate()</h2>
+<a id="a59095b464714920e5614711b25484d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59095b464714920e5614711b25484d28">&#9670;&nbsp;</a></span>generate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +406,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void mc_planning::generator::generate </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>n_time</em></td><td>)</td>
           <td></td>
         </tr>
@@ -559,6 +648,124 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="afb57c98a86e9dce1a76b3021fbde4ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb57c98a86e9dce1a76b3021fbde4ec8">&#9670;&nbsp;</a></span>polesX() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_planning::generator::polesX </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramname"><em>poles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the poles for the short-term trajectory. </p>
+<p>Typical values range from \( [1,1,150] \) to \( [1,1,300] \). The bigger the poles are, the more the faster the short-term trajectory will converge to the long-term trajectory. Too high a value could lead to jerk when the long-term trajectory is not continuous</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">poles</td><td>Poles for the short-term trajectory </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc3f946e65fa60393368d82e3d791986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3f946e65fa60393368d82e3d791986">&#9670;&nbsp;</a></span>polesX() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::Vector3d&amp; mc_planning::generator::polesX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the short-term trajectory poles. </p>
+
+</div>
+</div>
+<a id="a8d72a39168321ccb40112ec319924a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d72a39168321ccb40112ec319924a81">&#9670;&nbsp;</a></span>polesY() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_planning::generator::polesY </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramname"><em>poles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the poles for the short-term trajectory. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01569.html#afb57c98a86e9dce1a76b3021fbde4ec8" title="Sets the poles for the short-term trajectory. ">polesX(const Eigen::Vector3d &amp; poles)</a> </dd></dl>
+
+</div>
+</div>
+<a id="a95bdb6659b701bb0a812692a90599027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95bdb6659b701bb0a812692a90599027">&#9670;&nbsp;</a></span>polesY() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::Vector3d&amp; mc_planning::generator::polesY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the short-term trajectory poles. </p>
+
+</div>
+</div>
 <a id="ac32216ece17ce98cbc4bf8dc5a118e69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac32216ece17ce98cbc4bf8dc5a118e69">&#9670;&nbsp;</a></span>push_back()</h2>
 
@@ -586,8 +793,28 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b2d43c1995b1c210c8601fdc337a460"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b2d43c1995b1c210c8601fdc337a460">&#9670;&nbsp;</a></span>setSteps()</h2>
+<a id="a8f09c7bc2f7a1bd911fda862411a7670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f09c7bc2f7a1bd911fda862411a7670">&#9670;&nbsp;</a></span>removeFromLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_planning::generator::removeFromLogger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02137.html">mc_rtc::Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove from Logger. </p>
+
+</div>
+</div>
+<a id="a7139a70fcfa6120e02986f507cd508ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7139a70fcfa6120e02986f507cd508ae">&#9670;&nbsp;</a></span>steps() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -596,7 +823,35 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mc_planning::generator::setSteps </td>
+          <td class="memname">const std::vector&lt;Eigen::Vector3d&gt;&amp; mc_planning::generator::steps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desired steps. </p>
+<dl class="section see"><dt>See also</dt><dd>setSteps(const std::vector&lt;Eigen::Vector3d&gt; &amp; steps) </dd></dl>
+
+</div>
+</div>
+<a id="ad58ef808ce616d11b9cacadc739241ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58ef808ce616d11b9cacadc739241ab">&#9670;&nbsp;</a></span>steps() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mc_planning::generator::steps </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; Eigen::Vector3d &gt; &amp;&#160;</td>
           <td class="paramname"><em>steps</em></td><td>)</td>
@@ -620,34 +875,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e818bb019e6aa806a3cc923c5d0698a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e818bb019e6aa806a3cc923c5d0698a">&#9670;&nbsp;</a></span>Steps()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt;Eigen::Vector3d&gt;&amp; mc_planning::generator::Steps </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Desired steps. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01569.html#a8b2d43c1995b1c210c8601fdc337a460" title="Sets desired reference steps as (time, CoM X, CoM Y) ">setSteps(const std::vector&lt;Eigen::Vector3d&gt; &amp; steps)</a> </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
@@ -655,7 +882,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00770.html">mc_planning</a></li><li class="navelem"><a class="el" href="a01569.html">generator</a></li>
-    <li class="footer">Generated on Wed Jun 17 2020 10:47:05 for mc_rtc by
+    <li class="footer">Generated on Fri Jun 19 2020 09:43:20 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

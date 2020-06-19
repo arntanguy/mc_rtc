@@ -14,7 +14,7 @@ var a00751 =
     [ "ConfigurationLoader< mc_rbdyn::lipm_stabilizer::ZMPCCConfiguration >", "a01693.html", "a01693" ],
     [ "ConfigurationLoader< mc_rbdyn::RobotModule >", "a01629.html", "a01629" ],
     [ "ConfigurationLoader< mc_rbdyn::RobotModulePtr >", "a01633.html", "a01633" ],
-    [ "ConfigurationLoader< mc_tasks::lipm_stabilizer::ContactState >", "a02377.html", "a02377" ],
+    [ "ConfigurationLoader< mc_tasks::lipm_stabilizer::ContactState >", "a02381.html", "a02381" ],
     [ "ConfigurationLoader< void >", "a01777.html", "a01777" ],
     [ "DataStore", "a01841.html", "a01841" ],
     [ "Loader", "a02101.html", "a02101" ],
@@ -24,5 +24,6 @@ var a00751 =
     [ "LTDLHandle", "a02097.html", "a02097" ],
     [ "measure", "a02153.html", "a02153" ],
     [ "MessagePackBuilder", "a02149.html", "a02149" ],
-    [ "ObjectLoader", "a02089.html", "a02089" ]
+    [ "ObjectLoader", "a02089.html", "a02089" ],
+    [ "Stopwatch", "a02157.html", "a02157" ]
 ];
