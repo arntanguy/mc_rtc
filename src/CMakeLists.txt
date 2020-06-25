@@ -386,7 +386,8 @@ mc_planning/LIPMControlByPoleAssign.cpp
 mc_planning/LIPMControlByPoleAssignWithExternalForce.cpp
 mc_planning/MathFunction.cpp
 mc_planning/State.cpp
-mc_planning/generator.cpp # XXX should it be there?
+mc_planning/generator.cpp
+mc_planning/PreviewWindow.cpp
 )
 
 set(mc_planning_HDR_DIR
@@ -404,6 +405,7 @@ set(mc_planning_HDR
   ${mc_planning_HDR_DIR}/ClampedCubicSpline.h
   ${mc_planning_HDR_DIR}/generator.h
   ${mc_planning_HDR_DIR}/PreviewSteps.h
+  ${mc_planning_HDR_DIR}/PreviewWindow.h
 )
 
 add_library(mc_planning SHARED ${mc_planning_SRC} ${mc_planning_HDR})
