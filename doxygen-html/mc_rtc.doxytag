@@ -13843,6 +13843,20 @@
     </member>
     <member kind="function">
       <type>const Eigen::Vector3d &amp;</type>
+      <name>CompensatedZMPPosition</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>a3ab4439ee87384d1f04b6c2a84fb54d3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
+      <name>CompensatedZMPVelocity</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>a8ee90f16ff9996c83aee9b98331382d7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
       <name>OutputCOGPosition</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>a4019fd7259832cb95fb7196da53c8ded</anchor>
@@ -13864,24 +13878,31 @@
     </member>
     <member kind="function">
       <type>const Eigen::Vector3d &amp;</type>
-      <name>CompensatedZMPPosition</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>a3ab4439ee87384d1f04b6c2a84fb54d3</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>CompensatedZMPVelocity</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>a8ee90f16ff9996c83aee9b98331382d7</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
       <name>OutputZMPPosition</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>a27eb16418e00a24bf331c5b0c1998962</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const PreviewSteps&lt; Eigen::Vector2d &gt; &amp;</type>
+      <name>steps</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>a1191077b4ee68eb6b9abbd3dc7d9b718</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>steps</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>a1ecb75fb162f3c7e586099acce031d17</anchor>
+      <arglist>(const PreviewSteps&lt; Eigen::Vector2d &gt; &amp;steps)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>changeFutureSteps</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>aebcd5d0ef4a420421a8646ad07a5615d</anchor>
+      <arglist>(double transitionTime, const std::vector&lt; TimedStep&lt; Eigen::Vector2d &gt;&gt; &amp;futureSteps)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -13969,6 +13990,20 @@
     </member>
     <member kind="function">
       <type>const Eigen::Vector3d &amp;</type>
+      <name>CompensatedZMPPosition</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>a3ab4439ee87384d1f04b6c2a84fb54d3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
+      <name>CompensatedZMPVelocity</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>a8ee90f16ff9996c83aee9b98331382d7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
       <name>OutputCOGPosition</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>a4019fd7259832cb95fb7196da53c8ded</anchor>
@@ -13986,20 +14021,6 @@
       <name>OutputCOGAcceleration</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>ac7aba7b4fbe24f1a137e2fdf89b4b4d7</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>CompensatedZMPPosition</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>a3ab4439ee87384d1f04b6c2a84fb54d3</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>CompensatedZMPVelocity</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>a8ee90f16ff9996c83aee9b98331382d7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
