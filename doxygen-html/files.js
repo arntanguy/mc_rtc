@@ -11,17 +11,17 @@ var files =
     [ "AdmittanceTask.h", "a00473.html", [
       [ "AdmittanceTask", "a02382.html", "a02382" ]
     ] ],
-    [ "mc_control/api.h", "a03408.html", "a03408" ],
-    [ "mc_control/fsm/api.h", "a03411.html", "a03411" ],
-    [ "mc_control/fsm/states/api.h", "a03414.html", "a03414" ],
-    [ "mc_observers/api.h", "a03417.html", "a03417" ],
-    [ "mc_planning/api.h", "a03420.html", "a03420" ],
-    [ "mc_rbdyn/api.h", "a03423.html", "a03423" ],
-    [ "mc_robots/api.h", "a03426.html", "a03426" ],
-    [ "mc_rtc/gui/api.h", "a03429.html", "a03429" ],
-    [ "mc_solver/api.h", "a03432.html", "a03432" ],
-    [ "mc_tasks/api.h", "a03435.html", "a03435" ],
-    [ "mc_trajectory/api.h", "a03438.html", "a03438" ],
+    [ "mc_control/api.h", "a03409.html", "a03409" ],
+    [ "mc_control/fsm/api.h", "a03412.html", "a03412" ],
+    [ "mc_control/fsm/states/api.h", "a03415.html", "a03415" ],
+    [ "mc_observers/api.h", "a03418.html", "a03418" ],
+    [ "mc_planning/api.h", "a03421.html", "a03421" ],
+    [ "mc_rbdyn/api.h", "a03424.html", "a03424" ],
+    [ "mc_robots/api.h", "a03427.html", "a03427" ],
+    [ "mc_rtc/gui/api.h", "a03430.html", "a03430" ],
+    [ "mc_solver/api.h", "a03433.html", "a03433" ],
+    [ "mc_tasks/api.h", "a03436.html", "a03436" ],
+    [ "mc_trajectory/api.h", "a03439.html", "a03439" ],
     [ "ArrayInput.h", "a00281.html", "a00281" ],
     [ "ArrayLabel.h", "a00284.html", "a00284" ],
     [ "Arrow.h", "a00287.html", "a00287" ],
@@ -68,8 +68,8 @@ var files =
     [ "CoMTask.h", "a00482.html", [
       [ "CoMTask", "a02394.html", "a02394" ]
     ] ],
-    [ "mc_control/Configuration.h", "a03441.html", "a03441" ],
-    [ "mc_rtc/Configuration.h", "a03444.html", "a03444" ],
+    [ "mc_control/Configuration.h", "a03442.html", "a03442" ],
+    [ "mc_rtc/Configuration.h", "a03445.html", "a03445" ],
     [ "configuration_io.h", "a00191.html", "a00191" ],
     [ "ConfigurationHelpers.h", "a00269.html", "a00269" ],
     [ "constants.h", "a00272.html", "a00272" ],
@@ -80,11 +80,11 @@ var files =
     [ "ConstraintSetLoader.h", "a00428.html", [
       [ "ConstraintSetLoader", "a02242.html", "a02242" ]
     ] ],
-    [ "mc_rbdyn/Contact.h", "a03447.html", "a03447" ],
-    [ "mc_solver/msg/Contact.h", "a03450.html", [
+    [ "mc_rbdyn/Contact.h", "a03448.html", "a03448" ],
+    [ "mc_solver/msg/Contact.h", "a03451.html", [
       [ "ContactMsg", "a02314.html", "a02314" ]
     ] ],
-    [ "mc_tasks/lipm_stabilizer/Contact.h", "a03453.html", "a03453" ],
+    [ "mc_tasks/lipm_stabilizer/Contact.h", "a03454.html", "a03454" ],
     [ "contact_transform.h", "a00197.html", "a00197" ],
     [ "ContactConstraint.h", "a00431.html", [
       [ "ContactConstraint", "a02246.html", "a02246" ]
@@ -308,7 +308,7 @@ var files =
     ] ],
     [ "plot.h", "a00344.html", null ],
     [ "Point3D.h", "a00347.html", "a00347" ],
-    [ "plot/Polygon.h", "a03456.html", "a03456" ],
+    [ "plot/Polygon.h", "a03457.html", "a03457" ],
     [ "Polygon.h", "a00335.html", "a00335" ],
     [ "polygon_utils.h", "a00227.html", "a00227" ],
     [ "PolygonInterpolator.h", "a00230.html", [
@@ -342,8 +342,8 @@ var files =
     [ "RelativeEndEffectorTask.h", "a00533.html", [
       [ "RelativeEndEffectorTask", "a02478.html", "a02478" ]
     ] ],
-    [ "mc_rbdyn/Robot.h", "a03459.html", "a03459" ],
-    [ "mc_solver/msg/Robot.h", "a03462.html", [
+    [ "mc_rbdyn/Robot.h", "a03460.html", "a03460" ],
+    [ "mc_solver/msg/Robot.h", "a03463.html", [
       [ "RobotMsg", "a02322.html", "a02322" ]
     ] ],
     [ "RobotLoader.h", "a00236.html", "a00236" ],
@@ -386,8 +386,8 @@ var files =
       [ "StabilizerTask", "a02430.html", "a02430" ],
       [ "EnumClassHash", "a02434.html", "a02434" ]
     ] ],
-    [ "mc_control/fsm/State.h", "a03465.html", "a03465" ],
-    [ "mc_planning/State.h", "a03468.html", [
+    [ "mc_control/fsm/State.h", "a03466.html", "a03466" ],
+    [ "mc_planning/State.h", "a03469.html", [
       [ "StateP", "a01642.html", "a01642" ],
       [ "StatePV", "a01646.html", "a01646" ],
       [ "StatePVA", "a01650.html", "a01650" ]
@@ -420,7 +420,7 @@ var files =
       [ "TransitionMap", "a01482.html", "a01482" ]
     ] ],
     [ "type_name.h", "a00407.html", "a00407" ],
-    [ "plot/types.h", "a03471.html", "a03471" ],
+    [ "plot/types.h", "a03472.html", "a03472" ],
     [ "types.h", "a00341.html", "a00341" ],
     [ "Update.h", "a00464.html", "a00464" ],
     [ "UpdateNrVars.h", "a00467.html", [
@@ -428,15 +428,15 @@ var files =
       [ "UpdateNrVarsRobot", "a02362.html", "a02362" ],
       [ "UpdateNrVarsLambda", "a02366.html", "a02366" ]
     ] ],
-    [ "log/utils.h", "a03474.html", "a03474" ],
+    [ "log/utils.h", "a03475.html", "a03475" ],
     [ "utils.h", "a00395.html", null ],
     [ "utils_api.h", "a00410.html", "a00410" ],
     [ "VectorOrientationTask.h", "a00548.html", [
       [ "VectorOrientationTask", "a02498.html", "a02498" ]
     ] ],
     [ "XYTheta.h", "a00368.html", "a00368" ],
-    [ "mc_rbdyn/ZMP.h", "a03477.html", "a03477" ],
-    [ "mc_solver/msg/ZMP.h", "a03480.html", [
+    [ "mc_rbdyn/ZMP.h", "a03478.html", "a03478" ],
+    [ "mc_solver/msg/ZMP.h", "a03481.html", [
       [ "ZMP", "a02326.html", "a02326" ]
     ] ],
     [ "ZMPCC.h", "a00503.html", [

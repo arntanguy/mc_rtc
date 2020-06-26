@@ -1,8 +1,16 @@
 var a00764 =
 [
-    [ "ExponentialMovingAverage", "a01514.html", "a01514" ],
-    [ "LeakyIntegrator", "a01518.html", "a01518" ],
-    [ "LowPass", "a01522.html", "a01522" ],
-    [ "LowPassFiniteDifferences", "a01526.html", "a01526" ],
-    [ "StationaryOffset", "a01530.html", "a01530" ]
+    [ "linear_control_system", "a00766.html", "a00766" ],
+    [ "motion_interpolator", "a00765.html", "a00765" ],
+    [ "CenteredPreviewWindow", "a01615.html", "a01615" ],
+    [ "generator", "a01563.html", "a01563" ],
+    [ "LookupTable", "a01595.html", "a01595" ],
+    [ "Pendulum", "a01599.html", "a01599" ],
+    [ "PreviewElement", "a01611.html", "a01611" ],
+    [ "PreviewSteps", "a01607.html", "a01607" ],
+    [ "RangeElementIterator", "a01619.html", "a01619" ],
+    [ "StateP", "a01627.html", "a01627" ],
+    [ "StatePV", "a01631.html", "a01631" ],
+    [ "StatePVA", "a01635.html", "a01635" ],
+    [ "TimedStep", "a01603.html", "a01603" ]
 ];

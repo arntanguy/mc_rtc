@@ -90,7 +90,7 @@ var searchData=
   ['slidingsurface_5f',['slidingSurface_',['../a01470.html#a6b9672879e70a7220fc474ac8aec7d6f',1,'mc_control::fsm::SlidingFootContactState']]],
   ['smoothtask',['SmoothTask',['../a02482.html',1,'mc_tasks::SmoothTask&lt; objT &gt;'],['../a02482.html#a9ceb8c25b164dea48c57db36aae1f788',1,'mc_tasks::SmoothTask::SmoothTask()']]],
   ['smoothtask_2eh',['SmoothTask.h',['../a00536.html',1,'']]],
-  ['solid',['Solid',['../a03471.html#ae070f931bda093c33a301115abc450b1',1,'Solid():&#160;types.h'],['../a00794.html#a23166295a3983f35cb0fa510b4c156c9ae41480b6bbfbf7407974a88d3d34f4fa',1,'mc_rtc::gui::Solid()']]],
+  ['solid',['Solid',['../a03472.html#ae070f931bda093c33a301115abc450b1',1,'Solid():&#160;types.h'],['../a00794.html#a23166295a3983f35cb0fa510b4c156c9ae41480b6bbfbf7407974a88d3d34f4fa',1,'mc_rtc::gui::Solid()']]],
   ['solve',['solve',['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00567.html#aabc3ed5167a3fd0f5e75cd5c9ac3fbdd',1,'Eigen::QuadProgDense::solve()'],['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00571.html#ae82cef5c25505dd4bb70ac19d9835a59',1,'Eigen::QuadProgSparse::solve()']]],
   ['solveandbuildtime',['solveAndBuildTime',['../a02330.html#a53c4d41439ee0e428928a7318fde3f07',1,'mc_solver::QPSolver']]],
   ['solver',['solver',['../a01518.html#aa6a9b2cd350ec94a1f1bda12c3133c28',1,'mc_control::MCController::solver() const'],['../a01518.html#abc7651033ec24b18d662797fc3bb48fa',1,'mc_control::MCController::solver()']]],

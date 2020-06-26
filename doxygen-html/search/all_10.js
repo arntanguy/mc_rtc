@@ -61,7 +61,7 @@ var searchData=
   ['polesy',['polesY',['../a01578.html#a8d72a39168321ccb40112ec319924a81',1,'mc_planning::generator::polesY(const Eigen::Vector3d &amp;poles)'],['../a01578.html#a95bdb6659b701bb0a812692a90599027',1,'mc_planning::generator::polesY() const']]],
   ['policy',['Policy',['../a02170.html#a0fefb36635930cf5a9db966442756b9b',1,'mc_rtc::Logger']]],
   ['polygon',['Polygon',['../a02034.html',1,'mc_rtc::gui::plot::impl::Polygon&lt; GetT &gt;'],['../a02034.html#af7e96bad2cd93f2b0eaecbf94e8ce4c2',1,'mc_rtc::gui::plot::impl::Polygon::Polygon()'],['../a01390.html#a9b237bbf2c2441f2d80e9c2b825dcb1b',1,'mc_control::ControllerClient::polygon()'],['../a02418.html#a5b6cfbb78cfb49c05589e1f861355853',1,'mc_tasks::lipm_stabilizer::internal::Contact::polygon()'],['../a00796.html#a455aeb83363d1c76669333ae6827f638',1,'mc_rtc::gui::plot::Polygon()'],['../a00794.html#ac7c7c596bdb09e8c01e26e8fb53ce360',1,'mc_rtc::gui::Polygon(const std::string &amp;name, GetT get_fn)'],['../a00794.html#a2b137bae8372a9a84cdb28508e7de1dd',1,'mc_rtc::gui::Polygon(const std::string &amp;name, const Color &amp;color, GetT get_fn)'],['../a00794.html#a32d283e5c35e7fd7dcddbc0199bfdc06a4c0a11247d92f73fb84baa51e37a3263',1,'mc_rtc::gui::Polygon()'],['../a00796.html#a6e2b70125fa1d433838b9a8f2bf28c4da4c0a11247d92f73fb84baa51e37a3263',1,'mc_rtc::gui::plot::Polygon()']]],
-  ['polygon_2eh',['Polygon.h',['../a03456.html',1,'(Global Namespace)'],['../a00335.html',1,'(Global Namespace)']]],
+  ['polygon_2eh',['Polygon.h',['../a03457.html',1,'(Global Namespace)'],['../a00335.html',1,'(Global Namespace)']]],
   ['polygon_5futils_2eh',['polygon_utils.h',['../a00227.html',1,'']]],
   ['polygondescription',['PolygonDescription',['../a02050.html',1,'mc_rtc::gui::plot::PolygonDescription'],['../a02050.html#a5be9ba163395960fd1d95bc337b64f2b',1,'mc_rtc::gui::plot::PolygonDescription::PolygonDescription()'],['../a02050.html#a45ab1398054c73f857e813161bb32c62',1,'mc_rtc::gui::plot::PolygonDescription::PolygonDescription(const std::vector&lt; std::array&lt; double, 2 &gt;&gt; &amp;points, Color outline)']]],
   ['polygonimpl',['PolygonImpl',['../a02062.html',1,'mc_rtc::gui::PolygonImpl&lt; GetT &gt;'],['../a02062.html#af21492bee86877ea68740b1c555e8d45',1,'mc_rtc::gui::PolygonImpl::PolygonImpl(const std::string &amp;name, const Color &amp;color, GetT get_fn)'],['../a02062.html#a9c908c6704072d862688c0dcd3f1de73',1,'mc_rtc::gui::PolygonImpl::PolygonImpl()']]],
@@ -117,5 +117,5 @@ var searchData=
   ['pythonrwcallback',['PythonRWCallback',['../a01506.html',1,'mc_control']]],
   ['pythonstate',['PythonState',['../a01418.html',1,'mc_control::fsm']]],
   ['pythonstate_2eh',['PythonState.h',['../a00026.html',1,'']]],
-  ['types_2eh',['types.h',['../a03471.html',1,'']]]
+  ['types_2eh',['types.h',['../a03472.html',1,'']]]
 ];

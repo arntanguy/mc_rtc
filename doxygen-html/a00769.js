@@ -1,7 +1,6 @@
 var a00769 =
 [
-    [ "LinearControl3", "a01578.html", "a01578" ],
-    [ "LinearTimeVariantInvertedPendulum", "a01582.html", "a01582" ],
-    [ "LIPMControlByPoleAssign", "a01590.html", "a01590" ],
-    [ "LIPMControlByPoleAssignWithExternalForce", "a01594.html", "a01594" ]
+    [ "FDQPWeights", "a01703.html", "a01703" ],
+    [ "StabilizerConfiguration", "a01711.html", "a01711" ],
+    [ "ZMPCCConfiguration", "a01719.html", "a01719" ]
 ];
