@@ -633,7 +633,7 @@ void StabilizerTask::run()
     footTasks[ContactState::Left]->setZeroTargetWrench();
   }
   // Distributed ZMP
-  zmpTarget_ = mc_rbdyn::zmp(desiredWrench, zmpFrame_, MIN_NET_TOTAL_FORCE_ZMP);
+  zmpTarget_ = mc_rbdyn::zmp(desiredWrench, zmpFrame_, c_.safetyThresholds.MIN_NET_TOTAL_FORCE_ZMP);
   updateCoMTaskZMPCC();
   updateFootForceDifferenceControl();
 

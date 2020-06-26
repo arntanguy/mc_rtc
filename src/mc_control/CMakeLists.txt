@@ -20,6 +20,7 @@ if(${BUILD_CONTROLLER_SAMPLES})
   add_subdirectory(samples/LIPMStabilizer)
   add_subdirectory(samples/Admittance)
   add_subdirectory(samples/Door)
+  add_subdirectory(samples/CoMTrajectoryGeneration)
 endif()
 
 add_subdirectory(HalfSitPose)
