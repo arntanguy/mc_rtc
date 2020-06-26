@@ -1,5 +1,5 @@
 var a00314 =
 [
-    [ "NumberSliderImpl", "a01977.html", "a01977" ],
-    [ "NumberSlider", "a00314.html#a5c6714af47a8cb199c7345ed1c2e8ffe", null ]
+    [ "IntegerInputImpl", "a01998.html", "a01998" ],
+    [ "IntegerInput", "a00314.html#ac4f13804b0853d4e3ee9d53afed5b06c", null ]
 ];

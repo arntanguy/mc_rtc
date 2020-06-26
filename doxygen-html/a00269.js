@@ -1,6 +1,5 @@
 var a00269 =
 [
-    [ "is_eigen_matrix", "a01861.html", null ],
-    [ "test", "a00269.html#af906a58079257e11f4652a22f067a822", null ],
-    [ "test", "a00269.html#a6ba1ae61e3ffbdc9d1f72aa5363cb608", null ]
+    [ "fromVectorOrElement", "a00269.html#ac1107b5d5bcf197a41add86ce445c866", null ],
+    [ "fromVectorOrElement", "a00269.html#a9c308b4400fb83031251be1f6ab0adb2", null ]
 ];

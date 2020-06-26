@@ -1,7 +1,8 @@
 var a00356 =
 [
-    [ "TransformROImpl", "a02065.html", "a02065" ],
-    [ "TransformImpl", "a02069.html", "a02069" ],
-    [ "Transform", "a00356.html#aa5342b74063b005e6a03efd66adef74e", null ],
-    [ "Transform", "a00356.html#a96cb90761dce6d6e3441d779e7184847", null ]
+    [ "StateBuilder", "a02078.html", "a02078" ],
+    [ "ElementsStacking", "a00356.html#a649ddcaedb769dede3922fa845e71ca4", [
+      [ "Vertical", "a00356.html#a649ddcaedb769dede3922fa845e71ca4a06ce2a25e5d12c166a36f654dbea6012", null ],
+      [ "Horizontal", "a00356.html#a649ddcaedb769dede3922fa845e71ca4ac1b5fa03ecdb95d4a45dd1c40b02527f", null ]
+    ] ]
 ];

@@ -1,9 +1,7 @@
 var a00769 =
 [
-    [ "BodySensorObserver", "a01537.html", "a01537" ],
-    [ "EncoderObserver", "a01541.html", "a01541" ],
-    [ "KinematicInertialObserver", "a01545.html", "a01545" ],
-    [ "KinematicInertialPoseObserver", "a01549.html", "a01549" ],
-    [ "Observer", "a01553.html", "a01553" ],
-    [ "ObserverLoader", "a01557.html", "a01557" ]
+    [ "LinearControl3", "a01578.html", "a01578" ],
+    [ "LinearTimeVariantInvertedPendulum", "a01582.html", "a01582" ],
+    [ "LIPMControlByPoleAssign", "a01590.html", "a01590" ],
+    [ "LIPMControlByPoleAssignWithExternalForce", "a01594.html", "a01594" ]
 ];

@@ -1,7 +1,7 @@
 var a00795 =
 [
-    [ "AdmittanceTask", "a02349.html", "a02349" ],
-    [ "ComplianceTask", "a02357.html", "a02357" ],
-    [ "CoPTask", "a02365.html", "a02365" ],
-    [ "DampingTask", "a02369.html", "a02369" ]
+    [ "CheckReturnType", "a01934.html", "a01934" ],
+    [ "CheckReturnType< GetT, T >", "a01938.html", "a01938" ],
+    [ "CheckReturnType< GetT, T, Args... >", "a01942.html", "a01942" ],
+    [ "ReturnType", "a01930.html", "a01930" ]
 ];

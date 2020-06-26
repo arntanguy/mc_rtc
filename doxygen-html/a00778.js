@@ -1,6 +1,9 @@
 var a00778 =
 [
-    [ "are_strings", "a01737.html", null ],
-    [ "are_strings< T >", "a01741.html", null ],
-    [ "are_strings< T, Args... >", "a01745.html", null ]
+    [ "BodySensorObserver", "a01546.html", "a01546" ],
+    [ "EncoderObserver", "a01550.html", "a01550" ],
+    [ "KinematicInertialObserver", "a01554.html", "a01554" ],
+    [ "KinematicInertialPoseObserver", "a01558.html", "a01558" ],
+    [ "Observer", "a01562.html", "a01562" ],
+    [ "ObserverLoader", "a01566.html", "a01566" ]
 ];

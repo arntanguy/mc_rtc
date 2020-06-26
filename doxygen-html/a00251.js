@@ -1,8 +1,7 @@
 var a00251 =
 [
-    [ "cylindrical_hull", "a00251.html#adcd59f0c2e8c9cd94a6f9800c164e723", null ],
-    [ "gripper_hull", "a00251.html#a70b7277a0499a32774e608f8def99043", null ],
-    [ "planar_hull", "a00251.html#a96cab2abc78656a41b2b56987c5fbbfa", null ],
-    [ "sch_polyhedron", "a00251.html#a3db1776d4f8f36e1eb2a8c51bc157867", null ],
-    [ "surface_to_sch", "a00251.html#adf1399b68c68126e373f564e95bc7531", null ]
+    [ "distance", "a00251.html#a8e193a456c2d3dab3ad5f12ed049e3b1", null ],
+    [ "Polyhedron", "a00251.html#a1d8bc5539da072c12d1f76bc317f8af3", null ],
+    [ "STPBV", "a00251.html#a30354c6b845b9f2c2bf59342c84f9e0d", null ],
+    [ "transform", "a00251.html#a3c0ffcdf6b05980ab8ca56474c431bc7", null ]
 ];

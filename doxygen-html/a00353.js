@@ -1,6 +1,5 @@
 var a00353 =
 [
-    [ "TrajectoryImpl", "a02061.html", "a02061" ],
-    [ "Trajectory", "a00353.html#a062a5442d4cabf7a31d7f83008751a6a", null ],
-    [ "Trajectory", "a00353.html#aa175899f8868d419050975dc9f79ed97", null ]
+    [ "SchemaImpl", "a02074.html", "a02074" ],
+    [ "Schema", "a00353.html#a0c892f6b2ba9e06d4bda32a16b76b75b", null ]
 ];

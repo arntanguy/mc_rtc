@@ -1,5 +1,9 @@
 var a00248 =
 [
-    [ "Surface", "a01781.html", "a01781" ],
-    [ "SurfacePtr", "a00248.html#a848cf0b2e8f6ca6f18ceba1769d9a426", null ]
+    [ "rpyFromMat", "a00248.html#a0948fb6dc9382e116f65c76261d26ea0", null ],
+    [ "rpyFromQuat", "a00248.html#a058cd1f189f02e2c4986b6aacffa8195", null ],
+    [ "rpyToMat", "a00248.html#a5f178afee4c03533ae15c4dc04c143e2", null ],
+    [ "rpyToMat", "a00248.html#a04f15be86a9827b0d076764f344406ab", null ],
+    [ "rpyToPT", "a00248.html#afa2b9eed96e67a1bdb6abf90bb597063", null ],
+    [ "rpyToPT", "a00248.html#a4626f965b6c407b0bd14e10f98ec42b9", null ]
 ];

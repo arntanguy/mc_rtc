@@ -1,6 +1,10 @@
 var a00272 =
 [
-    [ "ArrayInputImpl", "a01865.html", "a01865" ],
-    [ "ArrayInput", "a00272.html#ad70775c90f4b00f10abc4c5a5721e557", null ],
-    [ "ArrayInput", "a00272.html#a7f24f6599b905f3caf6ad3ec29def6bf", null ]
+    [ "EIGEN_PI", "a00272.html#aebdd4427aa2148313c07b0eedad449ad", null ],
+    [ "toDeg", "a00272.html#a357fd1ef503f568cf436fbda923472cf", null ],
+    [ "toRad", "a00272.html#a2ca6e1fbd563bfd79d6484a3295d08bd", null ],
+    [ "GRAVITY", "a00272.html#a04b344c34834432afcfcc1ac86bff22c", null ],
+    [ "gravity", "a00272.html#acf271123cee2ac958b9ae0f9220ea422", null ],
+    [ "PI", "a00272.html#a8cb2b2837ea283890b185cfef0631602", null ],
+    [ "vertical", "a00272.html#aaaeaab7136aa7d17fa172fde905c2cc7", null ]
 ];

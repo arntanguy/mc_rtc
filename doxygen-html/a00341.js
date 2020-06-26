@@ -1,7 +1,12 @@
 var a00341 =
 [
-    [ "RotationROImpl", "a02033.html", "a02033" ],
-    [ "RotationImpl", "a02037.html", "a02037" ],
-    [ "Rotation", "a00341.html#a9dc809d7e99978fe3f5e2439d1a20771", null ],
-    [ "Rotation", "a00341.html#a6440392ea4b48778f6d4012e0400ee5b", null ]
+    [ "Color", "a02106.html", "a02106" ],
+    [ "LineConfig", "a02110.html", "a02110" ],
+    [ "ArrowConfig", "a02114.html", "a02114" ],
+    [ "ForceConfig", "a02118.html", "a02118" ],
+    [ "PointConfig", "a02122.html", "a02122" ],
+    [ "LineStyle", "a00341.html#a23166295a3983f35cb0fa510b4c156c9", [
+      [ "Solid", "a00341.html#a23166295a3983f35cb0fa510b4c156c9ae41480b6bbfbf7407974a88d3d34f4fa", null ],
+      [ "Dotted", "a00341.html#a23166295a3983f35cb0fa510b4c156c9a90c09393a4c0970bc9a6703ad527781c", null ]
+    ] ]
 ];

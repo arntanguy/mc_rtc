@@ -1,7 +1,6 @@
 var a00787 =
 [
-    [ "impl", "a00788.html", "a00788" ],
-    [ "AxisConfiguration", "a02013.html", "a02013" ],
-    [ "PolygonDescription", "a02017.html", "a02017" ],
-    [ "Range", "a02009.html", "a02009" ]
+    [ "are_strings", "a01770.html", null ],
+    [ "are_strings< T >", "a01774.html", null ],
+    [ "are_strings< T, Args... >", "a01778.html", null ]
 ];

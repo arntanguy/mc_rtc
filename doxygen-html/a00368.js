@@ -1,10 +1,7 @@
 var a00368 =
 [
-    [ "ObjectLoader", "a02101.html", "a02101" ],
-    [ "LoaderException", "a02105.html", "a02105" ],
-    [ "LTDLHandle", "a02109.html", "a02109" ],
-    [ "Loader", "a02113.html", "a02113" ],
-    [ "ObjectLoader", "a02101.html", "a02101" ],
-    [ "ObjectDeleter", "a02117.html", "a02117" ],
-    [ "LTDLHandlePtr", "a00368.html#a04f4430d990b320f494b3a21112c7e3a", null ]
+    [ "XYThetaROImpl", "a02126.html", "a02126" ],
+    [ "XYThetaImpl", "a02130.html", "a02130" ],
+    [ "XYTheta", "a00368.html#aaaa2ebe2ecb490f266fe541318646561", null ],
+    [ "XYTheta", "a00368.html#a98fa40132858d1d9c0091acb36ce9f32", null ]
 ];
