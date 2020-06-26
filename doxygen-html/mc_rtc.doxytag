@@ -13808,6 +13808,20 @@
     </member>
     <member kind="function">
       <type>const Eigen::Vector3d &amp;</type>
+      <name>IdealZMPPosition</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>aaa3404c6c270d17857c41bd5bbad6dfb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
+      <name>IdealZMPVelocity</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>af814993e8d68ec59a56d48952a0b56c8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
       <name>CompensatedCOGPosition</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>a267fb938bba23291232bf547818033f1</anchor>
@@ -13846,20 +13860,6 @@
       <name>OutputCOGAcceleration</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>ac7aba7b4fbe24f1a137e2fdf89b4b4d7</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>IdealZMPPosition</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>aaa3404c6c270d17857c41bd5bbad6dfb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>IdealZMPVelocity</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>af814993e8d68ec59a56d48952a0b56c8</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -13934,6 +13934,20 @@
     </member>
     <member kind="function">
       <type>const Eigen::Vector3d &amp;</type>
+      <name>IdealZMPPosition</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>aaa3404c6c270d17857c41bd5bbad6dfb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
+      <name>IdealZMPVelocity</name>
+      <anchorfile>a01578.html</anchorfile>
+      <anchor>af814993e8d68ec59a56d48952a0b56c8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const Eigen::Vector3d &amp;</type>
       <name>CompensatedCOGPosition</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>a267fb938bba23291232bf547818033f1</anchor>
@@ -13972,20 +13986,6 @@
       <name>OutputCOGAcceleration</name>
       <anchorfile>a01578.html</anchorfile>
       <anchor>ac7aba7b4fbe24f1a137e2fdf89b4b4d7</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>IdealZMPPosition</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>aaa3404c6c270d17857c41bd5bbad6dfb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const Eigen::Vector3d &amp;</type>
-      <name>IdealZMPVelocity</name>
-      <anchorfile>a01578.html</anchorfile>
-      <anchor>af814993e8d68ec59a56d48952a0b56c8</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
