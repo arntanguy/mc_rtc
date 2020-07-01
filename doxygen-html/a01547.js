@@ -1,18 +1,20 @@
 var a01547 =
 [
-    [ "Observer", "a01547.html#a0f9f2d8b07a93f2fe3b55e48406835d3", null ],
-    [ "~Observer", "a01547.html#afe80cec7744a72c627f17990a74e890b", null ],
-    [ "addToGUI", "a01547.html#a0957402752e8564b876c86f305ebbe2f", null ],
-    [ "addToLogger", "a01547.html#aa1a2253dad0a8adcb7eb376dc0861af0", null ],
-    [ "desc", "a01547.html#ae17bf0ca1911dea768788e63bf0d45b0", null ],
-    [ "dt", "a01547.html#a862e1f350e7b57da34f15824d21d1d37", null ],
-    [ "name", "a01547.html#a5faf70047c2be78645564f90a8053bff", null ],
-    [ "removeFromGUI", "a01547.html#a261f51b20ca1d1a57500ae40b6e4093b", null ],
-    [ "removeFromLogger", "a01547.html#ac81467221a6c73328b0ee45fa7327eb3", null ],
-    [ "reset", "a01547.html#aa59bc21df7afff4f66cecc9315898c6b", null ],
-    [ "run", "a01547.html#a4805153c7a65f4f5ff444fdfd6528d73", null ],
-    [ "updateRobots", "a01547.html#a7c2325f9b7cc610db1f7f459198217ee", null ],
-    [ "desc_", "a01547.html#a09b5945fa09bf14489d9796d43df60b9", null ],
-    [ "dt_", "a01547.html#adde90bcccecab614f391f6d515d435fa", null ],
-    [ "name_", "a01547.html#a2e3f65fb8549873b71b1eeda29c1b363", null ]
+    [ "Update", "a01547.html#ace7a5ef240bc42d89053419e8718eba3", [
+      [ "Control", "a01547.html#ace7a5ef240bc42d89053419e8718eba3aa1595abbb4c3a326636dd178757cd6c1", null ],
+      [ "Estimator", "a01547.html#ace7a5ef240bc42d89053419e8718eba3ada2a1b654dd8965375b17b81a0874e1d", null ]
+    ] ],
+    [ "BodySensorObserver", "a01547.html#aad52d430f0c328c986a14d2a8a9a7b17", null ],
+    [ "addToGUI", "a01547.html#abf71106c03fdf82b9e342a51bd7f4ea6", null ],
+    [ "addToLogger", "a01547.html#a164f25654c0fc7ef6d08e5c052260445", null ],
+    [ "posW", "a01547.html#a40a80d57f8974b3af7d4f65df95161ab", null ],
+    [ "removeFromLogger", "a01547.html#aa36833218c888dbeee8d98e4994d43f1", null ],
+    [ "reset", "a01547.html#a23564250186a2e8780df9150945dad63", null ],
+    [ "run", "a01547.html#a2a497aef03e071004c926032776ac520", null ],
+    [ "updateRobots", "a01547.html#aa499d558eec971e714a924f1fb9d0722", null ],
+    [ "velW", "a01547.html#a96afc25baaad80aa4c09d6619eb3be56", null ],
+    [ "fbSensorName_", "a01547.html#a66d2fa568fd183d424b8b45488fe5c87", null ],
+    [ "posW_", "a01547.html#a7b67ccbf5ae607a9ed7227d64825d4fe", null ],
+    [ "updateFrom_", "a01547.html#a41e24212545815c92909fc647cfd4d75", null ],
+    [ "velW_", "a01547.html#a4d5cc646377a58ef243bf1d6b8c10f5e", null ]
 ];

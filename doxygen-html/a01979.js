@@ -1,8 +1,5 @@
 var a01979 =
 [
-    [ "FormDataComboInput", "a01979.html#af453833d5d01430f2ce9674c26998b43", null ],
-    [ "FormDataComboInput", "a01979.html#afb3b67d526995fced7d01603d2efe213", null ],
-    [ "write_", "a01979.html#a1b608ec12ddf49804eca58c3ba9445b7", null ],
-    [ "write_size_", "a01979.html#a9ec93215a0779c5bbad3bc1b4a720b3d", null ],
-    [ "type", "a01979.html#abbcd49d3548e91a2dd518ffca7b4b34f", null ]
+    [ "CommonInputImpl", "a01979.html#a1d18c6be098836d8c4dc9cd9bcae1072", null ],
+    [ "CommonInputImpl", "a01979.html#aee87ac9fbe3573e62fd457a0065118e8", null ]
 ];

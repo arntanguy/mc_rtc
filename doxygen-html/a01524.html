@@ -70,26 +70,31 @@ $(document).ready(function(){initNavTree('a01527.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mc_filter::StationaryOffset&lt; VectorT &gt; Member List</div>  </div>
+<div class="title">mc_filter::ExponentialMovingAverage&lt; VectorT &gt; Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a01527.html#a5db8a63c61b7305d04f3fcd20793ba79">eval</a>() const</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01527.html#aa529e044d21dfc42d5a5e6ff8938a7c6">reset</a>(const VectorT &amp;initValue)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01527.html#afd7e9222057cfac1eb12fa155e4c97d8">saturation</a>(double limit)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01527.html#aa24fa819655846548ac382ba218e051b">StationaryOffset</a>(double dt, double timeConstant, const VectorT &amp;initValue=VectorT::Zero())</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01527.html#ac19e584e7e9172a67709b2187f533069">timeConstant</a>() const</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a01527.html#a19bbac77cc974f0b7463e493965d5999">timeConstant</a>(double T)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01527.html#ac9dfa7c0425d04a71c179ee05f477d0a">update</a>(const VectorT &amp;value)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::StationaryOffset&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01527.html#accd3db44b24084922b2d1915e378b2fb">alpha_</a></td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01527.html#afc5e32731c162cecc484c71b1cd6680f">append</a>(const VectorT &amp;value)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01527.html#adaad48a146f8e945da36b18c0e9c4f8a">average_</a></td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01527.html#a6a235570200c501307ebc666fcd81e20">dt_</a></td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01527.html#a59a37436a454f4caa5d9ba49ab85b2e8">eval</a>() const</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01527.html#a156a26de235d293b4e94cb1f269dd16c">ExponentialMovingAverage</a>(double dt, double timeConstant, const VectorT &amp;initValue=VectorT::Zero())</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01527.html#a4fe8efb515654281aa77b87296449f89">reset</a>(const VectorT &amp;initVal)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01527.html#abc199c7a1935a35f01882c9ce6f355e4">saturation</a>(double limit)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01527.html#aa39c03dbafb64fa46f4be54499b3ed48">saturation_</a></td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01527.html#a25e06aceff6cb86deaba24edc060ef8f">timeConstant</a>() const</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01527.html#a5e116fb401af8c027896173066d8b8ed">timeConstant</a>(double T)</td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01527.html#a08b8eaf1a64cf2abc37a27311db4923e">timeConstant_</a></td><td class="entry"><a class="el" href="a01527.html">mc_filter::ExponentialMovingAverage&lt; VectorT &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 26 2020 08:23:50 for mc_rtc by
+    <li class="footer">Generated on Wed Jul 1 2020 12:23:01 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

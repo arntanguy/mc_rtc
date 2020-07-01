@@ -1,7 +1,6 @@
 var a01939 =
 [
-    [ "CallbackElement", "a01939.html#a26a8cb0f6a61d3442fca7f11d29f57d2", null ],
-    [ "CallbackElement", "a01939.html#ae9ef12835522d27b5d1a55210b0c973c", null ],
-    [ "handleRequest", "a01939.html#a405f276989aeae1fd599f46e0458e10f", null ],
-    [ "cb_", "a01939.html#a872fb77b757c4074529ce4847ba4dc17", null ]
+    [ "CheckboxImpl", "a01939.html#a2be8a9d91abdab7867e3ef29903aa18a", null ],
+    [ "CheckboxImpl", "a01939.html#a49e606784d3c5c64ebf3dc493491e99d", null ],
+    [ "type", "a01939.html#a39f960415eb48979416b212d6f08c453", null ]
 ];

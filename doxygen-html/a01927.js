@@ -1,4 +1,8 @@
 var a01927 =
 [
-    [ "value", "a01927.html#ae2a3213c436d7248322db80b601c9747", null ]
+    [ "ArrowROImpl", "a01927.html#a2931391d13181c75b69b122a0977a4a3", null ],
+    [ "ArrowROImpl", "a01927.html#ab3973c42d423404df611627b43a1197f", null ],
+    [ "write", "a01927.html#a7840f5c07db4b91e69e7a4b54fcc1a4f", null ],
+    [ "write_size", "a01927.html#a057d3112dd2282d30d59514ce55fdb3f", null ],
+    [ "type", "a01927.html#a20358219220c836e9e56f425c9f33390", null ]
 ];

@@ -1,8 +1,14 @@
 var a02039 =
 [
-    [ "Point3DROImpl", "a02039.html#adbfe7a2b3ff83932027e08f0c95d663b", null ],
-    [ "Point3DROImpl", "a02039.html#a3a11467db7f88a9eab78a93aee90227b", null ],
-    [ "write", "a02039.html#a2b4d2003ac770437919c754325d04134", null ],
-    [ "write_size", "a02039.html#abe5261acb5b704491064407a9b734b6b", null ],
-    [ "type", "a02039.html#a91b7374b66df426ff377ec34f124e73b", null ]
+    [ "AbscissaOrdinate", "a02039.html#a59782a8bb1c04dbaf888856985d7273d", null ],
+    [ "side", "a02039.html#ac412c96504ea09d32b3f19e18e0fca0b", null ],
+    [ "style", "a02039.html#a9298450fcf5a9549db2df14dc6223e4a", null ],
+    [ "write", "a02039.html#a3356c8e13777a41231e4a53f60a0e14c", null ],
+    [ "color_", "a02039.html#a86c83c91843a11a26a3404ddb7b4437b", null ],
+    [ "get_x_fn_", "a02039.html#a06bb63c46c89243d82cbcb4a7323a3cb", null ],
+    [ "get_y_fn_", "a02039.html#ade656f6138f2fd579ad5670c5afac13b", null ],
+    [ "name_", "a02039.html#af7bfde3739ae017ceb6db526762ca6aa", null ],
+    [ "side_", "a02039.html#ae33beeb0efca412dd64fcbad5e984c48", null ],
+    [ "style_", "a02039.html#ad56c269ffbd0cbf144af4b4ff066bd59", null ],
+    [ "type", "a02039.html#a13fb99d2e08099b6c7d7738e8bdd31fa", null ]
 ];

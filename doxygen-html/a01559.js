@@ -1,12 +1,13 @@
 var a01559 =
 [
-    [ "CubicSplineBase", "a01559.html#a8d77b611ab8762abafca94c7ba42fff8", null ],
-    [ "get", "a01559.html#a3c171b0fe3bdc65958cba40290672ac6", null ],
-    [ "getPointToPoint", "a01559.html#aca6a6f2b0334ece0286d4aaa8f2920db", null ],
-    [ "makeSplineTable", "a01559.html#a2f4e8f51d5de3453ab788db83f594a6c", null ],
-    [ "setSplineCoeff", "a01559.html#adb12d2afaa46efc1c008feb194f3ac5d", null ],
-    [ "update", "a01559.html#af8c10d56ce280630e14d0c26b318e80a", null ],
-    [ "update", "a01559.html#a2b994349e4696644bfcb424260da0719", null ],
-    [ "update", "a01559.html#a75f710b6bdffac4b4d64250b64096da8", null ],
-    [ "coeff", "a01559.html#ade0b6d36ebca0b30aa4e003724813ab4", null ]
+    [ "KinematicInertialPoseObserver", "a01559.html#a0fe74faab4da1913b5e271bbf6a7d1ed", null ],
+    [ "addToLogger", "a01559.html#a2ef97a314ad3f21392694e585ff89582", null ],
+    [ "estimateOrientation", "a01559.html#a6b6a2d32b41691feec87fbff77276731", null ],
+    [ "estimatePosition", "a01559.html#af4516c687fb2683eea570e5afc926165", null ],
+    [ "posW", "a01559.html#ae0059d688bf9a9864199b4f8bece7e3e", null ],
+    [ "removeFromLogger", "a01559.html#adbd72a6d4f7f24086bb399c556aef15c", null ],
+    [ "reset", "a01559.html#a5564591fc150e119fbfe35991031c7da", null ],
+    [ "run", "a01559.html#a91574e17a50e7d77a05835335accc0ec", null ],
+    [ "updateBodySensor", "a01559.html#a143ebfe1847c460ee63c5ec2b8ec5047", null ],
+    [ "updateRobots", "a01559.html#a4c4e67e7605e46a446caaf2fd6525b7c", null ]
 ];

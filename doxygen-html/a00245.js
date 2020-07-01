@@ -1,6 +1,6 @@
 var a00245 =
 [
-    [ "Robots", "a01806.html", "a01806" ],
+    [ "Robots", "a01827.html", "a01827" ],
     [ "loadRobot", "a00245.html#acaac690d2e96da3b8254fecefe1cccf9", null ],
     [ "loadRobot", "a00245.html#a7f3fbf6971706876454da1142aadb193", null ],
     [ "loadRobotAndEnv", "a00245.html#afad00246a5238eb31795027c0acad7a9", null ],

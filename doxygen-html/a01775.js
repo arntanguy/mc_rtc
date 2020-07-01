@@ -1,10 +1,5 @@
 var a01775 =
 [
-    [ "VisualMap", "a01775.html#abd6e8a7131d62002125d9cdc291719bf", null ],
-    [ "VisualMap", "a01775.html#ac58a4bfb954bb2596131d9dcf1bd54ec", null ],
-    [ "VisualMap", "a01775.html#a9ce12bfdd7e0edfaa4afbcce9764279a", null ],
-    [ "VisualMap", "a01775.html#a5a7913eda1566657722387ae559127ab", null ],
-    [ "operator=", "a01775.html#a7b4d1a9917b3bc796db270228d699411", null ],
-    [ "operator=", "a01775.html#a12a6994b9750a77e0543846be016a263", null ],
-    [ "operator=", "a01775.html#aace9203b0cf03c1813dbb51060a1681d", null ]
+    [ "normal", "a01775.html#ad8cba2015c957fc2f09367e269b33a07", null ],
+    [ "offset", "a01775.html#a8c864cca3648d188ffc463ee9cdb2fc6", null ]
 ];

@@ -70,22 +70,39 @@ $(document).ready(function(){initNavTree('a01671.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mc_solver::QPContactPtr Member List</div>  </div>
+<div class="title">mc_planning::StatePVA Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a01671.html">mc_solver::QPContactPtr</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a01671.html">mc_planning::StatePVA</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a01671.html#a31a08f61bfa921fa79dde45a30f72aa9">bilateralContact</a></td><td class="entry"><a class="el" href="a01671.html">mc_solver::QPContactPtr</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01671.html#ae43784e3317dd1ab1d0d8f42926e5de7">QPContactPtr</a>()</td><td class="entry"><a class="el" href="a01671.html">mc_solver::QPContactPtr</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01671.html#a8edb8058d39c00e880534c7d416819f2">unilateralContact</a></td><td class="entry"><a class="el" href="a01671.html">mc_solver::QPContactPtr</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01671.html#a2673bd190f845ef7e3c2bd0703051ef9">Copy</a>(const StatePVA &amp;i_state)</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01667.html#a42eaaee95b1c90f806a3b9b2238f9288">mc_planning::StatePV::Copy</a>(const StatePV &amp;i_state)</td><td class="entry"><a class="el" href="a01667.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01663.html#aa4810719793a3b0828168c4b173ab82f">mc_planning::StateP::Copy</a>(const StateP &amp;i_state)</td><td class="entry"><a class="el" href="a01663.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01671.html#a2e6013042a6b48d8914a437d92144aec">Initialize</a>()</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01671.html#afdadb73fc0c56698cb555020586c32a6">operator&lt;&lt;</a>(std::ostream &amp;os, const StatePVA &amp;s)</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a01671.html#a6c3011d86a83dc2954ce303c40608c1e">operator=</a>(const StatePVA &amp;i_state)</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01667.html#aad0afaabdcff1e0ee294205567aed9df">mc_planning::StatePV::operator=</a>(const StatePV &amp;i_state)</td><td class="entry"><a class="el" href="a01667.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01663.html#a323ac05f38b3e648a08922e6ee8fe427">mc_planning::StateP::operator=</a>(const StateP &amp;i_state)</td><td class="entry"><a class="el" href="a01663.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01663.html#a182ed07e44c51a690835f300cdde12b2">P</a></td><td class="entry"><a class="el" href="a01663.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01663.html#aa70eabc6ab14014518cf43b2bb3ff0dd">StateP</a>()</td><td class="entry"><a class="el" href="a01663.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01663.html#ad635c4cfa84e7870169f0ca8d76fcf87">StateP</a>(const Eigen::Vector3d &amp;p)</td><td class="entry"><a class="el" href="a01663.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01663.html#afc3dfb710d0dca983fb4dbf6c63ab129">StateP</a>(const StateP &amp;i_state)</td><td class="entry"><a class="el" href="a01663.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01667.html#ae8a780ff1b7241ea65345caf17e6f0d3">StatePV</a>()</td><td class="entry"><a class="el" href="a01667.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01667.html#aeb9ea75e44b30a78672b20ab5b73a675">StatePV</a>(const Eigen::Vector3d &amp;p, const Eigen::Vector3d &amp;v)</td><td class="entry"><a class="el" href="a01667.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01667.html#a9e8b621afa697184a69f8a1045371134">StatePV</a>(const StatePV &amp;i_state)</td><td class="entry"><a class="el" href="a01667.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01671.html#aefffc7d312d0d9c3b5289f3c3e78ebb1">StatePVA</a>()</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01671.html#a2c99192491b7229db9c198a35d4bfc4f">StatePVA</a>(const Eigen::Vector3d &amp;p, const Eigen::Vector3d &amp;v, const Eigen::Vector3d &amp;a)</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01671.html#adc22b2bbfa4cafc7ebf83d60e6434462">StatePVA</a>(const StatePVA &amp;i_state)</td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a01667.html#a1145b941b92646c110e47af422724f97">V</a></td><td class="entry"><a class="el" href="a01667.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a01671.html#ac3ffdfb87863c25360ce90e2ac246128">Vdot</a></td><td class="entry"><a class="el" href="a01671.html">mc_planning::StatePVA</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 26 2020 08:23:51 for mc_rtc by
+    <li class="footer">Generated on Wed Jul 1 2020 12:23:01 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

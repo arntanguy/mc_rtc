@@ -1,7 +1,5 @@
 var a01691 =
 [
-    [ "C", "a01691.html#a6937033e6a1e29165b7a1f9b2005232a", null ],
-    [ "jointName", "a01691.html#aae8d1a8eaa685b5efc3eb22b95fbb892", null ],
-    [ "K", "a01691.html#ad9fa8b3ad657cbfd784a906f80e2a493", null ],
-    [ "O", "a01691.html#aea9ed4cd59fb673fdac0d4f252d90987", null ]
+    [ "load", "a01691.html#ae134fc4eeb684a9fe90b8bea94f74b84", null ],
+    [ "save", "a01691.html#a24281b69d10bef2a02ccc3f57f5c1508", null ]
 ];

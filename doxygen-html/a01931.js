@@ -1,13 +1,7 @@
 var a01931 =
 [
-    [ "Element", "a01931.html#a086e5b72ef29fb83ebba494135f0f579", null ],
-    [ "Element", "a01931.html#a6fcb5cd1168ebfd6b9dc8830df21956f", null ],
-    [ "handleRequest", "a01931.html#a00f7fa6be59c8cc61304d35e7dd2a914", null ],
-    [ "id", "a01931.html#ad2e559a17ad52901a5e726ca03f300c6", null ],
-    [ "id", "a01931.html#a000ffd25b2fe0b3b36ad02b44cd190c3", null ],
-    [ "name", "a01931.html#a4f1f84cbf9bafb94cd41824712565f5a", null ],
-    [ "write", "a01931.html#ab8e71ecce7dab695777a1a11faf119f7", null ],
-    [ "write_size", "a01931.html#adb2f99cc312bfc645254b2cecd9f9c27", null ],
-    [ "id_", "a01931.html#a208ba439700a31e9ff94abc76a466472", null ],
-    [ "name_", "a01931.html#a7b365cbe4764d76aafa03495be0ecd5d", null ]
+    [ "ArrowImpl", "a01931.html#aa433a79021362f7338be283a44f58cf6", null ],
+    [ "ArrowImpl", "a01931.html#a477913abc68cc99cddaf4496166dc412", null ],
+    [ "handleRequest", "a01931.html#a106e8180fe61c6a91023ffb29f06ee98", null ],
+    [ "write", "a01931.html#a3d992464bca9a200b481434aecc0c7a5", null ]
 ];

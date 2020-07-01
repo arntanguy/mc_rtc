@@ -1,11 +1,11 @@
 var a01627 =
 [
-    [ "StateP", "a01627.html#aa70eabc6ab14014518cf43b2bb3ff0dd", null ],
-    [ "StateP", "a01627.html#ad635c4cfa84e7870169f0ca8d76fcf87", null ],
-    [ "StateP", "a01627.html#afc3dfb710d0dca983fb4dbf6c63ab129", null ],
-    [ "Copy", "a01627.html#aa4810719793a3b0828168c4b173ab82f", null ],
-    [ "Initialize", "a01627.html#a8c6c68a5ae5030aca65c6c3266f3d703", null ],
-    [ "operator=", "a01627.html#a323ac05f38b3e648a08922e6ee8fe427", null ],
-    [ "operator<<", "a01627.html#a4a60170fc8063f980cb5bb737571cbd0", null ],
-    [ "P", "a01627.html#a182ed07e44c51a690835f300cdde12b2", null ]
+    [ "strong_typedef", "a01627.html#ad1ff3a9dc65574912a58cb86b19621de", null ],
+    [ "strong_typedef", "a01627.html#ac038704e2addc6c1ef2a181253d64439", null ],
+    [ "strong_typedef", "a01627.html#a739b3623cbad3aebf95beebda37c63d5", null ],
+    [ "operator const T &", "a01627.html#a2c18fb23d453b81c9d04b59641571a98", null ],
+    [ "operator T&", "a01627.html#a9d1170f344abcfccbe82dbe9a96780bb", null ],
+    [ "operator()", "a01627.html#a579eb955a2679ad17a89b22a5e0256cc", null ],
+    [ "swap", "a01627.html#aca01a3aa6694cd606c359e4d2b490a88", null ],
+    [ "value_", "a01627.html#ade3b9090bf05955d7c6bfb706dbd92c1", null ]
 ];

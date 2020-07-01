@@ -1,9 +1,9 @@
 var a00763 =
 [
-    [ "BodySensorObserver", "a01531.html", "a01531" ],
-    [ "EncoderObserver", "a01535.html", "a01535" ],
-    [ "KinematicInertialObserver", "a01539.html", "a01539" ],
-    [ "KinematicInertialPoseObserver", "a01543.html", "a01543" ],
-    [ "Observer", "a01547.html", "a01547" ],
-    [ "ObserverLoader", "a01551.html", "a01551" ]
+    [ "BodySensorObserver", "a01532.html", "a01532" ],
+    [ "EncoderObserver", "a01536.html", "a01536" ],
+    [ "KinematicInertialObserver", "a01540.html", "a01540" ],
+    [ "KinematicInertialPoseObserver", "a01544.html", "a01544" ],
+    [ "Observer", "a01548.html", "a01548" ],
+    [ "ObserverLoader", "a01552.html", "a01552" ]
 ];

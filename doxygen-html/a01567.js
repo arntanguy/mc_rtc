@@ -1,10 +1,10 @@
 var a01567 =
 [
-    [ "InterpolatorDataType", "a01567.html#a997ff09c1030f784050010a87b099c47", null ],
-    [ "InterpolatorDataType", "a01567.html#afc4fcf7ed9b94e7a1c212d7b197ec02f", null ],
-    [ "acc", "a01567.html#a74431c245af9ab445ce79f8c5fb5b844", null ],
-    [ "boundary", "a01567.html#a085bf8150e57ec845545c0f53f160bed", null ],
-    [ "pos", "a01567.html#a88bc2ae5fd443fe214a62af192c2434f", null ],
-    [ "t", "a01567.html#a7590cc3e112ae57ca57da0065e2ffb56", null ],
-    [ "vel", "a01567.html#acdfdfbf7f334abfd1fc31bac31d3d9bc", null ]
+    [ "available_observers", "a01567.html#ac104339befa76e8673940c1a86ad2847", null ],
+    [ "clear", "a01567.html#a8649f98bfdfa69a7b1c76bea9897c933", null ],
+    [ "enable_sandboxing", "a01567.html#a8182bc3bc5952e68b6dd9d7ea8435478", null ],
+    [ "get_observer", "a01567.html#a3d1ff69617f71a1eb0aea7aedc13caa9", null ],
+    [ "has_observer", "a01567.html#aac203ca60191fa7e4041339a52baf625", null ],
+    [ "set_verbosity", "a01567.html#afc7d5d833c4d4ce520be8fa81a0b1b63", null ],
+    [ "update_module_path", "a01567.html#a56fc6c53c0487328ed16473706e82df6", null ]
 ];

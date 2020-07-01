@@ -1,7 +1,6 @@
 var a02023 =
 [
-    [ "Polygons", "a02023.html#af5c1dd31a2d012206f2915a07a9f792c", null ],
-    [ "side", "a02023.html#ac8a95deed7837d208505cbe7d949844b", null ],
-    [ "write", "a02023.html#a881d4f1ec50acb6bb79e8db1605ac1ac", null ],
-    [ "type", "a02023.html#a9bac28b142bf3360b5d6a15aa09197fa", null ]
+    [ "LabelImpl", "a02023.html#a8d875328b3e6dcc3d22287cdc7b65d9f", null ],
+    [ "LabelImpl", "a02023.html#aa27962fafec53add87be74c45388891a", null ],
+    [ "type", "a02023.html#a4701d75e61153ae03eb9137a254e603f", null ]
 ];

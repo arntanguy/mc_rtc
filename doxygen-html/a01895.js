@@ -1,7 +1,6 @@
 var a01895 =
 [
-    [ "ArrowImpl", "a01895.html#aa433a79021362f7338be283a44f58cf6", null ],
-    [ "ArrowImpl", "a01895.html#a477913abc68cc99cddaf4496166dc412", null ],
-    [ "handleRequest", "a01895.html#a106e8180fe61c6a91023ffb29f06ee98", null ],
-    [ "write", "a01895.html#a3d992464bca9a200b481434aecc0c7a5", null ]
+    [ "decay_t", "a01895.html#a5b8154625caf14c4dcc919d071c7ba46", null ],
+    [ "type", "a01895.html#a0b4ee875f9490a7d6bef544143160904", null ],
+    [ "is_arithmetic", "a01895.html#a63d9d0405b36451f9c9441f71e3642f6", null ]
 ];

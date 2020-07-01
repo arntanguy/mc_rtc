@@ -1,8 +1,5 @@
 var a02399 =
 [
-    [ "GazeTask", "a02399.html#a84332429e702444553058f37edcbe1d8", null ],
-    [ "GazeTask", "a02399.html#abbb977995875cf7717d4ad89d78b0e12", null ],
-    [ "error", "a02399.html#acc7bf6883b72a0d7082addb417956037", null ],
-    [ "error", "a02399.html#afeef6a71bd72087a707d60a093664d86", null ],
-    [ "reset", "a02399.html#a0be1042d1ec91e59bb2431ba86d226fe", null ]
+    [ "RemoveContactTask", "a02399.html#a6be76449c889b558b10232dc9e21f62a", null ],
+    [ "RemoveContactTask", "a02399.html#a2015e5fecd242b335889e417ef01f98b", null ]
 ];

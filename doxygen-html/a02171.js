@@ -1,6 +1,6 @@
 var a02171 =
 [
-    [ "base_type", "a02171.html#a36029a9801c5ca972f21e626ea554174", null ],
-    [ "ret_type", "a02171.html#a38207f8c1014c4e1b2ebb310e3ceb551", null ],
-    [ "value", "a02171.html#aad0ab42aac325e0fa19a1a82d853288b", null ]
+    [ "ObjectDeleter", "a02171.html#ad9d8c7bebf11fd046f3264f25d73f56d", null ],
+    [ "ObjectDeleter", "a02171.html#a3527e6200ab7ef9bf24606c987072039", null ],
+    [ "operator()", "a02171.html#a7cd3bbddec0b057af90444eb5794ad80", null ]
 ];

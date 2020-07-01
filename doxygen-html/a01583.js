@@ -1,8 +1,10 @@
 var a01583 =
 [
-    [ "cog_acc", "a01583.html#a8d3c98cb8a5aad30e315a29a85fe26ec", null ],
-    [ "cog_pos", "a01583.html#a43181cc4182888bc3c914534e882e45d", null ],
-    [ "cog_vel", "a01583.html#ad4633c96c23a4ff2b763d33d1142462b", null ],
-    [ "p", "a01583.html#a61dcd3e2b8ba4c1c80da38d4d9ba75a3", null ],
-    [ "pdot", "a01583.html#a52c4c505efd51e9eac5b70b436c0fadd", null ]
+    [ "InterpolatorDataType", "a01583.html#a997ff09c1030f784050010a87b099c47", null ],
+    [ "InterpolatorDataType", "a01583.html#afc4fcf7ed9b94e7a1c212d7b197ec02f", null ],
+    [ "acc", "a01583.html#a74431c245af9ab445ce79f8c5fb5b844", null ],
+    [ "boundary", "a01583.html#a085bf8150e57ec845545c0f53f160bed", null ],
+    [ "pos", "a01583.html#a88bc2ae5fd443fe214a62af192c2434f", null ],
+    [ "t", "a01583.html#a7590cc3e112ae57ca57da0065e2ffb56", null ],
+    [ "vel", "a01583.html#acdfdfbf7f334abfd1fc31bac31d3d9bc", null ]
 ];

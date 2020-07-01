@@ -1,14 +1,11 @@
 var a02231 =
 [
-    [ "ContactType", "a02231.html#aa1038fc325c517503d2f68a3feec1c30", [
-      [ "Acceleration", "a02231.html#aa1038fc325c517503d2f68a3feec1c30acbc392a30777e1fa953eea2c011ea2c3", null ],
-      [ "Velocity", "a02231.html#aa1038fc325c517503d2f68a3feec1c30a15d06b5b0997a0a5e17eccd053c7c652", null ],
-      [ "Position", "a02231.html#aa1038fc325c517503d2f68a3feec1c30a75ced229938828d7cf205928657fd137", null ]
-    ] ],
-    [ "ContactConstraint", "a02231.html#a2226b4449ee6faeb3f6d70cfdfb13b4f", null ],
-    [ "ContactConstraint", "a02231.html#ad4a4d2baaacb8b1d914d66a0110c99ab", null ],
-    [ "addToSolver", "a02231.html#a3e94d3c790da36671345692cbf14e81d", null ],
-    [ "removeFromSolver", "a02231.html#af72efeda2c9cd6af2e4626f32ab7583d", null ],
-    [ "contactConstr", "a02231.html#ad8b6359d4d1a771db2fd8bad433acf1f", null ],
-    [ "posLambdaConstr", "a02231.html#a4456741f8ae0b07c199415fda9b9aecf", null ]
+    [ "BoundedSpeedConstr", "a02231.html#a43af0872dd664d13d864053d3ecfda18", null ],
+    [ "addBoundedSpeed", "a02231.html#abcd47fff771a0c7357bd5b682398b3df", null ],
+    [ "addBoundedSpeed", "a02231.html#aff11f05b8b3f2139db8ae2d95ce4afee", null ],
+    [ "addToSolver", "a02231.html#a54adcdc90cc41a64a9723b693f8beb1b", null ],
+    [ "nrBoundedSpeeds", "a02231.html#a70c84d6defba583690d9175ca4cf192d", null ],
+    [ "removeBoundedSpeed", "a02231.html#a5b85799a5bb8df9c5344cd9d3f630708", null ],
+    [ "removeFromSolver", "a02231.html#a0214a46d2452e2dcf610bbf44f863019", null ],
+    [ "reset", "a02231.html#ab0fffcd8e01c61ced64cf5371999acb7", null ]
 ];

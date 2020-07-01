@@ -1,19 +1,11 @@
 var a01535 =
 [
-    [ "Update", "a01535.html#ab23dff7bf325e5a4a3fcf84d13fa62b2", [
-      [ "Control", "a01535.html#ab23dff7bf325e5a4a3fcf84d13fa62b2aa1595abbb4c3a326636dd178757cd6c1", null ],
-      [ "Estimator", "a01535.html#ab23dff7bf325e5a4a3fcf84d13fa62b2ada2a1b654dd8965375b17b81a0874e1d", null ],
-      [ "None", "a01535.html#ab23dff7bf325e5a4a3fcf84d13fa62b2a6adf97f83acf6453d4a6a4b1070f3754", null ]
-    ] ],
-    [ "EncoderObserver", "a01535.html#ae041a35fb0a73ebdbe7bbea9e1346155", null ],
-    [ "addToLogger", "a01535.html#a2a2f2d12d8ea8643e3a2ad1e910aa892", null ],
-    [ "removeFromLogger", "a01535.html#af71d87a052f0e72a00198643ab760a11", null ],
-    [ "reset", "a01535.html#a2934c6f44a6b49aae0e8e412b04d37c1", null ],
-    [ "run", "a01535.html#ad65144731e89fc2d6ba40c39e9d5b691", null ],
-    [ "updateRobots", "a01535.html#af72093790abd36ada558ed00cb0414a0", null ],
-    [ "encodersVelocity_", "a01535.html#a836476dda18a176da54e14ede5f0eabd", null ],
-    [ "logEstimation_", "a01535.html#a53abfb8ea362389b0a08a268bc9ac268", null ],
-    [ "posUpdate_", "a01535.html#a8b1666591ee20b8a1f45f7766b5ec694", null ],
-    [ "prevEncoders_", "a01535.html#a81e5682d74e14df7b3b65c6344b49cb0", null ],
-    [ "velUpdate_", "a01535.html#a6da1c395f9ebe746776910c6713c21d4", null ]
+    [ "LowPass", "a01535.html#ae3ddcbbc84aae62aad621a14a91c39bf", null ],
+    [ "cutoffPeriod", "a01535.html#ac48741a383af10509d4678c5a0673f3a", null ],
+    [ "cutoffPeriod", "a01535.html#ac3c92851291e84d2347271125877dc0c", null ],
+    [ "dt", "a01535.html#a41bcea9e9de194a6816f03cacbd534dd", null ],
+    [ "eval", "a01535.html#a543781fd1c5ec7b653de6e2189de8fdb", null ],
+    [ "reset", "a01535.html#af9ccdd55e5d7f3beabcf4c26bcea9620", null ],
+    [ "update", "a01535.html#a03ab891a2b1f5cd2fd2398b7016ba633", null ],
+    [ "dt_", "a01535.html#a54232494fa4fa74a08d85acf3f95ab7a", null ]
 ];

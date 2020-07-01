@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Robot.h File Reference</title>
+<title>api.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -70,55 +70,120 @@ $(document).ready(function(){initNavTree('a03446.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">mc_rbdyn/Robot.h File Reference</div>  </div>
+<div class="title">mc_control/api.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a00179.html">mc_rbdyn/Base.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00239.html">mc_rbdyn/RobotModule.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00257.html">mc_rbdyn/Surface.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a00071.html">mc_control/generic_gripper.h</a>&gt;</code><br />
-<code>#include &lt;RBDyn/MultiBody.h&gt;</code><br />
-<code>#include &lt;RBDyn/MultiBodyConfig.h&gt;</code><br />
-<code>#include &lt;RBDyn/MultiBodyGraph.h&gt;</code><br />
-<code>#include &lt;sch/S_Object/S_Object.h&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;unordered_map&gt;</code><br />
-<code>#include &lt;mc_rbdyn/Robot.hpp&gt;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01751.html">mc_rbdyn::Robot</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a00760"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00760.html">mc_rbdyn</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga70b316b2f0c0caf547e160e74c2a029d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a03410.html#a5f64edebd03a669545de1ba699d6cb49">MC_RBDYN_DLLAPI</a> const <a class="el" href="a01751.html">mc_rbdyn::Robot</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00753.html#ga70b316b2f0c0caf547e160e74c2a029d">mc_rbdyn::robotFromConfig</a> (const <a class="el" href="a01827.html">mc_rtc::Configuration</a> &amp;config, const <a class="el" href="a01791.html">mc_rbdyn::Robots</a> &amp;robots, const std::string &amp;prefix, bool required=false, const std::string &amp;robotIndexKey=&quot;robotIndex&quot;, const std::string &amp;robotNameKey=&quot;robot&quot;, const std::string &amp;defaultRobotName=&quot;&quot;)</td></tr>
-<tr class="memdesc:ga70b316b2f0c0caf547e160e74c2a029d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to a loaded robot from configuration (using robotName or robotIndex)  <a href="a00753.html#ga70b316b2f0c0caf547e160e74c2a029d">More...</a><br /></td></tr>
-<tr class="separator:ga70b316b2f0c0caf547e160e74c2a029d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga40325ac769295d23f270976eead26245"><td class="memItemLeft" align="right" valign="top">std::string <a class="el" href="a03410.html#a5f64edebd03a669545de1ba699d6cb49">MC_RBDYN_DLLAPI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00753.html#ga40325ac769295d23f270976eead26245">mc_rbdyn::robotNameFromConfig</a> (const <a class="el" href="a01827.html">mc_rtc::Configuration</a> &amp;config, const <a class="el" href="a01791.html">mc_rbdyn::Robots</a> &amp;robots, const std::string &amp;prefix=&quot;&quot;, bool required=false, const std::string &amp;robotIndexKey=&quot;robotIndex&quot;, const std::string &amp;robotNameKey=&quot;robot&quot;, const std::string &amp;defaultRobotName=&quot;&quot;)</td></tr>
-<tr class="memdesc:ga40325ac769295d23f270976eead26245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to obtain the robot name from configuration.  <a href="a00753.html#ga40325ac769295d23f270976eead26245">More...</a><br /></td></tr>
-<tr class="separator:ga40325ac769295d23f270976eead26245"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf9b711ec2baa5684b8f422d740464b5f"><td class="memItemLeft" align="right" valign="top">unsigned int <a class="el" href="a03410.html#a5f64edebd03a669545de1ba699d6cb49">MC_RBDYN_DLLAPI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00753.html#gaf9b711ec2baa5684b8f422d740464b5f">mc_rbdyn::robotIndexFromConfig</a> (const <a class="el" href="a01827.html">mc_rtc::Configuration</a> &amp;config, const <a class="el" href="a01791.html">mc_rbdyn::Robots</a> &amp;robots, const std::string &amp;prefix=&quot;&quot;, bool required=false, const std::string &amp;robotIndexKey=&quot;robotIndex&quot;, const std::string &amp;robotNameKey=&quot;robot&quot;, const std::string &amp;defaultRobotName=&quot;&quot;)</td></tr>
-<tr class="memdesc:gaf9b711ec2baa5684b8f422d740464b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to obtain the robot index from configuration.  <a href="a00753.html#gaf9b711ec2baa5684b8f422d740464b5f">More...</a><br /></td></tr>
-<tr class="separator:gaf9b711ec2baa5684b8f422d740464b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a22df2857d14ed04f3b639527d08f7740"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03446.html#a22df2857d14ed04f3b639527d08f7740">MC_CONTROL_VERSION</a>&#160;&#160;&#160;&quot;UNKNOWN-dirty&quot;</td></tr>
+<tr class="separator:a22df2857d14ed04f3b639527d08f7740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d9bb1f3f36bbffb00cf015b0bb0e37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03446.html#a93d9bb1f3f36bbffb00cf015b0bb0e37">MC_CONTROL_DLLIMPORT</a></td></tr>
+<tr class="separator:a93d9bb1f3f36bbffb00cf015b0bb0e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab2eb8965ce5e6d787aecf3e46d3be0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03446.html#a3ab2eb8965ce5e6d787aecf3e46d3be0">MC_CONTROL_DLLEXPORT</a></td></tr>
+<tr class="separator:a3ab2eb8965ce5e6d787aecf3e46d3be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd14ed2320e3cbe50d19d4ada5b64a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03446.html#a5fd14ed2320e3cbe50d19d4ada5b64a7">MC_CONTROL_DLLLOCAL</a></td></tr>
+<tr class="separator:a5fd14ed2320e3cbe50d19d4ada5b64a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a167861c5d95139886801b242d6d0115f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03446.html#a167861c5d95139886801b242d6d0115f">MC_CONTROL_DLLAPI</a>&#160;&#160;&#160;<a class="el" href="a03446.html#a93d9bb1f3f36bbffb00cf015b0bb0e37">MC_CONTROL_DLLIMPORT</a></td></tr>
+<tr class="separator:a167861c5d95139886801b242d6d0115f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef3a5c95b86a2ae0592bfafaec89185"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03446.html#aaef3a5c95b86a2ae0592bfafaec89185">MC_CONTROL_LOCAL</a>&#160;&#160;&#160;<a class="el" href="a03446.html#a5fd14ed2320e3cbe50d19d4ada5b64a7">MC_CONTROL_DLLLOCAL</a></td></tr>
+<tr class="separator:aaef3a5c95b86a2ae0592bfafaec89185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a167861c5d95139886801b242d6d0115f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a167861c5d95139886801b242d6d0115f">&#9670;&nbsp;</a></span>MC_CONTROL_DLLAPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_DLLAPI&#160;&#160;&#160;<a class="el" href="a03446.html#a93d9bb1f3f36bbffb00cf015b0bb0e37">MC_CONTROL_DLLIMPORT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ab2eb8965ce5e6d787aecf3e46d3be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab2eb8965ce5e6d787aecf3e46d3be0">&#9670;&nbsp;</a></span>MC_CONTROL_DLLEXPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_DLLEXPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93d9bb1f3f36bbffb00cf015b0bb0e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d9bb1f3f36bbffb00cf015b0bb0e37">&#9670;&nbsp;</a></span>MC_CONTROL_DLLIMPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_DLLIMPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fd14ed2320e3cbe50d19d4ada5b64a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fd14ed2320e3cbe50d19d4ada5b64a7">&#9670;&nbsp;</a></span>MC_CONTROL_DLLLOCAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_DLLLOCAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaef3a5c95b86a2ae0592bfafaec89185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef3a5c95b86a2ae0592bfafaec89185">&#9670;&nbsp;</a></span>MC_CONTROL_LOCAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_LOCAL&#160;&#160;&#160;<a class="el" href="a03446.html#a5fd14ed2320e3cbe50d19d4ada5b64a7">MC_CONTROL_DLLLOCAL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22df2857d14ed04f3b639527d08f7740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22df2857d14ed04f3b639527d08f7740">&#9670;&nbsp;</a></span>MC_CONTROL_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_VERSION&#160;&#160;&#160;&quot;UNKNOWN-dirty&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_314ec80f2fc36a4630429f4d5408038e.html">mc_rbdyn</a></li><li class="navelem"><a class="el" href="a03446.html">Robot.h</a></li>
-    <li class="footer">Generated on Fri Jun 26 2020 08:23:50 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8a948ff1aa35df8f7730fc54bf71041a.html">mc_control</a></li><li class="navelem"><a class="el" href="a03446.html">api.h</a></li>
+    <li class="footer">Generated on Wed Jul 1 2020 12:23:01 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

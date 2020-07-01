@@ -70,33 +70,35 @@ $(document).ready(function(){initNavTree('a02235.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mc_solver::DynamicsConstraint Member List</div>  </div>
+<div class="title">mc_solver::CollisionsConstraint Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a08413ca37fc394ed2b3f692f2bcc8e44">addToSolver</a>(const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, tasks::qp::QPSolver &amp;solver) override</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a02295.html#a3febf798804706fce1efe1eac46c16f9">damperJointLimitsConstr</a></td><td class="entry"><a class="el" href="a02295.html">mc_solver::KinematicsConstraint</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a0f1097a536c65e610735d3314e86a4e3">DynamicsConstraint</a>(const mc_rbdyn::Robots &amp;robots, unsigned int robotIndex, double timeStep, bool infTorque=false)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a02235.html#a330391bd86278523ae70830fc2d7e9f9">DynamicsConstraint</a>(const mc_rbdyn::Robots &amp;robots, unsigned int robotIndex, double timeStep, const std::array&lt; double, 3 &gt; &amp;damper, double velocityPercent=1.0, bool infTorque=false)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a2adb5f59889ad682361cbdd940e7d527">DynamicsConstraint</a>()</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a02235.html#ad1eea623f5d96d9d75043108d4251911">inSolver</a>() const</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a02295.html#ab113d21083add766566decba27631820">jointLimitsConstr</a></td><td class="entry"><a class="el" href="a02295.html">mc_solver::KinematicsConstraint</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a02295.html#ae4fa119dd4f6643ea9bfd6e71d100e48">KinematicsConstraint</a>(const mc_rbdyn::Robots &amp;robots, unsigned int robotIndex, double timeStep)</td><td class="entry"><a class="el" href="a02295.html">mc_solver::KinematicsConstraint</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a02295.html#a89801271d9d8e8288c6be32b13970f3f">KinematicsConstraint</a>(const mc_rbdyn::Robots &amp;robots, unsigned int robotIndex, double timeStep, const std::array&lt; double, 3 &gt; &amp;damper, double velocityPercent=1.0)</td><td class="entry"><a class="el" href="a02295.html">mc_solver::KinematicsConstraint</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a02295.html#a9772713ef63997c2ff16a754cdf34401">KinematicsConstraint</a>()</td><td class="entry"><a class="el" href="a02295.html">mc_solver::KinematicsConstraint</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a888094b65574aed3b2bb86a67a744a44">motionConstr</a></td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a02235.html#ac37f401f997c13db2b3a3cf080f0bd4b">removeFromSolver</a>(tasks::qp::QPSolver &amp;solver) override</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a02235.html#af226f3dc547957b5700408bcc6688f7a">robotIndex</a>() const</td><td class="entry"><a class="el" href="a02235.html">mc_solver::DynamicsConstraint</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a02223.html#ad979bb11e0faeba2c10d36d5a4c46e00">~ConstraintSet</a>()</td><td class="entry"><a class="el" href="a02223.html">mc_solver::ConstraintSet</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a63ceff121b62162d0817026e7177767e">addCollision</a>(QPSolver &amp;solver, const mc_rbdyn::Collision &amp;col)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#a9908fdb932f5228faf0e508f9db37edd">addCollisions</a>(QPSolver &amp;solver, const std::vector&lt; mc_rbdyn::Collision &gt; &amp;cols)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#ad35e4c70b095a3dd62bcc640f5fc3cae">addToSolver</a>(const std::vector&lt; rbd::MultiBody &gt; &amp;mbs, tasks::qp::QPSolver &amp;solver) override</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#aeb19fca872f0ad264f1babf3fcb19da8">collConstr</a></td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a9a46b2c285695e166eefc0814938e2b4">CollisionsConstraint</a>(const mc_rbdyn::Robots &amp;robots, unsigned int r1Index, unsigned int r2Index, double timeStep)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#a65a16e95f788ae679f6aa0bf67d0ec10">CollisionsConstraint</a>()</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a8f2dea27de0d2763cf96505ecac6f61c">cols</a></td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#a53ad175e22679ab9924f71ad573fd87a">defaultDampingOffset</a></td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a0fbd97c53f4fb31297e1abd61fa304b2">r1Index</a></td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#a0dc1390b5fc625595ded740a9e12afd2">r2Index</a></td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#abd70fa0653a8fbdc8d9e397694340626">removeCollision</a>(QPSolver &amp;solver, const std::string &amp;b1Name, const std::string &amp;b2Name)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#a5f5f7b094d049ef78ceaba70868db1f4">removeCollisionByBody</a>(QPSolver &amp;solver, const std::string &amp;byName, const std::string &amp;b2Name)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a0e5e400e748c70619be1602764431b5f">removeCollisions</a>(QPSolver &amp;solver, const std::vector&lt; mc_rbdyn::Collision &gt; &amp;cols)</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02235.html#ad7757edd53edcdbda1ba8da7513acc74">removeFromSolver</a>(tasks::qp::QPSolver &amp;solver) override</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a02235.html#a3234964e5bd5e0bd73e62f507f1880c4">reset</a>()</td><td class="entry"><a class="el" href="a02235.html">mc_solver::CollisionsConstraint</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a02259.html#ad979bb11e0faeba2c10d36d5a4c46e00">~ConstraintSet</a>()</td><td class="entry"><a class="el" href="a02259.html">mc_solver::ConstraintSet</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 26 2020 08:23:51 for mc_rtc by
+    <li class="footer">Generated on Wed Jul 1 2020 12:23:02 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

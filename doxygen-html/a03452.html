@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>State.h File Reference</title>
+<title>api.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -70,87 +70,106 @@ $(document).ready(function(){initNavTree('a03452.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">mc_control/fsm/State.h File Reference</div>  </div>
+<div class="title">mc_control/fsm/states/api.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a03398.html">mc_control/fsm/api.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a03401.html">mc_control/fsm/states/api.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a03431.html">mc_rtc/Configuration.h</a>&gt;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01407.html">mc_control::fsm::State</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A state of an FSM.  <a href="a01407.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a00755"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00755.html">mc_control</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00756"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00756.html">mc_control::fsm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3d9a843e054d57012b5f40fbab9ca357"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#a3d9a843e054d57012b5f40fbab9ca357">FSM_STATE_API</a></td></tr>
-<tr class="separator:a3d9a843e054d57012b5f40fbab9ca357"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc0c9094c9775d1a72401d17cd60d6be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#afc0c9094c9775d1a72401d17cd60d6be">EXPORT_SINGLE_STATE</a>(NAME,  TYPE)</td></tr>
-<tr class="separator:afc0c9094c9775d1a72401d17cd60d6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a4c42d903de4c4a1e5ad50c37bc2d547a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00756.html#a4c42d903de4c4a1e5ad50c37bc2d547a">mc_control::fsm::StatePtr</a> = std::shared_ptr&lt; State &gt;</td></tr>
-<tr class="separator:a4c42d903de4c4a1e5ad50c37bc2d547a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a3d06e24faff23eaa588f3820e74042b7"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a03398.html#abb5c53c99c37c6ca870d1838f76228ef">MC_CONTROL_FSM_DLLAPI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00756.html#a3d06e24faff23eaa588f3820e74042b7">mc_control::fsm::Controller</a></td></tr>
-<tr class="separator:a3d06e24faff23eaa588f3820e74042b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fe6be3f7fd6b98de2dbdcb335b157b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#a2fe6be3f7fd6b98de2dbdcb335b157b0">MC_CONTROL_FSM_STATE_VERSION</a>&#160;&#160;&#160;&quot;UNKNOWN-dirty&quot;</td></tr>
+<tr class="separator:a2fe6be3f7fd6b98de2dbdcb335b157b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb918e5798089061b14f124312865580"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#adb918e5798089061b14f124312865580">MC_CONTROL_FSM_STATE_DLLIMPORT</a></td></tr>
+<tr class="separator:adb918e5798089061b14f124312865580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bceb2813abeb80aa1e49f1109e6c88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#a16bceb2813abeb80aa1e49f1109e6c88">MC_CONTROL_FSM_STATE_DLLEXPORT</a></td></tr>
+<tr class="separator:a16bceb2813abeb80aa1e49f1109e6c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113188e6b7bc199d59abd8a7f463d9f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#a113188e6b7bc199d59abd8a7f463d9f9">MC_CONTROL_FSM_STATE_DLLLOCAL</a></td></tr>
+<tr class="separator:a113188e6b7bc199d59abd8a7f463d9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfcac728c1786a9888c977f8b656ba2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#a4cfcac728c1786a9888c977f8b656ba2">MC_CONTROL_FSM_STATE_DLLAPI</a>&#160;&#160;&#160;<a class="el" href="a03452.html#adb918e5798089061b14f124312865580">MC_CONTROL_FSM_STATE_DLLIMPORT</a></td></tr>
+<tr class="separator:a4cfcac728c1786a9888c977f8b656ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f940b92f5b7fef9b7af442273630546"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a03452.html#a9f940b92f5b7fef9b7af442273630546">MC_CONTROL_FSM_STATE_LOCAL</a>&#160;&#160;&#160;<a class="el" href="a03452.html#a113188e6b7bc199d59abd8a7f463d9f9">MC_CONTROL_FSM_STATE_DLLLOCAL</a></td></tr>
+<tr class="separator:a9f940b92f5b7fef9b7af442273630546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="afc0c9094c9775d1a72401d17cd60d6be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc0c9094c9775d1a72401d17cd60d6be">&#9670;&nbsp;</a></span>EXPORT_SINGLE_STATE</h2>
+<a id="a4cfcac728c1786a9888c977f8b656ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cfcac728c1786a9888c977f8b656ba2">&#9670;&nbsp;</a></span>MC_CONTROL_FSM_STATE_DLLAPI</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EXPORT_SINGLE_STATE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">NAME, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">TYPE&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">#define MC_CONTROL_FSM_STATE_DLLAPI&#160;&#160;&#160;<a class="el" href="a03452.html#adb918e5798089061b14f124312865580">MC_CONTROL_FSM_STATE_DLLIMPORT</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>                                                              \</div><div class="line">  {                                                                       \</div><div class="line">    FSM_STATE_API <span class="keywordtype">void</span> MC_RTC_FSM_STATE(std::vector&lt;std::string&gt; &amp; names) \</div><div class="line">    {                                                                     \</div><div class="line">      names = {NAME};                                                     \</div><div class="line">    }                                                                     \</div><div class="line">    FSM_STATE_API <span class="keywordtype">void</span> destroy(<a class="code" href="a01407.html">mc_control::fsm::State</a> * ptr)              \</div><div class="line">    {                                                                     \</div><div class="line">      delete ptr;                                                         \</div><div class="line">    }                                                                     \</div><div class="line">    FSM_STATE_API <a class="code" href="a01407.html">mc_control::fsm::State</a> * create(<span class="keyword">const</span> std::string &amp;)    \</div><div class="line">    {                                                                     \</div><div class="line">      return <span class="keyword">new</span> TYPE();                                                  \</div><div class="line">    }                                                                     \</div><div class="line">  }</div><div class="ttc" id="a01407_html"><div class="ttname"><a href="a01407.html">mc_control::fsm::State</a></div><div class="ttdoc">A state of an FSM. </div><div class="ttdef"><b>Definition:</b> mc_control/fsm/State.h:52</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
-<a id="a3d9a843e054d57012b5f40fbab9ca357"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d9a843e054d57012b5f40fbab9ca357">&#9670;&nbsp;</a></span>FSM_STATE_API</h2>
+<a id="a16bceb2813abeb80aa1e49f1109e6c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16bceb2813abeb80aa1e49f1109e6c88">&#9670;&nbsp;</a></span>MC_CONTROL_FSM_STATE_DLLEXPORT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FSM_STATE_API</td>
+          <td class="memname">#define MC_CONTROL_FSM_STATE_DLLEXPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb918e5798089061b14f124312865580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb918e5798089061b14f124312865580">&#9670;&nbsp;</a></span>MC_CONTROL_FSM_STATE_DLLIMPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_FSM_STATE_DLLIMPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a113188e6b7bc199d59abd8a7f463d9f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113188e6b7bc199d59abd8a7f463d9f9">&#9670;&nbsp;</a></span>MC_CONTROL_FSM_STATE_DLLLOCAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_FSM_STATE_DLLLOCAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f940b92f5b7fef9b7af442273630546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f940b92f5b7fef9b7af442273630546">&#9670;&nbsp;</a></span>MC_CONTROL_FSM_STATE_LOCAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_FSM_STATE_LOCAL&#160;&#160;&#160;<a class="el" href="a03452.html#a113188e6b7bc199d59abd8a7f463d9f9">MC_CONTROL_FSM_STATE_DLLLOCAL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fe6be3f7fd6b98de2dbdcb335b157b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe6be3f7fd6b98de2dbdcb335b157b0">&#9670;&nbsp;</a></span>MC_CONTROL_FSM_STATE_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_CONTROL_FSM_STATE_VERSION&#160;&#160;&#160;&quot;UNKNOWN-dirty&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -163,8 +182,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8a948ff1aa35df8f7730fc54bf71041a.html">mc_control</a></li><li class="navelem"><a class="el" href="dir_5eca7bb21ab95c8ba50a69c382d19321.html">fsm</a></li><li class="navelem"><a class="el" href="a03452.html">State.h</a></li>
-    <li class="footer">Generated on Fri Jun 26 2020 08:23:50 for mc_rtc by
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8a948ff1aa35df8f7730fc54bf71041a.html">mc_control</a></li><li class="navelem"><a class="el" href="dir_5eca7bb21ab95c8ba50a69c382d19321.html">fsm</a></li><li class="navelem"><a class="el" href="dir_e6b7f2c290ec347c099e5f45d81956a4.html">states</a></li><li class="navelem"><a class="el" href="a03452.html">api.h</a></li>
+    <li class="footer">Generated on Wed Jul 1 2020 12:23:01 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

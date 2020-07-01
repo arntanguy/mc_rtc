@@ -1,4 +1,5 @@
 var a02159 =
 [
-    [ "type", "a02159.html#a7b718d634332b545266bbe2298a624d4", null ]
+    [ "LoaderException", "a02159.html#a52e22f0a82bd6634d02ca30961643c25", null ],
+    [ "what", "a02159.html#a2db77040caace4fc6f15e231a328a608", null ]
 ];

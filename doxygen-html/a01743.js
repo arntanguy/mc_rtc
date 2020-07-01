@@ -1,10 +1,5 @@
 var a01743 =
 [
-    [ "tuple_pair_t", "a01743.html#adda7bb6a81b142d132c7772fe7b1672c", null ],
-    [ "tuple_t", "a01743.html#a8667e5bd25c0215d10ce8e139028207d", null ],
-    [ "PolygonInterpolator", "a01743.html#a279595aaf7f350b0247920b77efb8040", null ],
-    [ "fast_interpolate", "a01743.html#a41490869f7df5826143477c52ac3f236", null ],
-    [ "midpoint_derivative", "a01743.html#a5dbd705039482f156583eadaa91bd51a", null ],
-    [ "normal_derivative", "a01743.html#a8692430f5c1315d38bbc1a1f4798907c", null ],
-    [ "tuple_pairs", "a01743.html#a8c6e2f6234920055ea5c7ab8e32434ee", null ]
+    [ "load", "a01743.html#af6bc9c479eb0cbd067ea314e165fe451", null ],
+    [ "save", "a01743.html#af9445788bc08d4b66c5a82c8fc4e35df", null ]
 ];

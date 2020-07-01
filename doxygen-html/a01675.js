@@ -1,5 +1,7 @@
 var a01675 =
 [
-    [ "points", "a01675.html#a0b18450a98acf02d8b5b56b0c74e84a1", null ],
-    [ "qpcontact_ptr", "a01675.html#a18f4220244dc364488e15a5b6fc7bdf6", null ]
+    [ "baseName", "a01675.html#a29e3501c76c5f562000ea4c144bcb92e", null ],
+    [ "baseType", "a01675.html#aefd54756f82332b9155a61cea33d8cc3", null ],
+    [ "X_0_s", "a01675.html#ae50130e4a7f74e88220617d3080c65ec", null ],
+    [ "X_b0_s", "a01675.html#a4fed34226bcc4165ddc6f39fab4dfacb", null ]
 ];

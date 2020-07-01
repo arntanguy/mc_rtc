@@ -1,12 +1,7 @@
 var a02095 =
 [
-    [ "LineConfig", "a02095.html#a15dd7cd44bf0edc5b475448de6e26451", null ],
-    [ "LineConfig", "a02095.html#a0ba859719a9ff99290fec7b8e8add72b", null ],
-    [ "LineConfig", "a02095.html#a05fe24ecd21753185e6da09151f35ce2", null ],
-    [ "load", "a02095.html#ac77f299a585b18903c8628590b8f6a00", null ],
-    [ "write", "a02095.html#a2845b8dfdbdaeb72cb473086c6bdf8a7", null ],
-    [ "write_size", "a02095.html#a76ab2e9dcb6923c3877c2822dec478dd", null ],
-    [ "color", "a02095.html#a4f88bdc8e23bf720a90553abaca4d6ec", null ],
-    [ "style", "a02095.html#a2678eadbdc5908c80e0dcc9c39941a14", null ],
-    [ "width", "a02095.html#a57cd8fdd493c21993724fe26828cf47c", null ]
+    [ "SchemaImpl", "a02095.html#a3b43196dfda7475d0924cc29e2db22fb", null ],
+    [ "write", "a02095.html#ac2fad63fbecf2126101c4bb4bfca5397", null ],
+    [ "write_size", "a02095.html#ad53e00175461bd0bd4facd164cabf656", null ],
+    [ "type", "a02095.html#a2e77582fcb4cdc8af5919f0d3f8ffa0d", null ]
 ];

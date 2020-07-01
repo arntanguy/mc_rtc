@@ -1,7 +1,7 @@
 var a00780 =
 [
-    [ "ClampedCubicSpline", "a01570.html", "a01570" ],
-    [ "CubicSplineBase", "a01574.html", "a01574" ],
-    [ "InterpolatorBase", "a01586.html", "a01586" ],
-    [ "InterpolatorDataType", "a01582.html", "a01582" ]
+    [ "ClampedCubicSpline", "a01571.html", "a01571" ],
+    [ "CubicSplineBase", "a01575.html", "a01575" ],
+    [ "InterpolatorBase", "a01587.html", "a01587" ],
+    [ "InterpolatorDataType", "a01583.html", "a01583" ]
 ];

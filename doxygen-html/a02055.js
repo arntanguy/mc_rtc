@@ -1,8 +1,7 @@
 var a02055 =
 [
-    [ "RotationImpl", "a02055.html#a7661413981acb1ca272bd40dcbdfec76", null ],
-    [ "RotationImpl", "a02055.html#ad38cdbde21b335061f261683a3540046", null ],
-    [ "write", "a02055.html#a5db74bd06e02788dcf943ecb1ba51267", null ],
-    [ "write_size", "a02055.html#a90964aa0cd30be5f543ca7a75433d17a", null ],
-    [ "type", "a02055.html#acc77cdef75bb1767eb3e80c2db36afc0", null ]
+    [ "Polygon", "a02055.html#af7e96bad2cd93f2b0eaecbf94e8ce4c2", null ],
+    [ "side", "a02055.html#ab7683b7758fdcb4c826c57eb7ef37800", null ],
+    [ "write", "a02055.html#a5cad8ea3b30915d71a70df177591e536", null ],
+    [ "type", "a02055.html#a5c7df3c2bb038af2fd07bc822c1af1bc", null ]
 ];

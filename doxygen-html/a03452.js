@@ -1,8 +1,9 @@
 var a03452 =
 [
-    [ "State", "a01407.html", "a01407" ],
-    [ "EXPORT_SINGLE_STATE", "a03452.html#afc0c9094c9775d1a72401d17cd60d6be", null ],
-    [ "FSM_STATE_API", "a03452.html#a3d9a843e054d57012b5f40fbab9ca357", null ],
-    [ "StatePtr", "a03452.html#a4c42d903de4c4a1e5ad50c37bc2d547a", null ],
-    [ "Controller", "a03452.html#a3d06e24faff23eaa588f3820e74042b7", null ]
+    [ "MC_CONTROL_FSM_STATE_DLLAPI", "a03452.html#a4cfcac728c1786a9888c977f8b656ba2", null ],
+    [ "MC_CONTROL_FSM_STATE_DLLEXPORT", "a03452.html#a16bceb2813abeb80aa1e49f1109e6c88", null ],
+    [ "MC_CONTROL_FSM_STATE_DLLIMPORT", "a03452.html#adb918e5798089061b14f124312865580", null ],
+    [ "MC_CONTROL_FSM_STATE_DLLLOCAL", "a03452.html#a113188e6b7bc199d59abd8a7f463d9f9", null ],
+    [ "MC_CONTROL_FSM_STATE_LOCAL", "a03452.html#a9f940b92f5b7fef9b7af442273630546", null ],
+    [ "MC_CONTROL_FSM_STATE_VERSION", "a03452.html#a2fe6be3f7fd6b98de2dbdcb335b157b0", null ]
 ];

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Member List</title>
+<title>mc_planning::PreviewElement Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -51,7 +51,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a01646.html','');});
+$(document).ready(function(){initNavTree('a01643.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -69,34 +69,300 @@ $(document).ready(function(){initNavTree('a01646.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="a01640.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_planning::StatePV Member List</div>  </div>
+<div class="title">mc_planning::PreviewElement Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a01646.html">mc_planning::StatePV</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a01646.html#a42eaaee95b1c90f806a3b9b2238f9288">Copy</a>(const StatePV &amp;i_state)</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01642.html#aa4810719793a3b0828168c4b173ab82f">mc_planning::StateP::Copy</a>(const StateP &amp;i_state)</td><td class="entry"><a class="el" href="a01642.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01646.html#a8feaa96fbb2eb4e4a71de6dead9d2ce0">Initialize</a>()</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01646.html#aec95a9d9552b685a4ff584f073605d9b">operator&lt;&lt;</a>(std::ostream &amp;os, const StatePV &amp;s)</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01646.html#aad0afaabdcff1e0ee294205567aed9df">operator=</a>(const StatePV &amp;i_state)</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01642.html#a323ac05f38b3e648a08922e6ee8fe427">mc_planning::StateP::operator=</a>(const StateP &amp;i_state)</td><td class="entry"><a class="el" href="a01642.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01642.html#a182ed07e44c51a690835f300cdde12b2">P</a></td><td class="entry"><a class="el" href="a01642.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01642.html#aa70eabc6ab14014518cf43b2bb3ff0dd">StateP</a>()</td><td class="entry"><a class="el" href="a01642.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01642.html#ad635c4cfa84e7870169f0ca8d76fcf87">StateP</a>(const Eigen::Vector3d &amp;p)</td><td class="entry"><a class="el" href="a01642.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01642.html#afc3dfb710d0dca983fb4dbf6c63ab129">StateP</a>(const StateP &amp;i_state)</td><td class="entry"><a class="el" href="a01642.html">mc_planning::StateP</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01646.html#ae8a780ff1b7241ea65345caf17e6f0d3">StatePV</a>()</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01646.html#aeb9ea75e44b30a78672b20ab5b73a675">StatePV</a>(const Eigen::Vector3d &amp;p, const Eigen::Vector3d &amp;v)</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a01646.html#a9e8b621afa697184a69f8a1045371134">StatePV</a>(const StatePV &amp;i_state)</td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a01646.html#a1145b941b92646c110e47af422724f97">V</a></td><td class="entry"><a class="el" href="a01646.html">mc_planning::StatePV</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Element returned by CenteredPreviewWindow::iterator providing the current index and allowing to conveniently get the corresponding time.  
+ <a href="a01643.html#details">More...</a></p>
+
+<p><code>#include &lt;mc_planning/PreviewWindow.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aad3e9292c942638c2318bbda8161bfc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#aad3e9292c942638c2318bbda8161bfc3">PreviewElement</a> (const <a class="el" href="a01651.html">PreviewWindowView</a> &amp;window, <a class="el" href="a01639.html">Index</a> <a class="el" href="a01643.html#a12f6aabbfdf4003e0191f1b0315f4d10">index</a>) noexcept</td></tr>
+<tr class="memdesc:aad3e9292c942638c2318bbda8161bfc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an element (meant to be used by iterators)  <a href="#aad3e9292c942638c2318bbda8161bfc3">More...</a><br /></td></tr>
+<tr class="separator:aad3e9292c942638c2318bbda8161bfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3619a5d19d24d6cc3d59ae36e8c1bd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#ac3619a5d19d24d6cc3d59ae36e8c1bd9">PreviewElement</a> (const <a class="el" href="a01651.html">PreviewWindowView</a> &amp;window, unsigned <a class="el" href="a01643.html#a12f6aabbfdf4003e0191f1b0315f4d10">index</a>) noexcept</td></tr>
+<tr class="separator:ac3619a5d19d24d6cc3d59ae36e8c1bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f6aabbfdf4003e0191f1b0315f4d10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01639.html">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#a12f6aabbfdf4003e0191f1b0315f4d10">index</a> () const noexcept</td></tr>
+<tr class="memdesc:a12f6aabbfdf4003e0191f1b0315f4d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global index starting at <code>window.startIndex()</code>  <a href="#a12f6aabbfdf4003e0191f1b0315f4d10">More...</a><br /></td></tr>
+<tr class="separator:a12f6aabbfdf4003e0191f1b0315f4d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a7cfa662c0defa662c54814da31c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01635.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#a19a7cfa662c0defa662c54814da31c9b">time</a> () const noexcept</td></tr>
+<tr class="memdesc:a19a7cfa662c0defa662c54814da31c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the time corresponding to <a class="el" href="a01643.html#a12f6aabbfdf4003e0191f1b0315f4d10" title="Returns the global index starting at window.startIndex() ">index()</a>  <a href="#a19a7cfa662c0defa662c54814da31c9b">More...</a><br /></td></tr>
+<tr class="separator:a19a7cfa662c0defa662c54814da31c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1309d1df8e3f5bbc8d8b63e766a5c49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01639.html">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#af1309d1df8e3f5bbc8d8b63e766a5c49">localIndex</a> () const noexcept</td></tr>
+<tr class="memdesc:af1309d1df8e3f5bbc8d8b63e766a5c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index local to the preview window.  <a href="#af1309d1df8e3f5bbc8d8b63e766a5c49">More...</a><br /></td></tr>
+<tr class="separator:af1309d1df8e3f5bbc8d8b63e766a5c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0043bb94191b9c0c6b0e8df62e7ab485"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01635.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#a0043bb94191b9c0c6b0e8df62e7ab485">localTime</a> () const noexcept</td></tr>
+<tr class="memdesc:a0043bb94191b9c0c6b0e8df62e7ab485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the time corresponding to <a class="el" href="a01643.html#af1309d1df8e3f5bbc8d8b63e766a5c49" title="Returns the index local to the preview window. ">localIndex()</a>  <a href="#a0043bb94191b9c0c6b0e8df62e7ab485">More...</a><br /></td></tr>
+<tr class="separator:a0043bb94191b9c0c6b0e8df62e7ab485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a3b825efa12b1b58dfd90f688f5a42421"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a01651.html">PreviewWindowView</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#a3b825efa12b1b58dfd90f688f5a42421">window_</a></td></tr>
+<tr class="memdesc:a3b825efa12b1b58dfd90f688f5a42421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window being iterated over.  <a href="#a3b825efa12b1b58dfd90f688f5a42421">More...</a><br /></td></tr>
+<tr class="separator:a3b825efa12b1b58dfd90f688f5a42421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695f43904a3a69e3a1f2436e6c21e970"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01639.html">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01643.html#a695f43904a3a69e3a1f2436e6c21e970">index_</a> {0u}</td></tr>
+<tr class="memdesc:a695f43904a3a69e3a1f2436e6c21e970"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02539.html" title="This interface must be implemented by each global plugin. ">Global</a> index.  <a href="#a695f43904a3a69e3a1f2436e6c21e970">More...</a><br /></td></tr>
+<tr class="separator:a695f43904a3a69e3a1f2436e6c21e970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Element returned by CenteredPreviewWindow::iterator providing the current index and allowing to conveniently get the corresponding time. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aad3e9292c942638c2318bbda8161bfc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3e9292c942638c2318bbda8161bfc3">&#9670;&nbsp;</a></span>PreviewElement() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mc_planning::PreviewElement::PreviewElement </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a01651.html">PreviewWindowView</a> &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a01639.html">Index</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create an element (meant to be used by iterators) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Preview window to which this element refers to </td></tr>
+    <tr><td class="paramname">index</td><td><a class="el" href="a02539.html" title="This interface must be implemented by each global plugin. ">Global</a> index of the element </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac3619a5d19d24d6cc3d59ae36e8c1bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3619a5d19d24d6cc3d59ae36e8c1bd9">&#9670;&nbsp;</a></span>PreviewElement() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mc_planning::PreviewElement::PreviewElement </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a01651.html">PreviewWindowView</a> &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a12f6aabbfdf4003e0191f1b0315f4d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f6aabbfdf4003e0191f1b0315f4d10">&#9670;&nbsp;</a></span>index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01639.html">Index</a> mc_planning::PreviewElement::index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the global index starting at <code>window.startIndex()</code> </p>
+
+</div>
+</div>
+<a id="af1309d1df8e3f5bbc8d8b63e766a5c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1309d1df8e3f5bbc8d8b63e766a5c49">&#9670;&nbsp;</a></span>localIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01639.html">Index</a> mc_planning::PreviewElement::localIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the index local to the preview window. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a01639.html">Index</a> between \( [0, 2*N] \) where <code>N</code> is the preview size </dd></dl>
+
+</div>
+</div>
+<a id="a0043bb94191b9c0c6b0e8df62e7ab485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0043bb94191b9c0c6b0e8df62e7ab485">&#9670;&nbsp;</a></span>localTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01635.html">Time</a> mc_planning::PreviewElement::localTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the time corresponding to <a class="el" href="a01643.html#af1309d1df8e3f5bbc8d8b63e766a5c49" title="Returns the index local to the preview window. ">localIndex()</a> </p>
+
+</div>
+</div>
+<a id="a19a7cfa662c0defa662c54814da31c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a7cfa662c0defa662c54814da31c9b">&#9670;&nbsp;</a></span>time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01635.html">Time</a> mc_planning::PreviewElement::time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the time corresponding to <a class="el" href="a01643.html#a12f6aabbfdf4003e0191f1b0315f4d10" title="Returns the global index starting at window.startIndex() ">index()</a> </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a695f43904a3a69e3a1f2436e6c21e970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695f43904a3a69e3a1f2436e6c21e970">&#9670;&nbsp;</a></span>index_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01639.html">Index</a> mc_planning::PreviewElement::index_ {0u}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a02539.html" title="This interface must be implemented by each global plugin. ">Global</a> index. </p>
+
+</div>
+</div>
+<a id="a3b825efa12b1b58dfd90f688f5a42421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b825efa12b1b58dfd90f688f5a42421">&#9670;&nbsp;</a></span>window_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a01651.html">PreviewWindowView</a>&amp; mc_planning::PreviewElement::window_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Window being iterated over. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 26 2020 08:26:43 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00779.html">mc_planning</a></li><li class="navelem"><a class="el" href="a01643.html">PreviewElement</a></li>
+    <li class="footer">Generated on Wed Jul 1 2020 12:23:01 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

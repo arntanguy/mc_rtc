@@ -1,6 +1,8 @@
 var a01947 =
 [
-    [ "VoidCallbackElement", "a01947.html#a9d063c0de86c3ba0f038908d146ca298", null ],
-    [ "VoidCallbackElement", "a01947.html#a350d19023027682fb550a84099cd96da", null ],
-    [ "handleRequest", "a01947.html#ab8cda0e74e03f5e56ae5bd42bb7b9b41", null ]
+    [ "DataComboInputImpl", "a01947.html#a571856b4ac446cb847df167cca1bb5ae", null ],
+    [ "DataComboInputImpl", "a01947.html#a5316b6d565ef6e59a40f112d3682ea74", null ],
+    [ "write", "a01947.html#ad79979e960ca7b50f5f9b2d0cf94d90d", null ],
+    [ "write_size", "a01947.html#a439d4fefa96b4619041a43f8b2109255", null ],
+    [ "type", "a01947.html#a066cabfbd0d24dcb5981be55147377a7", null ]
 ];

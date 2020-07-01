@@ -1,26 +1,9 @@
 var a03458 =
 [
-    [ "Range", "a02027.html", "a02027" ],
-    [ "AxisConfiguration", "a02031.html", "a02031" ],
-    [ "PolygonDescription", "a02035.html", "a02035" ],
-    [ "Plot", "a03458.html#ae8d436e1212bee55dfdb14d50b0d6be9", [
-      [ "Standard", "a03458.html#ae8d436e1212bee55dfdb14d50b0d6be9aeb6d8ae6f20283755b339c0dc273988b", null ],
-      [ "XY", "a03458.html#ae8d436e1212bee55dfdb14d50b0d6be9a74c53bcd3dcb2bb79993b2fec37d362a", null ]
-    ] ],
-    [ "Type", "a03458.html#a6e2b70125fa1d433838b9a8f2bf28c4d", [
-      [ "Abscissa", "a03458.html#a6e2b70125fa1d433838b9a8f2bf28c4dac9812e629ac3822b86f7c19704983d0e", null ],
-      [ "Ordinate", "a03458.html#a6e2b70125fa1d433838b9a8f2bf28c4da5d32a72e2819aaf62362fcc862b37c5e", null ],
-      [ "Polygon", "a03458.html#a6e2b70125fa1d433838b9a8f2bf28c4da4c0a11247d92f73fb84baa51e37a3263", null ],
-      [ "Polygons", "a03458.html#a6e2b70125fa1d433838b9a8f2bf28c4daa7a7e14b2a005870ba134e6c92bb7b51", null ],
-      [ "AbscissaOrdinate", "a03458.html#a6e2b70125fa1d433838b9a8f2bf28c4dab83f39f54c4bd7f3a02f9a45fd996031", null ]
-    ] ],
-    [ "is_2d", "a03458.html#a4670673e25f4957cc8b1d6933601fbb8", null ],
-    [ "is_2d", "a03458.html#a37afa0ee1be4dc35f8b370b58cd05c8d", null ],
-    [ "is_Abscissa", "a03458.html#a73e5c8e2228efe9d85770fa3233df148", null ],
-    [ "is_not_Abscissa", "a03458.html#ad9dd006fddf621ad45bc2ed39819cb7b", null ],
-    [ "is_not_Abscissa", "a03458.html#a4b35e42f9bdc831051bad630befc19d0", null ],
-    [ "Dashed", "a03458.html#a3aa6973802ff89463140e58e4978b222", null ],
-    [ "Dotted", "a03458.html#af050e39a625ecaa0d27537968bbeeaff", null ],
-    [ "Left", "a03458.html#aa149c1d1da2ae1c94f1ae91f4919625a", null ],
-    [ "Solid", "a03458.html#ae070f931bda093c33a301115abc450b1", null ]
+    [ "MC_PLANNING_DLLAPI", "a03458.html#a3adede9987330f98fe6a52abdfb955f5", null ],
+    [ "MC_PLANNING_DLLEXPORT", "a03458.html#a6a868413b6c5bddd02aeef2f6a0ef5c8", null ],
+    [ "MC_PLANNING_DLLIMPORT", "a03458.html#a7ef3aedb0867986ac977b43fdd7cf21f", null ],
+    [ "MC_PLANNING_DLLLOCAL", "a03458.html#aff1ad001b6bf5fdb9fb19cd51c97a75e", null ],
+    [ "MC_PLANNING_LOCAL", "a03458.html#a73898c9a3a9215937de16e50d4e504a3", null ],
+    [ "MC_PLANNING_VERSION", "a03458.html#aca946837554c98dec168efee18c95e5c", null ]
 ];

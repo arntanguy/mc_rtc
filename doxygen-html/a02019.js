@@ -1,7 +1,6 @@
 var a02019 =
 [
-    [ "Polygon", "a02019.html#af7e96bad2cd93f2b0eaecbf94e8ce4c2", null ],
-    [ "side", "a02019.html#ab7683b7758fdcb4c826c57eb7ef37800", null ],
-    [ "write", "a02019.html#a5cad8ea3b30915d71a70df177591e536", null ],
-    [ "type", "a02019.html#a5c7df3c2bb038af2fd07bc822c1af1bc", null ]
+    [ "IntegerInputImpl", "a02019.html#abb43e816875fdb07339135c65fa7982e", null ],
+    [ "IntegerInputImpl", "a02019.html#a5b3e150b460bd7c5b4fc426a1d08e370", null ],
+    [ "type", "a02019.html#ad03092ac48c1ea07ce3ee119e000229b", null ]
 ];

@@ -1,13 +1,9 @@
 var a01435 =
 [
-    [ "TaskCriteria", "a01439.html", "a01439" ],
-    [ "configure", "a01435.html#a7ea26c3c3626ad237567cd0bb4d8c077", null ],
-    [ "run", "a01435.html#aa58d3f76e1bdcee77b08b1786765e5aa", null ],
-    [ "start", "a01435.html#ab76034ae6d2f04688543a13a49c15493", null ],
-    [ "teardown", "a01435.html#a60321fa59012d49604c9e38d760aa7db", null ],
-    [ "criterias_", "a01435.html#abf365e7d07d5e71915cfa982fc0eb3cd", null ],
-    [ "finished_first_", "a01435.html#aef0fdf94ede34d66242bd301c560ea74", null ],
-    [ "outputCrit_", "a01435.html#a15385e3dba9c3a9ceacf9aa32ee4d0b5", null ],
-    [ "tasks_", "a01435.html#a7549c1830cef253c172306bb11ea4c4d", null ],
-    [ "tasks_configs_", "a01435.html#ad8a28534801a9c1967233cfaf07d9482", null ]
+    [ "configure", "a01435.html#a6feb7d14cdd9ac944f2311e83a786cbc", null ],
+    [ "run", "a01435.html#a62babf4e58b81ce358e6cb43779c564b", null ],
+    [ "start", "a01435.html#a6ba0f75a698bceabed668835046d382f", null ],
+    [ "teardown", "a01435.html#ae05d422fa90c06b058c890323d792581", null ],
+    [ "config_", "a01435.html#ab4479382513e35667a4c0e3fd6d08d5f", null ],
+    [ "grippers_", "a01435.html#abd9bd9863a30fad30f940c0a6baeecab", null ]
 ];

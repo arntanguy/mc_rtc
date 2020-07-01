@@ -1,5 +1,8 @@
 var a01807 =
 [
-    [ "load", "a01807.html#a8b405815d2c463e01efa6394cca1dc54", null ],
-    [ "save", "a01807.html#a6d4adb3f20c993a424538d38241da5de", null ]
+    [ "DevicePtrVector", "a01807.html#a39850850b50df785442c15d242d815f3", null ],
+    [ "DevicePtrVector", "a01807.html#a5f5834c7848c1593e4dda8556731c172", null ],
+    [ "DevicePtrVector", "a01807.html#a4190aad2585fa49da5d130316a163741", null ],
+    [ "operator=", "a01807.html#af28db08209588618e620a65c4187f34b", null ],
+    [ "operator=", "a01807.html#a13610008605e9a409dc6b3c7efa4ec66", null ]
 ];

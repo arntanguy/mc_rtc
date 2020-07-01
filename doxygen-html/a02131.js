@@ -1,10 +1,12 @@
 var a02131 =
 [
-    [ "callback_t", "a02131.html#ae88a2f28e5fa458257316949fd08a539", null ],
-    [ "handle_map_t", "a02131.html#a9c2401890571dbbde00eda2fb1e87710", null ],
-    [ "close", "a02131.html#a63ca4850e72fbb0ea10d1362c5402a51", null ],
-    [ "init", "a02131.html#a2d478e04efaa0d71d340ed45577b478a", null ],
-    [ "load_libraries", "a02131.html#a9611f8c05257ffd4651e68ea2f4f7e68", null ],
-    [ "ObjectLoader", "a02131.html#a0b9f840f1f1352debe8e77115e2454b1", null ],
-    [ "default_cb", "a02131.html#a2569410b656743e1d955a9aafc7ee793", null ]
+    [ "LineConfig", "a02131.html#a15dd7cd44bf0edc5b475448de6e26451", null ],
+    [ "LineConfig", "a02131.html#a0ba859719a9ff99290fec7b8e8add72b", null ],
+    [ "LineConfig", "a02131.html#a05fe24ecd21753185e6da09151f35ce2", null ],
+    [ "load", "a02131.html#ac77f299a585b18903c8628590b8f6a00", null ],
+    [ "write", "a02131.html#a2845b8dfdbdaeb72cb473086c6bdf8a7", null ],
+    [ "write_size", "a02131.html#a76ab2e9dcb6923c3877c2822dec478dd", null ],
+    [ "color", "a02131.html#a4f88bdc8e23bf720a90553abaca4d6ec", null ],
+    [ "style", "a02131.html#a2678eadbdc5908c80e0dcc9c39941a14", null ],
+    [ "width", "a02131.html#a57cd8fdd493c21993724fe26828cf47c", null ]
 ];

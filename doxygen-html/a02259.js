@@ -1,10 +1,6 @@
 var a02259 =
 [
-    [ "Handle", "a02259.html#a38ff1a03e3d23844851fbb6945052b6e", null ],
-    [ "Handle", "a02259.html#a3abf3568270608f66c2f3d8f42b158c5", null ],
-    [ "~Handle", "a02259.html#acb9b93dfdd948310129a694363b1d018", null ],
-    [ "Handle", "a02259.html#ad1354d6ec1298c55743594d5f7e959d7", null ],
-    [ "Handle", "a02259.html#a8d34eedd99c2441236c01717b2ec7291", null ],
-    [ "operator=", "a02259.html#a7bcd67bfff206e0063212e99dca891bc", null ],
-    [ "operator=", "a02259.html#a1002f0272ae3957fe636d3b06dc34148", null ]
+    [ "~ConstraintSet", "a02259.html#ad979bb11e0faeba2c10d36d5a4c46e00", null ],
+    [ "addToSolver", "a02259.html#a8b2739907caaeb5d49ccaedc1665e3ca", null ],
+    [ "removeFromSolver", "a02259.html#aa7a3302adccb4d3183e829fd2754b75a", null ]
 ];
