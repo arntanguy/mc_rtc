@@ -53,6 +53,17 @@ option(BUILD_BENCHMARKS "Build benchmarks" OFF)
 
 option(DISABLE_ROS "Do not build with ROS support (even if ROS was found)" OFF)
 
+# By default, neither clang nor gcc produce color output if they detect the output medium
+# is not a terminal (e.g Ninja).
+option (FORCE_COLORED_OUTPUT "Always produce ANSI-colored output (GNU/Clang only)." OFF)
+if (${FORCE_COLORED_OUTPUT})
+  if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    add_compile_options (-fdiagnostics-color=always)
+  elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    add_compile_options (-fcolor-diagnostics)
+  endif()
+endif()
+
 add_project_dependency(Boost REQUIRED COMPONENTS filesystem timer)
 add_project_dependency(Tasks REQUIRED)
 add_project_dependency(mc_rbdyn_urdf REQUIRED)
