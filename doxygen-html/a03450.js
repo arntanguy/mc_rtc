@@ -1,9 +1,9 @@
 var a03450 =
 [
-    [ "MC_ROBOTS_DLLAPI", "a03450.html#aab9f1fcb73f7bb68ce97897257085bc6", null ],
-    [ "MC_ROBOTS_DLLEXPORT", "a03450.html#a551f4997282c602cc3b9699950bff0d9", null ],
-    [ "MC_ROBOTS_DLLIMPORT", "a03450.html#afab08aefa87854e0f4e002300f42f2e0", null ],
-    [ "MC_ROBOTS_DLLLOCAL", "a03450.html#abd12baa7258deaf7a15d3874f1920e57", null ],
-    [ "MC_ROBOTS_LOCAL", "a03450.html#a31fee9d1d5fe536ba8cfac80e376564e", null ],
-    [ "MC_ROBOTS_VERSION", "a03450.html#a12b895bf0b39c259b3eb51ee7782f970", null ]
+    [ "MC_CONTROL_DLLAPI", "a03450.html#a167861c5d95139886801b242d6d0115f", null ],
+    [ "MC_CONTROL_DLLEXPORT", "a03450.html#a3ab2eb8965ce5e6d787aecf3e46d3be0", null ],
+    [ "MC_CONTROL_DLLIMPORT", "a03450.html#a93d9bb1f3f36bbffb00cf015b0bb0e37", null ],
+    [ "MC_CONTROL_DLLLOCAL", "a03450.html#a5fd14ed2320e3cbe50d19d4ada5b64a7", null ],
+    [ "MC_CONTROL_LOCAL", "a03450.html#aaef3a5c95b86a2ae0592bfafaec89185", null ],
+    [ "MC_CONTROL_VERSION", "a03450.html#a22df2857d14ed04f3b639527d08f7740", null ]
 ];

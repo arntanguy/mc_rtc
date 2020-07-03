@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['q',['q',['../a01515.html#ac3dbbf827ccf63e00f0f7c7be7f32539',1,'mc_control::ControllerResetData::q()'],['../a02343.html#a2266d5ca2aace35d45464180feda1768',1,'mc_solver::RobotMsg::q()'],['../a01487.html#a942af31983cf3ee9caecd5fff237258b',1,'mc_control::Gripper::q()'],['../a01787.html#a485eb8aa4ceb0a0a5010844d16e47f95',1,'mc_rbdyn::Robot::q() const'],['../a01787.html#a8ad8d3434a21adb16f8c41a5444ea067',1,'mc_rbdyn::Robot::q()']]],
+  ['q',['q',['../a01515.html#ac3dbbf827ccf63e00f0f7c7be7f32539',1,'mc_control::ControllerResetData::q()'],['../a02347.html#a2266d5ca2aace35d45464180feda1768',1,'mc_solver::RobotMsg::q()'],['../a01487.html#a942af31983cf3ee9caecd5fff237258b',1,'mc_control::Gripper::q()'],['../a01787.html#a485eb8aa4ceb0a0a5010844d16e47f95',1,'mc_rbdyn::Robot::q() const'],['../a01787.html#a8ad8d3434a21adb16f8c41a5444ea067',1,'mc_rbdyn::Robot::q()']]],
   ['q_5f',['Q_',['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00563.html#ade6b3b7402c19d572f55a18f79c8d212',1,'Eigen::QuadProgCommon']]],
   ['ql',['ql',['../a01787.html#ac18cb6ecabada0aac1f823b7e9170308',1,'mc_rbdyn::Robot::ql() const'],['../a01787.html#afc061e1b33c4f633a04015ab3fb20f94',1,'mc_rbdyn::Robot::ql()']]],
   ['qpcontact_5fptr',['qpcontact_ptr',['../a01711.html#a18f4220244dc364488e15a5b6fc7bdf6',1,'mc_solver::QPContactPtrWPoints']]],
@@ -9,10 +9,10 @@ var searchData=
   ['qpgen1_5f',['qpgen1_',['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00015.html#a5de6a01bef47f841b3657c5e2d3c42c4',1,'Eigen']]],
   ['qpgen2_5f',['qpgen2_',['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00015.html#a1a9bc2322f12c41652d5595e5ef8ef4f',1,'Eigen']]],
   ['qpresult_2eh',['QPResult.h',['../a00452.html',1,'']]],
-  ['qpresultmsg',['QPResultMsg',['../a02339.html',1,'mc_solver']]],
-  ['qpsolver',['QPSolver',['../a02351.html',1,'mc_solver::QPSolver'],['../a01519.html#a4523facc71906c6622227d0fa2597963',1,'mc_control::MCController::qpsolver()'],['../a02351.html#a6f0c3211feb7722f0316b8808b61f6d1',1,'mc_solver::QPSolver::QPSolver(std::shared_ptr&lt; mc_rbdyn::Robots &gt; robots, double timeStep)'],['../a02351.html#adb5af970ec8d5b46ddcf8af19bd205be',1,'mc_solver::QPSolver::QPSolver(double timeStep)'],['../a02351.html#a4f91d1d6ce556366149d3d947182e5f3',1,'mc_solver::QPSolver::QPSolver()']]],
+  ['qpresultmsg',['QPResultMsg',['../a02343.html',1,'mc_solver']]],
+  ['qpsolver',['QPSolver',['../a02355.html',1,'mc_solver::QPSolver'],['../a01519.html#a4523facc71906c6622227d0fa2597963',1,'mc_control::MCController::qpsolver()'],['../a02355.html#a6f0c3211feb7722f0316b8808b61f6d1',1,'mc_solver::QPSolver::QPSolver(std::shared_ptr&lt; mc_rbdyn::Robots &gt; robots, double timeStep)'],['../a02355.html#adb5af970ec8d5b46ddcf8af19bd205be',1,'mc_solver::QPSolver::QPSolver(double timeStep)'],['../a02355.html#a4f91d1d6ce556366149d3d947182e5f3',1,'mc_solver::QPSolver::QPSolver()']]],
   ['qpsolver_2eh',['QPSolver.h',['../a00455.html',1,'']]],
-  ['qpsolver_5f',['qpSolver_',['../a02451.html#a017bc4102822276a88a60ae683c46627',1,'mc_tasks::lipm_stabilizer::StabilizerTask']]],
+  ['qpsolver_5f',['qpSolver_',['../a02455.html#a017bc4102822276a88a60ae683c46627',1,'mc_tasks::lipm_stabilizer::StabilizerTask']]],
   ['qu',['qu',['../a01787.html#ac42c2ce3eea4e1100b4fc77b95821021',1,'mc_rbdyn::Robot::qu() const'],['../a01787.html#ac6915de62543382030defd22b9f8011c',1,'mc_rbdyn::Robot::qu()']]],
   ['quadprog_2eh',['QuadProg.h',['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00011.html',1,'']]],
   ['quadprogcommon',['QuadProgCommon',['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00563.html',1,'Eigen::QuadProgCommon'],['/usr/local/share/doc/eigen-quadprog/doxygen-html/a00563.html#ac7a006b9cb25fc5c1fa27d45bb78bdde',1,'Eigen::QuadProgCommon::QuadProgCommon()']]],

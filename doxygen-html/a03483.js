@@ -1,7 +1,4 @@
 var a03483 =
 [
-    [ "Robot", "a01772.html", "a01772" ],
-    [ "robotFromConfig", "a03483.html#ga70b316b2f0c0caf547e160e74c2a029d", null ],
-    [ "robotIndexFromConfig", "a03483.html#gaf9b711ec2baa5684b8f422d740464b5f", null ],
-    [ "robotNameFromConfig", "a03483.html#ga40325ac769295d23f270976eead26245", null ]
+    [ "Configuration", "a03483.html#a6e724381ca619d4c38da5fd7cdbfe9c0", null ]
 ];

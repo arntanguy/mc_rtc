@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>mc_rtc::Stopwatch&lt; TimeT, ClockT &gt; Struct Template Reference</title>
+<title>mc_rtc::measure&lt; TimeT, ClockT &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <script type="text/x-mathjax-config">
@@ -70,159 +70,80 @@ $(document).ready(function(){initNavTree('a02223.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="a02220.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mc_rtc::Stopwatch&lt; TimeT, ClockT &gt; Struct Template Reference</div>  </div>
+<div class="title">mc_rtc::measure&lt; TimeT, ClockT &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class to measure execution time.  
+<p>Class to measure the execution time of a callable.  
  <a href="a02223.html#details">More...</a></p>
 
 <p><code>#include &lt;mc_rtc/time_utils.h&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a719b805ca2a747fa34b47233e5527f25"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02223.html#a719b805ca2a747fa34b47233e5527f25">TimeP</a> = typename TimeT::time_point</td></tr>
-<tr class="separator:a719b805ca2a747fa34b47233e5527f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a077115dc9f221f6b8f6e6802f76f9e78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02223.html#a077115dc9f221f6b8f6e6802f76f9e78">Stopwatch</a> ()</td></tr>
-<tr class="separator:a077115dc9f221f6b8f6e6802f76f9e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43d87303af1a8a795d048828e191d571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02223.html#a43d87303af1a8a795d048828e191d571">start</a> ()</td></tr>
-<tr class="separator:a43d87303af1a8a795d048828e191d571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a964c5b8a4a878479317884597e994b94"><td class="memItemLeft" align="right" valign="top">TimeT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02223.html#a964c5b8a4a878479317884597e994b94">elapsed</a> ()</td></tr>
-<tr class="separator:a964c5b8a4a878479317884597e994b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a4b8b7ce0b2c9f0331c9b563d2bd2a714"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02223.html#a719b805ca2a747fa34b47233e5527f25">TimeP</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02223.html#a4b8b7ce0b2c9f0331c9b563d2bd2a714">startTime_</a></td></tr>
-<tr class="separator:a4b8b7ce0b2c9f0331c9b563d2bd2a714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae8cef41fbbe31ec638d560c26c16b352"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args&gt; </td></tr>
+<tr class="memitem:ae8cef41fbbe31ec638d560c26c16b352"><td class="memTemplItemLeft" align="right" valign="top">static TimeT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a02223.html#ae8cef41fbbe31ec638d560c26c16b352">execution</a> (F &amp;&amp;func, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ae8cef41fbbe31ec638d560c26c16b352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the exectution time of the provided function (in chrono type system)  <a href="#ae8cef41fbbe31ec638d560c26c16b352">More...</a><br /></td></tr>
+<tr class="separator:ae8cef41fbbe31ec638d560c26c16b352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TimeT = std::chrono::duration&lt;double, std::milli&gt;, class ClockT = typename std::conditional&lt;std::chrono::high_resolution_clock::is_steady,                                                  std::chrono::high_resolution_clock,                                                  std::chrono::steady_clock&gt;::type&gt;<br />
-struct mc_rtc::Stopwatch&lt; TimeT, ClockT &gt;</h3>
+struct mc_rtc::measure&lt; TimeT, ClockT &gt;</h3>
 
-<p>Class to measure execution time. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a719b805ca2a747fa34b47233e5527f25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a719b805ca2a747fa34b47233e5527f25">&#9670;&nbsp;</a></span>TimeP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TimeT  = std::chrono::duration&lt;double, std::milli&gt;, class ClockT  = typename std::conditional&lt;std::chrono::high_resolution_clock::is_steady,                                                  std::chrono::high_resolution_clock,                                                  std::chrono::steady_clock&gt;::type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="a02223.html">mc_rtc::Stopwatch</a>&lt; TimeT, ClockT &gt;::<a class="el" href="a02223.html#a719b805ca2a747fa34b47233e5527f25">TimeP</a> =  typename TimeT::time_point</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a077115dc9f221f6b8f6e6802f76f9e78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a077115dc9f221f6b8f6e6802f76f9e78">&#9670;&nbsp;</a></span>Stopwatch()</h2>
+<p>Class to measure the execution time of a callable. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae8cef41fbbe31ec638d560c26c16b352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8cef41fbbe31ec638d560c26c16b352">&#9670;&nbsp;</a></span>execution()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TimeT  = std::chrono::duration&lt;double, std::milli&gt;, class ClockT  = typename std::conditional&lt;std::chrono::high_resolution_clock::is_steady,                                                  std::chrono::high_resolution_clock,                                                  std::chrono::steady_clock&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;typename F , typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a02223.html">mc_rtc::Stopwatch</a>&lt; TimeT, ClockT &gt;::<a class="el" href="a02223.html">Stopwatch</a> </td>
+          <td class="memname">static TimeT <a class="el" href="a02223.html">mc_rtc::measure</a>&lt; TimeT, ClockT &gt;::execution </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a964c5b8a4a878479317884597e994b94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a964c5b8a4a878479317884597e994b94">&#9670;&nbsp;</a></span>elapsed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TimeT  = std::chrono::duration&lt;double, std::milli&gt;, class ClockT  = typename std::conditional&lt;std::chrono::high_resolution_clock::is_steady,                                                  std::chrono::high_resolution_clock,                                                  std::chrono::steady_clock&gt;::type&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeT <a class="el" href="a02223.html">mc_rtc::Stopwatch</a>&lt; TimeT, ClockT &gt;::elapsed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a43d87303af1a8a795d048828e191d571"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43d87303af1a8a795d048828e191d571">&#9670;&nbsp;</a></span>start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TimeT  = std::chrono::duration&lt;double, std::milli&gt;, class ClockT  = typename std::conditional&lt;std::chrono::high_resolution_clock::is_steady,                                                  std::chrono::high_resolution_clock,                                                  std::chrono::steady_clock&gt;::type&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="a02223.html">mc_rtc::Stopwatch</a>&lt; TimeT, ClockT &gt;::start </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4b8b7ce0b2c9f0331c9b563d2bd2a714"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b8b7ce0b2c9f0331c9b563d2bd2a714">&#9670;&nbsp;</a></span>startTime_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TimeT  = std::chrono::duration&lt;double, std::milli&gt;, class ClockT  = typename std::conditional&lt;std::chrono::high_resolution_clock::is_steady,                                                  std::chrono::high_resolution_clock,                                                  std::chrono::steady_clock&gt;::type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a02223.html#a719b805ca2a747fa34b47233e5527f25">TimeP</a> <a class="el" href="a02223.html">mc_rtc::Stopwatch</a>&lt; TimeT, ClockT &gt;::startTime_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
+<p>Returns the exectution time of the provided function (in chrono type system) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>Function to evaluate </td></tr>
+    <tr><td class="paramname">args</td><td>Arguments to the function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Time elapsed </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="a02548.html#a22">mc_sample_CoMGeneration.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->
@@ -231,8 +152,8 @@ template&lt;typename TimeT  = std::chrono::duration&lt;double, std::milli&gt;, c
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00772.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a02223.html">Stopwatch</a></li>
-    <li class="footer">Generated on Wed Jul 1 2020 12:23:02 for mc_rtc by
+    <li class="navelem"><a class="el" href="a00772.html">mc_rtc</a></li><li class="navelem"><a class="el" href="a02223.html">measure</a></li>
+    <li class="footer">Generated on Fri Jul 3 2020 09:08:21 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

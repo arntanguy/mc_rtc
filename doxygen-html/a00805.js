@@ -1,7 +1,7 @@
 var a00805 =
 [
-    [ "AdmittanceTask", "a02403.html", "a02403" ],
-    [ "ComplianceTask", "a02411.html", "a02411" ],
-    [ "CoPTask", "a02419.html", "a02419" ],
-    [ "DampingTask", "a02423.html", "a02423" ]
+    [ "AdmittanceTask", "a02407.html", "a02407" ],
+    [ "ComplianceTask", "a02415.html", "a02415" ],
+    [ "CoPTask", "a02423.html", "a02423" ],
+    [ "DampingTask", "a02427.html", "a02427" ]
 ];

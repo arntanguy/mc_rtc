@@ -1,9 +1,9 @@
 var a03462 =
 [
-    [ "MC_TRAJECTORY_DLLAPI", "a03462.html#adff5a6c1e965ae6fdc756a2c5187f9c9", null ],
-    [ "MC_TRAJECTORY_DLLEXPORT", "a03462.html#a531302b8554807c8aca0fcf931c490f3", null ],
-    [ "MC_TRAJECTORY_DLLIMPORT", "a03462.html#a6dc4322483ff7548be6769a3e2d2ae54", null ],
-    [ "MC_TRAJECTORY_DLLLOCAL", "a03462.html#aa1a1e2ac0d81d28e134d91b52199d1e1", null ],
-    [ "MC_TRAJECTORY_LOCAL", "a03462.html#a4d2a4bf4b090297efb1f6dfa124b52e2", null ],
-    [ "MC_TRAJECTORY_VERSION", "a03462.html#acd63e2a4854ce5d3f1eec2e5f2cf7498", null ]
+    [ "MC_PLANNING_DLLAPI", "a03462.html#a3adede9987330f98fe6a52abdfb955f5", null ],
+    [ "MC_PLANNING_DLLEXPORT", "a03462.html#a6a868413b6c5bddd02aeef2f6a0ef5c8", null ],
+    [ "MC_PLANNING_DLLIMPORT", "a03462.html#a7ef3aedb0867986ac977b43fdd7cf21f", null ],
+    [ "MC_PLANNING_DLLLOCAL", "a03462.html#aff1ad001b6bf5fdb9fb19cd51c97a75e", null ],
+    [ "MC_PLANNING_LOCAL", "a03462.html#a73898c9a3a9215937de16e50d4e504a3", null ],
+    [ "MC_PLANNING_VERSION", "a03462.html#aca946837554c98dec168efee18c95e5c", null ]
 ];

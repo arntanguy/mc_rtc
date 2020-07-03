@@ -93,17 +93,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9ff8694223841eb44de2058bdc8e07be"><td class="memItemLeft" align="right" valign="top">EIGEN_MAKE_ALIGNED_OPERATOR_NEW&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a9ff8694223841eb44de2058bdc8e07be">LinearTimeVariantInvertedPendulum</a> ()</td></tr>
-<tr class="memdesc:a9ff8694223841eb44de2058bdc8e07be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a9ff8694223841eb44de2058bdc8e07be">More...</a><br /></td></tr>
-<tr class="separator:a9ff8694223841eb44de2058bdc8e07be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a047d06a6a02227dab3c0778c4ec738"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a4a047d06a6a02227dab3c0778c4ec738">LinearTimeVariantInvertedPendulum</a> (double dt, unsigned n_preview=0, unsigned weight_resolution=20000, double minHeight=0.01, double maxHeight=2.5)</td></tr>
-<tr class="memdesc:a4a047d06a6a02227dab3c0778c4ec738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization Calls <a class="el" href="a01595.html#a3e8f7c6aea4f0ad0627cad4598d1de85" title="Initialization. ">Initialize()</a>  <a href="#a4a047d06a6a02227dab3c0778c4ec738">More...</a><br /></td></tr>
-<tr class="separator:a4a047d06a6a02227dab3c0778c4ec738"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45a506558787353a67a900c6518f894c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a45a506558787353a67a900c6518f894c">~LinearTimeVariantInvertedPendulum</a> ()</td></tr>
-<tr class="separator:a45a506558787353a67a900c6518f894c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e8f7c6aea4f0ad0627cad4598d1de85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a3e8f7c6aea4f0ad0627cad4598d1de85">Initialize</a> (double dt, unsigned n_preview=0, unsigned weight_resolution=20000, double minHeight=0.01, double maxHeight=2.5)</td></tr>
-<tr class="memdesc:a3e8f7c6aea4f0ad0627cad4598d1de85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization.  <a href="#a3e8f7c6aea4f0ad0627cad4598d1de85">More...</a><br /></td></tr>
-<tr class="separator:a3e8f7c6aea4f0ad0627cad4598d1de85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6b91fa6e71833d25ca9d9351ee53be"><td class="memItemLeft" align="right" valign="top">EIGEN_MAKE_ALIGNED_OPERATOR_NEW&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#acb6b91fa6e71833d25ca9d9351ee53be">LinearTimeVariantInvertedPendulum</a> (const <a class="el" href="a01647.html">CenteredPreviewWindow</a> &amp;window, unsigned weight_resolution=20000, double minHeight=0.01, double maxHeight=2.5)</td></tr>
+<tr class="memdesc:acb6b91fa6e71833d25ca9d9351ee53be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization.  <a href="#acb6b91fa6e71833d25ca9d9351ee53be">More...</a><br /></td></tr>
+<tr class="separator:acb6b91fa6e71833d25ca9d9351ee53be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47aa3c6c55b0d2e3452175ad1127c460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a47aa3c6c55b0d2e3452175ad1127c460">initMatrices</a> (double waist_height)</td></tr>
 <tr class="memdesc:a47aa3c6c55b0d2e3452175ad1127c460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the discretized system matrices with constant pendulum height.  <a href="#a47aa3c6c55b0d2e3452175ad1127c460">More...</a><br /></td></tr>
 <tr class="separator:a47aa3c6c55b0d2e3452175ad1127c460"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,15 +138,8 @@ Protected Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0d7d6b065bfa69d029309b718d985ee2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a0d7d6b065bfa69d029309b718d985ee2">m_dt</a></td></tr>
-<tr class="memdesc:a0d7d6b065bfa69d029309b718d985ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timstep.  <a href="#a0d7d6b065bfa69d029309b718d985ee2">More...</a><br /></td></tr>
-<tr class="separator:a0d7d6b065bfa69d029309b718d985ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d895679ff0471b72e15524364322a40"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a2d895679ff0471b72e15524364322a40">m_n_current</a></td></tr>
-<tr class="memdesc:a2d895679ff0471b72e15524364322a40"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a01639.html">Index</a> of current time (center of the preview window)  <a href="#a2d895679ff0471b72e15524364322a40">More...</a><br /></td></tr>
-<tr class="separator:a2d895679ff0471b72e15524364322a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad727890e6903bf8c6aab5873a6afb17c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#ad727890e6903bf8c6aab5873a6afb17c">m_n_preview2</a></td></tr>
-<tr class="memdesc:ad727890e6903bf8c6aab5873a6afb17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preview window size \( (2*\mbox{m_n_current})+1 \).  <a href="#ad727890e6903bf8c6aab5873a6afb17c">More...</a><br /></td></tr>
-<tr class="separator:ad727890e6903bf8c6aab5873a6afb17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f97cb90164e92779bd6835a80ef208e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a01647.html">CenteredPreviewWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a1f97cb90164e92779bd6835a80ef208e">window_</a></td></tr>
+<tr class="separator:a1f97cb90164e92779bd6835a80ef208e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b01bb5cafce26b7596ef97b36584233"><td class="memItemLeft" align="right" valign="top">boost::circular_buffer&lt; <a class="el" href="a01595.html#af8f721030036eaf37bda9d2116f0a08d">Matrix22</a>, Eigen::aligned_allocator&lt; <a class="el" href="a01595.html#af8f721030036eaf37bda9d2116f0a08d">Matrix22</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01595.html#a2b01bb5cafce26b7596ef97b36584233">m_A</a></td></tr>
 <tr class="memdesc:a2b01bb5cafce26b7596ef97b36584233"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( A_k \)  <a href="#a2b01bb5cafce26b7596ef97b36584233">More...</a><br /></td></tr>
 <tr class="separator:a2b01bb5cafce26b7596ef97b36584233"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,8 +270,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9ff8694223841eb44de2058bdc8e07be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ff8694223841eb44de2058bdc8e07be">&#9670;&nbsp;</a></span>LinearTimeVariantInvertedPendulum() <span class="overload">[1/2]</span></h2>
+<a id="acb6b91fa6e71833d25ca9d9351ee53be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6b91fa6e71833d25ca9d9351ee53be">&#9670;&nbsp;</a></span>LinearTimeVariantInvertedPendulum()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,34 +279,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">EIGEN_MAKE_ALIGNED_OPERATOR_NEW mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::LinearTimeVariantInvertedPendulum </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default constructor. </p>
-<p>You must call <a class="el" href="a01595.html#a3e8f7c6aea4f0ad0627cad4598d1de85" title="Initialization. ">Initialize()</a> before use </p>
-
-</div>
-</div>
-<a id="a4a047d06a6a02227dab3c0778c4ec738"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a047d06a6a02227dab3c0778c4ec738">&#9670;&nbsp;</a></span>LinearTimeVariantInvertedPendulum() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::LinearTimeVariantInvertedPendulum </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>n_preview</em> = <code>0</code>, </td>
+          <td class="paramtype">const <a class="el" href="a01647.html">CenteredPreviewWindow</a> &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -349,32 +308,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialization Calls <a class="el" href="a01595.html#a3e8f7c6aea4f0ad0627cad4598d1de85" title="Initialization. ">Initialize()</a> </p>
-
-</div>
-</div>
-<a id="a45a506558787353a67a900c6518f894c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45a506558787353a67a900c6518f894c">&#9670;&nbsp;</a></span>~LinearTimeVariantInvertedPendulum()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::~LinearTimeVariantInvertedPendulum </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Initialization. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Timestep </td></tr>
+    <tr><td class="paramname">n_preview</td><td>Number of future preview elements. The full size of the preview windows from past to future will be (2*n_preview+1) </td></tr>
+    <tr><td class="paramname">minHeight</td><td>for the pendulum (used for <a class="el" href="a01611.html" title="Stores precomputed values of a function for fast lookup. ">LookupTable</a> optimizations) </td></tr>
+    <tr><td class="paramname">maxHeight</td><td>for the pendulum </td></tr>
+    <tr><td class="paramname">weight_resolution</td><td>Number of data points to pre-compute for \( \omega, cosh(\omega), sinh(\omega) \) for height in a given range [minHeight, maxHeight]. This is used to optimize the otherwise costly computation of these functions. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -506,64 +450,6 @@ Protected Attributes</h2></td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">cog_acc</td><td>is acceleration of COG </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>is position of ZMP </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pdot</td><td>is velocity of ZMP </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3e8f7c6aea4f0ad0627cad4598d1de85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e8f7c6aea4f0ad0627cad4598d1de85">&#9670;&nbsp;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::Initialize </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>n_preview</em> = <code>0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>weight_resolution</em> = <code>20000</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>minHeight</em> = <code>0.01</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxHeight</em> = <code>2.5</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialization. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dt</td><td>Timestep </td></tr>
-    <tr><td class="paramname">n_preview</td><td>Number of future preview elements. The full size of the preview windows from past to future will be (2*n_preview+1) </td></tr>
-    <tr><td class="paramname">minHeight</td><td>for the pendulum (used for <a class="el" href="a01611.html" title="Stores precomputed values of a function for fast lookup. ">LookupTable</a> optimizations) </td></tr>
-    <tr><td class="paramname">maxHeight</td><td>for the pendulum </td></tr>
-    <tr><td class="paramname">weight_resolution</td><td>Number of data points to pre-compute for \( \omega, cosh(\omega), sinh(\omega) \) for height in a given range [minHeight, maxHeight]. This is used to optimize the otherwise costly computation of these functions. </td></tr>
   </table>
   </dd>
 </dl>
@@ -920,78 +806,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0d7d6b065bfa69d029309b718d985ee2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7d6b065bfa69d029309b718d985ee2">&#9670;&nbsp;</a></span>m_dt</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::m_dt</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Timstep. </p>
-
-</div>
-</div>
-<a id="a2d895679ff0471b72e15524364322a40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d895679ff0471b72e15524364322a40">&#9670;&nbsp;</a></span>m_n_current</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::m_n_current</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="a01639.html">Index</a> of current time (center of the preview window) </p>
-
-</div>
-</div>
-<a id="ad727890e6903bf8c6aab5873a6afb17c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad727890e6903bf8c6aab5873a6afb17c">&#9670;&nbsp;</a></span>m_n_preview2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::m_n_preview2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Preview window size \( (2*\mbox{m_n_current})+1 \). </p>
-
-</div>
-</div>
 <a id="ad6982c89d9f0e353c99e579b25098bb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6982c89d9f0e353c99e579b25098bb6">&#9670;&nbsp;</a></span>m_p_ref</h2>
 
@@ -1112,6 +926,28 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1f97cb90164e92779bd6835a80ef208e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f97cb90164e92779bd6835a80ef208e">&#9670;&nbsp;</a></span>window_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a01647.html">CenteredPreviewWindow</a> mc_planning::linear_control_system::LinearTimeVariantInvertedPendulum::window_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1302ee5580c5e867ed2b5a9b8ee3e483"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1302ee5580c5e867ed2b5a9b8ee3e483">&#9670;&nbsp;</a></span>wTable_</h2>
 
@@ -1143,7 +979,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="a00779.html">mc_planning</a></li><li class="navelem"><a class="el" href="a00781.html">linear_control_system</a></li><li class="navelem"><a class="el" href="a01595.html">LinearTimeVariantInvertedPendulum</a></li>
-    <li class="footer">Generated on Wed Jul 1 2020 12:23:01 for mc_rtc by
+    <li class="footer">Generated on Fri Jul 3 2020 09:08:20 for mc_rtc by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

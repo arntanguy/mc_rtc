@@ -1,9 +1,9 @@
 var a03477 =
 [
-    [ "Contact", "a02424.html", "a02424" ],
-    [ "ContactDescription", "a02428.html", "a02428" ],
-    [ "ConfigurationLoader< mc_tasks::lipm_stabilizer::ContactState >", "a02432.html", "a02432" ],
-    [ "ContactDescriptionVector", "a03477.html#a4ca092c9a2df0b34b399ff21a8bc938f", null ],
-    [ "HrepXd", "a03477.html#af644950088ef46324f20a7214021a824", null ],
-    [ "Left", "a03477.html#aa149c1d1da2ae1c94f1ae91f4919625a", null ]
+    [ "MC_TASKS_DLLAPI", "a03477.html#a54b6b62a72f51c6877ce5f6855eae009", null ],
+    [ "MC_TASKS_DLLEXPORT", "a03477.html#a6f58d55d50caa4b695e9ae0db68a84e3", null ],
+    [ "MC_TASKS_DLLIMPORT", "a03477.html#a1ca51f7fba6e50050fa71ee00906116e", null ],
+    [ "MC_TASKS_DLLLOCAL", "a03477.html#a88d2b44a0ab87ccac98cac02f5bc0220", null ],
+    [ "MC_TASKS_LOCAL", "a03477.html#a6fad7ce5639c7536227a82e08f06c0e5", null ],
+    [ "MC_TASKS_VERSION", "a03477.html#a47ff1b35f32c422f53ffee9a1a5d2de4", null ]
 ];
