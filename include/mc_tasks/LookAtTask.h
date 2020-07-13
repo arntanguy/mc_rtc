@@ -44,6 +44,8 @@ struct MC_TASKS_DLLAPI LookAtTask : public VectorOrientationTask
   /*! \brief Reset the task */
   void reset() override;
 
+  void target(const mc_rbdyn::Robot & robot, const Eigen::Vector3d & pos);
+
   /**
    * \brief Look towards the target frame position
    *

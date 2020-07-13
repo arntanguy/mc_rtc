@@ -43,12 +43,23 @@ struct MC_TASKS_ROS_DLLAPI LookAtTFTask : public LookAtTask
   /*! \brief Update the gaze target from TF position */
   void update(mc_solver::QPSolver &) override;
 
+  void useReal(bool state)
+  {
+    useReal_ = state;
+  }
+
+  bool useReal() const
+  {
+    return useReal_;
+  }
+
 private:
   tf2_ros::Buffer tfBuffer;
   tf2_ros::TransformListener tfListener;
   std::string sourceFrame;
   std::string targetFrame;
-  Eigen::Vector3d target_ori;
+  Eigen::Vector3d target_ori = Eigen::Vector3d::Zero();
+  bool useReal_ = false; ///< Whether to use the real robot
 };
 
 } // namespace mc_tasks

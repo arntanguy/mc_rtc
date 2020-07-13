@@ -44,10 +44,21 @@ void LookAtTask::reset()
   target_pos_ = robot.bodyPosW()[bIndex].translation() + actual();
 }
 
+void LookAtTask::target(const mc_rbdyn::Robot & realRobot, const Eigen::Vector3d & pos)
+{
+  target_pos_ = pos;
+  const auto & X_0_br = realRobot.mbc().bodyPosW[bIndex];
+  const auto & X_0_bc = robots.robot(rIndex).mbc().bodyPosW[bIndex];
+  auto target_ori = (pos - X_0_br.translation()).normalized();
+  // Transform the view direction from real robot to control robot
+  auto target_vector = (X_0_bc.inv() * X_0_br).rotation() * target_ori;
+  VectorOrientationTask::targetVector(target_vector);
+}
+
 void LookAtTask::target(const Eigen::Vector3d & pos)
 {
   target_pos_ = pos;
-  const sva::PTransformd & X_0_b = robots.robot(rIndex).mbc().bodyPosW[bIndex];
+  const auto & X_0_b = robots.robot(rIndex).mbc().bodyPosW[bIndex];
   auto target_ori = (pos - X_0_b.translation()).normalized();
   VectorOrientationTask::targetVector(target_ori);
 }

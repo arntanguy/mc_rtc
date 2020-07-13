@@ -26,7 +26,7 @@ LookAtTFTask::LookAtTFTask(const std::string & bodyName,
   name_ = "look_at_TF_" + robot.name() + "_" + bodyName + "_" + targetFrame;
 }
 
-void LookAtTFTask::update(mc_solver::QPSolver &)
+void LookAtTFTask::update(mc_solver::QPSolver & solver)
 {
   geometry_msgs::TransformStamped transformStamped;
   try
@@ -47,7 +47,14 @@ void LookAtTFTask::update(mc_solver::QPSolver &)
   target << transformStamped.transform.translation.x, transformStamped.transform.translation.y,
       transformStamped.transform.translation.z;
 
-  LookAtTask::target(target);
+  if(useReal_)
+  {
+    LookAtTask::target(solver.realRobots().robot(robots.robot(rIndex).name()), target);
+  }
+  else
+  {
+    LookAtTask::target(target);
+  }
 }
 
 } /* namespace mc_tasks */
@@ -77,6 +84,7 @@ static auto registered = mc_tasks::MetaTaskLoader::register_load_function(
           t->stiffness(static_cast<double>(s));
         }
       }
+      t->useReal(config("real", false));
       t->load(solver, config);
       return t;
     });
