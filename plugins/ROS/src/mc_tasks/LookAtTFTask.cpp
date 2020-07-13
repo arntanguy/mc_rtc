@@ -49,7 +49,7 @@ void LookAtTFTask::update(mc_solver::QPSolver & solver)
 
   if(useReal_)
   {
-    LookAtTask::target(solver.realRobots().robot(robots.robot(rIndex).name()), target);
+    LookAtTask::target(solver.realRobots().robot(realRobotName_), target);
   }
   else
   {
@@ -85,6 +85,7 @@ static auto registered = mc_tasks::MetaTaskLoader::register_load_function(
         }
       }
       t->useReal(config("real", false));
+      t->realRobotName(config("realRobot", solver.robot().name()));
       t->load(solver, config);
       return t;
     });

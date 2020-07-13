@@ -53,6 +53,16 @@ struct MC_TASKS_ROS_DLLAPI LookAtTFTask : public LookAtTask
     return useReal_;
   }
 
+  void realRobotName(const std::string & name)
+  {
+    realRobotName_ = name;
+  }
+
+  const std::string & realRobotName() const
+  {
+    return realRobotName_;
+  }
+
 private:
   tf2_ros::Buffer tfBuffer;
   tf2_ros::TransformListener tfListener;
@@ -60,6 +70,7 @@ private:
   std::string targetFrame;
   Eigen::Vector3d target_ori = Eigen::Vector3d::Zero();
   bool useReal_ = false; ///< Whether to use the real robot
+  std::string realRobotName_ = ""; ///< Allow to use a different real-robot than the main robot
 };
 
 } // namespace mc_tasks
