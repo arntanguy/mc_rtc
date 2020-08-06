@@ -226,6 +226,10 @@ Robot::Robot(make_shared_token,
              const std::optional<std::string_view> & bName)
 : name_(name), module_(std::move(module)), normalAccB_(module_.mb.nrDof()), fd_(module_.mb)
 {
+  kinematicsInputs_ = std::make_shared<tvm::graph::internal::Inputs>();
+  kinematicsInputs_->addInput(*this, Output::FK);
+  kinematicsGraph_.add(kinematicsInputs_);
+
   if(base)
   {
     std::string baseName = bName ? mb().body(0).name() : std::string(bName.value());
@@ -259,7 +263,7 @@ Robot::Robot(make_shared_token,
       initQ[0] = {std::begin(attitude), std::end(attitude)};
     }
     mbc().q = initQ;
-    rbd::forwardKinematics(mb(), mbc());
+    updateKinematics();
   }
 
   bodyTransforms_.resize(mb().bodies().size());
@@ -500,6 +504,7 @@ Robot::Robot(make_shared_token,
   mass_ = std::accumulate(mb().bodies().begin(), mb().bodies().end(), 0.0,
                           [](double m, const auto & body) { return m + body.inertia().mass(); });
   com_ = std::make_shared<CoM>(CoM::ctor_token{}, shared_from_this());
+  kinematicsInputs_->addInput(*com_, CoM::Output::CoM);
 
   // Create TVM variables
   if(mb().nrJoints() > 0 && mb().joint(0).type() == rbd::Joint::Free)
@@ -579,6 +584,7 @@ Frame & Robot::makeFrame(std::string_view name, std::string_view body, sva::PTra
   }
   auto out = frames_.emplace(
       name, std::make_shared<Frame>(Frame::ctor_token{}, name, shared_from_this(), body, std::move(X_b_f)));
+  kinematicsInputs_->addInput(*out.first->second, Frame::Output::Position);
   return updateFrameForceSensors(*out.first->second);
 }
 
@@ -595,6 +601,7 @@ Frame & Robot::makeFrame(std::string_view name, const Frame & parent, sva::PTran
         this->name(), parent.robot().name());
   }
   auto out = frames_.emplace(name, std::make_shared<Frame>(Frame::ctor_token{}, name, parent, std::move(X_p_f)));
+  kinematicsInputs_->addInput(*out.first->second, Frame::Output::Position);
   return updateFrameForceSensors(*out.first->second);
 }
 
@@ -1057,12 +1064,12 @@ void Robot::posW(const sva::PTransformd & pt)
     rotation.normalize();
     mbc().q[0] = {rotation.w(),         rotation.x(),         rotation.y(),        rotation.z(),
                   pt.translation().x(), pt.translation().y(), pt.translation().z()};
-    rbd::forwardKinematics(mb(), mbc());
+    updateKinematics();
   }
   else if(mb().joint(0).type() == rbd::Joint::Type::Fixed)
   {
     mb().transform(0, pt);
-    rbd::forwardKinematics(mb(), mbc());
+    updateKinematics();
   }
   else
   {
@@ -1150,7 +1157,7 @@ RobotPtr Robot::copy(std::string_view name, const std::optional<Base> & base) co
   for(const auto & c: convexes_)
   {
     const auto & convex = c.second;
-    robot.addConvex(c.first, S_ObjectPtr{convex->convex()->clone()}, convex->frame()->name(), convex->X_f_c());
+    robot.addConvex(c.first, S_ObjectPtr{convex->convex()->clone()}, convex->frame().name(), convex->X_f_c());
   }
   for(size_t i = 0; i < robot.forceSensors_.size(); ++i)
   {
@@ -1299,6 +1306,26 @@ Frame & Robot::updateFrameForceSensors(Frame & frame)
     }
   }
   return frame;
+}
+
+void Robot::forwardKinematics()
+{
+  updateFK();
+}
+
+void Robot::forwardVelocity()
+{
+  updateFV();
+}
+
+void Robot::forwardAcceleration()
+{
+  updateFA();
+}
+
+void Robot::updateKinematics()
+{
+  kinematicsGraph_.execute();
 }
 
 } // namespace mc_rbdyn
