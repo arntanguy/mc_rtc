@@ -8,6 +8,7 @@
 #include <mc_rbdyn/CoM.h>
 #include <mc_rbdyn/Convex.h>
 #include <mc_rbdyn/Frame.h>
+#include <mc_rbdyn/Limits.h>
 #include <mc_rbdyn/RobotModule.h>
 
 #include <mc_control/generic_gripper.h>
@@ -99,6 +100,18 @@ public:
 
   /** Retrieve the associated RobotModule */
   const RobotModule & module() const;
+
+  /** Retrieve the joint limits */
+  inline const Limits & limits() const noexcept
+  {
+    return limits_;
+  }
+
+  /** Retrieve the joint limits */
+  inline Limits & limits() noexcept
+  {
+    return limits_;
+  }
 
   /** Returns true if the robot has the given frame */
   bool hasFrame(std::string_view frame) const;
@@ -447,67 +460,6 @@ public:
   Eigen::Vector3d zmp(const std::vector<std::string> & sensorNames,
                       const sva::PTransformd & zmpFrame,
                       double minimalNetNormalForce = 1.) const;
-
-  /** Access the robot's angular lower acceleration limits (const) */
-  inline const std::vector<std::vector<double>> & al() const noexcept
-  {
-    return al_;
-  }
-  /** Access the robot's angular upper acceleration limits (const) */
-  inline const std::vector<std::vector<double>> & au() const noexcept
-  {
-    return au_;
-  }
-  /** Access the robot's angular lower jerk limits (const) */
-  inline const std::vector<std::vector<double>> & jl() const noexcept
-  {
-    return jl_;
-  }
-  /** Access the robot's angular upper jerk limits (const) */
-  inline const std::vector<std::vector<double>> & ju() const noexcept
-  {
-    return ju_;
-  }
-  /** Access the robot's angular lower torque-derivative limits (const) */
-  inline const std::vector<std::vector<double>> & tdl() const noexcept
-  {
-    return tdl_;
-  }
-  /** Access the robot's angular upper torque-derivative limits (const) */
-  inline const std::vector<std::vector<double>> & tdu() const noexcept
-  {
-    return tdu_;
-  }
-  /** Access the robot's angular lower acceleration limits */
-  inline std::vector<std::vector<double>> & al() noexcept
-  {
-    return al_;
-  }
-  /** Access the robot's angular upper acceleration limits */
-  inline std::vector<std::vector<double>> & au() noexcept
-  {
-    return au_;
-  }
-  /** Access the robot's angular lower jerk limits */
-  inline std::vector<std::vector<double>> & jl() noexcept
-  {
-    return jl_;
-  }
-  /** Access the robot's angular upper jerk limits */
-  inline std::vector<std::vector<double>> & ju() noexcept
-  {
-    return ju_;
-  }
-  /** Access the robot's angular lower torque-derivative limits */
-  inline std::vector<std::vector<double>> & tdl() noexcept
-  {
-    return tdl_;
-  }
-  /** Access the robot's angular upper torque-derivative limits */
-  inline std::vector<std::vector<double>> & tdu() noexcept
-  {
-    return tdu_;
-  }
 
   /** Return the flexibilities of the robot (const) */
   const std::vector<Flexibility> & flexibility() const;
@@ -931,6 +883,8 @@ private:
   std::string name_;
   /** RobotModule that was used to create this robot */
   RobotModule module_;
+  /** Joint limits */
+  Limits limits_;
   /** Floating-base variable */
   tvm::VariablePtr q_fb_;
   /** Joints variable */
@@ -953,18 +907,6 @@ private:
   CoMPtr com_;
   /** List of body transformations */
   std::vector<sva::PTransformd> bodyTransforms_;
-  /** Lower bounds for joint acceleration */
-  std::vector<std::vector<double>> al_;
-  /** Upper bounds for joint acceleration */
-  std::vector<std::vector<double>> au_;
-  /** Lower bounds for joint jerk */
-  std::vector<std::vector<double>> jl_;
-  /** Upper bounds for joint jerk */
-  std::vector<std::vector<double>> ju_;
-  /** Lower bounds for joint torque derivative */
-  std::vector<std::vector<double>> tdl_;
-  /** Upper bounds for joint torque derivative */
-  std::vector<std::vector<double>> tdu_;
   /** List of frames available in this robot */
   mc_rtc::map<std::string, FramePtr> frames_;
   /** List of convex available in this robot */
