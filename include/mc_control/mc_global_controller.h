@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 CNRS-UM LIRMM, CNRS-AIST JRL
+ * Copyright 2015-2020 CNRS-UM LIRMM, CNRS-AIST JRL
  */
 
 #pragma once
@@ -92,9 +92,6 @@ public:
    * are enabled or not.
    */
   std::vector<std::string> loaded_robots() const;
-
-  /*! \brief Returns the main robot module */
-  std::shared_ptr<mc_rbdyn::RobotModule> get_robot_module();
 
   /*! \brief Returns the name of the current controller */
   std::string current_controller() const;
@@ -556,19 +553,17 @@ public:
   /*! \brief Access the server */
   ControllerServer & server();
 
-  /*! \brief Access the result of the latest run
-   *
-   * \param t Unused
-   *
-   * \returns A reference to the latest result
-   */
-  const mc_solver::QPResultMsg & send(const double & t);
-
   /*! \brief Access the current controller */
-  MCController & controller();
+  inline MCController & controller() noexcept
+  {
+    return *controller_;
+  }
 
   /*! \brief Const access to current controller */
-  const MCController & controller() const;
+  inline const MCController & controller() const noexcept
+  {
+    return *controller_;
+  }
 
   /*! \brief Access to the control robots instance. */
   mc_rbdyn::Robots & robots();
@@ -576,35 +571,28 @@ public:
   /*! \brief Const access to the control robots instance. */
   const mc_rbdyn::Robots & robots() const;
 
-  /*! \brief Access to the real robots instance. */
-  mc_rbdyn::Robots & realRobots();
-
-  /*! \brief Const access to the real robots instance. */
-  const mc_rbdyn::Robots & realRobots() const;
-
   /*! \brief Access the main robot */
-  mc_rbdyn::Robot & robot();
+  inline mc_rbdyn::Robot & robot() noexcept
+  {
+    return controller_->robot();
+  }
 
   /*! \brief Const access to the main robot */
-  const mc_rbdyn::Robot & robot() const;
+  inline const mc_rbdyn::Robot & robot() const noexcept
+  {
+    return controller_->robot();
+  }
 
-  /*! \brief Access to a robot instance.
-   *
-   * @throws if no robot with that name exist
-   */
-  mc_rbdyn::Robot & robot(const std::string & name);
+  inline mc_rbdyn::Robots & realRobots() noexcept
+  {
+    return controller_->realRobots();
+  }
 
-  /*! \brief Const access to a  robot instance.
-   *
-   * @throws if no robot named with that name exist
-   **/
-  const mc_rbdyn::Robot & robot(const std::string & name) const;
-
-  /*! \brief Access the main real robot */
-  mc_rbdyn::Robot & realRobot();
-
-  /*! \brief Const access to the main real robot */
-  const mc_rbdyn::Robot & realRobot() const;
+  /*! \brief Get access to the main real robot instance. */
+  inline mc_rbdyn::Robot & realRobot() noexcept
+  {
+    return controller_->realRobot();
+  }
 
   /*! \brief Access to a real robot instance.
    *
@@ -619,17 +607,26 @@ public:
   const mc_rbdyn::Robot & realRobot(const std::string & name) const;
 
   /*! \brief Get the controller timestep */
-  double timestep() const;
+  inline double timestep() const noexcept
+  {
+    return config.timestep;
+  }
 
   /*! \brief Access the reference joint order
    *
    * This is provided by mc_rbdyn::RobotModule and represents the joint's order
    * in the native control system of the robot.
    */
-  const std::vector<std::string> & ref_joint_order();
+  inline const std::vector<std::string> & ref_joint_order() const noexcept
+  {
+    return robot().module().ref_joint_order();
+  }
 
   /*! \brief Access the global controller configuration */
-  const GlobalConfiguration & configuration() const;
+  inline const GlobalConfiguration & configuration() const noexcept
+  {
+    return config;
+  }
 
   /*! \brief Add the given directories to the controller search path
    *
@@ -825,7 +822,7 @@ public:
     std::vector<std::string> gui_server_pub_uris{};
     std::vector<std::string> gui_server_rep_uris{};
 
-    Configuration config;
+    mc_rtc::Configuration config;
 
     void load_controllers_configs();
 
@@ -835,7 +832,6 @@ public:
   };
 
 private:
-  using duration_ms = std::chrono::duration<double, std::milli>;
   GlobalConfiguration config;
   std::string current_ctrl = "";
   std::string next_ctrl = "";
@@ -865,14 +861,14 @@ private:
   struct PluginBefore
   {
     GlobalPlugin * plugin;
-    duration_ms plugin_before_dt;
+    mc_rtc::duration_ms plugin_before_dt;
   };
   std::vector<PluginBefore> plugins_before_;
   std::vector<GlobalPlugin *> plugins_before_always_;
   struct PluginAfter
   {
     GlobalPlugin * plugin;
-    duration_ms plugin_after_dt;
+    mc_rtc::duration_ms plugin_after_dt;
   };
   std::vector<PluginAfter> plugins_after_;
   std::vector<GlobalPlugin *> plugins_after_always_;
@@ -884,13 +880,12 @@ private:
   std::map<std::string, bool> setup_logger_ = {};
 
   /** Timers and performance measure */
-  duration_ms global_run_dt{0};
-  duration_ms controller_run_dt{0};
-  duration_ms observers_run_dt{0};
-  duration_ms log_dt{0};
-  duration_ms gui_dt{0};
-  double solver_build_and_solve_t = 0;
-  double solver_solve_t = 0;
+  mc_rtc::duration_ms global_run_dt{0};
+  mc_rtc::duration_ms observers_run_dt{0};
+  mc_rtc::duration_ms controller_run_dt{0};
+  mc_rtc::duration_ms log_dt{0};
+  mc_rtc::duration_ms gui_dt{0};
+  mc_rtc::duration_ms solver_build_and_solve_t{0};
   double framework_cost = 0;
 
   /** Keep track of controller outputs before applying gripper control */

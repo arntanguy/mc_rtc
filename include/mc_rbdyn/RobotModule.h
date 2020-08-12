@@ -466,7 +466,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * \see mc_rbdyn::Collision for details on the expected data
    */
-  const std::vector<mc_rbdyn::Collision> & minimalSelfCollisions() const
+  const std::vector<mc_rbdyn::CollisionVector::CollisionDescription> & minimalSelfCollisions() const
   {
     return _minimalSelfCollisions;
   }
@@ -479,7 +479,7 @@ struct MC_RBDYN_DLLAPI RobotModule
    *
    * \see mc_rbdyn::Collision for details on the expected data
    */
-  const std::vector<mc_rbdyn::Collision> & commonSelfCollisions() const
+  const std::vector<mc_rbdyn::CollisionVector::CollisionDescription> & commonSelfCollisions() const
   {
     return _commonSelfCollisions;
   }
@@ -636,9 +636,9 @@ struct MC_RBDYN_DLLAPI RobotModule
   /** \see springs() */
   Springs _springs;
   /** \see minimalSelfCollisions() */
-  std::vector<mc_rbdyn::Collision> _minimalSelfCollisions;
+  std::vector<mc_rbdyn::CollisionVector::CollisionDescription> _minimalSelfCollisions;
   /** \see commonSelfCollisions() */
-  std::vector<mc_rbdyn::Collision> _commonSelfCollisions;
+  std::vector<mc_rbdyn::CollisionVector::CollisionDescription> _commonSelfCollisions;
   /** \see grippers() */
   std::vector<Gripper> _grippers;
   /** \see gripperSafety() */
@@ -659,7 +659,7 @@ struct MC_RBDYN_DLLAPI RobotModule
   DevicePtrVector _devices;
 };
 
-typedef std::shared_ptr<RobotModule> RobotModulePtr;
+using RobotModulePtr = std::shared_ptr<RobotModule>;
 
 /*! \brief Converts limits provided by RBDyn parsers to bounds
  *
