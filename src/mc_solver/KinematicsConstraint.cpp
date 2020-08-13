@@ -49,6 +49,7 @@ void KinematicsConstraint::addToSolver(QPSolver & solver)
                                                        Eigen::VectorXd::Constant(nParams, 1, 0),
                                                        Eigen::VectorXd::Constant(nParams, 1, damper_[2])}),
       {tvm::requirements::PriorityLevel(0)});
+  constraints_.push_back(jl);
   /** Velocity limits */
   auto nDof = robot_->qJoints()->space().tSize();
   auto vl = robot_->limits().vl.tail(nDof) * velocityPercent_ / solver.dt();
@@ -56,10 +57,12 @@ void KinematicsConstraint::addToSolver(QPSolver & solver)
   auto vL = solver.problem().add(vl <= dot(robot_->qJoints()) <= vu, tvm::task_dynamics::Proportional(1 / solver.dt()),
                                  {tvm::requirements::PriorityLevel(0)});
   /** Acceleration limits */
+  constraints_.push_back(vL);
   auto al = robot_->limits().al.tail(nDof);
   auto au = robot_->limits().au.tail(nDof);
-  auto aL = solver.problem().add(al <= dot(robot_->qJoints(), 2) <= au, tvm::task_dynamics::None{}, {tvm::requirements::PriorityLevel(0)});
-  constraints_ = {jl, vL, aL};
+  auto aL = solver.problem().add(al <= dot(robot_->qJoints(), 2) <= au, tvm::task_dynamics::None{},
+                                 {tvm::requirements::PriorityLevel(0)});
+  constraints_.push_back(aL);
   /** FIXME Implement torque derivative and jerk bounds */
 }
 
