@@ -291,7 +291,7 @@ void MCGlobalController::reset(const std::map<std::string, std::vector<double>> 
 
 void MCGlobalController::initEncoders(mc_rbdyn::Robot & robot, const std::vector<double> & initq)
 {
-  const auto & rjo = robot.refJointOrder();
+  const auto & rjo = robot.module().ref_joint_order();
   if(initq.size() != rjo.size())
   {
     mc_rtc::log::error_and_throw<std::domain_error>(
