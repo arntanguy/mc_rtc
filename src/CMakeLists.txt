@@ -401,7 +401,6 @@ mc_tasks/PositionTask.cpp
 mc_tasks/TransformTask.cpp
 mc_tasks/OrientationTask.cpp
 #mc_tasks/VectorOrientationTask.cpp
-#mc_tasks/EndEffectorTask.cpp
 #mc_tasks/RelativeEndEffectorTask.cpp
 mc_tasks/CoMTask.cpp
 mc_tasks/ImpedanceTask.cpp
@@ -428,7 +427,6 @@ set(mc_tasks_HDR
 ../include/mc_tasks/AddRemoveContactTask.h
 ../include/mc_tasks/api.h
 ../include/mc_tasks/CoMTask.h
-../include/mc_tasks/EndEffectorTask.h
 ../include/mc_tasks/MetaTaskLoader.h
 ../include/mc_tasks/MomentumTask.h
 ../include/mc_tasks/OrientationTask.h
