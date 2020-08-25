@@ -132,6 +132,7 @@ Configuration::Configuration() : v{nullptr, std::shared_ptr<void>(new internal::
 }
 
 Configuration::Configuration(const Json & v) : v(v) {}
+Configuration::Configuration(const std::string & key, const Json & v) : key_(key), v(v) {}
 
 Configuration::Configuration(const char * path) : Configuration(std::string(path)) {}
 
@@ -151,7 +152,7 @@ Configuration Configuration::operator()(const std::string & key) const
 {
   if(has(key))
   {
-    return Configuration(v[key]);
+    return Configuration(key, v[key]);
   }
   throw Exception("No entry named " + key + " in the configuration");
 }
@@ -345,7 +346,7 @@ Configuration::operator Eigen::Matrix3d() const
           .toRotationMatrix();
     }
   }
-  throw Exception("Stored Json value is not a Matrix3d");
+  throw Exception(fmt::format("Stored Json value for key \"{}\" is not a Matrix3d", key_));
 }
 
 Configuration::operator Eigen::Matrix6d() const

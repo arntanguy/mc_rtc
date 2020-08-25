@@ -1270,7 +1270,9 @@ private:
     void * value_;
     std::shared_ptr<void> doc_;
   };
+  std::string key_; ///< Key of the last converted element used for the exception message
   Json v;
+  Configuration(const std::string & key, const Json & v);
   Configuration(const Json & v);
 };
 
