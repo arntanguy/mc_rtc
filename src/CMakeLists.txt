@@ -389,7 +389,7 @@ target_link_libraries(mc_trajectory PUBLIC ndcurves::ndcurves mc_rtc::mc_rtc_gui
 install_mc_rtc_lib(mc_trajectory)
 
 set(mc_tasks_SRC
-#mc_tasks/MomentumTask.cpp
+mc_tasks/MomentumTask.cpp
 mc_tasks/PositionTask.cpp
 mc_tasks/TransformTask.cpp
 mc_tasks/OrientationTask.cpp
