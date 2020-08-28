@@ -257,6 +257,7 @@ set(mc_tvm_HDR
   ${mc_tvm_HDR_DIR}/PositionFunction.h
   ${mc_tvm_HDR_DIR}/PostureFunction.h
   ${mc_tvm_HDR_DIR}/TransformFunction.h
+  ${mc_tvm_HDR_DIR}/VectorOrientationFunction.h
   ${mc_tvm_HDR_DIR}/utils.h
 )
 set(mc_tvm_SRC
@@ -273,6 +274,7 @@ set(mc_tvm_SRC
   mc_tvm/PositionFunction.cpp
   mc_tvm/PostureFunction.cpp
   mc_tvm/TransformFunction.cpp
+  mc_tvm/VectorOrientationFunction.cpp
   mc_tvm/utils.cpp
 )
 
