@@ -32,13 +32,13 @@ void StabilizerStandingTrackCoM::start(mc_control::fsm::Controller & ctl)
                             [this](const Eigen::Vector3d & com, const Eigen::Vector3d & comd,
                                    const Eigen::Vector3d & comdd,
                                    const Eigen::Vector3d & zmp) { stabilizerTask_->target(com, comd, comdd, zmp); });
+  // Update anchor frame for the KinematicInertial observer
+  ctl.datastore().make_call("KinematicAnchorFrame::" + ctl.robot().name(),
+                            [this](const mc_rbdyn::Robot & robot) { return stabilizerTask_->anchorFrame(robot); });
 }
 
 bool StabilizerStandingTrackCoM::run(mc_control::fsm::Controller & ctl)
 {
-  // Update anchor frame for the KinematicInertial observer
-  ctl.anchorFrame(stabilizerTask_->anchorFrame());
-  ctl.anchorFrameReal(stabilizerTask_->anchorFrameReal());
   output("OK");
   return false;
 }
