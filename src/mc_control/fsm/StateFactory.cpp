@@ -262,12 +262,12 @@ StatePtr StateFactory::create(const std::string & state)
   }
   else
   {
-    LOG_ERROR("Attempted to create unavailable state " << state)
+    mc_rtc::log::error("Attempted to create unavailable state {}", state);
     return nullptr;
   }
   if(!ret)
   {
-    LOG_ERROR("Creation of " << state << " state failed")
+    mc_rtc::log::error("Creation of {} state failed");
     return nullptr;
   }
   ret->name(state);
