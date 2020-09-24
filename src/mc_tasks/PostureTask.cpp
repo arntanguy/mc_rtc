@@ -90,6 +90,8 @@ void PostureTask::target(const mc_rtc::map<std::string, std::vector<double>> & j
 void PostureTask::addToLogger(mc_rtc::Logger & logger)
 {
   TrajectoryBase::addToLogger(logger);
+  logger.addLogEntry(name_ + "_eval", this, [this]() -> const Eigen::VectorXd & { return errorT_->value(); });
+  logger.addLogEntry(name_ + "_speed", this, [this]() -> const Eigen::VectorXd & { return errorT_->velocity(); });
 }
 
 void PostureTask::addToGUI(mc_rtc::gui::StateBuilder & gui)
