@@ -1,5 +1,6 @@
 export ROS_DISTRO=indigo
-export APT_DEPENDENCIES="wget cmake build-essential gfortran doxygen software-properties-common cython python-pip python-coverage python-numpy python-nose libtinyxml2-dev libboost-all-dev libgeos++-dev libgeos-dev libltdl-dev python-enum34 python-git qt4-default python-matplotlib python-catkin-tools"
+export APT_DEPENDENCIES="wget cmake build-essential gfortran doxygen software-properties-common cython python-pip python-coverage python-numpy python-nose libtinyxml2-dev libboost-all-dev libgeos++-dev libgeos-dev libltdl-dev python-enum34 python-git qt4-default python-matplotlib"
+export ROS_APT_DEPENDENCIES="ros-${ROS_DISTRO}-ros-base ros-${ROS_DISTRO}-rosdoc-lite ros-${ROS_DISTRO}-common-msgs ros-${ROS_DISTRO}-tf2-ros ros-${ROS_DISTRO}-xacro ros-${ROS_DISTRO}-rviz python-catkin-tools"
 
 mc_rtc_extra_steps()
 {
