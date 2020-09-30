@@ -637,21 +637,17 @@ init_catkin_ws()
     echo_log "Removing obsolete catkin_make files"
     exec_with_confirmation rm $workspace_src/CMakeLists.txt $workspace/build $workspace/devel
     exit_if_error "Automatic migration to catkin_tools cancelled. Please migrate your workspace '$workspace' manually and re-run the script. See https://catkin-tools.readthedocs.io/en/latest/migration.html for futher details."
-    init_ws=true
   fi
 
-  if [[ ! -d $workspace/.catkin_tools ]]; then
-    init_ws=true
-  fi
+  echo_log "Initializing workspace"
+  exec_log catkin init
 
   if $init_ws && $NOT_CLONE_ONLY; then
-    echo_log "Initializing workspace"
     cd ${workspace}
-    exec_log catkin init
     exec_log catkin build
+    echo_log "Sourcing $workspace/devel/setup.bash"
+    . $workspace/devel/setup.bash
   fi
-  echo_log "Sourcing $workspace/devel/setup.bash"
-  . $workspace/devel/setup.bash
 }
 
 if $WITH_ROS_SUPPORT
