@@ -9,4 +9,7 @@ mc_rtc_extra_steps()
 {
   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && sudo python get-pip.py && rm -f get-pip.py
   sudo pip install matplotlib
+  # FIXME: There is currently no released version of catkin_tools for noetic so we're building from source here
+  # Remove this hack once catkin_tools is officially released
+  sudo pip install --user git+https://github.com/catkin/catkin_tools.git
 }
