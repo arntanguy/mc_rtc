@@ -46,6 +46,38 @@ exit_if_error()
   fi
 }
 
+# Ask user confirmation
+# ask_confirmation "Would you like to continue?"
+# $? is 0 when accepted, 1 when refused
+ask_confirmation()
+{
+  question=$1
+  while true; do
+      read -p "$question (y/Y, n/N)" yn
+      case $yn in
+          [Yy]* ) return 0;;
+          [Nn]* ) return 1;;
+          * ) echo "Please answer yes (y/Y) or no (n/N).";;
+      esac
+  done
+}
+
+# Execute command with user confirmation
+# exec_with_confirmation command arg1 arg2
+# If the user accept the command is exectued and $? contains the command's exit code
+# Else $? is false
+exec_with_confirmation()
+{
+  while true; do
+      read -p "Execute '$*'? (y/Y, n/N)" yn
+      case $yn in
+          [Yy]* ) echo_log "Executing: '$*'\n"; exec_log $*; return $?;;
+          [Nn]* ) echo_log "Command '$*' was not exectued (canceled by user)"; return 1;;
+          * ) echo "Please answer yes (y/Y) or no (n/N).";;
+      esac
+  done
+}
+
 mc_rtc_extra_steps()
 {
   true
@@ -570,6 +602,53 @@ echo_log ""
 ##  -- Install ROS --  #
 ########################
 
+# Initialize catkin workspace and migrate from catkin_make to catkin_tools
+# - If the workspace doesn't exist, create it
+# - If the workspace exists and is not initialized, intialize it
+# - If the workspace exists but uses catkin_make, migrate it (remove obsolete files and configure workspace with catkin_tools)
+init_catkin_ws()
+{
+  workspace=$1
+  workspace_src=$2
+  init_ws=false
+
+  echo_log "-- Initializing catkin workspace $workspace (with catkin_tools)"
+
+  if [[ ! -d $workspace_src ]]; then
+    echo_log "Source dir $workspace_src does not exist, creating"
+    mkdir -p ${workspace_src}
+    init_ws=true
+  fi
+
+  if [ -L "${workspace_src}/CMakeLists.txt" ]; then
+    echo_log
+    echo_log "-------------------------------------------------"
+    echo_log "-- Migration from catkin_make to catkin build  --"
+    echo_log "-------------------------------------------------"
+    echo_log "This workspace appears to be using catkin_make, reinitializing with catkin_tools."
+    echo_log "[warning] If you had non-mc_rtc related packages in this workspace, and they are not configured to build with catkin_tools, consider migrating (https://catkin-tools.readthedocs.io/en/latest/migration.html), or move them to a separate catkin workspace."
+    echo_log
+    echo_log "Removing obsolete catkin_make files"
+    exec_with_confirmation rm $workspace_src/CMakeLists.txt
+    exec_with_confirmation rm -rf $workspace/build
+    exec_with_confirmation rm -rf $workspace/devel
+    init_ws=true
+  fi
+
+  if [[ ! -d $workspace/.catkin_tools ]]; then
+    init_ws=true
+  fi
+
+  if $init_ws && $NOT_CLONE_ONLY; then
+    echo_log "Initializing workspace"
+    cd ${workspace}
+    exec_log catkin init
+    exec_log catkin build
+  fi
+  echo_log "Sourcing $workspace/devel/setup.bash"
+  . $workspace/devel/setup.bash
+}
+
 if $WITH_ROS_SUPPORT
 then
   echo_log "================================"
@@ -595,38 +674,12 @@ then
   then
     . /opt/ros/${ROS_DISTRO}/setup.bash
   fi
-  CATKIN_DATA_WORKSPACE=$SOURCE_DIR/catkin_data_ws
-  CATKIN_DATA_WORKSPACE_SRC=${CATKIN_DATA_WORKSPACE}/src
-  if [[ ! -d $CATKIN_DATA_WORKSPACE_SRC ]]
-  then
-    mkdir -p ${CATKIN_DATA_WORKSPACE_SRC}
-    if $NOT_CLONE_ONLY
-    then
-      cd ${CATKIN_DATA_WORKSPACE_SRC}
-      catkin_init_workspace || true
-      cd ${CATKIN_DATA_WORKSPACE}
-      catkin_make
-      . $CATKIN_DATA_WORKSPACE/devel/setup.bash
-    fi
-  else
-    . $CATKIN_DATA_WORKSPACE/devel/setup.bash
-  fi
+  export CATKIN_DATA_WORKSPACE=$SOURCE_DIR/catkin_data_ws
+  export CATKIN_DATA_WORKSPACE_SRC=${CATKIN_DATA_WORKSPACE}/src
+  init_catkin_ws $CATKIN_DATA_WORKSPACE $CATKIN_DATA_WORKSPACE_SRC
   CATKIN_WORKSPACE=$SOURCE_DIR/catkin_ws
   CATKIN_WORKSPACE_SRC=${CATKIN_WORKSPACE}/src
-  if [[ ! -d $CATKIN_WORKSPACE_SRC ]]
-  then
-    mkdir -p ${CATKIN_WORKSPACE_SRC}
-    if $NOT_CLONE_ONLY
-    then
-      cd ${CATKIN_WORKSPACE_SRC}
-      catkin_init_workspace || true
-      cd ${CATKIN_WORKSPACE}
-      catkin_make
-      . $CATKIN_WORKSPACE/devel/setup.bash
-    fi
-  else
-    . $CATKIN_WORKSPACE/devel/setup.bash
-  fi
+  init_catkin_ws $CATKIN_WORKSPACE $CATKIN_WORKSPACE_SRC
 fi
 
 echo_log ""
@@ -766,9 +819,7 @@ check_and_clone_git_dependency()
 
         if $ASK_USER_INPUT
         then
-          read -r -p "--> Would you like to update to the new remote (warning this will overwrite the local master branch)? [y/N] " response
-          if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
-          then
+          if ask_confirmation "--> Would you like to update to the new remote (warning this will overwrite the local master branch)?"; then
             echo_log "-- Updating the remote url to $git_dep_uri"
             git remote set-url origin $git_dep_uri
             git remote update origin
@@ -1059,8 +1110,8 @@ build_catkin_workspace()
   fi
   echo_log "-- Building catkin workspace $1"
   cd $1
-  exec_log catkin_make
-  exit_if_error "catkin_build failed for $git_dep"
+  exec_log catkin build
+  exit_if_error "catkin build failed for $git_dep"
   echo_log "-- [OK] Successfully built $1"
 }
 
