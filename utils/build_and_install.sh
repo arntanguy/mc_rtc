@@ -51,6 +51,9 @@ exit_if_error()
 # $? is 0 when accepted, 1 when refused
 ask_confirmation()
 {
+  if ! $ASK_USER_INPUT; then
+    return 0
+  fi
   question=$1
   while true; do
       read -p "$question (y/Y, n/N)" yn
@@ -68,6 +71,9 @@ ask_confirmation()
 # Else $? is false
 exec_with_confirmation()
 {
+  if ! $ASK_USER_INPUT; then
+    echo_log "Executing: '$*'\n"; exec_log $*; return $?
+  fi
   while true; do
       read -p "Execute '$*'? (y/Y, n/N)" yn
       case $yn in
@@ -629,9 +635,8 @@ init_catkin_ws()
     echo_log "[warning] If you had non-mc_rtc related packages in this workspace, and they are not configured to build with catkin_tools, consider migrating (https://catkin-tools.readthedocs.io/en/latest/migration.html), or move them to a separate catkin workspace."
     echo_log
     echo_log "Removing obsolete catkin_make files"
-    exec_with_confirmation rm $workspace_src/CMakeLists.txt
-    exec_with_confirmation rm -rf $workspace/build
-    exec_with_confirmation rm -rf $workspace/devel
+    exec_with_confirmation rm $workspace_src/CMakeLists.txt $workspace/build $workspace/devel
+    exit_if_error "Automatic migration to catkin_tools cancelled. Please migrate your workspace '$workspace' manually and re-run the script. See https://catkin-tools.readthedocs.io/en/latest/migration.html for futher details."
     init_ws=true
   fi
 
@@ -1171,22 +1176,26 @@ echo_log ""
 cd $mc_rtc_dir
 git remote update origin
 current_commit=`git rev-parse HEAD`
+current_commit_msg="`git rev-list --format=%B --max-count=1 $current_commit`"
 current_branch_name="`git rev-parse --abbrev-ref HEAD`"
 remote_commit=`git rev-parse master@{upstream}`
+remote_commit_msg="`git rev-list --format=%B --max-count=1 $remote_commit`"
 if [[ "$current_commit" != "$remote_commit"  ]]
 then
-  echo "-- [WARNING] Would compile mc_rtc from commit $current_commit (currently on branch ${current_branch_name}) but the remote master branch is at $remote_commit"
-  if $ASK_USER_INPUT
+  echo "-- [WARNING] You are not on mc_rtc master"
+  echo
+  echo "-- remote is on:"
+  echo "$remote_commit_msg"
+  echo "-- local is on (branch $current_branch_name):"
+  echo "$current_commit_msg"
+  echo
+  if ask_confirmation "Would you like to compile mc_rtc from the current commit ($current_commit on branch ${current_branch_name})"
   then
-    read -r -p "Are you sure? [y/N] " response
-    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
-    then
-      echo_log "-- Building mc_rtc from commit $current_commit"
-    else
-      echo_log "-- Installation manually cancelled because mc_rtc would have been built from commit $current_commit but the remote master branch is at $remote_commit"
-      echo_log "   Please make sure mc_rtc is up-to date with the remote master branch and try again."
-      exit_failure
-    fi
+    echo_log "-- Building mc_rtc from local commit $current_commit (branch ${current_branch_name})"
+  else
+    echo_log "-- Installation manually cancelled because mc_rtc would have been built from commit $current_commit but the remote master branch is at $remote_commit"
+    echo_log "   Please make sure mc_rtc is up-to date with the remote master branch and try again."
+    exit_failure
   fi
 fi
 if ! $SKIP_UPDATE
