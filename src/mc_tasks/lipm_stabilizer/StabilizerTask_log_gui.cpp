@@ -72,17 +72,19 @@ void StabilizerTask::addToGUI(mc_rtc::gui::StateBuilder & gui)
                  Checkbox("Apply CoM admittance only in double support?", [this]() { return zmpccOnlyDS_; },
                           [this]() { zmpccOnlyDS_ = !zmpccOnlyDS_; }));
   zmpcc_.addToGUI(gui, {"Tasks", name_, "Advanced"});
-  gui.addElement({"Tasks", name_, "Advanced"},
-                 ArrayInput("Vertical drift compensation", {"frequency", "stiffness"},
-                            [this]() -> Eigen::Vector2d {
-                              return {c_.vdcFrequency, c_.vdcStiffness};
-                            },
-                            [this](const Eigen::Vector2d & v) {
-                              vdcFrequency(v(0));
-                              vdcStiffness(v(1));
-                            }),
-                 NumberInput("Torso pitch [rad]", [this]() { return c_.torsoPitch; },
-                             [this](double pitch) { torsoPitch(pitch); }));
+  gui.addElement(
+      {"Tasks", name_, "Advanced"},
+      ArrayInput("Vertical drift compensation", {"frequency", "stiffness"},
+                 [this]() -> Eigen::Vector2d {
+                   return {c_.vdcFrequency, c_.vdcStiffness};
+                 },
+                 [this](const Eigen::Vector2d & v) {
+                   vdcFrequency(v(0));
+                   vdcStiffness(v(1));
+                 }),
+      NumberInput("Torso pitch [rad]", [this]() { return c_.torsoPitch; }, [this](double pitch) { torsoPitch(pitch); }),
+      ArrayInput("DCM Bias", [this]() -> const Eigen::Vector3d & { return measuredCoMOffset_; },
+                 [this](const Eigen::Vector3d & bias) { measuredCoMOffset_ = bias; }));
 
   gui.addElement({"Tasks", name_, "Debug"}, Button("Disable", [this]() { disable(); }));
   addConfigButtons({"Tasks", name_, "Debug"});

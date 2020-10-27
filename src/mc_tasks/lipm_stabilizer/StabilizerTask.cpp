@@ -234,7 +234,8 @@ void StabilizerTask::update(mc_solver::QPSolver & solver)
   // Update contacts if they have changed
   updateContacts(solver);
 
-  updateState(realRobots_.robot().com(), realRobots_.robot().comVelocity());
+  updateState(realRobots_.robot().com() + realRobots_.robot().posW().rotation().transpose() * measuredCoMOffset_,
+              realRobots_.robot().comVelocity());
 
   // Run stabilizer
   run();
@@ -408,6 +409,8 @@ void StabilizerTask::load(mc_solver::QPSolver &, const mc_rtc::Configuration & c
   {
     this->disable();
   }
+
+  config("com_bias", measuredCoMOffset_);
 }
 
 const StabilizerConfiguration & StabilizerTask::config() const

@@ -685,6 +685,7 @@ protected:
   Eigen::Vector3d dcmError_ = Eigen::Vector3d::Zero();
   Eigen::Vector3d dcmVelError_ = Eigen::Vector3d::Zero();
   Eigen::Vector3d measuredCoM_ = Eigen::Vector3d::Zero();
+  Eigen::Vector3d measuredCoMOffset_ = Eigen::Vector3d::Zero(); /** Offset on the measured CoM */
   Eigen::Vector3d measuredCoMd_ = Eigen::Vector3d::Zero();
   Eigen::Vector3d measuredZMP_ = Eigen::Vector3d::Zero();
   Eigen::Vector3d measuredDCM_ = Eigen::Vector3d::Zero();
