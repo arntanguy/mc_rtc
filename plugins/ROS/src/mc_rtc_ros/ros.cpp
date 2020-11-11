@@ -13,6 +13,7 @@
 #include <geometry_msgs/WrenchStamped.h>
 #include <nav_msgs/Odometry.h>
 #include <ros/ros.h>
+#include <rosgraph_msgs/Clock.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/JointState.h>
 #include <tf2_ros/transform_broadcaster.h>
@@ -399,6 +400,82 @@ void RobotPublisherImpl::publishThread()
   }
 }
 
+struct ClockPublisherImpl
+{
+  ClockPublisherImpl(ros::NodeHandle & nh, double rate);
+  void init();
+  void update(const mc_control::MCGlobalController::time_point_ns & wallTime);
+
+private:
+  std::unique_ptr<ClockPublisher> impl;
+  ros::NodeHandle & nh;
+  double rate_ = 100;
+  ros::Publisher clockPub_;
+
+  bool running = true;
+  std::thread th;
+  std::atomic<uint64_t> time_;
+  void publishThread();
+};
+
+ClockPublisherImpl::ClockPublisherImpl(ros::NodeHandle & nh, double rate)
+: nh(nh), rate_(rate), th(std::bind(&ClockPublisherImpl::publishThread, this))
+{
+}
+
+void ClockPublisherImpl::init()
+{
+  clockPub_ = nh.advertise<rosgraph_msgs::Clock>("/clock", 10);
+}
+
+void ClockPublisherImpl::update(const mc_control::MCGlobalController::time_point_ns & wallTime)
+{
+  auto dur = std::chrono::duration_cast<std::chrono::duration<uint64_t>>(wallTime.time_since_epoch());
+  time_ = static_cast<uint64_t>(dur.count());
+}
+
+void ClockPublisherImpl::publishThread()
+{
+  ros::Rate rt(rate_);
+  rosgraph_msgs::Clock clockMsg;
+  while(this->running && ros::ok())
+  {
+    clockMsg.clock.fromNSec(time_);
+    clockPub_.publish(clockMsg);
+    rt.sleep();
+  }
+}
+
+ClockPublisher::ClockPublisher(double timestep) : impl(nullptr)
+{
+  auto nh = ROSBridge::get_node_handle();
+  if(nh)
+  {
+    if(timestep <= 0)
+    {
+      mc_rtc::log::error_and_throw<std::runtime_error>(
+          "Failed to create ClockPublisher: timestep must be strictly positive (provided {})", timestep);
+    }
+    impl.reset(new ClockPublisherImpl(*nh, 1 / timestep));
+  }
+}
+
+void ClockPublisher::init()
+{
+  if(impl)
+  {
+    impl->init();
+  }
+}
+
+void ClockPublisher::update(const mc_control::MCGlobalController::time_point_ns & wallTime)
+{
+  if(impl)
+  {
+    impl->update(wallTime);
+  }
+}
+
 inline bool ros_init(const std::string & name)
 {
   if(ros::ok())
@@ -422,6 +499,7 @@ struct ROSBridgeImpl
   bool ros_is_init;
   std::shared_ptr<ros::NodeHandle> nh;
   std::map<std::string, std::shared_ptr<RobotPublisher>> rpubs;
+  std::unique_ptr<ClockPublisher> clockPub;
   double publish_rate = 100;
 };
 
@@ -465,6 +543,25 @@ void ROSBridge::update_robot_publisher(const std::string & publisher, double dt,
     impl.rpubs[publisher]->init(robot);
   }
   impl.rpubs[publisher]->update(dt, robot);
+}
+
+void ROSBridge::init_clock_publisher(double timestep)
+{
+  static auto & impl = impl_();
+  if(!impl.clockPub)
+  {
+    impl.clockPub.reset(new ClockPublisher{timestep});
+  }
+  impl.clockPub->init();
+}
+
+void ROSBridge::update_clock_publisher(const mc_control::MCGlobalController::time_point_ns & wallTime)
+{
+  static auto & impl = impl_();
+  if(impl.clockPub)
+  {
+    impl.clockPub->update(wallTime);
+  }
 }
 
 void ROSBridge::shutdown()

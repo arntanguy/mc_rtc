@@ -580,9 +580,6 @@ void MCGlobalController::setWrenches(unsigned int robotIndex, const std::map<std
 
 bool MCGlobalController::run()
 {
-  /** Always pick a steady clock */
-  using clock = typename std::conditional<std::chrono::high_resolution_clock::is_steady,
-                                          std::chrono::high_resolution_clock, std::chrono::steady_clock>::type;
   /** Helper to converst Tasks' timer */
   using boost_ms = boost::chrono::duration<double, boost::milli>;
   using boost_ns = boost::chrono::duration<double, boost::nano>;
@@ -1079,9 +1076,8 @@ void MCGlobalController::setup_log()
                                      [&plugin]() { return plugin.plugin_after_dt.count(); });
   }
   // Log system wall time as nanoseconds since epoch (can be used to manage synchronization with ros)
-  controller->logger().addLogEntry("timeWall", []() -> int64_t {
-    int64_t nanoseconds_since_epoch = std::chrono::system_clock::now().time_since_epoch() / std::chrono::nanoseconds(1);
-    return nanoseconds_since_epoch;
+  controller->logger().addLogEntry("timeWall", [this]() -> int64_t {
+    return std::chrono::duration_cast<std::chrono::duration<uint64_t>>(wallTime_.time_since_epoch()).count();
   });
   setup_logger_[current_ctrl] = true;
 }

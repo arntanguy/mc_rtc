@@ -29,6 +29,14 @@ public:
 
   using QuaternionMapAllocator = Eigen::aligned_allocator<std::pair<const std::string, Eigen::Quaterniond>>;
   using QuaternionMap = std::map<std::string, Eigen::Quaterniond, std::less<std::string>, QuaternionMapAllocator>;
+  /** Always pick a steady clock */
+  using clock = typename std::conditional<std::chrono::high_resolution_clock::is_steady,
+                                          std::chrono::high_resolution_clock,
+                                          std::chrono::steady_clock>::type;
+  using time_point_ns = std::chrono::time_point<clock, std::chrono::nanoseconds>;
+  using time_point_ms = std::chrono::time_point<clock, std::chrono::nanoseconds>;
+  using duration_ns = std::chrono::duration<double, std::nano>;
+  using duration_ms = std::chrono::duration<double, std::milli>;
 
 private:
   /* MCGlobalController is non-copyable */
@@ -492,6 +500,31 @@ public:
   MC_RTC_DEPRECATED void setWrenches(unsigned int robotIndex, const std::map<std::string, sva::ForceVecd> & wrenches);
   /** @} */
 
+  /** Provides an input to define global time (system time, simulation time, ...) */
+  inline void setWallTime(const time_point_ns & time)
+  {
+    wallTime_ = time;
+  }
+
+  /** Set wall time to current clock time */
+  inline void setWallTimeToNow()
+  {
+    wallTime_ = clock::now();
+  }
+
+  /** Set wall time from a duration in nanoseconds since epoch */
+  inline void setWallTimeFromNs(uint64_t nanosecondsSinceEpoch)
+  {
+    auto duration = std::chrono::duration<uint64_t>(nanosecondsSinceEpoch);
+    wallTime_ = time_point_ns(duration);
+  }
+
+  /** Return the global time (system time, simulation time, ...) */
+  inline const time_point_ns & wallTime() const noexcept
+  {
+    return wallTime_;
+  }
+
 protected:
   /** @name Internal sensing helpers
    *
@@ -778,7 +811,7 @@ public:
   };
 
 private:
-  using duration_ms = std::chrono::duration<double, std::milli>;
+  time_point_ns wallTime_;
   GlobalConfiguration config;
   std::string current_ctrl = "";
   std::string next_ctrl = "";

@@ -17,7 +17,7 @@ struct ROSPlugin : public mc_control::GlobalPlugin
 
   void reset(mc_control::MCGlobalController & controller) override;
 
-  inline void before(mc_control::MCGlobalController &) override {}
+  inline void before(mc_control::MCGlobalController &) override;
 
   void after(mc_control::MCGlobalController & controller) override;
 
@@ -25,6 +25,7 @@ private:
   bool publish_control = true;
   bool publish_env = true;
   bool publish_real = true;
+  bool publish_clock = true;
   double publish_timestep = 0.01;
   std::unique_ptr<ROSServices> services_;
 

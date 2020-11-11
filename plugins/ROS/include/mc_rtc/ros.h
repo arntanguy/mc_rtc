@@ -9,6 +9,7 @@
 
 #include <SpaceVecAlg/SpaceVecAlg>
 
+#include <mc_control/mc_global_controller.h>
 #include <Eigen/Geometry>
 #include <map>
 #include <memory>
@@ -24,11 +25,6 @@ namespace mc_rbdyn
 {
 struct Robot;
 }
-
-namespace mc_control
-{
-struct MCGlobalController;
-} // namespace mc_control
 
 namespace mc_rtc
 {
@@ -80,6 +76,11 @@ struct MC_RTC_ROS_DLLAPI ROSBridge
    */
   static void update_robot_publisher(const std::string & publisher, double dt, const mc_rbdyn::Robot & robot);
 
+  /** Init the ros clock topic publishing */
+  static void init_clock_publisher(double rate);
+  /** Update clock time */
+  static void update_clock_publisher(const mc_control::MCGlobalController::time_point_ns & wallTime);
+
   /*! \brief Stop ROS */
   static void shutdown();
 
@@ -122,6 +123,18 @@ public:
 
 private:
   std::unique_ptr<RobotPublisherImpl> impl;
+};
+
+struct MC_RTC_ROS_DLLAPI ClockPublisherImpl;
+
+struct MC_RTC_ROS_DLLAPI ClockPublisher
+{
+  ClockPublisher(double timestep);
+  void init();
+  void update(const mc_control::MCGlobalController::time_point_ns & wallTime);
+
+private:
+  std::unique_ptr<ClockPublisherImpl> impl;
 };
 
 } // namespace mc_rtc

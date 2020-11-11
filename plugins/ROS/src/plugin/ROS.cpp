@@ -25,6 +25,7 @@ void ROSPlugin::init(mc_control::MCGlobalController & controller, const mc_rtc::
     conf("env", publish_env);
     conf("real", publish_real);
     conf("timestep", publish_timestep);
+    conf("clock", publish_clock);
   }
   mc_rtc::ROSBridge::set_publisher_timestep(publish_timestep);
   services_.reset(new ROSServices(mc_rtc::ROSBridge::get_node_handle(), controller));
@@ -56,6 +57,18 @@ void ROSPlugin::reset(mc_control::MCGlobalController & controller)
   {
     const auto & real_robot = controller.controller().realRobot();
     mc_rtc::ROSBridge::init_robot_publisher("real", controller.timestep(), real_robot, true);
+  }
+  if(publish_clock)
+  {
+    mc_rtc::ROSBridge::init_clock_publisher(controller.timestep());
+  }
+}
+
+void ROSPlugin::before(mc_control::MCGlobalController & controller)
+{
+  if(publish_clock)
+  {
+    mc_rtc::ROSBridge::update_clock_publisher(controller.wallTime());
   }
 }
 
