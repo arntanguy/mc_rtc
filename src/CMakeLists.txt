@@ -407,7 +407,7 @@ mc_tasks/LookAtFrameTask.cpp
 mc_tasks/VectorOrientationTask.cpp
 
 mc_tasks/CoMTask.cpp
-#mc_tasks/CoPTask.cpp
+mc_tasks/CoPTask.cpp
 mc_tasks/MomentumTask.cpp
 
 mc_tasks/BSplineTrajectoryTask.cpp
@@ -416,7 +416,7 @@ mc_tasks/ExactCubicTrajectoryTask.cpp
 mc_tasks/ComplianceTask.cpp
 mc_tasks/ImpedanceTask.cpp
 mc_tasks/AdmittanceTask.cpp
-#mc_tasks/DampingTask.cpp
+mc_tasks/DampingTask.cpp
 
 #mc_tasks/PositionBasedVisServoTask.cpp
 
