@@ -222,6 +222,22 @@ Robot::Robot(make_shared_token,
     forwardKinematics();
   }
 
+  forceSensors_ = module_.forceSensors();
+  if(loadFiles)
+  {
+    for(auto & fs : forceSensors_)
+    {
+      bfs::path calib_file = bfs::path(module_.calib_dir) / std::string("calib_data." + fs.name());
+      fs.loadCalibrator(calib_file.string(), mbc().gravity);
+    }
+  }
+  for(size_t i = 0; i < forceSensors_.size(); ++i)
+  {
+    const auto & fs = forceSensors_[i];
+    forceSensorsIndex_[fs.name()] = i;
+    frameForceSensors_[fs.parentBody()] = i;
+  }
+
   bodyTransforms_.resize(mb().bodies().size());
   const auto & bbts =
       base ? mbg().bodiesBaseTransform(mb().body(0).name(), *base) : mbg().bodiesBaseTransform(mb().body(0).name());
@@ -304,22 +320,6 @@ Robot::Robot(make_shared_token,
       mc_rtc::log::warning("RSDF directory ({}) specified by RobotModule for {} does not exist.", module_.rsdf_dir,
                            module_.name);
     }
-  }
-
-  forceSensors_ = module_.forceSensors();
-  if(loadFiles)
-  {
-    for(auto & fs : forceSensors_)
-    {
-      bfs::path calib_file = bfs::path(module_.calib_dir) / std::string("calib_data." + fs.name());
-      fs.loadCalibrator(calib_file.string(), mbc().gravity);
-    }
-  }
-  for(size_t i = 0; i < forceSensors_.size(); ++i)
-  {
-    const auto & fs = forceSensors_[i];
-    forceSensorsIndex_[fs.name()] = i;
-    frameForceSensors_[fs.parentBody()] = i;
   }
 
   // For each body in the robot find the closest force sensor attached to it (if any)
