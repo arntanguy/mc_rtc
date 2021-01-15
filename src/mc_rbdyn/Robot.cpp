@@ -1387,6 +1387,8 @@ void Robot::updateKinematics()
 {
   forwardKinematics();
   com_->updateCoM();
+  com_->updateVelocity();
+  com_->updateAcceleration();
   momentum_->updateMomentum();
   for(auto & f : frames_)
   {
