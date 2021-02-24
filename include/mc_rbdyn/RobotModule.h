@@ -654,6 +654,8 @@ struct MC_RBDYN_DLLAPI RobotModule
   Gripper::Safety _gripperSafety;
   /** \see ref_joint_order() */
   std::vector<std::string> _ref_joint_order;
+  std::vector<std::string> _p_gain;
+  std::vector<std::string> _d_gain;
   /** \see default_attitude() */
   std::array<double, 7> _default_attitude = {{1., 0., 0., 0., 0., 0., 0.}};
   /** \see compoundJoints() */
