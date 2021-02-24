@@ -134,6 +134,8 @@ RobotModule::RobotModule(const std::string & name, const mc_rbdyn_urdf::URDFPars
   boundsFromURDF(res.limits);
   _visual = res.visual;
   make_default_ref_joint_order();
+  _p_gain.resize(_ref_joint_order.size(), 0);
+  _d_gain.resize(_ref_joint_order.size(), 0);
   expand_stance();
 }
 

@@ -222,7 +222,7 @@ BOOST_AUTO_TEST_CASE(LambdaSugar)
   struct A
   {
     double val;
-    double compute(double t)
+    double compute(double t) const
     {
       return val * t;
     }
@@ -327,6 +327,13 @@ BOOST_AUTO_TEST_CASE(LambdaSugar)
   BOOST_CHECK(v2 == 2 * v);
   Eigen::Vector3d v3 = store.call<Eigen::Vector3d, const Eigen::Vector3d &>("double_v", v);
   BOOST_CHECK(v3 == 2 * v);
+
+  // Check calling a function expecting const ref argument with a non-const variable
+  A aa;
+  aa.compute(2);
+  store.make_call("const_ref_arg", [](const A & a) { return a.compute(2); });
+  auto rr = store.call<double, const A &>("const_ref_arg", a);
+  BOOST_CHECK(a.compute(2) == rr);
 }
 
 BOOST_AUTO_TEST_CASE(TestRemove)
