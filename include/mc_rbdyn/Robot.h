@@ -613,6 +613,26 @@ public:
   /** Set joint torques from sensors */
   void jointTorques(const std::vector<double> & jointTorques);
 
+  inline void powerStatus(const std::vector<bool> & powerStatus)
+  {
+    powerStatus_ = powerStatus;
+  }
+
+  inline const std::vector<bool> & powerStatus() const
+  {
+    return powerStatus_;
+  }
+
+  inline void servoStatus(const std::vector<bool> & servoStatus)
+  {
+    servoStatus_ = servoStatus;
+  }
+
+  inline const std::vector<bool> & servoStatus() const
+  {
+    return servoStatus_;
+  }
+
   /** Return the reference joint order for this robot */
   const std::vector<std::string> & refJointOrder() const;
 
@@ -1091,6 +1111,10 @@ private:
   /** Encoder velocities provided by the low-level controller or estimated from
    * encoder values **/
   std::vector<double> encoderVelocities_;
+  /** Whether the joint is powered on */
+  std::vector<bool> powerStatus_;
+  /** Whether the joint servo is on */
+  std::vector<bool> servoStatus_;
   /** Joint torques provided by the low-level controller */
   std::vector<double> jointTorques_;
   std::vector<double> flexibilityValues_;

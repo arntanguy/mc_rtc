@@ -297,6 +297,34 @@ mc_rbdyn::Robot & MCController::loadRobot(mc_rbdyn::RobotModulePtr rm,
     gui()->addElement({"Robots"}, mc_rtc::gui::Robot(r.name(), [name, this]() -> const mc_rbdyn::Robot & {
                         return this->robot(name);
                       }));
+
+    if(r.refJointOrder().size())
+    {
+      std::vector<std::tuple<std::string, double, double, double, double, bool, bool>> bodystat;
+      bodystat.resize(r.refJointOrder().size());
+      // clang-format off
+      gui()->addElement({"BodyStat", r.name()},
+                        mc_rtc::gui::Table(r.name(),
+                                           {"Joint", "angle", "angle_ref", "torque", "torque_ref", "power", "servo"},
+                                           {"{}", "{:0.3f}", "{:0.3f}", "{:0.3f}", "{:0.3f}", "{}", "{}"},
+                                           [bodystat, this, name]() mutable
+                                           {
+                                              auto & r = this->robot(name);
+                                              const auto & rjo = r.refJointOrder();
+                                              for(size_t i = 0; i < rjo.size(); ++i) {
+                                                int jIdx = r.jointIndexInMBC(i);
+                                                auto angle_ref = r.mbc().q[(size_t)jIdx][0];
+                                                auto angle = r.encoderValues()[i];
+                                                auto torque = (r.jointTorques().size()) ? r.jointTorques()[i] : 0;
+                                                auto torque_ref = (r.mbc().jointTorque.size()) ? r.mbc().jointTorque[(size_t)jIdx][0] : 0;
+                                                auto power = r.powerStatus().size() ? r.powerStatus()[i] : false;
+                                                auto servo = r.servoStatus().size() ? r.servoStatus()[i] : false;
+                                                bodystat[i] = std::make_tuple(rjo[i], angle, angle_ref, torque, torque_ref, power, servo);
+                                              }
+                                              return bodystat;
+                                           }));
+      // clang-format on
+    }
   }
   if(updateNrVars)
   {
