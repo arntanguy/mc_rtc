@@ -638,7 +638,7 @@ void StabilizerTask::setExternalWrenches(const std::vector<std::string> & surfac
   for(unsigned int i = 0; i < surfaceNames.size(); i++)
   {
     extWrenches_.push_back({targetWrenches[i], sva::ForceVecd::Zero(), gains[i], surfaceNames[i]});
-    if(!robot().surfaceHasIndirectForceSensor(surfaceNames[i]))
+    if(!robot().frameHasIndirectForceSensor(surfaceNames[i]))
     {
       mc_rtc::log::warning(
           "[StabilizerTask] surface {} does not have force sensor. The target force is used as the measured force.",
@@ -704,7 +704,7 @@ void StabilizerTask::computeExternalContact(const mc_rbdyn::Robot & robot,
                                             Eigen::Vector3d & force,
                                             Eigen::Vector3d & moment) const
 {
-  sva::PTransformd surfacePose = robot.surfacePose(surfaceName);
+  const auto & surfacePose = robot.frame(surfaceName).position();
   sva::PTransformd T_s_0(Eigen::Matrix3d(surfacePose.rotation().transpose()));
   // Represent the surface wrench in the frame whose position is same with the surface frame and orientation is same
   // with the world frame
@@ -860,10 +860,10 @@ sva::ForceVecd StabilizerTask::computeDesiredWrench()
   // Calculate CoM offset from measured wrench
   for(auto & extWrench : extWrenches_)
   {
-    if(robot().surfaceHasIndirectForceSensor(extWrench.surfaceName))
+    if(robot().frameHasIndirectForceSensor(extWrench.surfaceName))
     {
       extWrench.measured =
-          sva::ForceVecd(extWrench.gain.vector().cwiseProduct(robot().surfaceWrench(extWrench.surfaceName).vector()));
+          sva::ForceVecd(extWrench.gain.vector().cwiseProduct(robot().frame(extWrench.surfaceName).wrench().vector()));
     }
     else
     {
