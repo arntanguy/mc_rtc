@@ -14,6 +14,7 @@
 #include <RBDyn/MultiBodyConfig.h>
 #include <RBDyn/MultiBodyGraph.h>
 
+#include <mc_rbdyn/RobotInterface.h>
 #include <memory>
 #include <unordered_map>
 
@@ -613,25 +614,25 @@ public:
   /** Set joint torques from sensors */
   void jointTorques(const std::vector<double> & jointTorques);
 
-  inline void powerStatus(const std::vector<bool> & powerStatus)
-  {
-    powerStatus_ = powerStatus;
-  }
+  /** Whether the robot has a low-level control interface */
+  bool hasRobotInterface() const noexcept;
+  /** Provides access to the low-level robot interface */
+  void setRobotInterface(std::shared_ptr<RobotInterface> robotInterface) noexcept;
 
-  inline const std::vector<bool> & powerStatus() const
-  {
-    return powerStatus_;
-  }
+  /** Get const access to the low-level robot control
+   *
+   * \throws std::runtime_error If the robot does not have a low-level interface
+   */
+  const RobotInterface & robotInterface() const;
 
-  inline void servoStatus(const std::vector<bool> & servoStatus)
-  {
-    servoStatus_ = servoStatus;
-  }
-
-  inline const std::vector<bool> & servoStatus() const
-  {
-    return servoStatus_;
-  }
+  /** Get non-const access to the low-level robot control
+   *
+   * \warning This lets you directly control the low-level robot features,
+   * including changing PD gains of the motors, controlling the power/servo
+   * status of the motors, etc. Only call the non-const functions of this
+   * interface if you know what you are doing.
+   **/
+  RobotInterface & robotInterface();
 
   /** Return the reference joint order for this robot */
   const std::vector<std::string> & refJointOrder() const;
@@ -1111,6 +1112,8 @@ private:
   /** Encoder velocities provided by the low-level controller or estimated from
    * encoder values **/
   std::vector<double> encoderVelocities_;
+  /** Interface to the robot hardware */
+  std::shared_ptr<RobotInterface> robotInterface_;
   /** Whether the joint is powered on */
   std::vector<bool> powerStatus_;
   /** Whether the joint servo is on */

@@ -3,6 +3,7 @@
  */
 
 #include <mc_rbdyn/Robot.h>
+#include <mc_rbdyn/RobotInterface.h>
 #include <mc_rbdyn/RobotModule.h>
 #include <mc_rbdyn/Robots.h>
 #include <mc_rbdyn/SCHAddon.h>
@@ -1709,6 +1710,43 @@ const ForceSensor * Robot::findBodyForceSensor(const std::string & body) const
     return &forceSensors_[bodyForceSensors_.find(bodyName)->second];
   }
   return nullptr;
+}
+
+/** Whether the robot has a low-level control interface */
+bool Robot::hasRobotInterface() const noexcept
+{
+  return robotInterface_ != nullptr;
+}
+
+/** Provides access to the low-level robot interface */
+void Robot::setRobotInterface(std::shared_ptr<RobotInterface> robotInterface) noexcept
+{
+  robotInterface_ = std::move(robotInterface);
+}
+
+/** Get const access to the low-level robot control
+ *
+ * \throws std::runtime_error If the robot does not have a low-level interface
+ */
+const RobotInterface & Robot::robotInterface() const
+{
+  if(!hasRobotInterface())
+  {
+    mc_rtc::log::error_and_throw<std::runtime_error>("Robot \"{}\" does not have an associated robot interface", name_);
+  }
+  return *robotInterface_;
+}
+
+/** Get non-const access to the low-level robot control
+ *
+ * \warning This lets you directly control the low-level robot features,
+ * including changing PD gains of the motors, controlling the power/servo
+ * status of the motors, etc. Only call the non-const functions of this
+ * interface if you know what you are doing.
+ **/
+RobotInterface & Robot::robotInterface()
+{
+  return const_cast<RobotInterface &>(const_cast<const Robot *>(this)->robotInterface());
 }
 
 } // namespace mc_rbdyn
