@@ -26,39 +26,24 @@ mc_rbdyn::Robots & get_robots()
 
 void TestRobotLoadingCommon(mc_rbdyn::RobotModulePtr rm, mc_rbdyn::RobotModulePtr envrm)
 {
-  // Non-unique names
-  BOOST_REQUIRE_THROW(mc_rbdyn::loadRobots({rm, rm}), std::runtime_error);
-  std::shared_ptr<mc_rbdyn::Robots> robots_ptr = nullptr;
-  BOOST_REQUIRE_NO_THROW(robots_ptr = mc_rbdyn::loadRobots({rm, envrm}));
-  BOOST_REQUIRE(robots_ptr->hasRobot(rm->name));
-  BOOST_REQUIRE(robots_ptr->hasRobot(envrm->name));
+  mc_rbdyn::Robots robots;
+  BOOST_REQUIRE_NO_THROW(robots.load(*rm, rm->name));
+  BOOST_REQUIRE_NO_THROW(robots.load(*envrm, envrm->name));
+  BOOST_REQUIRE_THROW(robots.load(*rm, rm->name), std::runtime_error);
+  BOOST_REQUIRE(robots.hasRobot(rm->name));
+  BOOST_REQUIRE(robots.hasRobot(envrm->name));
   {
-    auto & robot = robots_ptr->robot(rm->name);
-    auto & env = robots_ptr->robot(envrm->name);
+    auto & robot = robots.robot(rm->name);
+    auto & env = robots.robot(envrm->name);
     BOOST_REQUIRE_EQUAL(robot.name(), rm->name);
-    BOOST_REQUIRE_EQUAL(robot.robotIndex(), 0);
     BOOST_REQUIRE_EQUAL(env.name(), envrm->name);
-    BOOST_REQUIRE_EQUAL(env.robotIndex(), 1);
-    robots_ptr->rename(robot.name(), "renamed");
-    BOOST_REQUIRE(robots_ptr->hasRobot("renamed"));
-    auto & renamed = robots_ptr->robot("renamed");
-    BOOST_REQUIRE_EQUAL(renamed.name(), "renamed");
-    BOOST_REQUIRE_EQUAL(robot.name(), "renamed");
-    BOOST_REQUIRE_EQUAL(renamed.robotIndex(), 0);
-    BOOST_REQUIRE_EQUAL(robot.robotIndex(), 0);
-    BOOST_REQUIRE(robots_ptr->hasRobot(envrm->name));
-    BOOST_REQUIRE_EQUAL(robots_ptr->robot(envrm->name).name(), envrm->name);
-    BOOST_REQUIRE_EQUAL(robots_ptr->robot(envrm->name).robotIndex(), 1);
-    BOOST_REQUIRE_NO_THROW(robots_ptr->robotCopy(robot, "robotCopy"));
+    BOOST_REQUIRE_NO_THROW(robots.robotCopy(robot, "robotCopy"));
+    BOOST_REQUIRE(robots.hasRobot("robotCopy"));
   }
-
-  BOOST_REQUIRE(robots_ptr->hasRobot("robotCopy"));
-  auto & robotCopy = robots_ptr->robots().back();
+  auto & robot = robots.robot(rm->name);
+  auto & robotCopy = *robots.robots().back();
   BOOST_REQUIRE(robotCopy.name() != rm->name);
-  BOOST_REQUIRE_EQUAL(robots_ptr->robot("robotCopy").name(), "robotCopy");
-  BOOST_REQUIRE_EQUAL(robotCopy.robotIndex(), 2);
-  BOOST_REQUIRE_EQUAL(robots_ptr->robots().back().name(), "robotCopy");
-  auto & robot = robots_ptr->robot("renamed");
+  BOOST_REQUIRE(robotCopy.name() == "robotCopy");
   for(const auto & c : robot.convexes())
   {
     BOOST_REQUIRE(robotCopy.hasConvex(c.first));
@@ -76,10 +61,10 @@ void TestRobotLoadingCommon(mc_rbdyn::RobotModulePtr rm, mc_rbdyn::RobotModulePt
     BOOST_REQUIRE(robotCopy.hasBodySensor(bs.name()));
   }
 
-  robots_ptr->removeRobot("robotCopy");
-  BOOST_REQUIRE(!robots_ptr->hasRobot("robotCopy"));
-  BOOST_REQUIRE(robots_ptr->hasRobot("renamed"));
-  BOOST_REQUIRE(robots_ptr->hasRobot(envrm->name));
+  robots.removeRobot("robotCopy");
+  BOOST_REQUIRE(!robots.hasRobot("robotCopy"));
+  BOOST_REQUIRE(robots.hasRobot(rm->name));
+  BOOST_REQUIRE(robots.hasRobot(envrm->name));
 }
 
 BOOST_AUTO_TEST_CASE(TestRobotLoading)
@@ -104,7 +89,8 @@ BOOST_AUTO_TEST_CASE(TestRobotLoadingWithCollisionObjects)
 
 BOOST_AUTO_TEST_CASE(TestRobotPosWVelWAccW)
 {
-  auto robots = get_robots();
+  auto robots_ptr = makeRobots();
+  auto & robots = *robots_ptr;
 
   for(int i = 0; i < 100; ++i)
   {
@@ -137,7 +123,8 @@ BOOST_AUTO_TEST_CASE(TestRobotPosWVelWAccW)
 
 BOOST_AUTO_TEST_CASE(TestRobotZMPSimple)
 {
-  auto robots = get_robots();
+  auto robots_ptr = makeRobots();
+  auto & robots = *robots_ptr;
   auto & robot = robots.robot();
 
   // Put all mass on the left foot, ZMP should be under the sensor
