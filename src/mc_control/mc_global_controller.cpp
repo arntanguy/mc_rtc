@@ -742,6 +742,11 @@ bool MCGlobalController::run()
       plugin.plugin->before(*this);
       plugin.plugin_before_dt = mc_rtc::clock::now() - start_t;
     }
+    for(size_t i = 0; i < pre_gripper_mbcs_.size() && i < robots.size(); ++i)
+    {
+      robots[i]->mbc() = pre_gripper_mbcs_[i];
+      robots[i]->forwardKinematics();
+    }
 
     auto start_observers_run_t = mc_rtc::clock::now();
     controller_->runObserverPipelines();
