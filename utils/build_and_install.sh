@@ -1227,6 +1227,7 @@ then
 fi
 export DISABLE_NINJA=OFF
 
+export CMAKE_ADDITIONAL_OPTIONS="-DTVM_WITH_ROBOT:BOOL=OFF ${OLD_CMAKE_OPTIONS}"
 build_git_dependency jrl-umi3218/tvm
 
 if $WITH_ROS_SUPPORT
