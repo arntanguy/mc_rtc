@@ -257,6 +257,6 @@ mc_rbdyn::Robot & Robots::fromConfig(const mc_rtc::Configuration & config,
   mc_rtc::log::error_and_throw<std::runtime_error>("{} \"{}\" is required", p, robotNameKey);
 }
 
-MC_RTC_diagnostic_pop;
+MC_RTC_diagnostic_pop
 
 } // namespace mc_rbdyn
