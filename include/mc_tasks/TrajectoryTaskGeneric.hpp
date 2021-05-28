@@ -321,31 +321,16 @@ void TrajectoryTaskGeneric<T>::addToGUI(mc_rtc::gui::StateBuilder & gui)
   MetaTask::addToGUI(gui);
   if constexpr(hasRefVel)
   {
-    gui.addElement({"Tasks", name_},
-                   mc_rtc::gui::ArrayInput("refVel", [this]() -> refVel_return_t { return this->refVel(); },
-                                           [this](const refVel_t & v) { this->refVel(v); }));
+    gui.addElement({"Tasks", name_}, mc_rtc::gui::ArrayInput(
+                                         "refVel", [this]() -> refVel_return_t { return this->refVel(); },
+                                         [this](const refVel_t & v) { this->refVel(v); }));
   }
   if constexpr(hasRefAccel)
   {
-    gui.addElement({"Tasks", name_},
-                   mc_rtc::gui::ArrayInput("refAccel", [this]() -> refAccel_return_t { return this->refAccel(); },
-                                           [this](const refAccel_t & v) { this->refAccel(v); }));
+    gui.addElement({"Tasks", name_}, mc_rtc::gui::ArrayInput(
+                                         "refAccel", [this]() -> refAccel_return_t { return this->refAccel(); },
+                                         [this](const refAccel_t & v) { this->refAccel(v); }));
   }
-  gui.addElement({"Tasks", name_, "Gains"},
-                 mc_rtc::gui::NumberInput("stiffness", [this]() { return this->stiffness(); },
-                                          [this](const double & s) { this->setGains(s, this->damping()); }),
-                 mc_rtc::gui::NumberInput("damping", [this]() { return this->damping(); },
-                                          [this](const double & d) { this->setGains(this->stiffness(), d); }),
-                 mc_rtc::gui::NumberInput("stiffness & damping", [this]() { return this->stiffness(); },
-                                          [this](const double & g) { this->stiffness(g); }),
-                 mc_rtc::gui::NumberInput("weight", [this]() { return this->weight(); },
-                                          [this](const double & w) { this->weight(w); }));
-  gui.addElement(
-      {"Tasks", name_},
-      mc_rtc::gui::ArrayInput(
-          "refVel", [this]() { return this->refVel(); }, [this](const Eigen::VectorXd & v) { this->refVel(v); }),
-      mc_rtc::gui::ArrayInput(
-          "refAccel", [this]() { return this->refAccel(); }, [this](const Eigen::VectorXd & v) { this->refAccel(v); }));
   gui.addElement({"Tasks", name_, "Gains"},
                  mc_rtc::gui::NumberInput(
                      "stiffness", [this]() { return this->stiffness(); },
