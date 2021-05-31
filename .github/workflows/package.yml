@@ -10,11 +10,12 @@ on:
     - "**"
   push:
     paths-ignore:
-    - ".gitlab-ci.yml"
-    - ".jrl-ci"
     - doc/**
     - README.md
     - ".github/workflows/build.yml"
+    - ".github/workflows/build-others.yml"
+    - ".github/workflows/clang-format.yml"
+    - ".github/workflows/sync.yml"
     branches:
     - "**"
     tags:
