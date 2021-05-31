@@ -360,6 +360,7 @@ mc_rtc_add_test(NAME TestPluginController COMMAND test_controller_ticker --run_t
 
 # Test Python bindings
 if(PYTHON_BINDING)
+  set(LOG_ENABLED "true")
   file(READ "ObserverPipelinesPython.json" OBSERVER_PIPELINES)
   set(LOG_ENABLED "true")
   get_python_names(python_names)
