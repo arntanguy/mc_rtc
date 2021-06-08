@@ -189,6 +189,7 @@ mc_rbdyn/CoM.cpp
 mc_rbdyn/Convex.cpp
 mc_rbdyn/CollisionPair.cpp
 mc_rbdyn/Momentum.cpp
+mc_rbdyn/FreeFrame.cpp
 )
 
 set(mc_rbdyn_HDR
@@ -224,6 +225,7 @@ set(mc_rbdyn_HDR
 ../include/mc_control/generic_gripper.h
 ../include/mc_rbdyn/Device.h
 ../include/mc_rbdyn/Frame.h
+../include/mc_rbdyn/FreeFrame.h
 ../include/mc_rbdyn/CoM.h
 ../include/mc_rbdyn/Convex.h
 ../include/mc_rbdyn/CollisionPair.h

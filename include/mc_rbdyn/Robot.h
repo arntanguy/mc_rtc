@@ -166,7 +166,7 @@ public:
    *
    * \throws If a frame with this name already exists or the parent frame does not belong to this robot
    */
-  Frame & makeFrame(std::string_view name, const Frame & parent, sva::PTransformd X_p_f);
+  Frame & makeFrame(std::string_view name, Frame & parent, sva::PTransformd X_p_f);
 
   /** @name Body sensors
    *
@@ -1081,6 +1081,9 @@ private:
 
   void updateAll();
 
+  /** Used internally to create a body frame */
+  Frame & makeFrame(std::string_view body);
+
   /** Used internally to access a frame safely and provide context information */
   Frame & frame(std::string_view, std::string_view context);
 
@@ -1089,12 +1092,6 @@ private:
 
   /** Used internally to update frame to force sensor mapping */
   Frame & updateFrameForceSensors(Frame & frame);
-
-  /** List of inputs for the kinematics graph */
-  std::shared_ptr<tvm::graph::internal::Inputs> kinematicsInputs_;
-
-  /** Used internally to maintain a kinematic view of the robot up-to-date */
-  tvm::graph::CallGraph kinematicsGraph_;
 };
 
 } // namespace mc_rbdyn
