@@ -706,7 +706,7 @@ cdef Limits LimitsFromC(c_mc_rbdyn.Limits & p):
     out.impl = &p
     return out
 
-cdef class FreeFrame(object):
+cdef class Frame(object):
     def __cinit__(self):
         self.base = NULL
     def name(self):
@@ -722,12 +722,12 @@ cdef class FreeFrame(object):
         assert(self.base)
         return sva.MotionVecdFromC(self.base.velocity())
 
-cdef FreeFrame FreeFrameFromC(c_mc_rbdyn.FreeFrame & f):
-    cdef FreeFrame out = FreeFrame()
+cdef Frame FrameFromC(c_mc_rbdyn.Frame & f):
+    cdef Frame out = Frame()
     out.base = &f
     return out
 
-cdef class RobotFrame(FreeFrame):
+cdef class RobotFrame(Frame):
     def __cinit__(self):
         self.impl = self.base = NULL
     def body(self):
@@ -784,7 +784,7 @@ cdef class Convex(object):
         self.impl = NULL
     def frame(self):
         assert(self.impl)
-        return FreeFrameFromC(self.impl.frame())
+        return FrameFromC(self.impl.frame())
     def X_f_c(self):
         assert(self.impl)
         return sva.PTransformdFromC(self.impl.X_f_c())

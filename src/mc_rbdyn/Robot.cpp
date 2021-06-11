@@ -1287,7 +1287,7 @@ void Robot::forwardKinematics()
   {
     if(f.second->parent_)
     {
-      f.second->FreeFrame::updatePosition();
+      f.second->Frame::updatePosition();
     }
   }
 }
@@ -1308,7 +1308,7 @@ void Robot::forwardVelocity()
   {
     if(f.second->parent_)
     {
-      f.second->FreeFrame::updateVelocity();
+      f.second->Frame::updateVelocity();
     }
   }
 }
