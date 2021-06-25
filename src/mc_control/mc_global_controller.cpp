@@ -298,8 +298,6 @@ void MCGlobalController::initEncoders(mc_rbdyn::Robot & robot, const std::vector
         "Make sure that the MainRobot is compatible with the real/simulated robot used by the interface.",
         robot.name(), initq.size(), rjo.size());
   }
-
-  auto & q = robot.mbc().q;
   for(size_t i = 0; i < rjo.size(); ++i)
   {
     auto jIdx = robot.refJointIndexToQIndex(i);
