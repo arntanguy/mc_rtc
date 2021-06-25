@@ -11,10 +11,7 @@
 #include <mc_rbdyn/configuration_io.h>
 #include "mc_rtc/MessagePackBuilder.h"
 
-namespace mc_rtc
-{
-
-namespace gui
+namespace mc_rtc::gui
 {
 
 namespace details
@@ -72,6 +69,4 @@ details::VisualImpl<GetVisual, GetPos> Visual(const std::string & name, GetVisua
   return details::VisualImpl<GetVisual, GetPos>(name, get_visual_fn, get_pos_fn);
 }
 
-} // namespace gui
-
-} // namespace mc_rtc
+} // namespace mc_rtc::gui

@@ -288,7 +288,7 @@ struct TestServer
   std::string robotVisual_ = "NECK_P_S";
   sva::PTransformd visualPos_ = sva::PTransformd::Identity();
 
-  std::shared_ptr<mc_rbdyn::Robots> robots_;
+  mc_rbdyn::RobotsPtr robots_;
 };
 
 TestServer::TestServer() : xythetaz_(4)
@@ -677,8 +677,7 @@ TestServer::TestServer() : xythetaz_(4)
 
   switch_visual("sphere");
 
-  configureRobotLoader();
-  robots_ = mc_rbdyn::loadRobot(*mc_rbdyn::RobotLoader::get_robot_module("JVRC1"));
+  robots_ = makeRobots();
   auto & robot = robots_->robot("jvrc1");
   robot.posW({Eigen::Vector3d{-2.0, 0.0, robot.posW().translation().z()}});
   builder.addElement(
