@@ -21,5 +21,7 @@
   "ObserverModulePaths": ["@OBSERVER_MODULE_PATH@"],
   "ClearGlobalPluginPath": true,
   "GlobalPluginPaths": ["@PLUGINS_MODULE_PATH@"],
-  "Plugins": [@TEST_PLUGINS@]
+  "Plugins": [@TEST_PLUGINS@],
+
+  "robots": []
 }
