@@ -464,16 +464,6 @@ void MCController::reset(const ControllerResetData & reset_data)
   }
 }
 
-const mc_rbdyn::Robot & MCController::realRobot(std::string_view name) const
-{
-  return realRobots().robot(name);
-}
-
-mc_rbdyn::Robot & MCController::realRobot(std::string_view name)
-{
-  return realRobots().robot(name);
-}
-
 void MCController::supported_robots(std::vector<std::string> & out) const
 {
   out = {};

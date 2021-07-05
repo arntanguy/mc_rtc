@@ -351,10 +351,16 @@ public:
    * @throws std::runtime_error if the robot does not exist
    * \anchor mc_controller_realRobot_name_const_doc
    **/
-  const mc_rbdyn::Robot & realRobot(std::string_view name) const;
+  inline const mc_rbdyn::Robot & realRobot(std::string_view name) const
+  {
+    return realRobots_->robot(name);
+  }
 
   /** Non-const variant of \ref mc_controller_realRobot_name_const_doc "realRobot(name)" */
-  mc_rbdyn::Robot & realRobot(std::string_view name);
+  inline mc_rbdyn::Robot & realRobot(std::string_view name)
+  {
+    return realRobots_->robot(name);
+  }
 
   /** Returns a list of robots supported by the controller.
    * \param out Vector of supported robots designed by name (as returned by
