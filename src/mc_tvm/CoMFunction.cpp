@@ -42,8 +42,6 @@ void CoMFunction::reset()
 void CoMFunction::updateValue()
 {
   value_ = comAlgo_->com() - com_;
-  refVel_.setZero();
-  refAccel_.setZero();
 }
 
 void CoMFunction::updateVelocity()
@@ -58,7 +56,7 @@ void CoMFunction::updateJacobian()
 
 void CoMFunction::updateNormalAcceleration()
 {
-  normalAcceleration_ = comAlgo_->normalAcceleration();
+  normalAcceleration_ = comAlgo_->normalAcceleration() - refAccel_;
 }
 
 void CoMFunction::updateJDot()
