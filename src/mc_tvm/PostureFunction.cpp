@@ -81,7 +81,7 @@ void PostureFunction::updateValue_()
       value_(pos) = robot_->mbc().q[jIdx][0] - posture_[jIdx][0];
       pos++;
     }
-    else if(j.dof() == 4) // spherical
+    else if(j.dof() == 3) // spherical
     {
       Eigen::Matrix3d ori(
           Eigen::Quaterniond(posture_[jIdx][0], posture_[jIdx][1], posture_[jIdx][2], posture_[jIdx][3]).matrix());
