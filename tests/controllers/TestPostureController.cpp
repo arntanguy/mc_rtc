@@ -42,15 +42,15 @@ public:
     {
       BOOST_CHECK_SMALL(robot().mbc().q[head_joint_index][0] - head_joint_target, 0.05);
 
-      neckTask_ = std::make_shared<mc_tasks::PostureTask>(solver(), 0);
+      neckTask_ = std::make_shared<mc_tasks::PostureTask>(robot());
       neckTask_->stiffness(200.0);
       neckTask_->selectActiveJoints(solver(), {"NECK_P"});
       neckTask_->name("neck_posture");
-      postureTask->target({{"NECK_P", {head_joint_target}}});
+      postureTask_->target({{"NECK_P", {head_joint_target}}});
       solver().addTask(neckTask_);
 
-      postureTask->target({{"NECK_P", {0}}});
-      postureTask->selectUnactiveJoints(solver(), {"NECK_P"});
+      postureTask_->target({{"NECK_P", {0}}});
+      postureTask_->selectInactiveJoints(solver(), {"NECK_P"});
     }
     if(nrIter == 500)
     {

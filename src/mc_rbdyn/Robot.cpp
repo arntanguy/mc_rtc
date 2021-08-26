@@ -1119,7 +1119,7 @@ RobotPtr Robot::copy(std::string_view name, const std::optional<Base> & base) co
   {
     robot.surfaces_[s.first] = s.second->copy(robot);
   }
-  for(const auto & c: convexes_)
+  for(const auto & c : convexes_)
   {
     const auto & convex = c.second;
     robot.addConvex(c.first, S_ObjectPtr{convex->convex()->clone()}, convex->frame().name(), convex->X_f_c());
