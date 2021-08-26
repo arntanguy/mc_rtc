@@ -81,7 +81,7 @@ protected:
    *
    */
   JointsSelectorFunction(tvm::FunctionPtr f,
-                         const mc_rbdyn::Robot & robot,
+                         tvm::VariablePtr variable,
                          const std::vector<std::pair<Eigen::DenseIndex, Eigen::DenseIndex>> & activeIndex);
 
 protected:
@@ -89,7 +89,7 @@ protected:
   void updateJDot();
 
   tvm::FunctionPtr f_;
-  mc_rbdyn::ConstRobotPtr robot_;
+  tvm::VariablePtr variable_;
   std::vector<std::pair<Eigen::DenseIndex, Eigen::DenseIndex>> activeIndex_;
 };
 
