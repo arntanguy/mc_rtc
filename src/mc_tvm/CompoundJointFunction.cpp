@@ -36,8 +36,8 @@ CompoundJointFunction::CompoundJointFunction(mc_rbdyn::RobotPtr robot,
   }
   desc_ = {q1Idx, q2Idx, desc.p1.x(), desc.p1.y(), desc.p2.x() - desc.p1.x(), desc.p2.y() - desc.p1.y()};
   b_cst_ = desc_.p1_y * desc_.P_x - desc_.p1_x * desc_.P_y;
-  const auto & q1Var = robot_->qJoint(q1Idx);
-  const auto & q2Var = robot_->qJoint(q2Idx);
+  const auto & q1Var = tvm::dot(robot_->qJoint(q1Idx), 2);
+  const auto & q2Var = tvm::dot(robot_->qJoint(q2Idx), 2);
   addVariable(q1Var, true);
   auto & jac1 = jacobian_.at(q1Var.get());
   jac1.properties({tvm::internal::MatrixProperties::Constness(true)});
