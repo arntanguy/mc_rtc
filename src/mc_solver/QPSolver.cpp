@@ -324,6 +324,8 @@ auto QPSolver::addVirtualContactImpl(const mc_rbdyn::Contact & contact) -> std::
   else
   {
     auto contact_fn = std::static_pointer_cast<mc_tvm::ContactFunction>(data.contactConstraint_->task.function());
+    mc_rtc::log::info("Added contact {}::{}/{}::{} (dof: {}, friction: {})", contact.r1, contact.r1Surface, contact.r2,
+                      contact.r2Surface, contact.dof.transpose(), contact.friction);
     contact_fn->dof(contact.dof);
   }
   return std::make_tuple(idx, hasWork);
