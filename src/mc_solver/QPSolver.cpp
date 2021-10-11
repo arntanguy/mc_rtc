@@ -604,4 +604,22 @@ void QPSolver::updateRobot(mc_rbdyn::Robot & robot)
   robot.forwardAcceleration();
 }
 
+const sva::ForceVecd QPSolver::desiredContactForce(const mc_rbdyn::Contact & id) const
+{
+  if(dynamics_.count(id.r1))
+  {
+    auto & dynamic = *dynamics_.at(id.r1);
+    return dynamic.dynamic().contactForce(robots_->robot(id.r1).frame(id.r1Surface));
+  }
+  else if(dynamics_.count(id.r2))
+  {
+    auto & dynamic = *dynamics_.at(id.r2);
+    return dynamic.dynamic().contactForce(robots_->robot(id.r2).frame(id.r2Surface));
+  }
+  else
+  {
+    return sva::ForceVecd::Zero();
+  }
+}
+
 } // namespace mc_solver
