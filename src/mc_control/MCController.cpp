@@ -136,6 +136,7 @@ MCController::MCController(const std::vector<mc_rbdyn::RobotModulePtr> & modules
   dynamicsConstraint_ = std::make_shared<mc_solver::DynamicsConstraint>(robot(), damper, 0.5);
   collisionConstraint_ = std::make_shared<mc_solver::CollisionsConstraint>();
   collisionConstraint_->addCollisions(solver(), {robot().name(), modules[0]->minimalSelfCollisions()});
+  solver_.addConstraint(collisionConstraint_);
   compoundJointConstraint_ = std::make_shared<mc_solver::CompoundJointConstraint>(robot(), dt);
   postureTask_ = std::make_shared<mc_tasks::PostureTask>(robot());
   /** Load additional robots from the configuration */
