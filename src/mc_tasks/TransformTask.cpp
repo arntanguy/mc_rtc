@@ -157,6 +157,50 @@ void TransformTask::addToGUI(mc_rtc::gui::StateBuilder & gui)
       mc_rtc::gui::Transform("pose", [this]() -> const sva::PTransformd & { return errorT_->frame().position(); }));
 }
 
+std::function<bool(const mc_tasks::MetaTask &, std::string &)> TransformTask::buildCompletionCriteria(
+    double dt,
+    const mc_rtc::Configuration & config) const
+{
+  if(config.has("wrench"))
+  {
+    if(!frame().hasForceSensor())
+    {
+      mc_rtc::log::error_and_throw<std::invalid_argument>("[{}] Attempted to use \"wrench\" as completion criteria but "
+                                                          "frame \"{}\" is not attached to a force sensor",
+                                                          name(), frame().name());
+    }
+    sva::ForceVecd target_w = config("wrench");
+    Eigen::Vector6d target = target_w.vector();
+    Eigen::Vector6d dof = Eigen::Vector6d::Ones();
+    for(int i = 0; i < 6; ++i)
+    {
+      if(std::isnan(target(i)))
+      {
+        dof(i) = 0.;
+        target(i) = 0.;
+      }
+      else if(target(i) < 0)
+      {
+        dof(i) = -1.;
+      }
+    }
+    return [dof, target](const mc_tasks::MetaTask & t, std::string & out) {
+      const auto & self = static_cast<const mc_tasks::TransformTask &>(t);
+      Eigen::Vector6d w = self.frame().wrench().vector();
+      for(int i = 0; i < 6; ++i)
+      {
+        if(dof(i) * fabs(w(i)) < target(i))
+        {
+          return false;
+        }
+      }
+      out += "wrench";
+      return true;
+    };
+  }
+  return MetaTask::buildCompletionCriteria(dt, config);
+}
+
 } // namespace mc_tasks
 
 namespace

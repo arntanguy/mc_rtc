@@ -140,6 +140,18 @@ public:
     return errorT_->frame();
   }
 
+  /** Add support for the following criterias:
+   *
+   * - wrench: completed when the surface wrench reaches the given wrench, if
+   *   some values are NaN, this direction is ignored. Only valid if the surface
+   *   controlled by this task is attached to a force sensor, throws otherwise
+   *
+   * @throws If wrench is used but the surface is not attached to a force sensor
+   */
+  std::function<bool(const mc_tasks::MetaTask & task, std::string &)> buildCompletionCriteria(
+      double dt,
+      const mc_rtc::Configuration & config) const override;
+
 protected:
   void addToGUI(mc_rtc::gui::StateBuilder & gui) override;
 
