@@ -1294,6 +1294,10 @@ void Robot::forwardKinematics()
       f.second->Frame::updatePosition();
     }
   }
+  for(auto & c : convexes_)
+  {
+    c.second->updatePosition();
+  }
 }
 
 void Robot::forwardVelocity()
