@@ -73,6 +73,6 @@ Eigen::Matrix3d InterpolatedRotation::eval(double t)
   from.rotation() = all_waypoints_[start].second;
   sva::PTransformd to = sva::PTransformd::Identity();
   to.rotation() = all_waypoints_[end].second;
-  return sva::interpolate(from, to, (t-ts)/duration).rotation();
+  return sva::interpolate(from, to, (t - ts) / duration).rotation();
 }
 } // namespace mc_trajectory
