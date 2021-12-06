@@ -64,9 +64,15 @@ Eigen::Matrix3d InterpolatedRotation::eval(double t)
 
   double ts = all_waypoints_[start].first;
   double te = all_waypoints_[end].first;
+  // mc_rtc::log::info("start: {} (ts: {:.3f}), end: {} ({:.3f}), t: {:.3f}", start, ts, end, te, t);
   double duration = te - ts;
-  Eigen::Quaterniond qfrom(all_waypoints_[start].second);
-  Eigen::Quaterniond qto(all_waypoints_[end].second);
-  return Eigen::Matrix3d(qfrom.slerp((t - ts) / duration, qto));
+  // Eigen::Quaterniond qfrom(all_waypoints_[start].second);
+  // Eigen::Quaterniond qto(all_waypoints_[end].second);
+  // return Eigen::Matrix3d(qfrom.slerp((t - ts) / duration, qto));
+  sva::PTransformd from = sva::PTransformd::Identity();
+  from.rotation() = all_waypoints_[start].second;
+  sva::PTransformd to = sva::PTransformd::Identity();
+  to.rotation() = all_waypoints_[end].second;
+  return sva::interpolate(from, to, (t-ts)/duration).rotation();
 }
 } // namespace mc_trajectory
