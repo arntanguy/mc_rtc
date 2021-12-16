@@ -149,3 +149,9 @@ target_link_libraries(dummyServer PUBLIC mc_control)
 mc_rtc_test(test_filters mc_filter SpaceVecAlg::SpaceVecAlg)
 
 mc_rtc_test(test_interpolation mc_control)
+
+#######################
+# -- Bindings test -- #
+#######################
+# Only tests if the bindings were properly installed and can be imported
+add_test(test_python_bindings ${CMAKE_CURRENT_SOURCE_DIR}/test_python_bindings.py)
