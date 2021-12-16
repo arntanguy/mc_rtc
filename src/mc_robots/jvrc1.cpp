@@ -67,8 +67,22 @@ JVRC1RobotModule::JVRC1RobotModule(bool fixed) : RobotModule(std::string(JVRC_VA
   _minimalSelfCollisions = {
       {"WAIST_R_S", "L_SHOULDER_Y_S", 0.02, 0.001, 0.}, {"WAIST_R_S", "R_SHOULDER_Y_S", 0.02, 0.001, 0.},
       {"PELVIS_S", "R_ELBOW_P_S", 0.05, 0.001, 0.},     {"PELVIS_S", "L_ELBOW_P_S", 0.05, 0.001, 0.},
-      {"R_WRIST_Y_S", "R_HIP_Y_S", 0.05, 0.025, 0.},    {"L_WRIST_Y_S", "L_HIP_Y_S", 0.05, 0.025, 0.}};
+      {"R_WRIST_Y_S", "R_HIP_Y_S", 0.05, 0.025, 0.},    {"L_WRIST_Y_S", "L_HIP_Y_S", 0.05, 0.025, 0.},
+      {"R_WRIST_Y_S", "PELVIS_S", 0.05, 0.025, 0.},     {"L_WRIST_Y_S", "PELVIS_S", 0.05, 0.025, 0.}};
   _commonSelfCollisions = _minimalSelfCollisions;
+  _commonSelfCollisions.push_back({"R_WRIST_Y_S", "WAIST_R_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"R_WRIST_Y_S", "WAIST_R_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "WAIST_R_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "WAIST_R_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "R_WRIST_Y_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "R_ELBOW_P_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"R_WRIST_Y_S", "L_ELBOW_P_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"R_WRIST_Y_S", "R_HIP_Y_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"R_WRIST_Y_S", "L_HIP_Y_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "R_HIP_Y_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "L_HIP_Y_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "NECK_P_S", 0.02, 0.01, 0.});
+  _commonSelfCollisions.push_back({"L_WRIST_Y_S", "NECK_P_S", 0.02, 0.01, 0.});
   _grippers = {{"l_gripper", {"L_UTHUMB"}, true}, {"r_gripper", {"R_UTHUMB"}, false}};
 
   // Configure the stabilizer. Uses the default values of the
