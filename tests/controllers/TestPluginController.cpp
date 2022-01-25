@@ -20,11 +20,10 @@ public:
   TestPluginController(const std::string & name, mc_rbdyn::RobotModulePtr rm, double dt)
   : MCController(rm, dt), name_(name)
   {
-    solver().addConstraintSet(contactConstraint);
-    solver().addConstraintSet(dynamicsConstraint);
-    solver().addTask(postureTask.get());
-    solver().setContacts(
-        {mc_rbdyn::Contact(robots(), "LeftFoot", "AllGround"), mc_rbdyn::Contact(robots(), "RightFoot", "AllGround")});
+    solver().addConstraint(dynamicsConstraint_);
+    solver().addTask(postureTask_);
+    solver().addContact({"jvrc1", "ground", "LeftFoot", "AllGround"});
+    solver().addContact({"jvrc1", "ground", "RightFoot", "AllGround"});
     mc_rtc::log::success("Created {}", name_);
   }
 

@@ -529,19 +529,27 @@ cdef class RobotModule(object):
             return rbdyn.MultiBodyGraphFromC(deref(self.impl).mbg, copy = False)
     property _visual:
         def __get__(self):
+            assert(self.impl.get())
+            end = deref(self.impl)._visual.end()
+            it  = deref(self.impl)._visual.begin()
             res = {}
-            for it in deref(self.impl)._visual:
-                res[it.first] = []
-                for v in it.second:
-                    res[it.first].append(rbdyn_parsers.VisualFromC(v))
+            while it != end:
+                res[deref(it).first] = []
+                for v in deref(it).second:
+                    res[deref(it).first].append(rbdyn_parsers.VisualFromC(v))
+                preinc(it)
             return res
     property _collision:
         def __get__(self):
+            assert(self.impl.get())
+            end = deref(self.impl)._collision.end()
+            it  = deref(self.impl)._collision.begin()
             res = {}
-            for it in deref(self.impl)._collision:
-                res[it.first] = []
-                for c in it.second:
-                    res[it.first].append(rbdyn_parsers.VisualFromC(c))
+            while it != end:
+                res[deref(it).first] = []
+                for v in deref(it).second:
+                    res[deref(it).first].append(rbdyn_parsers.VisualFromC(v))
+                preinc(it)
             return res
 
 cdef RobotModule RobotModuleFromC(const c_mc_rbdyn.RobotModulePtr v):

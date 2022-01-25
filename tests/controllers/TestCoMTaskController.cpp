@@ -48,7 +48,8 @@ public:
     if(nrIter == 500)
     {
       // Swap the contact order
-      solver().setContacts({{robots(), 1, 0, "AllGround", "LeftFoot"}, {robots(), 1, 0, "AllGround", "RightFoot"}});
+      solver().addContact({"ground", "jvrc1", "AllGround", "LeftFoot"});
+      solver().addContact({"ground", "jvrc1", "AllGround", "RightFoot"});
     }
     if(nrIter == 1000)
     {

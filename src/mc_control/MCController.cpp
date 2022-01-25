@@ -449,9 +449,9 @@ void MCController::reset(const ControllerResetData & reset_data)
                        mc_rtc::gui::FormDataComboInput{"R1 surface", true, {"surfaces", "$R1"}},
                        mc_rtc::gui::FormDataComboInput{"R2", true, {"robots"}},
                        mc_rtc::gui::FormDataComboInput{"R2 surface", true, {"surfaces", "$R2"}},
-                       mc_rtc::gui::FormCheckbox{"Virtual", false, false},
-                       mc_rtc::gui::FormNumberInput{"Friction", false, mc_rbdyn::Contact::defaultFriction},
-                       mc_rtc::gui::FormArrayInput<Eigen::Vector6d>{"dof", false, Eigen::Vector6d::Ones()}));
+                       mc_rtc::gui::FormCheckbox("Virtual", false, false),
+                       mc_rtc::gui::FormNumberInput("Friction", false, mc_rbdyn::Contact::defaultFriction),
+                       mc_rtc::gui::FormArrayInput<Eigen::Vector6d>("dof", false, Eigen::Vector6d::Ones())));
   if(config().has("init_pos"))
   {
     robot().posW(config()("init_pos"));

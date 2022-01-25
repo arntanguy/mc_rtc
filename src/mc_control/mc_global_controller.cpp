@@ -169,11 +169,11 @@ void MCGlobalController::init(const std::vector<double> & initq, const sva::PTra
   robot().posW(initAttitude);
   for(auto & robot : robots())
   {
-    if(robot.robotIndex() == robots().robotIndex())
+    if(robot->name() == this->robot().name())
     {
       continue;
     }
-    initEncoders(robot);
+    initEncoders(*robot);
   }
   this->initController();
 }
@@ -228,11 +228,11 @@ void MCGlobalController::init(const std::vector<double> & initq)
   }
   for(auto & robot : robots())
   {
-    if(robot.robotIndex() == robots().robotIndex())
+    if(robot->name() == this->robot().name())
     {
       continue;
     }
-    initEncoders(robot);
+    initEncoders(*robot);
   }
   this->initController();
 }
@@ -247,8 +247,9 @@ void MCGlobalController::init(const std::map<std::string, std::vector<double>> &
                               const std::map<std::string, sva::PTransformd> & initAttitudes,
                               bool reset)
 {
-  for(auto & robot : robots())
+  for(auto & robot_ptr : robots())
   {
+    auto & robot = *robot_ptr;
     auto initq_it = initqs.find(robot.name());
     if(initq_it != initqs.end())
     {
@@ -269,7 +270,7 @@ void MCGlobalController::init(const std::map<std::string, std::vector<double>> &
       if(q[0].size() == 7)
       {
         const auto & initAttitude = robot.module().default_attitude();
-        q[0] = {std::begin(initAttitude), std::end(initAttitude)};
+        robot.qFloatingBase()->set(Eigen::Map<const Eigen::Matrix<double, 7, 1>>(initAttitude.data()));
         robot.forwardKinematics();
       }
     }
@@ -1114,7 +1115,7 @@ GlobalPlugin * MCGlobalController::loadPlugin(const std::string & name, const ch
     const auto & plugin_config = plugins_.back().plugin->configuration();
     if(plugin_config.should_run_before)
     {
-      plugins_before_.push_back({plugin, duration_ms{0}});
+      plugins_before_.push_back({plugin, mc_rtc::duration_ms{0}});
       if(plugin_config.should_always_run)
       {
         plugins_before_always_.push_back(plugin);
@@ -1122,7 +1123,7 @@ GlobalPlugin * MCGlobalController::loadPlugin(const std::string & name, const ch
     }
     if(plugin_config.should_run_after)
     {
-      plugins_after_.push_back({plugin, duration_ms{0}});
+      plugins_after_.push_back({plugin, mc_rtc::duration_ms{0}});
       if(plugin_config.should_always_run)
       {
         plugins_after_always_.push_back(plugin);
