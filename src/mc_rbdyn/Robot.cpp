@@ -1042,6 +1042,7 @@ void Robot::velW(const sva::MotionVecd & vel)
     module_.mbc.alpha[0][4] = vB.linear().y();
     module_.mbc.alpha[0][5] = vB.linear().z();
     rbd::forwardVelocity(mb(), module_.mbc);
+    com_->updateVelocity();
   }
   else
   {
@@ -1324,6 +1325,7 @@ void Robot::forwardVelocity()
 void Robot::forwardAcceleration()
 {
   updateFA();
+  com_->updateAcceleration();
 }
 
 tvm::VariablePtr Robot::qJoint(size_t jIdx)
