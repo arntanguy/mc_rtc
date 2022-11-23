@@ -16,21 +16,26 @@ namespace mc_tasks
 namespace force
 {
 
+ImpedanceTask::ImpedanceTask(const mc_rbdyn::RobotFrame & frame, double stiffness, double weight)
+: TransformTask(frame, stiffness, weight), lowPass_(0.005, 0.005)
+{
+  const auto & robot = frame.robot();
+  type_ = "impedance";
+  name_ = "impedance_" + robot.name() + "_" + frame.name();
+
+  if(!frame.hasForceSensor())
+  {
+    mc_rtc::log::error_and_throw("[{}] Frame {} does not have a force sensor attached", name_, frame.name());
+  }
+}
+
 ImpedanceTask::ImpedanceTask(const std::string & surfaceName,
                              const mc_rbdyn::Robots & robots,
                              unsigned int robotIndex,
                              double stiffness,
                              double weight)
-: SurfaceTransformTask(surfaceName, robots, robotIndex, stiffness, weight), lowPass_(0.005, cutoffPeriod_)
+: ImpedanceTask(robots.robot(robotIndex).frame(surfaceName), stiffness, weight)
 {
-  const auto & robot = robots.robot(robotIndex);
-  type_ = "impedance";
-  name_ = "impedance_" + robots.robot(rIndex).name() + "_" + surfaceName;
-
-  if(!robot.surfaceHasIndirectForceSensor(surfaceName))
-  {
-    mc_rtc::log::error_and_throw("[{}] Surface {} does not have a force sensor attached", name_, surfaceName);
-  }
 }
 
 void ImpedanceTask::update(mc_solver::QPSolver & solver)
@@ -41,7 +46,7 @@ void ImpedanceTask::update(mc_solver::QPSolver & solver)
   filteredMeasuredWrench_ = lowPass_.eval();
 
   // 2. Compute the compliance acceleration
-  sva::PTransformd T_0_s(surfacePose().rotation());
+  sva::PTransformd T_0_s(frame_->position().rotation());
   // deltaCompAccelW_ is represented in the world frame
   //   \Delta \ddot{p}_{cd} = - \frac{D}{M} \Delta \dot{p}_{cd} - \frac{K}{M} \Delta p_{cd})
   //   + \frac{K_f}{M} (f_m - f_d) where \Delta p_{cd} = p_c - p_d
@@ -127,11 +132,11 @@ void ImpedanceTask::update(mc_solver::QPSolver & solver)
   {
     // Transform to target pose frame (see compliancePose implementation)
     sva::PTransformd T_0_d(targetPoseW_.rotation());
-    // The previous compliancePose() is stored in SurfaceTransformTask::target()
-    deltaCompPoseW_ = T_0_d.inv() * SurfaceTransformTask::target() * targetPoseW_.inv() * T_0_d;
+    // The previous compliancePose() is stored in TransformTask::target()
+    deltaCompPoseW_ = T_0_d.inv() * TransformTask::target() * targetPoseW_.inv() * T_0_d;
   }
 
-  // 5. Set compliance values to the targets of SurfaceTransformTask
+  // 5. Set compliance values to the targets of TransformTask
   refAccel(T_0_s * (targetAccelW_ + deltaCompAccelW_)); // represented in the surface frame
   refVelB(T_0_s * (targetVelW_ + deltaCompVelW_)); // represented in the surface frame
   target(compliancePose()); // represented in the world frame
@@ -139,11 +144,11 @@ void ImpedanceTask::update(mc_solver::QPSolver & solver)
 
 void ImpedanceTask::reset()
 {
-  // Set the target pose of SurfaceTransformTask to the current pose
-  // Reset the target velocity and acceleration of SurfaceTransformTask to zero
-  SurfaceTransformTask::reset();
+  // Set the target pose of TransformTask to the current pose
+  // Reset the target velocity and acceleration of TransformTask to zero
+  TransformTask::reset();
 
-  // Set the target and compliance poses to the SurfaceTransformTask target (i.e., the current pose)
+  // Set the target and compliance poses to the TransformTask target (i.e., the current pose)
   targetPoseW_ = target();
   deltaCompPoseW_ = sva::PTransformd::Identity();
 
@@ -177,23 +182,23 @@ void ImpedanceTask::load(mc_solver::QPSolver & solver, const mc_rtc::Configurati
   {
     cutoffPeriod(config("cutoffPeriod"));
   }
-  SurfaceTransformTask::load(solver, config);
-  // The SurfaceTransformTask::load function above only sets
+  TransformTask::load(solver, config);
+  // The TransformTask::load function above only sets
   // the TrajectoryTaskGeneric's target, but not the compliance target, so we
   // need to set it manually here.
-  targetPose(SurfaceTransformTask::target());
+  targetPose(TransformTask::target());
 }
 
 void ImpedanceTask::addToSolver(mc_solver::QPSolver & solver)
 {
   lowPass_.dt(solver.dt());
   cutoffPeriod(cutoffPeriod_);
-  SurfaceTransformTask::addToSolver(solver);
+  TransformTask::addToSolver(solver);
 }
 
 void ImpedanceTask::addToLogger(mc_rtc::Logger & logger)
 {
-  SurfaceTransformTask::addToLogger(logger);
+  TransformTask::addToLogger(logger);
 
   // impedance parameters
   logger.addLogEntry(name_ + "_gains_M", this, [this]() -> const sva::ImpedanceVecd & { return gains().M().vec(); });
@@ -223,28 +228,26 @@ void ImpedanceTask::addToLogger(mc_rtc::Logger & logger)
 
 void ImpedanceTask::addToGUI(mc_rtc::gui::StateBuilder & gui)
 {
-  // Don't add SurfaceTransformTask because the target of SurfaceTransformTask should not be set by user
+  // Don't add TransformTask because the target of TransformTask should not be set by user
   TrajectoryTaskGeneric<tasks::qp::SurfaceTransformTask>::addToGUI(gui);
 
   gui.addElement({"Tasks", name_},
                  // pose
                  mc_rtc::gui::Transform(
-                     "targetPose", [this]() -> const sva::PTransformd & { return this->targetPose(); },
-                     [this](const sva::PTransformd & pos) { this->targetPose(pos); }),
-                 mc_rtc::gui::Transform("compliancePose", [this]() { return this->compliancePose(); }),
-                 mc_rtc::gui::Transform("pose", [this]() { return this->surfacePose(); }),
+                     "targetPose", [this]() -> const sva::PTransformd & { return targetPose(); },
+                     [this](const sva::PTransformd & pos) { targetPose(pos); }),
+                 mc_rtc::gui::Transform("compliancePose", [this]() { return compliancePose(); }),
+                 mc_rtc::gui::Transform("pose", [this]() { return frame_->position(); }),
                  // wrench
                  mc_rtc::gui::ArrayInput(
-                     "targetWrench", {"cx", "cy", "cz", "fx", "fy", "fz"},
-                     [this]() { return this->targetWrench().vector(); },
-                     [this](const Eigen::Vector6d & a) { this->targetWrench(a); }),
+                     "targetWrench", {"cx", "cy", "cz", "fx", "fy", "fz"}, [this]() { return targetWrench().vector(); },
+                     [this](const Eigen::Vector6d & a) { targetWrench(a); }),
                  mc_rtc::gui::ArrayLabel("measuredWrench", {"cx", "cy", "cz", "fx", "fy", "fz"},
-                                         [this]() { return this->measuredWrench_.vector(); }),
+                                         [this]() { return measuredWrench_.vector(); }),
                  mc_rtc::gui::ArrayLabel("filteredMeasuredWrench", {"cx", "cy", "cz", "fx", "fy", "fz"},
-                                         [this]() { return this->filteredMeasuredWrench_.vector(); }),
+                                         [this]() { return filteredMeasuredWrench_.vector(); }),
                  mc_rtc::gui::NumberInput(
-                     "cutoffPeriod", [this]() { return this->cutoffPeriod(); },
-                     [this](double a) { return this->cutoffPeriod(a); }),
+                     "cutoffPeriod", [this]() { return cutoffPeriod(); }, [this](double a) { return cutoffPeriod(a); }),
                  mc_rtc::gui::Checkbox(
                      "hold", [this]() { return hold_; }, [this]() { hold_ = !hold_; }));
   gui.addElement({"Tasks", name_, "Impedance gains"},

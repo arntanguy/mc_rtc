@@ -54,6 +54,16 @@ struct MC_TASKS_DLLAPI ImpedanceTask : SurfaceTransformTask
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
+  /*! \brief Constructor
+   *
+   * \param frame Frame controlled by this task
+   *
+   * \param stiffness Task stiffness
+   *
+   * \param weight Task weight
+   */
+  ImpedanceTask(const mc_rbdyn::RobotFrame & frame, double stiffness = 5.0, double weight = 1000.0);
+
   /*! \brief Constructor.
    *
    * \param surfaceName Name of the surface frame to control
