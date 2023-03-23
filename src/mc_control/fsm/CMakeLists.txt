@@ -27,6 +27,7 @@ set_target_properties(
   mc_control_fsm PROPERTIES COMPILE_FLAGS "-DMC_CONTROL_FSM_EXPORTS"
 )
 target_link_libraries(mc_control_fsm PUBLIC mc_control mc_planning)
+target_link_libraries(mc_control_fsm PRIVATE mc_rtc_3rd_party::GraphViz)
 install_mc_rtc_lib(mc_control_fsm)
 
 add_subdirectory(states)

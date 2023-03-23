@@ -125,6 +125,8 @@ struct MC_CONTROL_FSM_DLLAPI Executor
   /** Pass message to current state (read-write) */
   bool read_write_msg(std::string & msg, std::string & out);
 
+  const TransitionMap & transitionMap() const noexcept { return transition_map_; }
+
 private:
   using duration_ms = std::chrono::duration<double, std::milli>;
   /** Configuration passed at construction, can hold specific states' configuration */

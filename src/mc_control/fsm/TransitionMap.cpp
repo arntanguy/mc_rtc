@@ -3,6 +3,7 @@
  */
 
 #include <mc_control/fsm/TransitionMap.h>
+#include <GraphViz/gvl.h>
 
 namespace mc_control
 {
@@ -115,6 +116,34 @@ std::ostream & TransitionMap::print(std::ostream & os) const
     os << t.first.first << " -- (" << t.first.second << ") --> " << t.second.state << " [" << type2str(t.second.type)
        << "]\n";
   }
+  return os;
+}
+
+std::ostream & TransitionMap::printGraphViz(std::ostream & os) const
+{
+  gvl::Graph g("TransitionMap");
+  g.AddCommonNodeProperty("shape", "box");
+  auto type2str = [](const Transition::Type & t)
+  {
+    switch(t)
+    {
+#define MAKE_CASE(v)        \
+  case Transition::Type::v: \
+    return #v;
+      MAKE_CASE(StepByStep)
+      MAKE_CASE(Auto)
+      MAKE_CASE(Strict)
+      default:
+        return "Unknown transition type";
+#undef MAKE_CASE
+    };
+  };
+  for(const auto & t : map_)
+  {
+    g.AddEdge({t.first.first}, {t.second.state},
+              {{"label", t.first.second /* + " [" + type2str(t.second.type) + "]" */}});
+  }
+  g.RenderDot(os);
   return os;
 }
 

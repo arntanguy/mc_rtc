@@ -85,6 +85,9 @@ struct MC_CONTROL_FSM_DLLAPI TransitionMap
   /** Print the map */
   std::ostream & print(std::ostream & os) const;
 
+  /** Print the map in graphviz's dot format */
+  std::ostream & printGraphViz(std::ostream & os) const;
+
 private:
   std::string init_state_;
   std::map<origin_t, Transition> map_;

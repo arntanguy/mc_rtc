@@ -198,6 +198,13 @@ set_target_properties(
              ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/RapidJSON
 )
 
+# GraphViz Imported and modified from https://github.com/Skazzi00/GraphVizLib
+add_library(mc_rtc_3rd_party::GraphViz INTERFACE IMPORTED)
+set_target_properties(
+  mc_rtc_3rd_party::GraphViz PROPERTIES INTERFACE_INCLUDE_DIRECTORIES
+                                        ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/GraphViz
+)
+
 # spdlog
 add_project_dependency(spdlog 1.5.0 REQUIRED)
 

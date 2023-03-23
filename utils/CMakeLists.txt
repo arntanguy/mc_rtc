@@ -36,6 +36,15 @@ target_link_libraries(
   mc_rtc_ticker PUBLIC Boost::program_options Boost::disable_autolinking
 )
 
+add_mc_rtc_utils(mc_fsm_graph mc_fsm_graph.cpp)
+target_link_libraries(mc_fsm_graph PUBLIC mc_control_fsm)
+target_link_libraries(
+  mc_fsm_graph PUBLIC Boost::program_options Boost::disable_autolinking
+)
+if(NOT Boost_USE_STATIC_LIBS)
+  target_link_libraries(mc_fsm_graph PUBLIC Boost::dynamic_linking)
+endif()
+
 configure_file(mc_bin_utils.in.cpp "${CMAKE_CURRENT_BINARY_DIR}/mc_bin_utils.cpp")
 set(mc_bin_utils_SRC "${CMAKE_CURRENT_BINARY_DIR}/mc_bin_utils.cpp" mc_bin_to_log.cpp
                      mc_bin_to_flat.cpp

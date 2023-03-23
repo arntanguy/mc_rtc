@@ -17,6 +17,7 @@
 
 #include <array>
 #include <exception>
+#include <list>
 #include <map>
 #include <memory>
 #include <optional>
