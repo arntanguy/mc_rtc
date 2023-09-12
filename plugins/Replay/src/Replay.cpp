@@ -7,6 +7,7 @@
 #include <mc_control/GlobalPluginMacros.h>
 
 #include <mc_control/Ticker.h>
+#include "mc_rtc/logging.h"
 
 namespace mc_plugin
 {
@@ -127,18 +128,25 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
     }
   }
   auto & ds = gc.controller().datastore();
+  ds.make_call("Replay::SetStartTime", [this](double startTime) { start_time_ = startTime; });
+  ds.make_call("Replay::SetEndTime", [this](double endTime) { end_time_ = endTime; });
+  ds.make_call("Replay::SetLog",
+               [this, &ds, &gc](const std::string & logPath)
+               {
+                 init_log(logPath, ds, gc.timestep());
+                 reset(gc);
+               });
+  ds.make_call("Replay::iter", [this](size_t iter) { iters_ = iter; });
+  ds.make_call("Replay::pause", [this](bool pause) { pause_ = pause; });
   if(ds.has("Replay::Log")) { log_ = ds.get<decltype(log_)>("Replay::Log"); }
   else
   {
     if(!config.has("log"))
     {
-      mc_rtc::log::error_and_throw(
+      mc_rtc::log::warning(
           "[Replay] No log specified in the plugin configuration and no log available in the datastore at Replay::Log");
     }
-    log_ = std::make_shared<mc_rtc::log::FlatLog>(config("log").operator std::string());
-    ds.make<decltype(log_)>("Replay::Log", log_);
   }
-  if(log_->size() == 0) { mc_rtc::log::error_and_throw("[Replay] Cannot replay an empty log"); }
   std::string config_str;
   auto do_config = [&](const char * key, bool & check, std::string_view msg)
   {
@@ -153,6 +161,8 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
   do_config("with-gui-inputs", with_gui_inputs_, "replay GUI inputs");
   do_config("with-outputs", with_outputs_, "replay controller output");
   do_config("pause", pause_, "start paused");
+  config("start_time", start_time_);
+  config("end_time", end_time_);
   if(pause_ && with_inputs_ && !with_outputs_)
   {
     mc_rtc::log::warning("[Replay] Cannot start paused if only inputs are replayed");
@@ -170,9 +180,26 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
   reset(gc);
 }
 
+void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds, double dt)
+{
+  log_ = std::make_shared<mc_rtc::log::FlatLog>(logPath);
+  if(!ds.has("Replay::Log")) { ds.make<decltype(log_)>("Replay::Log", log_); }
+  if(log_->size() == 0) { mc_rtc::log::error_and_throw("[Replay] Cannot replay an empty log"); }
+  if(start_time_ > static_cast<double>(log_->size()) * dt)
+  {
+    mc_rtc::log::error_and_throw("[Replay] Start time cannot be outside of the log");
+  }
+  else if(end_time_ != 0.0 && start_time_ > end_time_)
+  {
+    mc_rtc::log::error_and_throw("[Replay] Start time cannot be greater than end time");
+  }
+}
+
 void Replay::reset(mc_control::MCGlobalController & gc)
 {
-  iters_ = 0;
+  iters_ = static_cast<decltype(iters_)>(std::floor(start_time_ / gc.timestep()));
+  if(!log_) { return; }
+  auto & ds = gc.controller().datastore();
   if(gc.controller().name_ != ctl_name_)
   {
     mc_rtc::log::warning(
@@ -192,6 +219,10 @@ void Replay::reset(mc_control::MCGlobalController & gc)
     }
   }
   // Initialize datastore
+  for(const auto & ds_update : datastore_updates_)
+  {
+    if(ds.has(ds_update.ds_entry)) { ds.remove(ds_update.ds_entry); }
+  }
   datastore_updates_.clear();
   for(auto it = log_to_datastore_.begin(); it != log_to_datastore_.end();)
   {
@@ -206,7 +237,6 @@ void Replay::reset(mc_control::MCGlobalController & gc)
         {log_entry, ds_entry, make_update_datastore_fn(*log_, log_entry, gc.controller().datastore(), ds_entry)});
     ++it;
   }
-  gc.controller().datastore().make_call("Replay::iter", [this](size_t iter) { iters_ = iter; });
   // Setup Replay GUI
   gc.controller().gui()->removeCategory({"Replay"});
   gc.controller().gui()->addElement(
@@ -220,7 +250,9 @@ void Replay::reset(mc_control::MCGlobalController & gc)
                               return;
                             }
                             pause_ = !pause_;
-                          }),
+                          }));
+  gc.controller().gui()->addElement(
+      {"Replay"}, mc_rtc::gui::ElementsStacking::Horizontal,
       mc_rtc::gui::NumberSlider(
           "Replay time", [this, &gc]() { return static_cast<double>(iters_) * gc.timestep(); },
           [this, &gc](double t)
@@ -233,14 +265,15 @@ void Replay::reset(mc_control::MCGlobalController & gc)
             size_t iter = static_cast<size_t>(std::floor(t / gc.timestep()));
             iters_ = std::max<size_t>(std::min<size_t>(iter, log_->size() - 1), 0);
           },
-          0.0, static_cast<double>(log_->size()) * gc.timestep()));
+          0.0, static_cast<double>(log_->size()) * gc.timestep()),
+      mc_rtc::gui::Label("/", [this, &gc]() { return static_cast<double>(log_->size()) * gc.timestep(); }));
   // Run once to fill the initial sensors
   before(gc);
-  iters_ = 0;
 }
 
 void Replay::before(mc_control::MCGlobalController & gc)
 {
+  if(!log_) { return; }
   const auto & log = *log_;
   if(with_inputs_)
   {
@@ -312,6 +345,7 @@ void Replay::before(mc_control::MCGlobalController & gc)
 
 void Replay::after(mc_control::MCGlobalController & gc)
 {
+  if(!log_) { return; }
   if(with_outputs_)
   {
     for(auto & r : *robots_)
@@ -320,7 +354,11 @@ void Replay::after(mc_control::MCGlobalController & gc)
       gc.robot(r.name()).mbc() = r.mbc();
     }
   }
-  if(!pause_ && iters_ + 1 < log_->size()) { iters_++; }
+  if(!pause_ && iters_ + 1 < log_->size()
+     /* && (end_time_ != 0.0 || static_cast<double>(iters_) * gc.timestep() < end_time_) */)
+  {
+    iters_++;
+  }
 }
 
 } // namespace mc_plugin
