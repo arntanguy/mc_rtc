@@ -163,6 +163,15 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
   do_config("pause", pause_, "start paused");
   config("start_time", start_time_);
   config("end_time", end_time_);
+  auto preload_logs = config("preload_logs", std::vector<std::string>{});
+  if(preload_logs.size())
+  {
+    for(const auto & logPath : preload_logs)
+    {
+      mc_rtc::log::info("[Replay] Pre-loading {}", logPath);
+      preload_logs_[logPath] = std::make_shared<mc_rtc::log::FlatLog>(logPath);
+    }
+  }
   if(pause_ && with_inputs_ && !with_outputs_)
   {
     mc_rtc::log::warning("[Replay] Cannot start paused if only inputs are replayed");
@@ -182,6 +191,12 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
 
 void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds, double dt)
 {
+  if(preload_logs_.count(logPath) > 0)
+  {
+    mc_rtc::log::info("[Replay] Loading log {} from preload cache", logPath);
+    log_ = preload_logs_[logPath];
+  }
+  else { mc_rtc::log::info("[Replay] Loading log {} from disk", logPath); }
   log_ = std::make_shared<mc_rtc::log::FlatLog>(logPath);
   if(!ds.has("Replay::Log")) { ds.make<decltype(log_)>("Replay::Log", log_); }
   if(log_->size() == 0) { mc_rtc::log::error_and_throw("[Replay] Cannot replay an empty log"); }
