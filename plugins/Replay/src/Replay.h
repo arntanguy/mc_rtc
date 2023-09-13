@@ -64,6 +64,7 @@ private:
   };
   std::vector<DataStoreUpdate> datastore_updates_;
   std::shared_ptr<mc_rbdyn::Robots> robots_;
+  bool finished_ = false;
 };
 
 } // namespace mc_plugin

@@ -138,6 +138,7 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
                });
   ds.make_call("Replay::iter", [this](size_t iter) { iters_ = iter; });
   ds.make_call("Replay::pause", [this](bool pause) { pause_ = pause; });
+  ds.make_call("Replay::is_finished", [this]() { return finished_; });
   if(ds.has("Replay::Log")) { log_ = ds.get<decltype(log_)>("Replay::Log"); }
   else
   {
@@ -191,6 +192,7 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
 
 void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds, double dt)
 {
+  finished_ = false;
   if(preload_logs_.count(logPath) > 0)
   {
     mc_rtc::log::info("[Replay] Loading log {} from preload cache", logPath);
@@ -369,11 +371,9 @@ void Replay::after(mc_control::MCGlobalController & gc)
       gc.robot(r.name()).mbc() = r.mbc();
     }
   }
-  if(!pause_ && iters_ + 1 < log_->size()
-     /* && (end_time_ != 0.0 || static_cast<double>(iters_) * gc.timestep() < end_time_) */)
-  {
-    iters_++;
-  }
+  if(pause_) {}
+  else if(iters_ + 1 < log_->size()) { iters_++; }
+  else { finished_ = true; }
 }
 
 } // namespace mc_plugin
