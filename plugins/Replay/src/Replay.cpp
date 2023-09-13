@@ -128,12 +128,13 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
     }
   }
   auto & ds = gc.controller().datastore();
-  ds.make_call("Replay::SetStartTime", [this](double startTime) { start_time_ = startTime; });
-  ds.make_call("Replay::SetEndTime", [this](double endTime) { end_time_ = endTime; });
+  ds.make_call("Replay::SetStartTime",
+               [this, &gc](double startTime) { start_iter_ = timeToIter(startTime, gc.timestep()); });
+  ds.make_call("Replay::SetEndTime", [this, &gc](double endTime) { end_iter_ = timeToIter(endTime, gc.timestep()); });
   ds.make_call("Replay::SetLog",
                [this, &ds, &gc](const std::string & logPath)
                {
-                 init_log(logPath, ds, gc.timestep());
+                 init_log(logPath, ds);
                  reset(gc);
                });
   ds.make_call("Replay::iter", [this](size_t iter) { iters_ = iter; });
@@ -147,6 +148,7 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
       mc_rtc::log::warning(
           "[Replay] No log specified in the plugin configuration and no log available in the datastore at Replay::Log");
     }
+    else { init_log(config("log"), ds); }
   }
   std::string config_str;
   auto do_config = [&](const char * key, bool & check, std::string_view msg)
@@ -162,8 +164,8 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
   do_config("with-gui-inputs", with_gui_inputs_, "replay GUI inputs");
   do_config("with-outputs", with_outputs_, "replay controller output");
   do_config("pause", pause_, "start paused");
-  config("start_time", start_time_);
-  config("end_time", end_time_);
+  start_iter_ = timeToIter(config("start_time", 0), gc.timestep());
+  end_iter_ = timeToIter(config("end_time", 0), gc.timestep());
   auto preload_logs = config("preload_logs", std::vector<std::string>{});
   if(preload_logs.size())
   {
@@ -190,7 +192,7 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
   reset(gc);
 }
 
-void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds, double dt)
+void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds)
 {
   finished_ = false;
   if(preload_logs_.count(logPath) > 0)
@@ -202,19 +204,20 @@ void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds, doubl
   log_ = std::make_shared<mc_rtc::log::FlatLog>(logPath);
   if(!ds.has("Replay::Log")) { ds.make<decltype(log_)>("Replay::Log", log_); }
   if(log_->size() == 0) { mc_rtc::log::error_and_throw("[Replay] Cannot replay an empty log"); }
-  if(start_time_ > static_cast<double>(log_->size()) * dt)
+  if(start_iter_ > log_->size() - 1)
   {
     mc_rtc::log::error_and_throw("[Replay] Start time cannot be outside of the log");
   }
-  else if(end_time_ != 0.0 && start_time_ > end_time_)
+  else if(end_iter_ != 0 && end_iter_ > log_->size() - 1)
   {
     mc_rtc::log::error_and_throw("[Replay] Start time cannot be greater than end time");
   }
+  if(end_iter_ == 0) { end_iter_ = log_->size() - 1; }
 }
 
 void Replay::reset(mc_control::MCGlobalController & gc)
 {
-  iters_ = static_cast<decltype(iters_)>(std::floor(start_time_ / gc.timestep()));
+  iters_ = start_iter_;
   if(!log_) { return; }
   auto & ds = gc.controller().datastore();
   if(gc.controller().name_ != ctl_name_)
@@ -258,7 +261,7 @@ void Replay::reset(mc_control::MCGlobalController & gc)
   gc.controller().gui()->removeCategory({"Replay"});
   gc.controller().gui()->addElement(
       {"Replay"},
-      mc_rtc::gui::Button("Pause/Play",
+      mc_rtc::gui::Button("Pdause/Play",
                           [this]()
                           {
                             if(with_inputs_ && !with_outputs_)
@@ -372,7 +375,7 @@ void Replay::after(mc_control::MCGlobalController & gc)
     }
   }
   if(pause_) {}
-  else if(iters_ + 1 < log_->size()) { iters_++; }
+  else if(iters_ + 1 < end_iter_) { iters_++; }
   else { finished_ = true; }
 }
 

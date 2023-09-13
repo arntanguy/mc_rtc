@@ -42,7 +42,8 @@ struct Replay : public mc_control::GlobalPlugin
                                          const std::string & ds_entry);
 
 protected:
-  void init_log(const std::string & logPath, mc_rtc::DataStore & ds, double dt);
+  void init_log(const std::string & logPath, mc_rtc::DataStore & ds);
+  inline size_t timeToIter(double time, double dt) { return static_cast<decltype(iters_)>(std::floor(time / dt)); }
 
 private:
   std::string ctl_name_;
@@ -53,8 +54,8 @@ private:
   bool with_inputs_ = true;
   bool with_gui_inputs_ = true;
   bool with_outputs_ = false;
-  double start_time_ = 0;
-  double end_time_ = 0;
+  size_t start_iter_ = 0;
+  size_t end_iter_ = 0;
   std::map<std::string, std::string> log_to_datastore_;
   struct DataStoreUpdate
   {
