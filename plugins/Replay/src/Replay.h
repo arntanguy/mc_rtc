@@ -56,6 +56,8 @@ private:
   bool with_outputs_ = false;
   size_t start_iter_ = 0;
   size_t end_iter_ = 0;
+  size_t skipIter_ = 1;
+  size_t totalIter_ = 0;
   std::map<std::string, std::string> log_to_datastore_;
   struct DataStoreUpdate
   {

@@ -128,16 +128,25 @@ void Replay::init(mc_control::MCGlobalController & gc, const mc_rtc::Configurati
     }
   }
   auto & ds = gc.controller().datastore();
+  ds.make_call("Replay::SkipIter", [this](size_t skipIter) { skipIter_ = std::max(static_cast<size_t>(1), skipIter); });
   ds.make_call("Replay::SetStartTime",
                [this, &gc](double startTime) { start_iter_ = timeToIter(startTime, gc.timestep()); });
   ds.make_call("Replay::SetEndTime", [this, &gc](double endTime) { end_iter_ = timeToIter(endTime, gc.timestep()); });
+  ds.make_call("Replay::GetStartTime", [this, &gc]() { return static_cast<double>(start_iter_) * gc.timestep(); });
+  ds.make_call("Replay::GetCurrentTime", [this, &gc]() { return static_cast<double>(iters_) * gc.timestep(); });
+  ds.make_call("Replay::GetEndTime", [this, &gc]() { return (static_cast<double>(end_iter_) - 1.0) * gc.timestep(); });
   ds.make_call("Replay::SetLog",
                [this, &ds, &gc](const std::string & logPath)
                {
                  init_log(logPath, ds);
                  reset(gc);
                });
-  ds.make_call("Replay::iter", [this](size_t iter) { iters_ = iter; });
+  ds.make_call("Replay::iter",
+               [this](size_t iter)
+               {
+                 iters_ = iter;
+                 totalIter_ = iter;
+               });
   ds.make_call("Replay::pause", [this](bool pause) { pause_ = pause; });
   ds.make_call("Replay::is_finished", [this]() { return finished_; });
   if(ds.has("Replay::Log")) { log_ = ds.get<decltype(log_)>("Replay::Log"); }
@@ -213,7 +222,8 @@ void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds)
   }
   else if(end_iter_ != 0 && end_iter_ > log_->size() - 1)
   {
-    mc_rtc::log::error_and_throw("[Replay] Start time cannot be greater than end time");
+    mc_rtc::log::warning("[Replay] End time cannot be greater than end time");
+    end_iter_ = log_->size() - 1;
   }
   if(end_iter_ == 0) { end_iter_ = log_->size() - 1; }
 }
@@ -377,9 +387,18 @@ void Replay::after(mc_control::MCGlobalController & gc)
       gc.robot(r.name()).mbc() = r.mbc();
     }
   }
-  if(pause_) {}
-  else if(iters_ + 1 < end_iter_) { iters_++; }
-  else { finished_ = true; }
+  if(pause_ || finished_) {}
+  else if(iters_ + 1 < end_iter_)
+  {
+    if(skipIter_ != 0 && iters_ != 0 && totalIter_ % skipIter_ == 0) { iters_++; }
+    totalIter_++;
+  }
+  else
+  {
+    finished_ = true;
+    end_iter_ = 0;
+    start_iter_ = 0;
+  }
 }
 
 } // namespace mc_plugin
