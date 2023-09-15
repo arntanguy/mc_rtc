@@ -398,6 +398,8 @@ void Replay::after(mc_control::MCGlobalController & gc)
     finished_ = true;
     end_iter_ = 0;
     start_iter_ = 0;
+    totalIter_ = 0;
+    skipIter_ = 1;
   }
 }
 
