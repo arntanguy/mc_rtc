@@ -200,8 +200,11 @@ void Replay::init_log(const std::string & logPath, mc_rtc::DataStore & ds)
     mc_rtc::log::info("[Replay] Loading log {} from preload cache", logPath);
     log_ = preload_logs_[logPath];
   }
-  else { mc_rtc::log::info("[Replay] Loading log {} from disk", logPath); }
-  log_ = std::make_shared<mc_rtc::log::FlatLog>(logPath);
+  else
+  {
+    mc_rtc::log::info("[Replay] Loading log {} from disk", logPath);
+    log_ = std::make_shared<mc_rtc::log::FlatLog>(logPath);
+  }
   if(!ds.has("Replay::Log")) { ds.make<decltype(log_)>("Replay::Log", log_); }
   if(log_->size() == 0) { mc_rtc::log::error_and_throw("[Replay] Cannot replay an empty log"); }
   if(start_iter_ > log_->size() - 1)
