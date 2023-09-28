@@ -24,6 +24,7 @@
 #include <mc_rtc/gui/Label.h>
 #include <mc_rtc/gui/NumberInput.h>
 #include <mc_rtc/gui/NumberSlider.h>
+#include <mc_rtc/gui/ParametricSurface.h>
 #include <mc_rtc/gui/Point3D.h>
 #include <mc_rtc/gui/Polygon.h>
 #include <mc_rtc/gui/Polyhedron.h>

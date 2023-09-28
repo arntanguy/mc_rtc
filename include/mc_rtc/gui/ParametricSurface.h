@@ -2,7 +2,8 @@
 
 #include <mc_rtc/gui/Visual.h>
 #include <mc_rtc/visual_utils.h>
-#include "../3rd-party/paramesh/mesh_generators.hpp"
+#include <paramesh/mesh.hpp>
+#include <paramesh/mesh_generators.hpp>
 
 namespace mc_rtc::gui
 {
@@ -29,25 +30,27 @@ auto ParametricSurface(const std::string & name,
                        size_t slices = 32,
                        GetColor color_fn = mc_rtc::gui::Color::Red)
 {
-  vector<MeshTriangle> tlist; // contains triangles for mesh
-  vector<MeshVertex> vlist; // contains vertices for mesh
+  using MeshTriangle = paramesh::MeshTriangle;
+  using MeshVertex = paramesh::MeshVertex;
+  std::vector<paramesh::MeshTriangle> tlist; // contains triangles for mesh
+  std::vector<paramesh::MeshVertex> vlist; // contains vertices for mesh
 
   auto points_fn_ = [points_fn](double theta, double phi)
   {
     Eigen::Vector3d p = points_fn(theta, phi);
-    return ::vec3(p.x(), p.y(), p.z());
+    return glm::vec3(p.x(), p.y(), p.z());
   };
   auto normals_fn_ = [normals_fn](double theta, double phi)
   {
     Eigen::Vector3d p = normals_fn(theta, phi);
-    return ::vec3(p.x(), p.y(), p.z());
+    return glm::vec3(p.x(), p.y(), p.z());
   };
   GeneratePointsAndNormals(vlist, rings, slices, points_fn_, normals_fn_, 2.0f * mc_rtc::constants::PI / (float)rings,
                            mc_rtc::constants::PI / (float)slices);
   GenerateFaces(tlist, (int)rings, (int)slices);
   // GenerateSphereVertexNormals(vlist);
 
-  TriangleMesh mesh;
+  paramesh::TriangleMesh mesh;
   mesh.nv = (uint32_t)vlist.size();
   mesh.nt = (uint32_t)tlist.size();
   mesh.vertexArray = (MeshVertex *)malloc(vlist.size() * sizeof(MeshVertex));
@@ -57,7 +60,7 @@ auto ParametricSurface(const std::string & name,
   copy(tlist.begin(), tlist.begin() + tlist.size(), mesh.triangleArray);
 
   auto path = fmt::format("/tmp/generated-parametric-mesh-{}.ply", name);
-  ::WritePLYMesh(mesh, path);
+  paramesh::WritePLYMesh(mesh, path);
 
   auto visual_mesh = mc_rtc::makeVisualMesh(path, 1.0);
 
