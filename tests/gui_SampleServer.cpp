@@ -1075,6 +1075,35 @@ void SampleServer::switch_visual(const std::string & choice)
                            color.a = (1 + sin(t_)) / 2;
                            return color;
                          }));
+
+  double a = 2;
+  double b = 1;
+  double c = 0.5;
+  auto sphere_pt = [a, b, c](double theta, double phi)
+  {
+    auto N = sqrt((a * a * cos(theta) * cos(theta) + b * b * sin(theta) * sin(theta)) * sin(phi) * sin(phi)
+                  + c * c * cos(phi) * cos(phi));
+    return Eigen::Vector3d(a * sin(phi) * cos(theta) * N, b * sin(phi) * sin(theta) * N, c * cos(phi) * N);
+  };
+  auto normal_pt = [sphere_pt](double theta, double phi)
+  {
+    // This should be the derivative instead, but using the point is a reasonable approximation for now
+    Eigen::Vector3d pt = sphere_pt(theta, phi);
+    Eigen::Vector3d n;
+    n.x() = pt.x();
+    n.y() = pt.y();
+    n.z() = pt.z();
+
+    return n.normalized();
+  };
+
+  builder.addElement({"Visual", "BeltedEllipsoid"},
+                     mc_rtc::gui::ParametricSurface(
+                         "BeltedEllipsoid", sphere_pt, normal_pt,
+                         [this] {
+                           return sva::PTransformd{sva::RotY(t_), Eigen::Vector3d{5, 0, 0}};
+                         },
+                         32, 32));
 }
 
 template<typename T>

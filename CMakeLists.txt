@@ -181,6 +181,8 @@ add_subdirectory(3rd-party/qhull)
 # mpack (build static version)
 add_subdirectory(3rd-party/mpack)
 
+add_project_dependency(paramesh)
+
 # yaml-cpp
 add_project_dependency(yaml-cpp 0.5.0 REQUIRED)
 if(TARGET yaml-cpp::yaml-cpp)

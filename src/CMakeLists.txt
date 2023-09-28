@@ -391,6 +391,7 @@ set(mc_rtc_gui_HDR
     ../include/mc_rtc/gui/Transform.h
     ../include/mc_rtc/gui/types.h
     ../include/mc_rtc/gui/Visual.h
+    ../include/mc_rtc/gui/ParametricSurface.h
     ../include/mc_rtc/gui/XYTheta.h
     ../include/mc_rtc/gui/details/traits.h
     ../include/mc_rtc/gui/plot.h
@@ -405,6 +406,7 @@ set(mc_rtc_gui_HDR
 add_library(mc_rtc_gui SHARED ${mc_rtc_gui_SRC} ${mc_rtc_gui_HDR})
 set_target_properties(mc_rtc_gui PROPERTIES COMPILE_FLAGS "-DMC_RTC_GUI_EXPORTS")
 target_link_libraries(mc_rtc_gui PUBLIC mc_rbdyn)
+target_link_libraries(mc_rtc_gui PUBLIC paramesh::paramesh)
 install_mc_rtc_lib(mc_rtc_gui)
 
 add_subdirectory(mc_robots)
