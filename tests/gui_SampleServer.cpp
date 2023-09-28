@@ -2,6 +2,7 @@
  * Copyright 2015-2020 CNRS-UM LIRMM, CNRS-AIST JRL
  */
 
+#include <mc_rtc/gui/ParametricPolyhedron.h>
 #include <mc_rtc/utils/heatmap.h>
 #include <mc_rtc/visual_utils.h>
 
@@ -1079,16 +1080,16 @@ void SampleServer::switch_visual(const std::string & choice)
   double a = 2;
   double b = 1;
   double c = 0.5;
-  auto sphere_pt = [a, b, c](double theta, double phi)
+  auto belted_ellipsoid_pt = [a, b, c](double theta, double phi)
   {
     auto N = sqrt((a * a * cos(theta) * cos(theta) + b * b * sin(theta) * sin(theta)) * sin(phi) * sin(phi)
                   + c * c * cos(phi) * cos(phi));
     return Eigen::Vector3d(a * sin(phi) * cos(theta) * N, b * sin(phi) * sin(theta) * N, c * cos(phi) * N);
   };
-  auto normal_pt = [sphere_pt](double theta, double phi)
+  auto belted_ellipsoid_normal = [belted_ellipsoid_pt](double theta, double phi)
   {
     // This should be the derivative instead, but using the point is a reasonable approximation for now
-    Eigen::Vector3d pt = sphere_pt(theta, phi);
+    Eigen::Vector3d pt = belted_ellipsoid_pt(theta, phi);
     Eigen::Vector3d n;
     n.x() = pt.x();
     n.y() = pt.y();
@@ -1096,10 +1097,27 @@ void SampleServer::switch_visual(const std::string & choice)
 
     return n.normalized();
   };
+  auto belted_ellipsoid_color = [](double theta, double phi)
+  {
+    // theta in [0, pi]
+    // phi in [0, 2*pi]
+    constexpr auto pi = mc_rtc::constants::PI;
+    Eigen::Vector3d c1 = mc_rtc::utils::heatmap<Eigen::Vector3d>(0, 2 * pi, phi);
+    Eigen::Vector3d c2 = mc_rtc::utils::heatmap<Eigen::Vector3d>(0, pi, theta);
+    Eigen::Vector3d c = 0.5 * (c1 + c2);
+    return mc_rtc::gui::Color(c);
+  };
 
   builder.addElement({"Visual", "BeltedEllipsoid"},
                      mc_rtc::gui::ParametricSurface(
-                         "BeltedEllipsoid", sphere_pt, normal_pt,
+                         "BeltedEllipsoidMesh", belted_ellipsoid_pt, belted_ellipsoid_normal,
+                         [this] {
+                           return sva::PTransformd{sva::RotY(t_), Eigen::Vector3d{5, 0, 0}};
+                         },
+                         32, 32),
+                     mc_rtc::gui::ParametricPolyhedron(
+                         "BeltedEllipsoidPolyhedron", belted_ellipsoid_pt, belted_ellipsoid_normal,
+                         belted_ellipsoid_color,
                          [this] {
                            return sva::PTransformd{sva::RotY(t_), Eigen::Vector3d{5, 0, 0}};
                          },
