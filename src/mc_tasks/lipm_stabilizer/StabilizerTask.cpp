@@ -350,6 +350,34 @@ void StabilizerTask::configure_(mc_solver::QPSolver & solver)
 
   for(const auto & footTask : footTasks)
   {
+    if(footTask.first == ContactState::Left && footTask.second->frame().name() != c_.leftFootSurface)
+    {
+      if(contacts_.count(ContactState::Left) != 0)
+      {
+        footTasks[ContactState::Left] = std::allocate_shared<mc_tasks::force::CoPTask>(
+            Eigen::aligned_allocator<mc_tasks::force::CoPTask>{}, c_.leftFootSurface, solver.robots(), robotIndex_);
+        footTasks[ContactState::Left]->reset();
+      }
+      else
+      {
+        mc_rtc::log::warning("[{}] contact {} is currently used, remove the contact before changing the suface", name(),
+                             ContactState::Left);
+      }
+    }
+    if(footTask.first == ContactState::Right && footTask.second->frame().name() != c_.rightFootSurface)
+    {
+      if(contacts_.count(ContactState::Right) != 0)
+      {
+        footTasks[ContactState::Right] = std::allocate_shared<mc_tasks::force::CoPTask>(
+            Eigen::aligned_allocator<mc_tasks::force::CoPTask>{}, c_.rightFootSurface, solver.robots(), robotIndex_);
+        footTasks[ContactState::Right]->reset();
+      }
+      else
+      {
+        mc_rtc::log::warning("[{}] contact {} is currently used, remove the contact before changing the suface", name(),
+                             ContactState::Right);
+      }
+    }
     footTask.second->maxLinearVel(c_.copMaxVel.linear());
     footTask.second->maxAngularVel(c_.copMaxVel.angular());
     footTask.second->useTargetPressure(c_.useTargetPressure);
