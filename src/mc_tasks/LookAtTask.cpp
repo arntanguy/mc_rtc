@@ -49,10 +49,16 @@ void LookAtTask::reset()
   target_pos_ = frame_->position().translation() + actual();
 }
 
+void LookAtTask::update(mc_solver::QPSolver & solver)
+{
+  target(target_pos_);
+  VectorOrientationTask::update(solver);
+}
+
 void LookAtTask::target(const Eigen::Vector3d & pos)
 {
   target_pos_ = pos;
-  auto target_ori = (pos - frame_->position().translation()).normalized();
+  auto target_ori = (target_pos_ - frame_->position().translation()).normalized();
   VectorOrientationTask::targetVector(target_ori);
 }
 

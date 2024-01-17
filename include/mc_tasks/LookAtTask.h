@@ -65,6 +65,8 @@ struct MC_TASKS_DLLAPI LookAtTask : public VectorOrientationTask
   /*! \brief Reset the task */
   void reset() override;
 
+  void update(mc_solver::QPSolver & solver) override;
+
   /**
    * \brief Look towards the target frame position
    *
