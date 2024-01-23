@@ -64,7 +64,13 @@ public:
    * \param pos Target in world frame
    *
    */
-  virtual void target(const sva::PTransformd & pos);
+  virtual void target(const sva::PTransformd & worldPos);
+
+  /*! \brief Get the task's target velocity
+   *
+   * \param vel Target velocity in world frame
+   */
+  virtual void targetVel(const sva::MotionVecd & worldVel);
 
   /**
    * @brief Targets a robot surface with an optional offset.
@@ -91,6 +97,18 @@ public:
    * \param offset Offset relative to \p targetFrame
    */
   void targetFrame(const mc_rbdyn::Frame & targetFrame, const sva::PTransformd & offset = sva::PTransformd::Identity());
+
+  /**
+   * @brief Targets a given frame velocity with an optional offset
+   *
+   * The offset is given in the target frame
+   *
+   * \param targetFrame Target frame
+   *
+   * \param offset Offset relative to \p targetFrame
+   */
+  void targetFrameVelocity(const mc_rbdyn::Frame & targetFrame,
+                           const sva::PTransformd & offset = sva::PTransformd::Identity());
 
   /**
    * @brief Targets a given frame with an optional offset
