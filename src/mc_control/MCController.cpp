@@ -25,6 +25,9 @@
 #include <RBDyn/FK.h>
 #include <RBDyn/FV.h>
 
+#include <mc_rtc/gui/Convex.h>
+#include <sch/S_Polyhedron/S_Polyhedron.h>
+
 #include <boost/filesystem.hpp>
 namespace bfs = boost::filesystem;
 
@@ -417,6 +420,43 @@ void MCController::addRobotToGUI(const mc_rbdyn::Robot & r)
   gui()->addElement(
       {"Robots"},
       mc_rtc::gui::Robot(r.name(), [name, this]() -> const mc_rbdyn::Robot & { return this->outputRobot(name); }));
+
+  for(const auto & [convexName, convexPair] : r.convexes())
+  {
+    const auto & bodyName = convexPair.first;
+    const auto & object = convexPair.second;
+    const auto & convexName_ = convexName;
+
+    auto getConvexPose = [bodyName, convexName_, &r]()
+    {
+      const sva::PTransformd X_0_b = r.frame(bodyName).position();
+      const sva::PTransformd & X_b_c = r.collisionTransform(convexName_);
+      sva::PTransformd X_0_c = X_b_c * X_0_b;
+      return X_0_c;
+    };
+
+    if(auto poly = std::dynamic_pointer_cast<sch::S_Polyhedron>(object))
+    {
+      gui()->addElement({"Robots", r.name(), "Convex"}, mc_rtc::gui::Convex(
+                                                            convexName, [poly]() { return poly; }, getConvexPose));
+    }
+    else if(auto box = std::dynamic_pointer_cast<sch::S_Box>(object))
+    {
+      gui()->addElement({"Robots", r.name(), "Convex"}, mc_rtc::gui::ConvexBox(
+                                                            convexName, [box]() { return *box; }, getConvexPose));
+    }
+    else if(auto cylinder = std::dynamic_pointer_cast<sch::S_Cylinder>(object))
+    {
+      gui()->addElement({"Robots", r.name(), "Convex"},
+                        mc_rtc::gui::ConvexCylinder(
+                            convexName, [cylinder]() { return *cylinder; }, getConvexPose));
+    }
+    // else if(sch::S_Sphere * sphere = dynamic_cast<sch::S_Sphere *>(object))
+    // {
+    //   markers.markers.push_back(fromSphere(tf_prefix + frame, col.first, ++id, *sphere, colTrans));
+    // }
+    else { mc_rtc::log::warning("Cannot display {} collision object", convexName); }
+  }
 }
 
 void MCController::addRobotToLog(const mc_rbdyn::Robot & r)

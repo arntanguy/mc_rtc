@@ -357,7 +357,7 @@ target_include_directories(
 )
 install_mc_rtc_lib(mc_rbdyn)
 
-set(mc_rtc_gui_SRC mc_rtc/gui/StateBuilder.cpp)
+set(mc_rtc_gui_SRC mc_rtc/gui/StateBuilder.cpp mc_rtc/gui/Convex.cpp)
 
 set(mc_rtc_gui_HDR
     ../include/mc_rtc/gui/api.h
