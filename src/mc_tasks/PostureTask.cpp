@@ -17,6 +17,7 @@
 
 #include <mc_rtc/gui/NumberInput.h>
 #include <mc_rtc/gui/NumberSlider.h>
+#include <mc_rtc/gui/Table.h>
 
 namespace mc_tasks
 {
@@ -103,20 +104,23 @@ inline static mc_rtc::void_ptr make_error(MetaTask::Backend backend,
 }
 
 PostureTask::PostureTask(const mc_solver::QPSolver & solver, unsigned int rIndex, double stiffness, double weight)
-: robots_(solver.robots()), rIndex_(rIndex), pt_(make_error(backend_, solver, rIndex, stiffness, weight)),
-  dt_(solver.dt())
+: robots_(solver.robots()), realRobots_(solver.realRobots()), rIndex_(rIndex),
+  pt_(make_error(backend_, solver, rIndex, stiffness, weight)), dt_(solver.dt())
 {
   eval_ = this->eval();
   speed_ = Eigen::VectorXd::Zero(eval_.size());
   type_ = "posture";
   name_ = std::string("posture_") + robots_.robot(rIndex_).name();
+  size_t nrJoints = 0;
   for(const auto & j : robots_.robot(rIndex_).mb().joints())
   {
+    if(j.dof() == 1) ++nrJoints;
     if(j.isMimic())
     {
       mimics_[j.mimicName()].push_back(static_cast<int>(robots_.robot(rIndex_).jointIndexByName(j.name())));
     }
   }
+  jointsTable_.resize(nrJoints, {"", 0, 0, 0, 0});
   reset();
 }
 
@@ -331,6 +335,20 @@ void PostureTask::removeFromSolver(mc_solver::QPSolver & solver)
 
 void PostureTask::update(mc_solver::QPSolver & solver)
 {
+  size_t i = 0;
+  for(const auto & j : robots_.robot(rIndex_).mb().joints())
+  {
+    if(j.dof() != 1) { continue; }
+    auto jIndex = robots_.robot(rIndex_).jointIndexByName(j.name());
+    auto & robot = robots_.robot(rIndex_);
+    auto & realRobot = realRobots_.robot(rIndex_);
+    auto control_qrad = robot.mbc().q[jIndex][0];
+    auto control_qdeg = mc_rtc::constants::toDeg(control_qrad);
+    auto real_qrad = realRobot.mbc().q[jIndex][0];
+    auto real_qdeg = mc_rtc::constants::toDeg(real_qrad);
+    jointsTable_[i++] = {j.name(), control_qrad, real_qrad, control_qdeg, real_qdeg};
+  }
+
   switch(backend_)
   {
     case Backend::Tasks:
@@ -626,6 +644,11 @@ void PostureTask::addToGUI(mc_rtc::gui::StateBuilder & gui)
                          robots_.robot(rIndex_).ql()[jIndex][0], robots_.robot(rIndex_).qu()[jIndex][0]));
     }
   }
+  gui.addElement({"Tasks", name_, "Actual"},
+                 mc_rtc::gui::Table("Actual Joint Values",
+                                    {"Joint Name", "Command [rad]", "Actual [rad]", "Command [deg]", "Actual [deg]"},
+                                    {"{}", "{:0.3f}", "{:0.3f}", "{:0.3f}", "{:0.3f}"},
+                                    [this]() { return jointsTable_; }));
 }
 
 } // namespace mc_tasks

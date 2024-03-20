@@ -161,6 +161,7 @@ private:
   bool inSolver_ = false;
   /** Robot handled by the task */
   const mc_rbdyn::Robots & robots_;
+  const mc_rbdyn::Robots & realRobots_;
   unsigned int rIndex_;
   /** Holds the constraint implementation
    *
@@ -181,6 +182,9 @@ private:
   Eigen::VectorXd eval_;
   /** Store the task speed */
   Eigen::VectorXd speed_;
+  /** Store a table of all joints data to show in the GUI */
+  using JointsTableColumn = std::tuple<std::string, double, double, double, double>;
+  std::vector<JointsTableColumn> jointsTable_;
 };
 
 using PostureTaskPtr = std::shared_ptr<PostureTask>;
