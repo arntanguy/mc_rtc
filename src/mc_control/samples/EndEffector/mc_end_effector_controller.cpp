@@ -18,10 +18,10 @@ MCEndEffectorController::MCEndEffectorController(std::shared_ptr<mc_rbdyn::Robot
 : MCController(robot_module, dt, backend)
 {
   solver().addConstraintSet(contactConstraint);
-  solver().addConstraintSet(dynamicsConstraint);
-  solver().addConstraintSet(selfCollisionConstraint);
-  solver().addConstraintSet(*compoundJointConstraint);
-  solver().addTask(postureTask.get());
+  solver().addConstraintSet(dynamicsConstraint());
+  solver().addConstraintSet(selfCollisionConstraint());
+  solver().addConstraintSet(compoundJointConstraint());
+  solver().addTask(&postureTask());
   if(robot().hasSurface("LFullSole") && robot().hasSurface("RFullSole"))
   {
     addContact({robot().name(), env().name(), "LFullSole", "AllGround"});
@@ -47,7 +47,7 @@ MCEndEffectorController::MCEndEffectorController(std::shared_ptr<mc_rbdyn::Robot
     comTask_ = std::make_shared<mc_tasks::CoMTask>(robots(), robots().robotIndex());
     solver().addTask(comTask_);
   }
-  postureTask->weight(1.0);
+  postureTask().weight(1.0);
   if(config.has(robot().name()))
   {
     auto tasks = config(robot().name())("tasks", std::vector<mc_rtc::Configuration>{});

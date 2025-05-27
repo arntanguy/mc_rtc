@@ -15,14 +15,14 @@ MCImpedanceController::MCImpedanceController(std::shared_ptr<mc_rbdyn::RobotModu
 : MCController(robot_module, dt, backend)
 {
   solver().addConstraintSet(contactConstraint);
-  solver().addConstraintSet(kinematicsConstraint);
-  solver().addConstraintSet(selfCollisionConstraint);
-  solver().addConstraintSet(*compoundJointConstraint);
+  solver().addConstraintSet(kinematicsConstraint());
+  solver().addConstraintSet(selfCollisionConstraint());
+  solver().addConstraintSet(compoundJointConstraint());
 
   // add PostureTask
-  solver().addTask(postureTask);
-  postureTask->stiffness(1);
-  postureTask->weight(1);
+  solver().addTask(&postureTask());
+  postureTask().stiffness(1);
+  postureTask().weight(1);
 
   if(!robot().hasSurface("LeftGripper"))
   {

@@ -16,12 +16,12 @@ MCPostureController::MCPostureController(std::shared_ptr<mc_rbdyn::RobotModule> 
 : MCController(robot_module, dt, backend)
 {
   solver().addConstraintSet(contactConstraint);
-  solver().addConstraintSet(kinematicsConstraint);
-  solver().addConstraintSet(selfCollisionConstraint);
-  solver().addConstraintSet(*compoundJointConstraint);
-  solver().addTask(postureTask.get());
+  solver().addConstraintSet(kinematicsConstraint());
+  solver().addConstraintSet(selfCollisionConstraint());
+  solver().addConstraintSet(compoundJointConstraint());
+  solver().addTask(&postureTask());
 
-  postureTask->stiffness(1.0);
+  postureTask().stiffness(1.0);
   mc_rtc::log::success("MCPostureController init done");
 }
 

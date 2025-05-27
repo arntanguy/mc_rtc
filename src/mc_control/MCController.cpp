@@ -27,6 +27,7 @@
 #include <RBDyn/FV.h>
 
 #include <boost/filesystem.hpp>
+#include "mc_rtc/Configuration.h"
 namespace bfs = boost::filesystem;
 
 #include <array>
@@ -81,6 +82,46 @@ static thread_local std::string MC_CONTROLLER_NAME = "";
 void MCController::set_name(std::string_view name)
 {
   MC_CONTROLLER_NAME = name;
+}
+
+MCController::RobotsTasksAndConstraints::RobotsTasksAndConstraints(
+    mc_control::MCController & ctl,
+    const mc_rbdyn::Robot & robot,
+    const std::vector<mc_rtc::Configuration> & constraints,
+    const std::map<std::string, mc_rtc::Configuration> & tasks)
+: ctl_(ctl), robot_(robot)
+{
+  auto rName = robot.name();
+  auto ctlName = ctl.name_;
+  for(const auto & cstr : constraints)
+  {
+    if(static_cast<std::string>(cstr("type")) == "dynamics")
+    {
+      mc_rtc::log::info("[{}] Creating dynamics constraint for robot {}", ctlName, rName);
+      dynamicsConstraint_ = mc_solver::ConstraintSetLoader::load<mc_solver::DynamicsConstraint>(ctl.solver(), cstr);
+    }
+    else if(static_cast<std::string>(cstr("type")) == "kinematics")
+    {
+      mc_rtc::log::info("[{}] Creating kinematics constraint for robot {}", ctlName, rName);
+      kinematicsConstraint_ = mc_solver::ConstraintSetLoader::load<mc_solver::KinematicsConstraint>(ctl.solver(), cstr);
+    }
+    else if(static_cast<std::string>(cstr("type")) == "collisions")
+    {
+      mc_rtc::log::info("[{}] Creating collision constraint for robot {}", ctlName, rName);
+      selfCollisionConstraint_ =
+          mc_solver::ConstraintSetLoader::load<mc_solver::CollisionsConstraint>(ctl.solver(), cstr);
+    }
+    else if(static_cast<std::string>(cstr("type")) == "compoundJoint")
+    {
+      mc_rtc::log::info("[{}] Creating compoundJoint constraint for robot {}", ctlName, rName);
+      compoundJointConstraint_ =
+          mc_solver::ConstraintSetLoader::load<mc_solver::CompoundJointConstraint>(ctl.solver(), cstr);
+    }
+  }
+  // XXX: make it configurable here
+  mc_rtc::log::info("[{}] Creating posture task for robot {}", ctlName, rName);
+  postureTask_ = std::make_shared<mc_tasks::PostureTask>(ctl.solver(), robot_.robotIndex(), 10.0, 5.0);
+  if(tasks.count("posture") > 0) { postureTask_->load(ctl.solver(), tasks.at("posture")); }
 }
 
 MCController::MCController(std::shared_ptr<mc_rbdyn::RobotModule> robot, double dt, ControllerParameters params)
@@ -194,15 +235,8 @@ MCController::MCController(const std::vector<std::shared_ptr<mc_rbdyn::RobotModu
                                            }
                                          }));
   }
-  /* Initialize constraints and tasks */
-  contactConstraint.reset(new mc_solver::ContactConstraint(dt));
-  std::array<double, 3> damper{0.1, 0.01, 0.5};
-  dynamicsConstraint.reset(new mc_solver::DynamicsConstraint(robots(), 0, dt, damper, 0.5));
-  kinematicsConstraint.reset(new mc_solver::KinematicsConstraint(robots(), 0, dt, damper, 0.5));
-  selfCollisionConstraint.reset(new mc_solver::CollisionsConstraint(robots(), 0, 0, dt));
-  selfCollisionConstraint->addCollisions(solver(), robot_modules[0]->minimalSelfCollisions());
-  compoundJointConstraint.reset(new mc_solver::CompoundJointConstraint(robots(), 0, timeStep));
-  postureTask = std::make_shared<mc_tasks::PostureTask>(solver(), 0, 10.0, 5.0);
+
+  auto config_robots = config("robots", mc_rtc::Configuration{});
   /** Load additional robots from the configuration */
   {
     auto init_robot = [&](const std::string & robotName, const mc_rtc::Configuration & config)
@@ -229,7 +263,6 @@ MCController::MCController(const std::vector<std::shared_ptr<mc_rbdyn::RobotModu
                               fmt::format("robots/{}/init_pos", robot().name()));
       init_robot(robot().name(), config);
     }
-    auto config_robots = config("robots", mc_rtc::Configuration{});
     auto config_robots_keys = config_robots.keys();
     for(const auto & rname : config_robots_keys)
     {
@@ -274,6 +307,44 @@ MCController::MCController(const std::vector<std::shared_ptr<mc_rbdyn::RobotModu
     mc_rtc::log::info("Robots loaded in controller:");
     for(const auto & r : robots()) { mc_rtc::log::info("- {}", r.name()); }
   }
+
+  {
+    /**
+     * Load per-robot default tasks and constraints
+     */
+    auto init_robot_constraints = [&, this](const mc_rbdyn::Robot & robot)
+    {
+      const auto & rName = robot.name();
+
+      mc_rtc::log::info("[{}] Adding default constraints and tasks to robot {}", name_, robot.name());
+
+      // Merging global configuration with the new one for this robot
+      auto mergedConfig = mc_rtc::Configuration{};
+      mergedConfig.array("constraints");
+      mergedConfig.add("tasks", mc_rtc::Configuration{});
+      if(robot.name() == this->robot().name())
+      { // main robot constraints
+        if(auto c = config_.find("constraints")) { mergedConfig("constraints").load(*c); }
+      }
+      if(auto robotNameConfig = config_.find(robot.name()))
+      {
+        mergedConfig("constraints").load((*robotNameConfig)("constraints", mc_rtc::Configuration{}));
+        mergedConfig("tasks").add("posture", robotNameConfig.value()("posture", mc_rtc::Configuration{}));
+        mergedConfig("tasks").load((*robotNameConfig)("tasks", mc_rtc::Configuration{}));
+      }
+
+      mc_rtc::log::info("Merged config:\n{}", mergedConfig.dump(true, true));
+
+      robotTasksAndConstraints_.emplace(
+          rName, RobotsTasksAndConstraints(*this, robot, mergedConfig("constraints"), mergedConfig("tasks")));
+    };
+
+    for(const auto & robot : robots()) { init_robot_constraints(robot); }
+  }
+
+  /* Initialize constraints */
+  contactConstraint.reset(new mc_solver::ContactConstraint(dt));
+
   /** Load global constraints (robots' kinematics/dynamics constraints and contact constraint */
   {
     auto config_constraints = config("constraints", std::vector<mc_rtc::Configuration>{});
@@ -728,7 +799,7 @@ void MCController::reset(const ControllerResetData & reset_data)
 
   robot().mbc().zero(robot().mb());
   robot().mbc().q = reset_data.q;
-  postureTask->posture(reset_data.q);
+  postureTask().posture(reset_data.q);
   robot().forwardKinematics();
   robot().forwardVelocity();
   updateContacts();

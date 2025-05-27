@@ -19,13 +19,13 @@ MCCoMController::MCCoMController(std::shared_ptr<mc_rbdyn::RobotModule> robot_mo
 : MCController(robot_module, dt, backend)
 {
   qpsolver->addConstraintSet(contactConstraint);
-  qpsolver->addConstraintSet(selfCollisionConstraint);
-  qpsolver->addConstraintSet(*compoundJointConstraint);
-  qpsolver->addTask(postureTask);
+  qpsolver->addConstraintSet(selfCollisionConstraint());
+  qpsolver->addConstraintSet(compoundJointConstraint());
+  qpsolver->addTask(&postureTask());
 
   comTask.reset(new mc_tasks::CoMTask(robots(), robots().robotIndex()));
-  postureTask->stiffness(1);
-  postureTask->weight(1);
+  postureTask().stiffness(1);
+  postureTask().weight(1);
   comTask->weight(1000);
 
   if(robot().hasSurface("LFullSole") && robot().hasSurface("RFullSole"))
@@ -59,7 +59,7 @@ void MCCoMController::reset(const ControllerResetData & reset_data)
   MCController::reset(reset_data);
   comTask->reset();
   solver().addTask(comTask);
-  qpsolver->addConstraintSet(dynamicsConstraint);
+  qpsolver->addConstraintSet(dynamicsConstraint());
   for(const auto & surface : surfaces_) { addContact(Contact{env().name(), robot().name(), "AllGround", surface}); }
 }
 

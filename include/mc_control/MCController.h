@@ -339,6 +339,28 @@ public:
   /** Non-const variant of \ref mc_controller_qpsolver_const_doc "solver()" */
   inline mc_solver::QPSolver & solver() noexcept { return *qpsolver; }
 
+  inline mc_solver::DynamicsConstraint & dynamicsConstraint()
+  {
+    return *(robotTasksAndConstraints_.at(robot().name()).dynamicsConstraint());
+  }
+
+  inline mc_solver::DynamicsConstraint & kinematicsConstraint()
+  {
+    return *(robotTasksAndConstraints_.at(robot().name()).dynamicsConstraint());
+  }
+
+  mc_solver::CompoundJointConstraint & compoundJointConstraint()
+  {
+    return *(robotTasksAndConstraints_.at(robot().name()).compoundJointConstraint());
+  }
+
+  mc_solver::CollisionsConstraint & selfCollisionConstraint()
+  {
+    return *(robotTasksAndConstraints_.at(robot().name()).selfCollisionConstraint());
+  }
+
+  mc_tasks::PostureTask & postureTask() { return *(robotTasksAndConstraints_.at(robot().name()).postureTask()); }
+
   /** Returns mc_rtc::Logger instance */
   inline mc_rtc::Logger & logger() noexcept { return *logger_; }
 
@@ -692,18 +714,91 @@ protected:
 public:
   /** Controller timestep */
   const double timeStep;
-  /** Contact constraint for the main robot */
-  mc_rtc::unique_ptr<mc_solver::ContactConstraint> contactConstraint;
-  /** Dynamics constraints for the main robot */
-  mc_rtc::unique_ptr<mc_solver::DynamicsConstraint> dynamicsConstraint;
-  /** Kinematics constraints for the main robot */
-  mc_rtc::unique_ptr<mc_solver::KinematicsConstraint> kinematicsConstraint;
-  /** Self collisions constraint for the main robot */
-  mc_rtc::unique_ptr<mc_solver::CollisionsConstraint> selfCollisionConstraint;
-  /** Compound joint constraint for the main robot */
-  mc_rtc::unique_ptr<mc_solver::CompoundJointConstraint> compoundJointConstraint;
-  /** Posture task for the main robot */
-  std::shared_ptr<mc_tasks::PostureTask> postureTask;
+
+  /**
+   * Stores default robot tasks and constraints that are always active
+   *
+   * Only the postureTask is created by default as it is required for the QP problem to be valid. Other tasks and
+   * constraints are loaded from configuration as needed.
+   */
+  struct RobotsTasksAndConstraints
+  {
+    RobotsTasksAndConstraints(mc_control::MCController & ctl, const mc_rbdyn::Robot & robot)
+    : RobotsTasksAndConstraints(ctl, robot, mc_rtc::Configuration{}, mc_rtc::Configuration{})
+    {
+    }
+
+    RobotsTasksAndConstraints(mc_control::MCController & ctl,
+                              const mc_rbdyn::Robot & robot,
+                              const std::vector<mc_rtc::Configuration> & constraints,
+                              const std::map<std::string, mc_rtc::Configuration> & tasks);
+
+    inline std::shared_ptr<mc_solver::DynamicsConstraint> dynamicsConstraint()
+    {
+      if(!dynamicsConstraint_)
+      {
+        const auto & robots = ctl_.robots();
+        dynamicsConstraint_ =
+            std::make_shared<mc_solver::DynamicsConstraint>(robots, robot_.robotIndex(), ctl_.timeStep);
+      }
+      return dynamicsConstraint_;
+    }
+
+    inline std::shared_ptr<mc_solver::KinematicsConstraint> kinematicsConstraint()
+    {
+      if(!kinematicsConstraint_)
+      {
+        const auto & robots = ctl_.robots();
+        kinematicsConstraint_ =
+            std::make_shared<mc_solver::KinematicsConstraint>(robots, robot_.robotIndex(), (double)ctl_.timeStep);
+      }
+      return kinematicsConstraint_;
+    }
+
+    inline std::shared_ptr<mc_solver::CollisionsConstraint> selfCollisionConstraint()
+    {
+      if(!selfCollisionConstraint_)
+      {
+        selfCollisionConstraint_ = std::make_shared<mc_solver::CollisionsConstraint>(
+            ctl_.robots(), robot_.robotIndex(), robot_.robotIndex(), ctl_.timeStep);
+      }
+      return selfCollisionConstraint_;
+    }
+
+    inline std::shared_ptr<mc_solver::CompoundJointConstraint> compoundJointConstraint()
+    {
+      if(!compoundJointConstraint_)
+      {
+        compoundJointConstraint_ =
+            std::make_shared<mc_solver::CompoundJointConstraint>(ctl_.robots(), robot_.robotIndex(), ctl_.timeStep);
+      }
+      return compoundJointConstraint_;
+    }
+
+    inline std::shared_ptr<mc_tasks::PostureTask> postureTask() { return postureTask_; }
+
+  protected:
+    mc_control::MCController & ctl_;
+    const mc_rbdyn::Robot & robot_;
+
+    /** Dynamics constraints */
+    std::shared_ptr<mc_solver::DynamicsConstraint> dynamicsConstraint_ = nullptr;
+    /** Kinematics constraints */
+    std::shared_ptr<mc_solver::KinematicsConstraint> kinematicsConstraint_ = nullptr;
+    /** Self collisions constraint */
+    std::shared_ptr<mc_solver::CollisionsConstraint> selfCollisionConstraint_ = nullptr;
+    /** Compound joint constraint */
+    std::shared_ptr<mc_solver::CompoundJointConstraint> compoundJointConstraint_ = nullptr;
+    /** Posture task */
+    std::shared_ptr<mc_tasks::PostureTask> postureTask_ = nullptr;
+  };
+
+  /** Store tasks and constraints that are always active for a given robot (dynamics, kinematics, postureTask, etc) */
+  std::map<std::string, RobotsTasksAndConstraints> robotTasksAndConstraints_;
+
+  /** Contact constraint between robots */
+  mc_rtc::unique_ptr<mc_solver::ContactConstraint> contactConstraint = nullptr;
+
   /* Controller's name */
   const std::string name_;
   /** Stores the loading location provided by the loader via \ref set_loading_location */

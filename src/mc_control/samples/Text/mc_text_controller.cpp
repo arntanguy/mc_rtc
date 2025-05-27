@@ -35,9 +35,9 @@ void MCTextController::reset(const mc_control::ControllerResetData & data)
     constraints_.push_back(mc_solver::ConstraintSetLoader::load(solver(), c));
     solver().addConstraintSet(*constraints_.back());
   }
-  postureTask->stiffness(2.0);
-  postureTask->weight(10.0);
-  solver().addTask(postureTask);
+  postureTask().stiffness(2.0);
+  postureTask().weight(10.0);
+  solver().addTask(&postureTask());
   for(const auto & t : config_("tasks"))
   {
     tasks_.push_back(mc_tasks::MetaTaskLoader::load(solver(), t));
