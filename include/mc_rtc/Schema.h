@@ -23,6 +23,7 @@ struct Choices
 {
   Choices() = default;
   Choices(const std::vector<std::string> & choices) : choices(choices) {}
+  Choices(std::initializer_list<std::string> choices) : choices(choices) {}
   std::vector<std::string> choices;
 };
 

@@ -11,6 +11,7 @@
 #include <mc_rbdyn/ForceSensor.h>
 #include <mc_rbdyn/JointSensor.h>
 #include <mc_rbdyn/Mimic.h>
+#include <mc_rbdyn/MuJoCo.h>
 #include <mc_rbdyn/RobotConverterConfig.h>
 #include <mc_rbdyn/Springs.h>
 #include <mc_rbdyn/api.h>
@@ -26,6 +27,12 @@
 #include <array>
 #include <map>
 #include <vector>
+
+namespace tinyxml2
+{
+struct XMLElement;
+struct XMLDocument;
+} // namespace tinyxml2
 
 /* This is an interface designed to provide additionnal information about a robot */
 
@@ -274,6 +281,8 @@ struct MC_RBDYN_DLLAPI RobotModule
    * - Create a default stance
    */
   void init(const rbd::parsers::ParserResult & res);
+
+  tinyxml2::XMLElement * toMCJF(tinyxml2::XMLDocument & doc) const;
 
   /** Returns the robot's bounds obtained from parsing a urdf
    *
@@ -627,6 +636,8 @@ public:
   DevicePtrVector _devices;
   /** \see frames() */
   std::vector<FrameDescription> _frames;
+  /** MuJoCo-specific metadata used for conversion to MCJF */
+  mc_rbdyn::mujoco::MuJoCoMetadata mujocoMetadata;
 };
 
 typedef std::shared_ptr<RobotModule> RobotModulePtr;
