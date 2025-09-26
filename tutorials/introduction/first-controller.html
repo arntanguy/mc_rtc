@@ -13,275 +13,379 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/mc_rtc/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/mc_rtc/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/mc_rtc/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/mc_rtc/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="/mc_rtc/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+
+
+
+
+<link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
 
     <title>Tutorials - Your first controller with mc_rtc - mc_rtc</title>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/mc_rtc/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/mc_rtc/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/mc_rtc/assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/mc_rtc/assets/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/mc_rtc/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.0.0/build.css" integrity="sha256-iPUhChwurLRCrDCM1+2a2LDe9pfW6Je29o/oA5VPr28=" crossorigin="anonymous" />
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-
-    
-
-    
-
-    <link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
   </head>
 
   <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light sticky-top" role="navigation">
-      <a class="navbar-brand" href="/mc_rtc/index.html"><img src="/mc_rtc/assets/logo.png" alt="logo" width="30" height="30"/> mc_rtc</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <div class="navbar-nav mr-auto">
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/interfaces.html">Interfaces</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/robots.html">Robots</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link active" href="/mc_rtc/tutorials.html">Tutorials</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/doxygen.html">API documentation</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/json.html">JSON/YAML documentation</a>
-          
-          
-        </div>
-        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-      </div>
-    </header>
+  <a class="navbar-brand" href="/mc_rtc/index.html"><img src="/mc_rtc/assets/logo.png" alt="logo" width="30" height="30"/> mc_rtc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class="navbar-nav mr-auto">
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/interfaces.html">Interfaces</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/robots.html">Robots</a>
+      
+        
+        
+        <a class="nav-item nav-link active" href="/mc_rtc/tutorials.html">Tutorials</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/doxygen.html">API documentation</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/json.html">JSON/YAML documentation</a>
+      
+      <a class="nav-item nav-link" href="https://mc-rtc-demo.netlify.app/" target="blank_">Online demonstration</a>
+    </div>
+    
+      
+      
+      
+      EN
+      
+      
+        &nbsp;|&nbsp;
+      
+    
+      
+      
+      
+        <a href="/mc_rtc/jp/tutorials/introduction/first-controller.html">
+      
+      JP
+      
+        </a>
+      
+      
+        &nbsp;&nbsp;&nbsp;
+      
+    
+    <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a>
+  </div>
+</header>
+
 
     <div class="container-fluid">
       <div class="row">
-      <div class="col">
-        <ul>
-          
-          <li>Introduction</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/installation-guide.html">Installation guide</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/configuration.html">Configuring mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/running-a-controller.html">Running a controller</a></li>
-              
-            
-              
-              <li><strong>Your first controller with mc_rtc</strong></li>
-                
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/com-controller.html">Controlling the CoM</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/ef-controller.html">Controlling an end-effector (and loading)</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Multi-robot controller</a></li>
-              
-            
-          </ul>
-          
-          <li>Framework usage</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html"><code>mc_rtc::Configuration</code> general purpose configuration</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/logging.html">Logging data</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/console-logging.html">Printing information to the screen</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/gui.html">Graphical User Interface (GUI)</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/live-plotting.html">Display plots live from the controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/ros.html">ROS integration</a></li>
-              
-            
-          </ul>
-          
-          <li>Framework tools</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_utils.html">Log manipulation</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_ui.html">Log plotting</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Replay visualization</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_surfaces_visualization.html">Visualizing surfaces</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_convex_visualization.html">Visualizing convexes</a></li>
-              
-            
-          </ul>
-          
-          <li>Control recipes</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm.html">Using the FSM facilities</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/derived-fsm.html">Deriving the FSM controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/observers.html">Using the observers pipeline</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/speed-constraint.html">Constraint the speed of a body</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/moving-a-contact.html">Moving a contact</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/contact-dof.html">Change the DoF constraints on a contact</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/joint-select.html">Select specific joints for a task</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/dim-weight.html">Affect different weight to different axis in the task space</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/joint-stiffness.html">Joints Stiffness</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/com-constraint.html">Constraining the accessible region of the CoM</a></li>
-              
-            
-          </ul>
-          
-          <li>Advanced topics</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-interface.html">Implement a new mc_rtc interface</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-environment.html">Environment creation for mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
-              
-            
-          </ul>
-          
-        </ul>
+      <div class="col col-lg-3">
+        <div class="sticky-top sticky-toc">
+          <div class="accordion" id="accordionTutorials">
+            <div class="card">
+              <div class="card-header" id="headingOtherTutorials">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOtherTutorials" aria-expanded="true" aria-controls="collapseOtherTutorials">
+                  Other tutorials
+                </button>
+              </div>
+              <div id="collapseOtherTutorials" class="collapse" arial-labelledby="headingOtherTutorials" data-parent="#accordionTutorials">
+                <div class="card-body">
+                  <ul>
+                    
+                    <li>Introduction</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/installation-guide.html">Installation guide</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/configuration.html">Configuring mc_rtc and its components</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/running-a-controller.html">Running a controller</a></li>
+                        
+                      
+                        
+                        <li><strong>Your first controller with mc_rtc</strong></li>
+                          
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/com-controller.html">Controlling the CoM</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/ef-controller.html">Controlling an end-effector (and loading)</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Multi-robot controller</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Framework usage</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html"><code>mc_rtc::Configuration</code> general purpose configuration</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/logging.html">Logging data</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/console-logging.html">Printing information to the screen</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/gui.html">Graphical User Interface (GUI)</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/live-plotting.html">Display plots live from the controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/ros.html">ROS integration</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/global-plugins.html">Using global plugins</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/schema.html">Schema structures integrated to the framework</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Framework tools</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_rtc_ticker-and-replay.html">mc_rtc_ticker and the Replay plugin</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_utils.html">Log manipulation</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_ui.html">Log plotting</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Replay visualization</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_surfaces_visualization.html">Visualizing surfaces</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_convex_visualization.html">Visualizing convexes</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Control recipes</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm.html">Using the FSM facilities</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/derived-fsm.html">Deriving the FSM controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/observers.html">State Observation Pipelines</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/speed-constraint.html">Constraint the speed of a body</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/moving-a-contact.html">Moving a contact</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/contact-dof.html">Change the DoF constraints on a contact</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/joint-select.html">Select specific joints for a task</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/dim-weight.html">Affect different weight to different axis in the task space</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/joint-stiffness.html">Joints Stiffness</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/com-constraint.html">Constraining the accessible region of the CoM</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Samples</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/samples/list-of-samples.html">Available sample controllers</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/samples/sample-admittance.html">Admittance sample controller</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Advanced topics</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-plugin.html">Implement a new plugin for mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-interface.html">Implement a new mc_rtc interface</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-environment.html">Environment creation for mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/support-mc-rtc-build-static.html">Supporting MC_RTC_BUILD_STATIC in your code</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
+                        
+                      
+                    </ul>
+                    
+                  </ul>
+                </div>
+              </div>
+              
+                <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#creating-and-running-the-controller-skeleton">Creating and running the controller skeleton</a></li>
+<li class="toc-entry toc-h3"><a href="#understanding-the-skeleton-code-step-by-step">Understanding the skeleton code step-by-step</a></li>
+<li class="toc-entry toc-h3"><a href="#shaking-the-head-left-and-right">Shaking the head left and right</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#find-out-available-joints-in-a-robot">Find out available joints in a robot</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-9">
+      <div class="col-9" id="tutorial-content">
+        
         <h1>Your first controller with mc_rtc</h1>
+        
 
         <p>The goal of this tutorial is to show you how to create a new controller for mc_rtc. We will use the JVRC1 robot in our example and we will simply try to shake the head left and right</p>
 
-<h3>Creating and running the controller skeleton</h3>
+<h3 id="creating-and-running-the-controller-skeleton">Creating and running the controller skeleton</h3>
 
-<p><em>Note:</em> in mc_rtc, every controller derives from the <code>MCController</code> class. To write a simple controller you can also derive from it and write the required functionnality. This is what we will do in these tutorials. However, for more complex controllers we advise you to use the <a href="/mc_rtc/tutorials/recipes/fsm.html">FSM facilties</a></p>
 
-<ul class="nav nav-tabs" id="createTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="cppCreateTab" data-toggle="tab" href="#cppCreateTabContent" role="tab" aria-controls="cppCreateTabContent" aria-selected="true">C++</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pythonCreateTab" data-toggle="tab" href="#pythonCreateTabContent" role="tab" aria-controls="pythonCreateTabContent" aria-selected="false">Python</a>
-  </li>
+<p><em>Note:</em> in mc_rtc, every controller derives from the <code>MCController</code> class. To write a simple controller you can also derive from it and write the required functionnality. This is what we will do in these tutorials. However, for more complex controllers we advise you to use the <a href="/mc_rtc/tutorials/recipes/fsm.html">FSM facilities</a></p>
+
+<div class="no_toc_section">
+
+<ul class="nav nav-tabs" id="make_new_controllerTab" role="tablist">
+  
+    <li class="nav-item">
+      
+      
+      <a class="nav-link active" id="make-new-controllerc-rawTab" data-toggle="tab" href="#make-new-controllerc-rawTabContent" role="tab" aria-controls="make-new-controllerc-rawTabContent" aria-selected="true">C++</a>
+    </li>
+  
+    <li class="nav-item">
+      
+      
+      <a class="nav-link" id="make-new-controllerpythonrawTab" data-toggle="tab" href="#make-new-controllerpythonrawTabContent" role="tab" aria-controls="make-new-controllerpythonrawTabContent" aria-selected="false">Python</a>
+    </li>
+  
+    <li class="nav-item">
+      
+      
+      <a class="nav-link" id="make-new-controllergithubrawTab" data-toggle="tab" href="#make-new-controllergithubrawTabContent" role="tab" aria-controls="make-new-controllergithubrawTabContent" aria-selected="false">GitHub</a>
+    </li>
+  
 </ul>
-<div class="tab-content" id="interfaceTabContent">
-  <div class="tab-pane show active" id="cppCreateTabContent" role="tabpanel" arial-labelledby="cppCreateTab">
-    <div class="card bg-light">
-      <div class="card-body">
-        <p>We will use <code>mc_rtc_new_controller</code> provided by mc_rtc to setup a new controller project:</p>
+<div class="tab-content" id="make_new_controllerTabContent">
+  
+    
+    
+    
+    
+    <div class="tab-pane show active" id="make-new-controllerc-rawTabContent" role="tabpanel" arial-labelledby="make-new-controllerc-rawTab">
+      
+
+<div class="card bg-light card-source">
+  <div class="card-body">
+
+  <p>We will use <code>mc_rtc_new_controller</code> provided by mc_rtc to setup a new controller project:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mc_rtc_new_controller <span class="nt">--help</span>
 usage: mc_rtc_new_controller <span class="o">[</span><span class="nt">-h</span><span class="o">]</span>
@@ -306,14 +410,14 @@ optional arguments:
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mc_rtc_new_controller my_first_controller MyFirstController</code></pre></figure>
 
-<p>Going into the newly create my_first_controller folder we can see some files have been created:</p>
+<p>Going into the newly created <code>my_first_controller</code> folder we can see some files have been automatically generated:</p>
 
 <dl class="row">
   <dt class="col-3">CMakeLists.txt</dt>
   <dd class="col-9">A minimal CMake file to build your controller</dd>
 
   <dt class="col-3">etc/MyFirstController.yaml</dt>
-  <dd class="col-9">Your contorller configuration file see this <a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html">tutorial</a> for more details</dd>
+  <dd class="col-9">Your controller configuration file see this <a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html">tutorial</a> for more details</dd>
 
   <dt class="col-3">src/CMakeLists.txt</dt>
   <dd class="col-9">Describe the source files required to build your controller</dd>
@@ -322,7 +426,7 @@ optional arguments:
   <dd class="col-9">Declaration to make sure your controller will be loadable on all platforms</dd>
 
   <dt class="col-3">src/MyFirstController.h</dt>
-  <dd class="col-9">Declare your controller class. It must inherits from <code>mc_control::Controller</code> and override at least the run function and the reset function</dd>
+  <dd class="col-9">Declare your controller class. It must inherits from mc_control::Controller and override at least the run function and the reset function</dd>
 
   <dt class="col-3">src/MyFirstController.cpp</dt>
   <dd class="col-9">Implement your controller. We will go over this in more details in the next sections</dd>
@@ -352,13 +456,23 @@ optional arguments:
 
 <p>Then run your controller as explained in the previous section. Congratulations, you just built and and ran your first controller!</p>
 
-      </div>
-    </div>
+  
   </div>
-  <div class="tab-pane" id="pythonCreateTabContent" role="tabpanel" arial-labelledby="pythonCreateTab">
-    <div class="card bg-light">
-      <div class="card-body">
-        <p>We will start by creating a new Python package:</p>
+</div>
+
+    </div>
+  
+    
+    
+    
+    
+    <div class="tab-pane" id="make-new-controllerpythonrawTabContent" role="tabpanel" arial-labelledby="make-new-controllerpythonrawTab">
+      
+
+<div class="card bg-light card-source">
+  <div class="card-body">
+
+  <p>We will start by creating a new Python package:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> my_first_controller
 <span class="nv">$ </span><span class="nb">touch </span>my_first_controller/__init__.py</code></pre></figure>
@@ -384,7 +498,6 @@ optional arguments:
 15
 16
 17
-18
 </pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">mc_control</span>
 <span class="kn">import</span> <span class="nn">mc_rbdyn</span>
 <span class="kn">import</span> <span class="nn">mc_rtc</span>
@@ -394,7 +507,6 @@ optional arguments:
         <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
         <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">contactConstraint</span><span class="p">)</span>
         <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">setContacts</span><span class="p">([])</span>
     <span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">True</span>
     <span class="k">def</span> <span class="nf">reset_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
@@ -418,9 +530,19 @@ optional arguments:
   </span><span class="nl">"Enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Python#my_first_controller.MyFirstController"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p><em>Note: if you have enforced Python 2 or Python 3 or if you have installed both then you should explicitly choose <code>Python2</code> or <code>Python3</code>.</em></p>
+<p><em>Note: if you have enforced Python 2 or Python 3 or if you have installed both then you should explicitly choose <code>Python2</code> or <code>Python3</code>. E.g for Python3 use:</em></p>
 
-<p>For this to work, we need to make sure the <code>my_first_controller</code> folder is on the Python path. In fact, given this configuration, mc_rtc will create your controller this way:</p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"MainRobot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JVRC1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Python3#my_first_controller.MyFirstController"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>For this to work, we need to make sure the <code>my_first_controller</code> folder is on the Python path.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">"/path/to/my_first_controller:</span><span class="nv">$PYTHONPATH</span><span class="s2">"</span></code></pre></figure>
+
+
+<p>In fact, given this configuration, mc_rtc will create your controller this way:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">my_first_controller</span> <span class="kn">import</span> <span class="n">MyFirstController</span>
 <span class="n">controller</span> <span class="o">=</span> <span class="n">MyFirstController</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">rm</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
@@ -434,12 +556,37 @@ optional arguments:
 
 <p>A key difference between the C++ controller and the Python controller is that the C++ controller let you bypass the call to <code>mc_control::MCController::run()</code> and <code>mc_control::MCController::reset()</code> functions if you like. Whereas in Python, <code>run_callback(self)</code> and <code>reset_callback(self, data)</code> will always be called <strong>after</strong> its C++ counterpart.</p>
 
-      </div>
-    </div>
+  
   </div>
 </div>
 
-<h3>Understanding the skeleton code step-by-step</h3>
+    </div>
+  
+    
+    
+    
+    
+    <div class="tab-pane" id="make-new-controllergithubrawTabContent" role="tabpanel" arial-labelledby="make-new-controllergithubrawTab">
+      
+
+<div class="card bg-light card-source">
+  <div class="card-body">
+
+  <p>Use the <a href="https://github.com/mc-rtc/new-controller">mc-rtc/new-controller</a> template project. This is equivalent to using the <code>mc_rtc_new_controller</code> tool with extra goodies.</p>
+
+  
+  </div>
+</div>
+
+    </div>
+  
+</div>
+
+
+</div>
+
+<h3 id="understanding-the-skeleton-code-step-by-step">Understanding the skeleton code step-by-step</h3>
+
 
 <p>Let's first have a look at the constructor:</p>
 
@@ -462,37 +609,41 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="constructorc-cppTabContent" role="tabpanel" arial-labelledby="constructorc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">solver</span><span class="p">().</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="n">contactConstraint</span><span class="p">);</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">solver</span><span class="p">().</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="n">contactConstraint</span><span class="p">);</span>
 <span class="n">solver</span><span class="p">().</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="n">kinematicsConstraint</span><span class="p">);</span>
-<span class="n">solver</span><span class="p">().</span><span class="n">addTask</span><span class="p">(</span><span class="n">postureTask</span><span class="p">);</span>
-<span class="n">solver</span><span class="p">().</span><span class="n">setContacts</span><span class="p">({{}});</span></code></pre></figure>
+<span class="n">solver</span><span class="p">().</span><span class="n">addTask</span><span class="p">(</span><span class="n">postureTask</span><span class="p">);</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="constructorpythonpythonTabContent" role="tabpanel" arial-labelledby="constructorpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">kinematicsConstraint</span><span class="p">)</span>
 <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addConstraintSet</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">contactConstraint</span><span class="p">)</span>
-<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">)</span>
-<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">setContacts</span><span class="p">([])</span></code></pre></figure>
+<span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">)</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -529,35 +680,41 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="resetc-cppTabContent" role="tabpanel" arial-labelledby="resetc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">reset</span><span class="p">(</span><span class="k">const</span> <span class="n">mc_control</span><span class="o">::</span><span class="n">ControllerResetData</span> <span class="o">&amp;</span> <span class="n">reset_data</span><span class="p">)</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">reset</span><span class="p">(</span><span class="k">const</span> <span class="n">mc_control</span><span class="o">::</span><span class="n">ControllerResetData</span> <span class="o">&amp;</span> <span class="n">reset_data</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">mc_control</span><span class="o">::</span><span class="n">MCController</span><span class="o">::</span><span class="n">reset</span><span class="p">(</span><span class="n">reset_data</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="resetpythonpythonTabContent" role="tabpanel" arial-labelledby="resetpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">reset_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">reset_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="k">pass</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -587,35 +744,41 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="runc-cppTabContent" role="tabpanel" arial-labelledby="runc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">mc_control</span><span class="o">::</span><span class="n">MCController</span><span class="o">::</span><span class="n">run</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="runpythonpythonTabContent" role="tabpanel" arial-labelledby="runpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">True</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -645,35 +808,41 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="createcontrollerc-cppTabContent" role="tabpanel" arial-labelledby="createcontrollerc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Should not be in any namespace</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Should not be in any namespace</span>
 <span class="n">CONTROLLER_CONSTRUCTOR</span><span class="p">(</span><span class="s">"MyFirstController"</span><span class="p">,</span> <span class="n">MyFirstController</span><span class="p">)</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="createcontrollerpythonpythonTabContent" role="tabpanel" arial-labelledby="createcontrollerpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">@</span><span class="nb">staticmethod</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">@</span><span class="nb">staticmethod</span>
 <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
     <span class="n">env</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"env"</span><span class="p">,</span> <span class="n">mc_rtc</span><span class="p">.</span><span class="n">MC_ENV_DESCRIPTION_PATH</span><span class="p">,</span> <span class="s">"ground"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">MyFirstController</span><span class="p">([</span><span class="n">robot</span><span class="p">,</span><span class="n">env</span><span class="p">],</span> <span class="n">dt</span><span class="p">)</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -682,7 +851,8 @@ optional arguments:
 
 <p>It's unlikely you would need to modify this but it's vital not to forget it so we are mentioning it here.</p>
 
-<h3>Shaking the head left and right</h3>
+<h3 id="shaking-the-head-left-and-right">Shaking the head left and right</h3>
+
 
 <p>We will start by adding two properties to our controller, one will hold the joint index for the head joint we are going to move, the other will tell us in which direction we are going.</p>
 
@@ -705,35 +875,41 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="propertiesc-cppTabContent" role="tabpanel" arial-labelledby="propertiesc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Added to MyFirstController.h in the private members</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Added to MyFirstController.h in the private members</span>
 <span class="kt">int</span> <span class="n">jointIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">bool</span> <span class="n">goingLeft</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="propertiespythonpythonTabContent" role="tabpanel" arial-labelledby="propertiespythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Added inside MyFirstController __init__ method
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Added inside MyFirstController __init__ method
 </span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -761,31 +937,37 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="init-jindexc-cppTabContent" role="tabpanel" arial-labelledby="init-jindexc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">jointIndex</span> <span class="o">=</span> <span class="n">robot</span><span class="p">().</span><span class="n">jointIndexByName</span><span class="p">(</span><span class="s">"NECK_Y"</span><span class="p">);</span></code></pre></figure>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">jointIndex</span> <span class="o">=</span> <span class="n">robot</span><span class="p">().</span><span class="n">jointIndexByName</span><span class="p">(</span><span class="s">"NECK_Y"</span><span class="p">);</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="init-jindexpythonpythonTabContent" role="tabpanel" arial-labelledby="init-jindexpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">jointIndexByName</span><span class="p">(</span><span class="s">"NECK_Y"</span><span class="p">)</span></code></pre></figure>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">jointIndexByName</span><span class="p">(</span><span class="s">"NECK_Y"</span><span class="p">)</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -813,12 +995,15 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="switch-targetc-cppTabContent" role="tabpanel" arial-labelledby="switch-targetc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">switch_target</span><span class="p">()</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">switch_target</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span><span class="p">(</span><span class="n">goingLeft</span><span class="p">)</span>
   <span class="p">{</span>
@@ -831,29 +1016,32 @@ optional arguments:
   <span class="n">goingLeft</span> <span class="o">=</span> <span class="o">!</span><span class="n">goingLeft</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="switch-targetpythonpythonTabContent" role="tabpanel" arial-labelledby="switch-targetpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">switch_target</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">switch_target</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span><span class="p">:</span>
         <span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">target</span><span class="p">({</span><span class="s">"NECK_Y"</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">qu</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">]})</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">target</span><span class="p">({</span><span class="s">"NECK_Y"</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">ql</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">]})</span>
     <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">goingLeft</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -883,12 +1071,15 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="update-targetc-cppTabContent" role="tabpanel" arial-labelledby="update-targetc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">MyFirstController</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">postureTask</span><span class="o">-&gt;</span><span class="n">posture</span><span class="p">()[</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">robot</span><span class="p">().</span><span class="n">mbc</span><span class="p">().</span><span class="n">q</span><span class="p">[</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">)</span>
   <span class="p">{</span>
@@ -897,27 +1088,30 @@ optional arguments:
   <span class="k">return</span> <span class="n">mc_control</span><span class="o">::</span><span class="n">MCController</span><span class="o">::</span><span class="n">run</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="update-targetpythonpythonTabContent" role="tabpanel" arial-labelledby="update-targetpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">postureTask</span><span class="p">.</span><span class="n">posture</span><span class="p">()[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">robot</span><span class="p">().</span><span class="n">mbc</span><span class="p">.</span><span class="n">q</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">jointIndex</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
         <span class="bp">self</span><span class="p">.</span><span class="n">switch_target</span><span class="p">()</span>
     <span class="k">return</span> <span class="bp">True</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -930,7 +1124,8 @@ optional arguments:
 
 <p>The full sources for this controller are available <a href="sources/first-controller.html">here</a>.</p>
 
-<h4>Find out available joints in a robot</h4>
+<h4 id="find-out-available-joints-in-a-robot">Find out available joints in a robot</h4>
+
 
 <p>You might be tempted to try this controller with different robots but not knowing which joints are available in your robot, the following snippet will print out a list of one dof joint that can be used in the sample code interchangeably with <code>NECK_Y</code>:</p>
 
@@ -953,47 +1148,51 @@ optional arguments:
   
     
     
+    
+    
     <div class="tab-pane show active" id="show-jointspythonpythonTabContent" role="tabpanel" arial-labelledby="show-jointspythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">mc_rbdyn</span>
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">mc_rbdyn</span>
+
 <span class="c1"># Here you can change the robot module name with your own robot
 </span><span class="n">rm</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="p">.</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"JVRC1"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="s">"- {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="p">())</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">rm</span><span class="p">.</span><span class="n">mb</span><span class="p">.</span><span class="n">joints</span><span class="p">()</span> <span class="k">if</span> <span class="n">j</span><span class="p">.</span><span class="n">dof</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]))</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="show-jointsc-cppTabContent" role="tabpanel" arial-labelledby="show-jointsc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;mc_rbdyn/RobotLoader.h&gt;
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;mc_rbdyn/RobotLoader.h&gt;</span><span class="cp">
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="c1">// Here you can change the robot module name with your own robot</span>
   <span class="k">auto</span> <span class="n">rm</span> <span class="o">=</span> <span class="n">mc_rbdyn</span><span class="o">::</span><span class="n">RobotLoader</span><span class="o">::</span><span class="n">get_robot_module</span><span class="p">(</span><span class="s">"JVRC1"</span><span class="p">);</span>
   <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">j</span> <span class="o">:</span> <span class="n">rm</span><span class="o">-&gt;</span><span class="n">mb</span><span class="p">.</span><span class="n">joints</span><span class="p">())</span>
   <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">dof</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">j</span><span class="p">.</span><span class="n">isMimic</span><span class="p">())</span>
-    <span class="p">{</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"- "</span> <span class="o">&lt;&lt;</span> <span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">dof</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">j</span><span class="p">.</span><span class="n">isMimic</span><span class="p">())</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"- "</span> <span class="o">&lt;&lt;</span> <span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -1001,10 +1200,11 @@ optional arguments:
 
 
 
+
         <hr/>
         
         <div class="text-right">
-        <a href="/mc_rtc/tutorials/introduction/com-controller.html">Next tutorial: Controlling the CoM</a>
+          <a href="/mc_rtc/tutorials/introduction/com-controller.html">Next tutorial: Controlling the CoM</a>
         </div>
         
       </div>
@@ -1012,18 +1212,27 @@ optional arguments:
     </div>
 
     <div class="container-fluid">
-      <footer>
-        <hr>
-        <div class="row">
-          <div class="col-8 offset-lg-2 col-lg-6">
-            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
-          </div>
-          <div class="col-4 col-lg-2 text-right">
-            <a href="/mc_rtc/credits.html">Credits</a>
-          </div>
-        </div>
-      </footer>
+  <footer>
+    <hr>
+    <div class="row">
+      <div class="col-8 offset-lg-2 col-lg-6">
+        Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
+      </div>
+      <div class="col-4 col-lg-2 text-right">
+        <a href="/mc_rtc/credits.html">Credits</a>
+      </div>
     </div>
+  </footer>
+</div>
+
   </body>
+
+  <script type="text/javascript">
+$(document).ready(function()
+{
+  new ClipboardJS('.copy-button');
+});
+</script>
+
 
 </html>

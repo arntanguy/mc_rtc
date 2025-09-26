@@ -17,267 +17,358 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/mc_rtc/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/mc_rtc/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/mc_rtc/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/mc_rtc/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="/mc_rtc/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+
+
+
+
+<link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
 
     <title>Tutorials - Log plotting - mc_rtc</title>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/mc_rtc/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/mc_rtc/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/mc_rtc/assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/mc_rtc/assets/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/mc_rtc/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.0.0/build.css" integrity="sha256-iPUhChwurLRCrDCM1+2a2LDe9pfW6Je29o/oA5VPr28=" crossorigin="anonymous" />
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-
-    
-
-    
-
-    <link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
   </head>
 
   <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light sticky-top" role="navigation">
-      <a class="navbar-brand" href="/mc_rtc/index.html"><img src="/mc_rtc/assets/logo.png" alt="logo" width="30" height="30"/> mc_rtc</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <div class="navbar-nav mr-auto">
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/interfaces.html">Interfaces</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/robots.html">Robots</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link active" href="/mc_rtc/tutorials.html">Tutorials</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/doxygen.html">API documentation</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/json.html">JSON/YAML documentation</a>
-          
-          
-        </div>
-        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-      </div>
-    </header>
+  <a class="navbar-brand" href="/mc_rtc/index.html"><img src="/mc_rtc/assets/logo.png" alt="logo" width="30" height="30"/> mc_rtc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class="navbar-nav mr-auto">
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/interfaces.html">Interfaces</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/robots.html">Robots</a>
+      
+        
+        
+        <a class="nav-item nav-link active" href="/mc_rtc/tutorials.html">Tutorials</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/doxygen.html">API documentation</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/json.html">JSON/YAML documentation</a>
+      
+      <a class="nav-item nav-link" href="https://mc-rtc-demo.netlify.app/" target="blank_">Online demonstration</a>
+    </div>
+    
+      
+      
+      
+      EN
+      
+      
+        &nbsp;|&nbsp;
+      
+    
+      
+      
+      
+        <a href="/mc_rtc/jp/tutorials/tools/mc_log_ui.html">
+      
+      JP
+      
+        </a>
+      
+      
+        &nbsp;&nbsp;&nbsp;
+      
+    
+    <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a>
+  </div>
+</header>
+
 
     <div class="container-fluid">
       <div class="row">
-      <div class="col">
-        <ul>
-          
-          <li>Introduction</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/installation-guide.html">Installation guide</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/configuration.html">Configuring mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/running-a-controller.html">Running a controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/first-controller.html">Your first controller with mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/com-controller.html">Controlling the CoM</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/ef-controller.html">Controlling an end-effector (and loading)</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Multi-robot controller</a></li>
-              
-            
-          </ul>
-          
-          <li>Framework usage</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html"><code>mc_rtc::Configuration</code> general purpose configuration</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/logging.html">Logging data</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/console-logging.html">Printing information to the screen</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/gui.html">Graphical User Interface (GUI)</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/live-plotting.html">Display plots live from the controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/ros.html">ROS integration</a></li>
-              
-            
-          </ul>
-          
-          <li>Framework tools</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_utils.html">Log manipulation</a></li>
-              
-            
-              
-              <li><strong>Log plotting</strong></li>
-                
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Replay visualization</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_surfaces_visualization.html">Visualizing surfaces</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_convex_visualization.html">Visualizing convexes</a></li>
-              
-            
-          </ul>
-          
-          <li>Control recipes</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm.html">Using the FSM facilities</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/derived-fsm.html">Deriving the FSM controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/observers.html">Using the observers pipeline</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/speed-constraint.html">Constraint the speed of a body</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/moving-a-contact.html">Moving a contact</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/contact-dof.html">Change the DoF constraints on a contact</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/joint-select.html">Select specific joints for a task</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/dim-weight.html">Affect different weight to different axis in the task space</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/joint-stiffness.html">Joints Stiffness</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/com-constraint.html">Constraining the accessible region of the CoM</a></li>
-              
-            
-          </ul>
-          
-          <li>Advanced topics</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-interface.html">Implement a new mc_rtc interface</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-environment.html">Environment creation for mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
-              
-            
-          </ul>
-          
-        </ul>
+      <div class="col col-lg-3">
+        <div class="sticky-top sticky-toc">
+          <div class="accordion" id="accordionTutorials">
+            <div class="card">
+              <div class="card-header" id="headingOtherTutorials">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOtherTutorials" aria-expanded="true" aria-controls="collapseOtherTutorials">
+                  Other tutorials
+                </button>
+              </div>
+              <div id="collapseOtherTutorials" class="collapse" arial-labelledby="headingOtherTutorials" data-parent="#accordionTutorials">
+                <div class="card-body">
+                  <ul>
+                    
+                    <li>Introduction</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/installation-guide.html">Installation guide</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/configuration.html">Configuring mc_rtc and its components</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/running-a-controller.html">Running a controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/first-controller.html">Your first controller with mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/com-controller.html">Controlling the CoM</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/ef-controller.html">Controlling an end-effector (and loading)</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Multi-robot controller</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Framework usage</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html"><code>mc_rtc::Configuration</code> general purpose configuration</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/logging.html">Logging data</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/console-logging.html">Printing information to the screen</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/gui.html">Graphical User Interface (GUI)</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/live-plotting.html">Display plots live from the controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/ros.html">ROS integration</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/global-plugins.html">Using global plugins</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/schema.html">Schema structures integrated to the framework</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Framework tools</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_rtc_ticker-and-replay.html">mc_rtc_ticker and the Replay plugin</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_utils.html">Log manipulation</a></li>
+                        
+                      
+                        
+                        <li><strong>Log plotting</strong></li>
+                          
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Replay visualization</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_surfaces_visualization.html">Visualizing surfaces</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_convex_visualization.html">Visualizing convexes</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Control recipes</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm.html">Using the FSM facilities</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/derived-fsm.html">Deriving the FSM controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/observers.html">State Observation Pipelines</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/speed-constraint.html">Constraint the speed of a body</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/moving-a-contact.html">Moving a contact</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/contact-dof.html">Change the DoF constraints on a contact</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/joint-select.html">Select specific joints for a task</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/dim-weight.html">Affect different weight to different axis in the task space</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/joint-stiffness.html">Joints Stiffness</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/com-constraint.html">Constraining the accessible region of the CoM</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Samples</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/samples/list-of-samples.html">Available sample controllers</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/samples/sample-admittance.html">Admittance sample controller</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Advanced topics</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-plugin.html">Implement a new plugin for mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-interface.html">Implement a new mc_rtc interface</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-environment.html">Environment creation for mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/support-mc-rtc-build-static.html">Supporting MC_RTC_BUILD_STATIC in your code</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
+                        
+                      
+                    </ul>
+                    
+                  </ul>
+                </div>
+              </div>
+              
+                <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#plotting-mode">Plotting mode</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#time-plot">Time plot</a></li>
+<li class="toc-entry toc-h4"><a href="#xy-plot">X/Y plot</a></li>
+<li class="toc-entry toc-h4"><a href="#3d-plot">3D plot</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#time-range-selector-range-making-and-axis-lock">Time range selector, range making and axis lock</a></li>
+<li class="toc-entry toc-h3"><a href="#animation">Animation</a></li>
+<li class="toc-entry toc-h3"><a href="#common-plots-menu">Common plots menu</a></li>
+<li class="toc-entry toc-h3"><a href="#user-plots-menu">User plots menu</a></li>
+<li class="toc-entry toc-h3"><a href="#robot-menu">Robot menu</a></li>
+<li class="toc-entry toc-h3"><a href="#style-menu">Style menu</a></li>
+<li class="toc-entry toc-h3"><a href="#tools-menu">Tools menu</a></li>
+<li class="toc-entry toc-h3"><a href="#shortcuts">Shortcuts</a></li>
+<li class="toc-entry toc-h3"><a href="#saving-a-figure">Saving a figure</a></li>
+<li class="toc-entry toc-h3"><a href="#automated-figure-plotting">Automated figure plotting</a></li>
+<li class="toc-entry toc-h3"><a href="#loading-multiple-logs">Loading multiple logs</a></li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-9">
+      <div class="col-9" id="tutorial-content">
+        
         <h1>Log plotting</h1>
+        
 
         <p>A simple GUI is provided in mc_rtc to read the logs after an experiment
-has been performed. This tool is installed as <code class="highlighter-rouge">mc_log_ui</code></p>
+has been performed. This tool is installed as <code class="language-plaintext highlighter-rouge">mc_log_ui</code></p>
 
-<p>Provided you have obtained a log (e.g. <code class="highlighter-rouge">~/my_log.bin</code>) then you can open it in the GUI with:</p>
+<p>Provided you have obtained a log (e.g. <code class="language-plaintext highlighter-rouge">~/my_log.bin</code>) then you can open it in the GUI with:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mc_log_ui ~/my_log.bin
 </code></pre></div></div>
 
 <p>It should look like this:</p>
 
-<p><img src="img/mc_log_ui.png" class="img-fluid" alt="mc_log_ui default" /></p>
+<p><img src="/mc_rtc/assets/tutorials/tools/img/mc_log_ui.png" class="img-fluid" alt="mc_log_ui default" /></p>
 
 <p><em>Note: some menus and operations described in the next sections are only available if you have mc_rtc Python bindings</em></p>
 
@@ -287,7 +378,7 @@ has been performed. This tool is installed as <code class="highlighter-rouge">mc
 
 <h4 id="time-plot">Time plot</h4>
 
-<p>In this mode you select data that shares the same abscissa (generally time hence the name), the panels on the left and the right of the plot let you select which data to display. You can select a grouped entry (e.g. <code class="highlighter-rouge">LeftFootForceSensor</code>) or a single entry (e.g. <code class="highlighter-rouge">LeftFootForceSensor -&gt; fz</code>).</p>
+<p>In this mode you select data that shares the same abscissa (generally time hence the name), the panels on the left and the right of the plot let you select which data to display. You can select a grouped entry (e.g. <code class="language-plaintext highlighter-rouge">LeftFootForceSensor</code>) or a single entry (e.g. <code class="language-plaintext highlighter-rouge">LeftFootForceSensor -&gt; fz</code>).</p>
 
 <p>Plots can be removed by clicking the same data entry again.</p>
 
@@ -295,15 +386,15 @@ has been performed. This tool is installed as <code class="highlighter-rouge">mc
 
 <h4 id="xy-plot">X/Y plot</h4>
 
-<p>In this mode, <code class="highlighter-rouge">Add XY plots</code> buttons on the left and right of the plot will open a menu to let you select two data entries that will be plotted on the X and Y axis respectively. You can select a grouped entry if it has exactly two entries (i.e. selecting <code class="highlighter-rouge">LeftFoot -&gt; CoP</code> is the same as selecting <code class="highlighter-rouge">LeftFoot -&gt; CoP -&gt; x</code> and <code class="highlighter-rouge">LeftFoot -&gt; CoP -&gt; y</code> individually). A label can be set at this point or later in the sytle menu.</p>
+<p>In this mode, <code class="language-plaintext highlighter-rouge">Add XY plots</code> buttons on the left and right of the plot will open a menu to let you select two data entries that will be plotted on the X and Y axis respectively. You can select a grouped entry if it has exactly two entries (i.e. selecting <code class="language-plaintext highlighter-rouge">LeftFoot -&gt; CoP</code> is the same as selecting <code class="language-plaintext highlighter-rouge">LeftFoot -&gt; CoP -&gt; x</code> and <code class="language-plaintext highlighter-rouge">LeftFoot -&gt; CoP -&gt; y</code> individually). A label can be set at this point or later in the sytle menu.</p>
 
-<p>Plots can be removed by clicking the <code class="highlighter-rouge">Remove XY plot(s)</code> button on the left or right and selecting the plots to remove.</p>
+<p>Plots can be removed by clicking the <code class="language-plaintext highlighter-rouge">Remove XY plot(s)</code> button on the left or right and selecting the plots to remove.</p>
 
 <h4 id="3d-plot">3D plot</h4>
 
-<p>In this mode, an <code class="highlighter-rouge">Add 3D plot</code> button on the left will open a menu to let you select three data entries that will be plotted on the X, Y and Z axis respectively. You can select a grouped entry if it has exactly three entries (i.e. selecting <code class="highlighter-rouge">CoM</code> is the same as selecting <code class="highlighter-rouge">CoM -&gt; x</code>, <code class="highlighter-rouge">CoM -&gt; y</code> and <code class="highlighter-rouge">CoM -&gt; z</code> individually). A label can be set at this point or later in the style menu.</p>
+<p>In this mode, an <code class="language-plaintext highlighter-rouge">Add 3D plot</code> button on the left will open a menu to let you select three data entries that will be plotted on the X, Y and Z axis respectively. You can select a grouped entry if it has exactly three entries (i.e. selecting <code class="language-plaintext highlighter-rouge">CoM</code> is the same as selecting <code class="language-plaintext highlighter-rouge">CoM -&gt; x</code>, <code class="language-plaintext highlighter-rouge">CoM -&gt; y</code> and <code class="language-plaintext highlighter-rouge">CoM -&gt; z</code> individually). A label can be set at this point or later in the style menu.</p>
 
-<p>Plots can be removed by clicking the <code class="highlighter-rouge">Remove 3D plot(s)</code> button and selecting the plots to remove.</p>
+<p>Plots can be removed by clicking the <code class="language-plaintext highlighter-rouge">Remove 3D plot(s)</code> button and selecting the plots to remove.</p>
 
 <p>You can use the mouse to manipulate the view in 3D mode.</p>
 
@@ -311,19 +402,19 @@ has been performed. This tool is installed as <code class="highlighter-rouge">mc
 
 <p>The selector under the plot lets you select the time range under which you wish to examine the log. In time plot mode, it simply selects the abscissa for the graph. In X/Y plot and 3D plot modes it will act as a filter (i.e. display the selected data when the selected range is active).</p>
 
-<p>The <code class="highlighter-rouge">Make range</code> button lets you select arbitrary data to create time ranges when the data is in the log. For example, if <code class="highlighter-rouge">com_x</code> is present if <code class="highlighter-rouge">5 &lt; t &lt; 10</code> and <code class="highlighter-rouge">15 &lt; t &lt; 20</code> then it will generate <code class="highlighter-rouge">t_com_x_1</code> and <code class="highlighter-rouge">t_com_x_2</code> corresponding to these ranges. For strings (typically <code class="highlighter-rouge">Executor_*</code> from the FSM), the selection can be refined for specific values of the string (so you can typically generate ranges for specific states).</p>
+<p>The <code class="language-plaintext highlighter-rouge">Make range</code> button lets you select arbitrary data to create time ranges when the data is in the log. For example, if <code class="language-plaintext highlighter-rouge">com_x</code> is present if <code class="language-plaintext highlighter-rouge">5 &lt; t &lt; 10</code> and <code class="language-plaintext highlighter-rouge">15 &lt; t &lt; 20</code> then it will generate <code class="language-plaintext highlighter-rouge">t_com_x_1</code> and <code class="language-plaintext highlighter-rouge">t_com_x_2</code> corresponding to these ranges. For strings (typically <code class="language-plaintext highlighter-rouge">Executor_*</code> from the FSM), the selection can be refined for specific values of the string (so you can typically generate ranges for specific states).</p>
 
-<p>Finally, three buttons beside the <code class="highlighter-rouge">Make range</code> button let you lock the X axis, the left side Y axis and the right side Y axis (or Z axis in 3D mode) respectively. Otherwise, the limits adapt to the selected data. Note that the GUI will not try to align the left and the right side Y axes even when the ranges are similar.</p>
+<p>Finally, three buttons beside the <code class="language-plaintext highlighter-rouge">Make range</code> button let you lock the X axis, the left side Y axis and the right side Y axis (or Z axis in 3D mode) respectively. Otherwise, the limits adapt to the selected data. Note that the GUI will not try to align the left and the right side Y axes even when the ranges are similar.</p>
 
 <h3 id="animation">Animation</h3>
 
 <p>The three buttons below the range selector relate to the animation:</p>
 
-<p><code class="highlighter-rouge">Start animation</code> will start an animation based on the current time range selected. By default, the axes limits will adapt during the animation.</p>
+<p><code class="language-plaintext highlighter-rouge">Start animation</code> will start an animation based on the current time range selected. By default, the axes limits will adapt during the animation.</p>
 
-<p>If the animation is not running, <code class="highlighter-rouge">Lock axes</code> will lock the axes so that the whole final graph in the animation is visible. Otherwise, it will lock the axes to the current view.</p>
+<p>If the animation is not running, <code class="language-plaintext highlighter-rouge">Lock axes</code> will lock the axes so that the whole final graph in the animation is visible. Otherwise, it will lock the axes to the current view.</p>
 
-<p><code class="highlighter-rouge">Save animation</code> will export the animation to an mp4 file. Note that no progress bar appears and it could take a while to save the animation.</p>
+<p><code class="language-plaintext highlighter-rouge">Save animation</code> will export the animation to an mp4 file. Note that no progress bar appears and it could take a while to save the animation.</p>
 
 <h3 id="common-plots-menu">Common plots menu</h3>
 
@@ -333,15 +424,15 @@ has been performed. This tool is installed as <code class="highlighter-rouge">mc
 
 <p>During the development of a controller you probably plot the same graph for different iterations of your controller. To save time, you can save your data selection. This is called a “User plot”.</p>
 
-<p>To create such a plot, you must setup the plot once manually. Then go the <code class="highlighter-rouge">User plots</code> menu and select <code class="highlighter-rouge">Save current plot</code>. You will be prompted for a name. This will then create a new entry in the <code class="highlighter-rouge">User plots</code> menu with this name.</p>
+<p>To create such a plot, you must setup the plot once manually. Then go the <code class="language-plaintext highlighter-rouge">User plots</code> menu and select <code class="language-plaintext highlighter-rouge">Save current plot</code>. You will be prompted for a name. This will then create a new entry in the <code class="language-plaintext highlighter-rouge">User plots</code> menu with this name.</p>
 
-<p>After loading a new log, select this new entry in the <code class="highlighter-rouge">User plots</code> menu and it will redo the same selection and styling (it doesn’t save axis limits or abscissa selection as they are likely to change).</p>
+<p>After loading a new log, select this new entry in the <code class="language-plaintext highlighter-rouge">User plots</code> menu and it will redo the same selection and styling (it doesn’t save axis limits or abscissa selection as they are likely to change).</p>
 
-<p>Such plots are saved in a JSON format under <code class="highlighter-rouge">$HOME/.config/mc_log_ui/custom_plots.json</code>. This file can be stored in your controller repository to setup the log ui quickly on a new machine. It can also be passed to the <code class="highlighter-rouge">mc_plot_logs</code> tool (see below).</p>
+<p>Such plots are saved in a JSON format under <code class="language-plaintext highlighter-rouge">$HOME/.config/mc_log_ui/custom_plots.json</code>. This file can be stored in your controller repository to setup the log ui quickly on a new machine. It can also be passed to the <code class="language-plaintext highlighter-rouge">mc_plot_logs</code> tool (see below).</p>
 
 <h3 id="robot-menu">Robot menu</h3>
 
-<p>This menu lets you select with which robot the log was generated. The main effect is to display user-friendly names in joint-related entries (e.g. instead of <code class="highlighter-rouge">qIn_0</code> you will get <code class="highlighter-rouge">qIn_R_HIP_P</code> with JVRC1 but <code class="highlighter-rouge">qIn_RLEG_JOINT0</code> with HRP2DRC.</p>
+<p>This menu lets you select with which robot the log was generated. The main effect is to display user-friendly names in joint-related entries (e.g. instead of <code class="language-plaintext highlighter-rouge">qIn_0</code> you will get <code class="language-plaintext highlighter-rouge">qIn_R_HIP_P</code> with JVRC1 but <code class="language-plaintext highlighter-rouge">qIn_RLEG_JOINT0</code> with HRP2DRC.</p>
 
 <p>The robot selection is saved upon change and restored when you open the UI again. Unless you work with a lot of robots it is likely you will change it once.</p>
 
@@ -350,44 +441,63 @@ has been performed. This tool is installed as <code class="highlighter-rouge">mc
 <p>The style menu lets you set many styling options for your graph, it has several entries:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Graph</code>: lets you choose the line color and line style for each plot;</li>
-  <li><code class="highlighter-rouge">Grid</code>: lets you enable a grid aligned with the left and/or right axis;</li>
-  <li><code class="highlighter-rouge">Labels/Title/Fonts</code>: lets you add labels to the axes, a title to the graph and choose the police size for those;</li>
-  <li><code class="highlighter-rouge">Colors selection</code>: lets you choose which colors are picked to display curves, you can either choose an existing color set (which have a limited number of colors available) or build your own selection;</li>
-  <li><code class="highlighter-rouge">Polygons colors selection</code>: lets you choose the colors that are used when displaying string entries in time-plot mode;</li>
+  <li><code class="language-plaintext highlighter-rouge">Graph</code>: lets you choose the line color and line style for each plot;</li>
+  <li><code class="language-plaintext highlighter-rouge">Grid</code>: lets you enable a grid aligned with the left and/or right axis;</li>
+  <li><code class="language-plaintext highlighter-rouge">Labels/Title/Fonts</code>: lets you add labels to the axes, a title to the graph and choose the police size for those;</li>
+  <li><code class="language-plaintext highlighter-rouge">Colors selection</code>: lets you choose which colors are picked to display curves, you can either choose an existing color set (which have a limited number of colors available) or build your own selection;</li>
+  <li><code class="language-plaintext highlighter-rouge">Polygons colors selection</code>: lets you choose the colors that are used when displaying string entries in time-plot mode;</li>
 </ul>
 
 <p><em>Note: style options are also saved when you save a user plot</em></p>
+
+<h3 id="tools-menu">Tools menu</h3>
+
+<p>The tools menu lets you access some tools to work with the log:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Extract keys...</code> is a front-end for the <code class="language-plaintext highlighter-rouge">mc_bin_utils extract --keys</code> command introduced in the <a href="mc_log_utils.html">log manipulation tutorial</a>;</li>
+  <li><code class="language-plaintext highlighter-rouge">Dump qOut to seqplay</code> can output a file compatible with the seqplay component of <a href="https://github.com/fkanehiro/hrpsys-base">hrprys-base</a> based on the <code class="language-plaintext highlighter-rouge">qOut</code> entry in the log;</li>
+</ul>
 
 <h3 id="shortcuts">Shortcuts</h3>
 
 <p>The following keyboard shortcuts can be used within the interface:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Ctrl+T</code>: create a new tab</li>
-  <li><code class="highlighter-rouge">Ctrl+W</code>: close the current tab</li>
-  <li><code class="highlighter-rouge">Ctrl+PageDown</code>: next tab</li>
-  <li><code class="highlighter-rouge">Ctrl+PageUp</code>: previous tab</li>
-  <li><code class="highlighter-rouge">Ctrl+A</code>: Axis limits menu</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+T</code>: create a new tab</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+W</code>: close the current tab</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+PageDown</code>: next tab</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+PageUp</code>: previous tab</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+A</code>: Axis limits menu</li>
 </ul>
 
 <h3 id="saving-a-figure">Saving a figure</h3>
 
 <p>After choosing the fields you want and setting up the graph as you wish you can export by clicking the save button:</p>
 
-<p><img src="img/mc_log_ui_save.png" class="img-fluid" alt="mc_log_ui save button" /></p>
+<p><img src="/mc_rtc/assets/tutorials/tools/img/mc_log_ui_save.png" class="img-fluid" alt="mc_log_ui save button" /></p>
 
 <p>You can choose to save as a variety of formats. If you save to SVG (Scalable Vector Graphics) you can further edit the file in a vector graphics editor such as <a href="https://inkscape.org">Inkscape</a>.</p>
 
 <h3 id="automated-figure-plotting">Automated figure plotting</h3>
 
-<p>The final tool introduced here is <code class="highlighter-rouge">mc_plot_logs</code>. It expects a binary log and a JSON file describing the logs that you wish to plot (the format is the same as user plots from <code class="highlighter-rouge">mc_log_ui</code>). It will output a figure for each plot in the provided file.</p>
+<p>The final tool introduced here is <code class="language-plaintext highlighter-rouge">mc_plot_logs</code>. It expects a binary log and a JSON file describing the logs that you wish to plot (the format is the same as user plots from <code class="language-plaintext highlighter-rouge">mc_log_ui</code>). It will output a figure for each plot in the provided file.</p>
+
+<h3 id="loading-multiple-logs">Loading multiple logs</h3>
+
+<p>It might be desirable to load multiple logs at once for comparison purpose. This can be achieved by the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mc_log_ui log-1.bin log-2.bin <span class="o">[</span>...] log-N.bin
+</code></pre></div></div>
+
+<p>Or by loading the files through <code class="language-plaintext highlighter-rouge">File -&gt; Compare...</code> in the menu.</p>
+
 
 
         <hr/>
         
         <div class="text-right">
-        <a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Next tutorial: Replay visualization</a>
+          <a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Next tutorial: Replay visualization</a>
         </div>
         
       </div>
@@ -395,18 +505,27 @@ has been performed. This tool is installed as <code class="highlighter-rouge">mc
     </div>
 
     <div class="container-fluid">
-      <footer>
-        <hr>
-        <div class="row">
-          <div class="col-8 offset-lg-2 col-lg-6">
-            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
-          </div>
-          <div class="col-4 col-lg-2 text-right">
-            <a href="/mc_rtc/credits.html">Credits</a>
-          </div>
-        </div>
-      </footer>
+  <footer>
+    <hr>
+    <div class="row">
+      <div class="col-8 offset-lg-2 col-lg-6">
+        Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
+      </div>
+      <div class="col-4 col-lg-2 text-right">
+        <a href="/mc_rtc/credits.html">Credits</a>
+      </div>
     </div>
+  </footer>
+</div>
+
   </body>
+
+  <script type="text/javascript">
+$(document).ready(function()
+{
+  new ClipboardJS('.copy-button');
+});
+</script>
+
 
 </html>

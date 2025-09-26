@@ -135,12 +135,36 @@ body
   margin-bottom: 10px;
 }
 
+.card-body table
+{
+  table-layout:fixed;
+}
+
+.card-body .btn
+{
+  word-break: break-word;
+}
+
 .object-property
 {
   margin-bottom: 10px;
 }
 
+
 .object-property td
+{
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+.sub-object-property
+{
+  margin-bottom: 10px;
+  background-color: #fafafa;
+}
+
+
+.sub-object-property td
 {
   padding-bottom: 6px;
   padding-top: 6px;
@@ -211,4 +235,62 @@ body
 .card-source figure
 {
   margin-bottom: 0;
+}
+
+.sticky-toc
+{
+  top: 58px;
+}
+
+#tutorial-content h1
+{
+  padding-top: 58px;
+  margin-top: -58px;
+  pointer-events: none;
+}
+#tutorial-content h2
+{
+  padding-top: 58px;
+  margin-top: -58px;
+  pointer-events: none;
+}
+#tutorial-content h3
+{
+  padding-top: 58px;
+  margin-top: -58px;
+  pointer-events: none;
+}
+#tutorial-content h4
+{
+  padding-top: 58px;
+  margin-top: -58px;
+  pointer-events: none;
+}
+#tutorial-content h5
+{
+  padding-top: 58px;
+  margin-top: -58px;
+  pointer-events: none;
+}
+#tutorial-content h6
+{
+  padding-top: 58px;
+  margin-top: -58px;
+  pointer-events: none;
+}
+.embed-responsive
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+  overflow: visible;
+}
+#toc
+{
+  margin-top: 20px;
 }

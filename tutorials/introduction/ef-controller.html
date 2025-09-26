@@ -13,257 +13,334 @@
 
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/mc_rtc/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/mc_rtc/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/mc_rtc/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/mc_rtc/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="/mc_rtc/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+
+
+
+
+<link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
 
     <title>Tutorials - Controlling an end-effector (and loading) - mc_rtc</title>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/mc_rtc/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/mc_rtc/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/mc_rtc/assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/mc_rtc/assets/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/mc_rtc/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.0.0/build.css" integrity="sha256-iPUhChwurLRCrDCM1+2a2LDe9pfW6Je29o/oA5VPr28=" crossorigin="anonymous" />
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-
-    
-
-    
-
-    <link href="/mc_rtc/css/mc_rtc.css" rel="stylesheet">
   </head>
 
   <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light sticky-top" role="navigation">
-      <a class="navbar-brand" href="/mc_rtc/index.html"><img src="/mc_rtc/assets/logo.png" alt="logo" width="30" height="30"/> mc_rtc</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <div class="navbar-nav mr-auto">
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/interfaces.html">Interfaces</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/robots.html">Robots</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link active" href="/mc_rtc/tutorials.html">Tutorials</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/doxygen.html">API documentation</a>
-          
-          
-          
-          
-          <a class="nav-item nav-link " href="/mc_rtc/json.html">JSON/YAML documentation</a>
-          
-          
-        </div>
-        <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-      </div>
-    </header>
+  <a class="navbar-brand" href="/mc_rtc/index.html"><img src="/mc_rtc/assets/logo.png" alt="logo" width="30" height="30"/> mc_rtc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class="navbar-nav mr-auto">
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/interfaces.html">Interfaces</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/robots.html">Robots</a>
+      
+        
+        
+        <a class="nav-item nav-link active" href="/mc_rtc/tutorials.html">Tutorials</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/doxygen.html">API documentation</a>
+      
+        
+        
+        <a class="nav-item nav-link " href="/mc_rtc/json.html">JSON/YAML documentation</a>
+      
+      <a class="nav-item nav-link" href="https://mc-rtc-demo.netlify.app/" target="blank_">Online demonstration</a>
+    </div>
+    
+      
+      
+      
+      EN
+      
+      
+        &nbsp;|&nbsp;
+      
+    
+      
+      
+      
+        <a href="/mc_rtc/jp/tutorials/introduction/ef-controller.html">
+      
+      JP
+      
+        </a>
+      
+      
+        &nbsp;&nbsp;&nbsp;
+      
+    
+    <a href="https://github.com/jrl-umi3218/mc_rtc" target="blank_"><svg height="25" width="25" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a>
+  </div>
+</header>
+
 
     <div class="container-fluid">
       <div class="row">
-      <div class="col">
-        <ul>
-          
-          <li>Introduction</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/installation-guide.html">Installation guide</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/configuration.html">Configuring mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/running-a-controller.html">Running a controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/first-controller.html">Your first controller with mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/com-controller.html">Controlling the CoM</a></li>
-              
-            
-              
-              <li><strong>Controlling an end-effector (and loading)</strong></li>
-                
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Multi-robot controller</a></li>
-              
-            
-          </ul>
-          
-          <li>Framework usage</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html"><code>mc_rtc::Configuration</code> general purpose configuration</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/logging.html">Logging data</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/console-logging.html">Printing information to the screen</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/gui.html">Graphical User Interface (GUI)</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/live-plotting.html">Display plots live from the controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/usage/ros.html">ROS integration</a></li>
-              
-            
-          </ul>
-          
-          <li>Framework tools</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_utils.html">Log manipulation</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_ui.html">Log plotting</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Replay visualization</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_surfaces_visualization.html">Visualizing surfaces</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/tools/mc_convex_visualization.html">Visualizing convexes</a></li>
-              
-            
-          </ul>
-          
-          <li>Control recipes</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm.html">Using the FSM facilities</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/derived-fsm.html">Deriving the FSM controller</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/observers.html">Using the observers pipeline</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/speed-constraint.html">Constraint the speed of a body</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/moving-a-contact.html">Moving a contact</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/contact-dof.html">Change the DoF constraints on a contact</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/joint-select.html">Select specific joints for a task</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/dim-weight.html">Affect different weight to different axis in the task space</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/joint-stiffness.html">Joints Stiffness</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/recipes/com-constraint.html">Constraining the accessible region of the CoM</a></li>
-              
-            
-          </ul>
-          
-          <li>Advanced topics</li>
-          <ul>
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-interface.html">Implement a new mc_rtc interface</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-environment.html">Environment creation for mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
-              
-            
-              
-              <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
-              
-            
-          </ul>
-          
-        </ul>
+      <div class="col col-lg-3">
+        <div class="sticky-top sticky-toc">
+          <div class="accordion" id="accordionTutorials">
+            <div class="card">
+              <div class="card-header" id="headingOtherTutorials">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOtherTutorials" aria-expanded="true" aria-controls="collapseOtherTutorials">
+                  Other tutorials
+                </button>
+              </div>
+              <div id="collapseOtherTutorials" class="collapse" arial-labelledby="headingOtherTutorials" data-parent="#accordionTutorials">
+                <div class="card-body">
+                  <ul>
+                    
+                    <li>Introduction</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/installation-guide.html">Installation guide</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/configuration.html">Configuring mc_rtc and its components</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/running-a-controller.html">Running a controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/first-controller.html">Your first controller with mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/com-controller.html">Controlling the CoM</a></li>
+                        
+                      
+                        
+                        <li><strong>Controlling an end-effector (and loading)</strong></li>
+                          
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Multi-robot controller</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Framework usage</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/mc_rtc_configuration.html"><code>mc_rtc::Configuration</code> general purpose configuration</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/logging.html">Logging data</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/console-logging.html">Printing information to the screen</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/gui.html">Graphical User Interface (GUI)</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/live-plotting.html">Display plots live from the controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/ros.html">ROS integration</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/global-plugins.html">Using global plugins</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/usage/schema.html">Schema structures integrated to the framework</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Framework tools</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_rtc_ticker-and-replay.html">mc_rtc_ticker and the Replay plugin</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_utils.html">Log manipulation</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_ui.html">Log plotting</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_log_visualization.html">Replay visualization</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_surfaces_visualization.html">Visualizing surfaces</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/tools/mc_convex_visualization.html">Visualizing convexes</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Control recipes</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm.html">Using the FSM facilities</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm-main-states.html">Main FSM states</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/fsm-example.html">FSM controller in practice</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/derived-fsm.html">Deriving the FSM controller</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/datastore.html">DataStore: Sharing Objects</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/observers.html">State Observation Pipelines</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/lipm-stabilizer.html">Using the LIPM Stabilizer</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/speed-constraint.html">Constraint the speed of a body</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/moving-a-contact.html">Moving a contact</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/contact-dof.html">Change the DoF constraints on a contact</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/joint-select.html">Select specific joints for a task</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/dim-weight.html">Affect different weight to different axis in the task space</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/joint-stiffness.html">Joints Stiffness</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/recipes/com-constraint.html">Constraining the accessible region of the CoM</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Samples</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/samples/list-of-samples.html">Available sample controllers</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/samples/sample-admittance.html">Admittance sample controller</a></li>
+                        
+                      
+                    </ul>
+                    
+                    <li>Advanced topics</li>
+                    <ul>
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-plugin.html">Implement a new plugin for mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-interface.html">Implement a new mc_rtc interface</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-environment.html">Environment creation for mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/new-robot.html">Integrate a new robot in mc_rtc</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/support-mc-rtc-build-static.html">Supporting MC_RTC_BUILD_STATIC in your code</a></li>
+                        
+                      
+                        
+                        <li><a href="/mc_rtc/tutorials/advanced/debug-lssol-output-6.html">Debugging LSSOL output 6</a></li>
+                        
+                      
+                    </ul>
+                    
+                  </ul>
+                </div>
+              </div>
+              
+                <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#the-short-story">The short story</a></li>
+<li class="toc-entry toc-h3"><a href="#loading-the-task-from-disk">Loading the task from disk</a></li>
+<li class="toc-entry toc-h3"><a href="#give-me-more-tasks">Give me more tasks</a></li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-9">
+      <div class="col-9" id="tutorial-content">
+        
         <h1>Controlling an end-effector (and loading)</h1>
+        
 
-        <h3>The short story</h3>
+        <h3 id="the-short-story">The short story</h3>
+
 
 <p>You can create an end-effector task and manipulate its objective:</p>
 
@@ -286,13 +363,16 @@
   
     
     
+    
+    
     <div class="tab-pane show active" id="create-ef-taskc-cppTabContent" role="tabpanel" arial-labelledby="create-ef-taskc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Include the EF task header (header)</span>
-<span class="cp">#include &lt;mc_tasks/EndEffectorTask.h&gt;
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Include the EF task header (header)</span>
+<span class="cp">#include</span> <span class="cpf">&lt;mc_tasks/EndEffectorTask.h&gt;</span><span class="cp">
 </span><span class="c1">// In the class private members (header)</span>
 <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">mc_tasks</span><span class="o">::</span><span class="n">EndEffectorTask</span><span class="o">&gt;</span> <span class="n">efTask</span><span class="p">;</span>
 <span class="c1">// In the constructor, create the task and add it to the problem</span>
@@ -301,30 +381,34 @@
 <span class="c1">// In the reset function, reset the task to the current EF position</span>
 <span class="n">efTask</span><span class="o">-&gt;</span><span class="n">reset</span><span class="p">();</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="create-ef-taskpythonpythonTabContent" role="tabpanel" arial-labelledby="create-ef-taskpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Import the mc_tasks module
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Import the mc_tasks module
 </span><span class="kn">import</span> <span class="nn">mc_tasks</span>
+
 <span class="c1"># In the constructor, create the task and add it to the problem
 </span><span class="bp">self</span><span class="p">.</span><span class="n">efTask</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="p">.</span><span class="n">EndEffectorTask</span><span class="p">(</span><span class="s">"l_wrist"</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">robots</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
 <span class="bp">self</span><span class="p">.</span><span class="n">qpsolver</span><span class="p">.</span><span class="n">addTask</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">efTask</span><span class="p">)</span>
 <span class="c1"># In the reset callback, reset the task to the current EF position
 </span><span class="bp">self</span><span class="p">.</span><span class="n">efTask</span><span class="p">.</span><span class="n">reset</span><span class="p">()</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -352,37 +436,45 @@
   
     
     
+    
+    
     <div class="tab-pane show active" id="update-ef-taskc-cppTabContent" role="tabpanel" arial-labelledby="update-ef-taskc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Get the current objective</span>
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Get the current objective</span>
 <span class="k">auto</span> <span class="n">pt</span> <span class="o">=</span> <span class="n">efTask</span><span class="o">-&gt;</span><span class="n">get_ef_pose</span><span class="p">();</span>
 <span class="c1">// Update the rotation and position objective</span>
-<span class="n">efTask</span><span class="o">-&gt;</span><span class="n">set_ef_pose</span><span class="p">(</span><span class="n">sva</span><span class="o">::</span><span class="n">PTransformd</span><span class="p">{</span><span class="n">sva</span><span class="o">::</span><span class="n">RotY</span><span class="p">(</span><span class="o">-</span><span class="n">M_PI</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="p">{</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">}});</span></code></pre></figure>
+<span class="n">efTask</span><span class="o">-&gt;</span><span class="n">set_ef_pose</span><span class="p">(</span><span class="n">sva</span><span class="o">::</span><span class="n">PTransformd</span><span class="p">{</span><span class="n">sva</span><span class="o">::</span><span class="n">RotY</span><span class="p">(</span><span class="o">-</span><span class="n">M_PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="p">{</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">}});</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="update-ef-taskpythonpythonTabContent" role="tabpanel" arial-labelledby="update-ef-taskpythonpythonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Get the current objective
+  <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Get the current objective
 </span><span class="n">pt</span> <span class="o">=</span> <span class="n">efTask</span><span class="p">.</span><span class="n">get_ef_pose</span><span class="p">()</span>
 <span class="c1"># Update the rotation and position objective
-</span><span class="n">efTask</span><span class="p">.</span><span class="n">set_ef_pose</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">RotY</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">eigen</span><span class="p">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)))</span></code></pre></figure>
+</span><span class="n">efTask</span><span class="p">.</span><span class="n">set_ef_pose</span><span class="p">(</span>
+    <span class="n">sva</span><span class="p">.</span><span class="n">PTransformd</span><span class="p">(</span><span class="n">sva</span><span class="p">.</span><span class="n">RotY</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">eigen</span><span class="p">.</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">))</span>
+<span class="p">)</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -391,7 +483,8 @@
 
 <p>Instead of repeating a similar experience as in the previous tutorials, this tutorial will show how we can load the task from a configuration file written in JSON or YAML. In fact, this will be applicable to any task in the framework.</p>
 
-<h3>Loading the task from disk</h3>
+<h3 id="loading-the-task-from-disk">Loading the task from disk</h3>
+
 
 <p><em>Note: for now, this is only available on the C++ side.</em></p>
 
@@ -418,41 +511,45 @@
   
     
     
+    
+    
     <div class="tab-pane show active" id="description-taskjsonjsonTabContent" role="tabpanel" arial-labelledby="description-taskjsonjsonTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"body6d"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"robotIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"l_wrist"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"orientation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.71</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.71</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w">
   </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
     
     
+    
+    
     <div class="tab-pane" id="description-taskyamlyamlTabContent" role="tabpanel" arial-labelledby="description-taskyamlyamlTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">type</span><span class="pi">:</span> <span class="s">body6d,</span>
-<span class="na">robotIndex</span><span class="pi">:</span> <span class="s">0,</span>
+  <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">type</span><span class="pi">:</span> <span class="s">body6d,</span>
 <span class="na">body</span><span class="pi">:</span> <span class="s">l_wrist,</span>
 <span class="na">orientation</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">0.71</span><span class="pi">,</span> <span class="nv">0</span><span class="pi">,</span> <span class="nv">0.71</span><span class="pi">,</span> <span class="nv">0</span><span class="pi">]</span>
 <span class="na">position</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">0.4</span><span class="pi">,</span> <span class="nv">0.4</span><span class="pi">,</span> <span class="nv">1.0</span><span class="pi">]</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -474,13 +571,16 @@
   
     
     
+    
+    
     <div class="tab-pane show active" id="get-taskc-cppTabContent" role="tabpanel" arial-labelledby="get-taskc-cppTab">
       
+
 <div class="card bg-light card-source">
   <div class="card-body">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Get the task loader in there</span>
-<span class="cp">#include &lt;mc_tasks/MetaTaskLoader.h&gt;
+  <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Get the task loader in there</span>
+<span class="cp">#include</span> <span class="cpf">&lt;mc_tasks/MetaTaskLoader.h&gt;</span><span class="cp">
 </span>
 <span class="c1">// Get the task from the JSON file</span>
 <span class="k">auto</span> <span class="n">task</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="o">::</span><span class="n">MetaTaskLoader</span><span class="o">::</span><span class="n">load</span><span class="p">(</span><span class="n">solver</span><span class="p">(),</span> <span class="s">"/my/path/task.json"</span><span class="p">);</span>
@@ -497,9 +597,9 @@
 <span class="c1">// requested</span>
 <span class="k">auto</span> <span class="n">task</span> <span class="o">=</span> <span class="n">mc_tasks</span><span class="o">::</span><span class="n">MetaTaskLoader</span><span class="o">::</span><span class="n">load</span><span class="o">&lt;</span><span class="n">mc_tasks</span><span class="o">::</span><span class="n">EndEffectorTask</span><span class="o">&gt;</span><span class="p">(</span><span class="n">solver</span><span class="p">(),</span> <span class="n">config</span><span class="p">(</span><span class="s">"task"</span><span class="p">));</span></code></pre></figure>
 
+  
   </div>
 </div>
-
 
     </div>
   
@@ -508,15 +608,17 @@
 
 <p>You can use this task as if you had created it manually, this is a great way to experiment with task settings.</p>
 
-<h3>Give me more tasks</h3>
+<h3 id="give-me-more-tasks">Give me more tasks</h3>
+
 
 <p>The <a href="/mc_rtc/json.html">JSON/YAML documentation</a> on this website shows all the tasks that can be loaded by the framework and what is expected in their JSON/YAML representation to be loaded correctly.</p>
+
 
 
         <hr/>
         
         <div class="text-right">
-        <a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Next tutorial: Multi-robot controller</a>
+          <a href="/mc_rtc/tutorials/introduction/multi-robot-controller.html">Next tutorial: Multi-robot controller</a>
         </div>
         
       </div>
@@ -524,18 +626,27 @@
     </div>
 
     <div class="container-fluid">
-      <footer>
-        <hr>
-        <div class="row">
-          <div class="col-8 offset-lg-2 col-lg-6">
-            Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
-          </div>
-          <div class="col-4 col-lg-2 text-right">
-            <a href="/mc_rtc/credits.html">Credits</a>
-          </div>
-        </div>
-      </footer>
+  <footer>
+    <hr>
+    <div class="row">
+      <div class="col-8 offset-lg-2 col-lg-6">
+        Copyright &copy; CNRS-AIST JRL, CNRS LIRMM 2015-2020
+      </div>
+      <div class="col-4 col-lg-2 text-right">
+        <a href="/mc_rtc/credits.html">Credits</a>
+      </div>
     </div>
+  </footer>
+</div>
+
   </body>
+
+  <script type="text/javascript">
+$(document).ready(function()
+{
+  new ClipboardJS('.copy-button');
+});
+</script>
+
 
 </html>
