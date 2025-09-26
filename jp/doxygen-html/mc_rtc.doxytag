@@ -3054,14 +3054,15 @@
     <path>/tmp/build-mc-rtc/src/mc_rtc/include/mc_rtc/</path>
     <filename>deprecated_8h.html</filename>
     <includes id="logging_8h" name="logging.h" local="no" imported="no">mc_rtc/logging.h</includes>
+    <includes id="utils__api_8h" name="utils_api.h" local="yes" imported="no">mc_rtc/utils_api.h</includes>
     <namespace>mc_rtc</namespace>
     <namespace>mc_rtc::log</namespace>
     <member kind="function">
       <type>MC_RTC_UTILS_DLLAPI void</type>
       <name>deprecated</name>
       <anchorfile>namespacemc__rtc_1_1log.html</anchorfile>
-      <anchor>a44519212b524404c86c6a6f354d58d2c</anchor>
-      <arglist>(const std::string &amp;source, const std::string &amp;old, const std::string &amp;replace)</arglist>
+      <anchor>af847170ed484855237b58e8b2706fecd</anchor>
+      <arglist>(const std::string &amp;source, const std::string &amp;old, const std::string &amp;replace, const std::string &amp;details=&quot;&quot;)</arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -47682,8 +47683,8 @@
       <type>MC_RTC_UTILS_DLLAPI void</type>
       <name>deprecated</name>
       <anchorfile>namespacemc__rtc_1_1log.html</anchorfile>
-      <anchor>a44519212b524404c86c6a6f354d58d2c</anchor>
-      <arglist>(const std::string &amp;source, const std::string &amp;old, const std::string &amp;replace)</arglist>
+      <anchor>af847170ed484855237b58e8b2706fecd</anchor>
+      <arglist>(const std::string &amp;source, const std::string &amp;old, const std::string &amp;replace, const std::string &amp;details=&quot;&quot;)</arglist>
     </member>
     <member kind="function">
       <type>bool MC_RTC_UTILS_DLLAPI</type>
