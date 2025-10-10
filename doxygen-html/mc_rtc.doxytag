@@ -4272,6 +4272,8 @@
     <class kind="struct">mc_rtc::schema::details::is_std_map&lt; std::map&lt; std::string, T &gt; &gt;</class>
     <class kind="struct">mc_rtc::schema::details::is_eigen_vector</class>
     <class kind="struct">mc_rtc::schema::details::is_eigen_vector&lt; Eigen::Matrix&lt; Scalar, Rows, 1, Options, MaxRows, 1 &gt; &gt;</class>
+    <class kind="struct">mc_rtc::schema::details::is_eigen_matrixxd</class>
+    <class kind="struct">mc_rtc::schema::details::is_eigen_matrixxd&lt; Eigen::MatrixXd &gt;</class>
     <class kind="struct">mc_rtc::schema::Operations</class>
     <class kind="struct">mc_rtc::schema::details::EmptySchema</class>
     <class kind="struct">mc_rtc::Default&lt; T, std::enable_if_t&lt; schema::details::is_schema_v&lt; T &gt; &gt; &gt;</class>
@@ -4380,6 +4382,13 @@
       <name>is_eigen_vector_v</name>
       <anchorfile>namespacemc__rtc_1_1schema_1_1details.html</anchorfile>
       <anchor>aadc011a10973f0c84cb88ba2082a54d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr bool</type>
+      <name>is_eigen_matrixxd_v</name>
+      <anchorfile>namespacemc__rtc_1_1schema_1_1details.html</anchorfile>
+      <anchor>a89fab8f81f8ffe1c0f02fb8b00d12fe3</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -7664,15 +7673,15 @@
       <type>EIGEN_MAKE_ALIGNED_OPERATOR_NEW</type>
       <name>AdmittanceTask</name>
       <anchorfile>structmc__tasks_1_1force_1_1AdmittanceTask.html</anchorfile>
-      <anchor>aeb260767d5027918e1931e5365f5ecf3</anchor>
-      <arglist>(const mc_rbdyn::RobotFrame &amp;frame, double stiffness=5.0, double weight=1000.0)</arglist>
+      <anchor>ad92ec442ebd899b296fde056cdbeeec3</anchor>
+      <arglist>(const mc_rbdyn::RobotFrame &amp;frame, double stiffness=5.0, double weight=1000.0, bool showTarget=true, bool showPose=true)</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>AdmittanceTask</name>
       <anchorfile>structmc__tasks_1_1force_1_1AdmittanceTask.html</anchorfile>
-      <anchor>adc9e5dddfd6c66644832803aa5187181</anchor>
-      <arglist>(const std::string &amp;robotSurface, const mc_rbdyn::Robots &amp;robots, unsigned robotIndex, double stiffness=5.0, double weight=1000.0)</arglist>
+      <anchor>a403c4203bcea5163857a6367d425f105</anchor>
+      <arglist>(const std::string &amp;robotSurface, const mc_rbdyn::Robots &amp;robots, unsigned robotIndex, double stiffness=5.0, double weight=1000.0, bool showTarget=true, bool showPose=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -7931,6 +7940,20 @@
       <name>refVelB_</name>
       <anchorfile>structmc__tasks_1_1force_1_1AdmittanceTask.html</anchorfile>
       <anchor>a2eeb8d4440242d2c4526226e15efaf87</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showTarget_</name>
+      <anchorfile>structmc__tasks_1_1force_1_1AdmittanceTask.html</anchorfile>
+      <anchor>a60e58bb75bb89731f7cceaedf60354f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showPose_</name>
+      <anchorfile>structmc__tasks_1_1force_1_1AdmittanceTask.html</anchorfile>
+      <anchor>af7408c76b5c729cc527747759e67fe8b</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -21687,15 +21710,15 @@
       <type>EIGEN_MAKE_ALIGNED_OPERATOR_NEW</type>
       <name>ImpedanceTask</name>
       <anchorfile>structmc__tasks_1_1force_1_1ImpedanceTask.html</anchorfile>
-      <anchor>a0ef3a7aced29828c13a1db97ca2c4d0b</anchor>
-      <arglist>(const std::string &amp;surfaceName, const mc_rbdyn::Robots &amp;robots, unsigned robotIndex, double stiffness=5.0, double weight=1000.0)</arglist>
+      <anchor>afc1eef30c25ea8b9375bf27645d775ef</anchor>
+      <arglist>(const std::string &amp;surfaceName, const mc_rbdyn::Robots &amp;robots, unsigned robotIndex, double stiffness=5.0, double weight=1000.0, bool showTarget=true, bool showPose=true, bool showCompliance=true)</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>ImpedanceTask</name>
       <anchorfile>structmc__tasks_1_1force_1_1ImpedanceTask.html</anchorfile>
-      <anchor>ad22745f66f514b82fe1aaa047f07d90f</anchor>
-      <arglist>(const mc_rbdyn::RobotFrame &amp;frame, double stiffness=5.0, double weight=1000.0)</arglist>
+      <anchor>a9706aa71098a06b27210c14391f23065</anchor>
+      <arglist>(const mc_rbdyn::RobotFrame &amp;frame, double stiffness=5.0, double weight=1000.0, bool showTarget=true, bool showPose=true, bool showCompliance=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -21877,6 +21900,27 @@
       <name>gains_</name>
       <anchorfile>structmc__tasks_1_1force_1_1ImpedanceTask.html</anchorfile>
       <anchor>a650f1aad54ff5b3f1b7b9a344c975187</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showTarget_</name>
+      <anchorfile>structmc__tasks_1_1force_1_1ImpedanceTask.html</anchorfile>
+      <anchor>a1edde6b0f7fe6095497d56ecead07b1e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showPose_</name>
+      <anchorfile>structmc__tasks_1_1force_1_1ImpedanceTask.html</anchorfile>
+      <anchor>aa6b586b8796ac8ec3e2195ce60c0d30e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showCompliance_</name>
+      <anchorfile>structmc__tasks_1_1force_1_1ImpedanceTask.html</anchorfile>
+      <anchor>a3c377d3700f9ff5efa84169b17d86ab1</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -22682,6 +22726,15 @@
       <anchor>a3a83a147d6040fd550d83b1fa2a5e37c</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>mc_rtc::schema::details::is_eigen_matrixxd</name>
+    <filename>structmc__rtc_1_1schema_1_1details_1_1is__eigen__matrixxd.html</filename>
+    <templarg></templarg>
+  </compound>
+  <compound kind="struct">
+    <name>mc_rtc::schema::details::is_eigen_matrixxd&lt; Eigen::MatrixXd &gt;</name>
+    <filename>structmc__rtc_1_1schema_1_1details_1_1is__eigen__matrixxd_3_01Eigen_1_1MatrixXd_01_4.html</filename>
   </compound>
   <compound kind="struct">
     <name>mc_rtc::schema::details::is_eigen_vector</name>
@@ -27212,6 +27265,13 @@
       <type>void</type>
       <name>write</name>
       <anchorfile>structmc__rtc_1_1MessagePackBuilder.html</anchorfile>
+      <anchor>a73fd4bf05ac7e2c957a6c13ac14d9ee7</anchor>
+      <arglist>(const Eigen::MatrixXd &amp;m)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write</name>
+      <anchorfile>structmc__rtc_1_1MessagePackBuilder.html</anchorfile>
       <anchor>a5106a9ce75422dc91abac33bd4c4f8e9</anchor>
       <arglist>(const sva::PTransformd &amp;pt)</arglist>
     </member>
@@ -27473,6 +27533,13 @@
       <anchorfile>structmc__rtc_1_1MessagePackBuilder.html</anchorfile>
       <anchor>aa9b29c6e647ca8cae9b77d2a9a9cf422</anchor>
       <arglist>(const Eigen::Matrix3d &amp;m)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write</name>
+      <anchorfile>structmc__rtc_1_1MessagePackBuilder.html</anchorfile>
+      <anchor>a73fd4bf05ac7e2c957a6c13ac14d9ee7</anchor>
+      <arglist>(const Eigen::MatrixXd &amp;m)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -43793,15 +43860,15 @@
       <type></type>
       <name>TransformTask</name>
       <anchorfile>structmc__tasks_1_1TransformTask.html</anchorfile>
-      <anchor>af76f18eb60ebc27c1e8b7612535aecc9</anchor>
-      <arglist>(const mc_rbdyn::RobotFrame &amp;frame, double stiffness=2.0, double weight=500.0)</arglist>
+      <anchor>a4d1b88687a9afd9b6ec428c9e290bab3</anchor>
+      <arglist>(const mc_rbdyn::RobotFrame &amp;frame, double stiffness=2.0, double weight=500.0, bool showTarget=true, bool showPose=true)</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>TransformTask</name>
       <anchorfile>structmc__tasks_1_1TransformTask.html</anchorfile>
-      <anchor>a9d566e2a0f59e9b4ed91c9a5849e31af</anchor>
-      <arglist>(const std::string &amp;surfaceName, const mc_rbdyn::Robots &amp;robots, unsigned int robotIndex, double stiffness=2.0, double weight=500)</arglist>
+      <anchor>a7c51a08d891c13c0bce6c848cbf8e5ad</anchor>
+      <arglist>(const std::string &amp;surfaceName, const mc_rbdyn::Robots &amp;robots, unsigned int robotIndex, double stiffness=2.0, double weight=500, bool showTarget=true, bool showPose=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -44039,6 +44106,20 @@
       <name>frame_</name>
       <anchorfile>structmc__tasks_1_1TransformTask.html</anchorfile>
       <anchor>a078d35f229cfe10dfa0e4672cb3304d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showTarget_</name>
+      <anchorfile>structmc__tasks_1_1TransformTask.html</anchorfile>
+      <anchor>a541c989c4151475146ef3f2cab003a4b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>showPose_</name>
+      <anchorfile>structmc__tasks_1_1TransformTask.html</anchorfile>
+      <anchor>ab014bb5e3073c5c41569557e2f92aa4a</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -48185,6 +48266,8 @@
     <class kind="struct">mc_rtc::schema::details::is_std_map&lt; std::map&lt; std::string, T &gt; &gt;</class>
     <class kind="struct">mc_rtc::schema::details::is_eigen_vector</class>
     <class kind="struct">mc_rtc::schema::details::is_eigen_vector&lt; Eigen::Matrix&lt; Scalar, Rows, 1, Options, MaxRows, 1 &gt; &gt;</class>
+    <class kind="struct">mc_rtc::schema::details::is_eigen_matrixxd</class>
+    <class kind="struct">mc_rtc::schema::details::is_eigen_matrixxd&lt; Eigen::MatrixXd &gt;</class>
     <class kind="struct">mc_rtc::schema::details::EmptySchema</class>
     <member kind="function">
       <type>void</type>
@@ -48247,6 +48330,13 @@
       <name>is_eigen_vector_v</name>
       <anchorfile>namespacemc__rtc_1_1schema_1_1details.html</anchorfile>
       <anchor>aadc011a10973f0c84cb88ba2082a54d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr bool</type>
+      <name>is_eigen_matrixxd_v</name>
+      <anchorfile>namespacemc__rtc_1_1schema_1_1details.html</anchorfile>
+      <anchor>a89fab8f81f8ffe1c0f02fb8b00d12fe3</anchor>
       <arglist></arglist>
     </member>
   </compound>
