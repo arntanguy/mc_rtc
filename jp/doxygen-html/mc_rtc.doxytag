@@ -38511,6 +38511,13 @@
       <anchor>a4a6908db392416efb30c7926dca9ff6b</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static std::vector&lt; std::pair&lt; double, Eigen::Matrix3d &gt; &gt;</type>
+      <name>loadOriWaypoints</name>
+      <anchorfile>structmc__tasks_1_1SplineTrajectoryTask.html</anchorfile>
+      <anchor>afa301d4713f8a9a223a5e3704b7ce018</anchor>
+      <arglist>(const mc_rtc::Configuration &amp;c)</arglist>
+    </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>refPose</name>
@@ -39096,6 +39103,13 @@
       <anchor>aa826a098c08c1548dcb65bbba28189b8</anchor>
       <arglist>() const noexcept</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static std::vector&lt; std::pair&lt; double, Eigen::Matrix3d &gt; &gt;</type>
+      <name>loadOriWaypoints</name>
+      <anchorfile>structmc__tasks_1_1SplineTrajectoryTask.html</anchorfile>
+      <anchor>afa301d4713f8a9a223a5e3704b7ce018</anchor>
+      <arglist>(const mc_rtc::Configuration &amp;c)</arglist>
+    </member>
     <member kind="function" protection="protected">
       <type>void</type>
       <name>refPose</name>
@@ -39674,6 +39688,13 @@
       <anchorfile>structmc__tasks_1_1SplineTrajectoryTask.html</anchorfile>
       <anchor>aa826a098c08c1548dcb65bbba28189b8</anchor>
       <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static std::vector&lt; std::pair&lt; double, Eigen::Matrix3d &gt; &gt;</type>
+      <name>loadOriWaypoints</name>
+      <anchorfile>structmc__tasks_1_1SplineTrajectoryTask.html</anchorfile>
+      <anchor>afa301d4713f8a9a223a5e3704b7ce018</anchor>
+      <arglist>(const mc_rtc::Configuration &amp;c)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
