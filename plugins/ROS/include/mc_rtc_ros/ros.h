@@ -79,11 +79,15 @@ struct MC_RTC_ROS_DLLAPI ROSBridge
    *
    * \param use_real Use the real URDF rather than the default one
    *
+   * \param manual Let the user handle destruction of this publisher manually. This is useful when publishing robots
+   * that are not part of the controller. \see remove_extra_robot_publishers
+   *
    */
   static void init_robot_publisher(const std::string & publisher,
                                    double dt,
                                    const mc_rbdyn::Robot & robot,
-                                   bool use_real = false);
+                                   bool use_real = false,
+                                   bool manual = false);
 
   /** Update the robot publisher state
    *

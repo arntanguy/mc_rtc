@@ -611,6 +611,11 @@ struct ROSBridgeImpl
   bool ros_is_init;
   std::shared_ptr<NodeHandle> nh;
   std::map<std::string, std::shared_ptr<RobotPublisher>> rpubs;
+  struct ExtraPublisherConfig
+  {
+    bool manual = false;
+  };
+  std::map<std::string, ExtraPublisherConfig> rpubsExtraConfig;
   double publish_rate = 100;
 };
 
@@ -640,11 +645,13 @@ void ROSBridge::set_publisher_timestep(double timestep)
 void ROSBridge::init_robot_publisher(const std::string & publisher,
                                      double dt,
                                      const mc_rbdyn::Robot & robot,
-                                     bool use_real)
+                                     bool use_real,
+                                     bool manual)
 {
   static auto & impl = impl_();
   if(impl.rpubs.count(publisher) == 0)
   {
+    impl.rpubsExtraConfig[publisher] = {manual};
     impl.rpubs[publisher] = std::make_shared<RobotPublisher>(publisher + "/", impl.publish_rate, dt);
   }
   impl.rpubs[publisher]->init(robot, use_real);
@@ -676,11 +683,25 @@ void ROSBridge::remove_extra_robot_publishers(const mc_rbdyn::Robots & robots)
   for(auto it = impl.rpubs.begin(); it != impl.rpubs.end();)
   {
     const std::string & topic = it->first;
-
-    size_t pos = topic.find('/');
-    if(pos != std::string::npos && pos + 1 < topic.size())
+    if(impl.rpubsExtraConfig.count(topic) && impl.rpubsExtraConfig[topic].manual)
     {
-      if(!robots.hasRobot(topic.substr(pos + 1))) { it = impl.rpubs.erase(it); }
+      ++it;
+      continue;
+    }
+
+    auto sep_pos = topic.find('/');
+    if(sep_pos != std::string::npos)
+    {
+      auto prefix = topic.substr(0, sep_pos);
+      auto robotName = topic.substr(sep_pos + 1);
+      if(prefix == "control" || prefix == "real")
+      {
+        if(!robots.hasRobot(robotName)) { it = impl.rpubs.erase(it); }
+        else
+        {
+          ++it;
+        }
+      }
       else
       {
         ++it;
