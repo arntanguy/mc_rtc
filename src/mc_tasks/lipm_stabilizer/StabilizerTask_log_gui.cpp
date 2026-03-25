@@ -370,7 +370,7 @@ void StabilizerTask::addToGUI(mc_rtc::gui::StateBuilder & gui)
           [this, FORCE_SCALE]() -> Eigen::Vector3d
           { return measuredZMP_ + FORCE_SCALE * measuredNetWrench_.force(); }));
 
-  for(const auto footTask : footTasks)
+  for(const auto & footTask : footTasks)
   {
     auto footT = footTask.second;
     gui.addElement(
