@@ -142,13 +142,16 @@ public:
   static void context_backend(Backend backend);
 
   /** Add a constraint set
-   * \param cs Constraint set added to the solver
+   *
+   * \param cs Pointer to a mc_solver::ConstraintSet added to the solver. QPSolver does not take
+   * ownership of this pointer.
    */
   void addConstraintSet(ConstraintSet & cs);
 
   /** Add a constraint set
    *
-   * \param cs Constraint set added to the solver
+   * \param cs Pointer to a mc_solver::ConstraintSet added to the solver. QPSolver does not take
+   * ownership of this pointer.
    */
   template<typename T>
   inline void addConstraintSet(const std::unique_ptr<T> & ptr)
@@ -156,6 +159,15 @@ public:
     addConstraintSet(*ptr);
   }
 
+  template<typename T>
+  inline void addConstraintSet(std::shared_ptr<T> cstr)
+  {
+    if(cstr)
+    {
+      addConstraintSet(*cstr.get());
+      constraintSetStorage_.emplace_back(cstr);
+    }
+  }
   /** Remove a constraint set
    * \param cs Constrain set removed from the solver
    */
@@ -168,7 +180,14 @@ public:
   template<typename T>
   inline void removeConstraintSet(const std::unique_ptr<T> & ptr)
   {
-    removeConstraintSet(*ptr);
+    if(ptr) { removeConstraintSet(*ptr); }
+  }
+
+  /** Remove a constraint set from the solver which was shared with the solver */
+  template<typename T>
+  inline void removeConstraintSet(std::shared_ptr<T> cstr)
+  {
+    if(cstr) { removeConstraintSet(*cstr); }
   }
 
   /** Add a task to the solver
@@ -313,6 +332,9 @@ protected:
 
   /** Holds ConstraintSet currently in the solver */
   std::vector<mc_solver::ConstraintSet *> constraints_;
+
+  /** Storage for shared_pointer on constraints */
+  std::vector<std::shared_ptr<void>> constraintSetStorage_;
 
   /** Pointer to the Logger */
   std::shared_ptr<mc_rtc::Logger> logger_ = nullptr;

@@ -208,13 +208,18 @@ MCController::MCController(const std::vector<std::shared_ptr<mc_rbdyn::RobotModu
                                          }));
   }
   /* Initialize constraints and tasks */
+  // TODO: remove
+  {
+    std::array<double, 3> damper{0.1, 0.01, 0.5};
+    dynamicsConstraint.reset(new mc_solver::DynamicsConstraint(robots(), 0, dt, damper, 0.5));
+    kinematicsConstraint.reset(new mc_solver::KinematicsConstraint(robots(), 0, dt, damper, 0.5));
+    selfCollisionConstraint.reset(new mc_solver::CollisionsConstraint(robots(), 0, 0, dt));
+    selfCollisionConstraint->addCollisions(solver(), robot_modules[0]->minimalSelfCollisions());
+    compoundJointConstraint.reset(new mc_solver::CompoundJointConstraint(robots(), 0, timeStep_));
+  }
+  // Ideally we would remove the assumption that this constraint needs to exist
+  // But for now it is used elsewhere in MCController.cpp
   contactConstraint.reset(new mc_solver::ContactConstraint(dt));
-  std::array<double, 3> damper{0.1, 0.01, 0.5};
-  dynamicsConstraint.reset(new mc_solver::DynamicsConstraint(robots(), 0, dt, damper, 0.5));
-  kinematicsConstraint.reset(new mc_solver::KinematicsConstraint(robots(), 0, dt, damper, 0.5));
-  selfCollisionConstraint.reset(new mc_solver::CollisionsConstraint(robots(), 0, 0, dt));
-  selfCollisionConstraint->addCollisions(solver(), robot_modules[0]->minimalSelfCollisions());
-  compoundJointConstraint.reset(new mc_solver::CompoundJointConstraint(robots(), 0, timeStep));
   postureTask = std::make_shared<mc_tasks::PostureTask>(solver(), 0, 10.0, 5.0);
   /** Load additional robots from the configuration */
   {

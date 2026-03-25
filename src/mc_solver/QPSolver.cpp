@@ -76,6 +76,11 @@ void QPSolver::removeConstraintSet(ConstraintSet & cs)
   constraints_.erase(it);
   cs.removeFromSolver(*this);
   removeDynamicsConstraint(&cs);
+
+  ConstraintSet * csPtr = &cs;
+  constraintSetStorage_.erase(std::remove_if(constraintSetStorage_.begin(), constraintSetStorage_.end(),
+                                             [csPtr](const std::shared_ptr<void> & p) { return csPtr == p.get(); }),
+                              constraintSetStorage_.end());
 }
 
 void QPSolver::addTask(mc_tasks::MetaTask * task)
