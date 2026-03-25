@@ -117,6 +117,7 @@ static inline std::shared_ptr<mc_solver::QPSolver> make_solver(double dt, MCCont
   }
 }
 
+MC_RTC_IGNORE_DEPRECATED_BEGIN
 MCController::MCController(const std::vector<std::shared_ptr<mc_rbdyn::RobotModule>> & robot_modules,
                            double dt,
                            const mc_rtc::Configuration & config,
@@ -124,9 +125,11 @@ MCController::MCController(const std::vector<std::shared_ptr<mc_rbdyn::RobotModu
 : qpsolver(make_solver(dt, params.backend_)), outputRobots_(mc_rbdyn::Robots::make()),
   outputRealRobots_(mc_rbdyn::Robots::make()),
   logger_(std::make_shared<mc_rtc::Logger>(mc_rtc::Logger::Policy::NON_THREADED, "", "")),
-  gui_(std::make_shared<mc_rtc::gui::StateBuilder>()), config_(config), timeStep(dt), name_(MC_CONTROLLER_NAME),
+  gui_(std::make_shared<mc_rtc::gui::StateBuilder>()), config_(config), timeStep_(dt),
+  timeStep(dt) /* sync the deprecated timeStep member with timeStep_ now used internally */, name_(MC_CONTROLLER_NAME),
   loading_location_(MC_CONTROLLER_LOADING_LOCATION)
 {
+  MC_RTC_IGNORE_DEPRECATED_END
   /* Load robots */
   qpsolver->logger(logger_);
   qpsolver->gui(gui_);
@@ -731,7 +734,7 @@ void MCController::createObserverPipelines(const mc_rtc::Configuration & config)
   {
     observerPipelines_.emplace_back(*this);
     auto & pipeline = observerPipelines_.back();
-    pipeline.create(pipelineConfig, timeStep);
+    pipeline.create(pipelineConfig, timeStep_);
     if(pipelineConfig("log", true)) { pipeline.addToLogger(logger()); }
     if(pipelineConfig("gui", false)) { pipeline.addToGUI(*gui()); }
   }

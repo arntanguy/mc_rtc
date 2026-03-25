@@ -34,6 +34,6 @@ void AdmittanceSampleController::reset(const mc_control::ControllerResetData & r
 
 bool AdmittanceSampleController::run()
 {
-  t_ += timeStep;
+  t_ += timestep();
   return Controller::run();
 }

@@ -824,7 +824,7 @@ bool MCGlobalController::run()
       const auto & gi = robot.grippers();
       if(!gi.empty())
       {
-        for(auto & g : gi) { g.get().run(controller_->timeStep, outputRobot, outputRealRobot); }
+        for(auto & g : gi) { g.get().run(controller_->timestep(), outputRobot, outputRealRobot); }
         outputRobot.forwardKinematics();
       }
       robot.module().controlToCanonicalPostProcess(robot, outputRobot);
@@ -1027,7 +1027,7 @@ bool MCGlobalController::GoToHalfSitPose()
 
 void MCGlobalController::start_log()
 {
-  controller_->logger().start(current_ctrl, controller_->timeStep,
+  controller_->logger().start(current_ctrl, controller_->timestep(),
                               setup_logger_.find(current_ctrl) != setup_logger_.end());
   setup_log();
   if(server_) { server_->set_logger(controller_->logger_); }
@@ -1035,14 +1035,14 @@ void MCGlobalController::start_log()
 
 void MCGlobalController::refreshLog()
 {
-  controller_->logger().start(current_ctrl, controller_->timeStep, true);
+  controller_->logger().start(current_ctrl, controller_->timestep(), true);
   setup_log();
 }
 
 void MCGlobalController::setup_log()
 {
   auto & meta = controller_->logger().meta();
-  meta.timestep = controller_->timeStep;
+  meta.timestep = controller_->timestep();
   meta.main_robot = controller_->robot().name();
   meta.main_robot_module = controller_->robot().module().parameters();
   meta.init.clear();

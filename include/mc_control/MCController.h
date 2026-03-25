@@ -339,6 +339,12 @@ public:
   /** Non-const variant of \ref mc_controller_qpsolver_const_doc "solver()" */
   inline mc_solver::QPSolver & solver() noexcept { return *qpsolver; }
 
+  /** Accessor to the controller's timestep
+   *
+   * \note Direct access through the timeStep member variable is now deprecated and will be removed in the future
+   */
+  inline double timestep() const noexcept { return timeStep_; }
+
   /** Returns mc_rtc::Logger instance */
   inline mc_rtc::Logger & logger() noexcept { return *logger_; }
 
@@ -716,9 +722,13 @@ protected:
   /** Monitor updateContacts runtime */
   duration_ms updateContacts_dt_{0};
 
-public:
   /** Controller timestep */
-  const double timeStep;
+  const double timeStep_;
+
+public:
+  /** Controller timestep (deprecated), use timeStep_ and timestep() instead */
+  MC_RTC_DEPRECATED const double timeStep;
+
   /** Contact constraint for the main robot */
   mc_rtc::unique_ptr<mc_solver::ContactConstraint> contactConstraint;
   /** Dynamics constraints for the main robot */

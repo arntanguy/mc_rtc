@@ -102,7 +102,7 @@ bool EncoderObserver::run(const mc_control::MCController & ctl)
     }
     for(unsigned i = 0; i < enc.size(); ++i)
     {
-      encodersVelocity_[i] = (enc[i] - prevEncoders_[i]) / ctl.timeStep;
+      encodersVelocity_[i] = (enc[i] - prevEncoders_[i]) / ctl.timestep();
       prevEncoders_[i] = enc[i];
     }
   }

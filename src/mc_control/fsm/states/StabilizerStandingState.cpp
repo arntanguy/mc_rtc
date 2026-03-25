@@ -221,7 +221,7 @@ bool StabilizerStandingState::run(Controller & ctl)
   double lambda = n.dot(comdd + constants::gravity) / n.dot(com_ - copTarget_);
   Eigen::Vector3d zmp = com_ - (constants::gravity + comdd) / lambda;
 
-  pendulum_.integrateIPM(zmp, lambda, ctl.timeStep);
+  pendulum_.integrateIPM(zmp, lambda, ctl.timestep());
 
   // Update stabilizer target
   stabilizerTask_->target(pendulum_.com(), pendulum_.comd(), pendulum_.comdd(), pendulum_.zmp());

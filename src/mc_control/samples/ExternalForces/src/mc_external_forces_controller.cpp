@@ -41,6 +41,6 @@ void ExternalForcesController::reset(const mc_control::ControllerResetData & res
 
 bool ExternalForcesController::run()
 {
-  t_ += timeStep;
+  t_ += timestep();
   return Controller::run();
 }

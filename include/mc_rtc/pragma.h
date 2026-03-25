@@ -74,3 +74,18 @@
 
 /** Ignore warning by compiler. Used as MC_RTC_diagnostic_ignored(compiler1, warningID1, compiler2, warningID2, ...).*/
 #define MC_RTC_diagnostic_ignored(...) MC_RTC_MAP_TWO_ARGS(MC_RTC_diagnostic_ignored_, __VA_ARGS__)
+
+// Allow to temporarely suppress warnings (for internal use only)
+// usage example:
+// MC_RTC_IGNORE_DEPRECATED({
+//   statement1;
+//   statement2;
+// })
+#if defined(__GNUC__) || defined(__clang__)
+#  define MC_RTC_IGNORE_DEPRECATED_BEGIN \
+    _Pragma("GCC diagnostic push") _Pragma("GCC diagnostic ignored \"-Wdeprecated-declarations\"")
+#  define MC_RTC_IGNORE_DEPRECATED_END _Pragma("GCC diagnostic pop")
+#else
+#  define MC_RTC_IGNORE_DEPRECATED_BEGIN
+#  define MC_RTC_IGNORE_DEPRECATED_END
+#endif
