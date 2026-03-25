@@ -833,7 +833,6 @@ SampleServer::SampleServer() : xythetaz_(4)
                                             {
                                               if(!chunky_xy_data_.add_data) { return; }
                                               double t0 = chunky_xy_data_.t;
-                                              double tF = 0.1;
                                               for(double t = t0; t < t0 + 1.0; t += 0.01)
                                               {
                                                 points.push_back({t, cos(t)});
