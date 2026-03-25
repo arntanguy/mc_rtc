@@ -170,10 +170,10 @@ struct callback_is_serializable
 };
 
 template<typename T>
-struct callback_is_serializable<T, void_t<typename std::result_of<T()>::type>>
+struct callback_is_serializable<T, void_t<std::invoke_result_t<T>>>
 {
-  using ret_type = typename std::result_of<T()>::type;
-  using base_type = typename std::decay<ret_type>::type;
+  using ret_type = std::invoke_result_t<T>;
+  using base_type = std::decay_t<ret_type>;
   static constexpr LogType log_type = is_serializable<base_type>::type;
   static constexpr bool value = is_serializable<base_type>::value;
 };
