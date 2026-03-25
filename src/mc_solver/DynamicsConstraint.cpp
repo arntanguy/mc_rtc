@@ -2,6 +2,7 @@
  * Copyright 2015-2022 CNRS-UM LIRMM, CNRS-AIST JRL
  */
 
+#include <mc_rtc/io_utils.h>
 #include <mc_solver/DynamicsConstraint.h>
 
 #include <mc_solver/ConstraintSetLoader.h>
@@ -11,7 +12,8 @@
 
 #include <Tasks/Bounds.h>
 
-#include "TVMKinematicsConstraint.h"
+#include <mc_solver/KinematicsConstraint.h>
+#include <mc_solver/TVMKinematicsConstraint.h>
 
 namespace mc_solver
 {
@@ -86,11 +88,12 @@ static mc_rtc::void_ptr initialize(QPSolver::Backend backend,
   }
 }
 
-DynamicsConstraint::DynamicsConstraint(const mc_rbdyn::Robots & robots,
+DynamicsConstraint::DynamicsConstraint(KinematicsConstraint::UseNonDampedJointLimitsCstr useNonDampedJointLimitsCstr,
+                                       const mc_rbdyn::Robots & robots,
                                        unsigned int robotIndex,
                                        double timeStep,
                                        bool infTorque)
-: KinematicsConstraint(robots, robotIndex, timeStep),
+: KinematicsConstraint(robots, robotIndex, timeStep, useNonDampedJointLimitsCstr),
   motion_constr_(initialize(backend_, robots, robotIndex, timeStep, infTorque)), robotIndex_(robotIndex)
 {
 }
@@ -188,8 +191,14 @@ mc_solver::ConstraintSetPtr load_dyn_constr(mc_solver::QPSolver & solver, const 
   }
   else
   {
+    mc_rtc::log::warning(
+        "[DynamicsConstraint] Before mc_rtc 2.15, creating a dynamics constraint without specifying a \"damper\" value "
+        "would result in using a joint limits constraint with direct integration (no damping). The behaviour has now "
+        "been modified to create a joint limits constraint with a default damper value of [{}]",
+        mc_rtc::io::to_string(mc_solver::KinematicsConstraint::DefaultDamperValue));
     return std::make_shared<mc_solver::DynamicsConstraint>(solver.robots(), robotIndex, solver.dt(),
-                                                           config("infTorque", false));
+                                                           mc_solver::KinematicsConstraint::DefaultDamperValue,
+                                                           config("velocityPercent", 0.5), config("infTorque", false));
   }
 }
 

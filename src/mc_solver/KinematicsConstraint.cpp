@@ -131,7 +131,10 @@ static mc_rtc::void_ptr initialize(QPSolver::Backend backend,
   }
 }
 
-KinematicsConstraint::KinematicsConstraint(const mc_rbdyn::Robots & robots, unsigned int robotIndex, double timeStep)
+KinematicsConstraint::KinematicsConstraint(const mc_rbdyn::Robots & robots,
+                                           unsigned int robotIndex,
+                                           double timeStep,
+                                           UseNonDampedJointLimitsCstr)
 : constraint_(initialize(backend_, robots, robotIndex, timeStep))
 {
 }

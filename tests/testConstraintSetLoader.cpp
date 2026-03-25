@@ -15,6 +15,7 @@
 
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/operations.hpp>
+#include "mc_solver/KinematicsConstraint.h"
 namespace bfs = boost::filesystem;
 
 #include <boost/mpl/list.hpp>
@@ -52,7 +53,7 @@ struct ConstraintTester
 template<>
 struct ConstraintTester<mc_solver::BoundedSpeedConstr>
 {
-  ConstraintTester<mc_solver::BoundedSpeedConstr>()
+  ConstraintTester()
   {
     for(int i = 0; i < 3; ++i)
     {
@@ -244,7 +245,8 @@ struct ConstraintTester<mc_solver::DynamicsConstraint>
 {
   mc_solver::ConstraintSetPtr make_ref(mc_solver::QPSolver & solver)
   {
-    return std::make_shared<mc_solver::DynamicsConstraint>(*robots, 0, solver.dt());
+    return std::make_shared<mc_solver::DynamicsConstraint>(
+        mc_solver::KinematicsConstraint::UseNonDampedJointLimitsCstr{}, *robots, 0, solver.dt());
   }
 
   std::string json()

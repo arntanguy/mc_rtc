@@ -20,7 +20,7 @@ namespace mc_solver
 struct MC_SOLVER_DLLAPI DynamicsConstraint : public KinematicsConstraint
 {
 public:
-  /** Constructor
+  /** \deprecated Constructor
    * Builds a regular joint limits constraint and a motion constr depending on
    * the nature of the robot
    * See tasks::qp::MotionConstr for details on the latter one
@@ -28,7 +28,18 @@ public:
    * \param robotIndex The index of the robot affected by this constraint
    * \param timeStep Solver timestep
    * \param infTorque If true, ignore the torque limits set in the robot model
+   * \param useNonDampedJointLimitsCstr tag to force use of this deprecated constructor
+   * \warning This used to be the default constructor is no damper was provided, this is no longer the case. If your
+   * code was using this constructor it will now (silently) use the (better) damped version. You might experience a
+   * subtle behaviour change.
    */
+  MC_RTC_DEPRECATED DynamicsConstraint(
+      KinematicsConstraint::UseNonDampedJointLimitsCstr /* useNonDampedJointLimitsCstr */,
+      const mc_rbdyn::Robots & robots,
+      unsigned int robotIndex,
+      double timeStep,
+      bool infTorque = false);
+
   DynamicsConstraint(const mc_rbdyn::Robots & robots, unsigned int robotIndex, double timeStep, bool infTorque = false);
 
   /** Constructor
@@ -46,7 +57,7 @@ public:
   DynamicsConstraint(const mc_rbdyn::Robots & robots,
                      unsigned int robotIndex,
                      double timeStep,
-                     const std::array<double, 3> & damper,
+                     const std::array<double, 3> & damper = KinematicsConstraint::DefaultDamperValue,
                      double velocityPercent = 1.0,
                      bool infTorque = false);
 
