@@ -89,3 +89,13 @@
 #  define MC_RTC_IGNORE_DEPRECATED_BEGIN
 #  define MC_RTC_IGNORE_DEPRECATED_END
 #endif
+
+// Ignore -Wdangling-reference warning
+#if defined(__GNUC__) || defined(__clang__)
+#  define MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_BEGIN \
+    _Pragma("GCC diagnostic push") _Pragma("GCC diagnostic ignored \"-Wdangling-reference\"")
+#  define MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_END _Pragma("GCC diagnostic pop")
+#else
+#  define MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_BEGIN
+#  define MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_END
+#endif

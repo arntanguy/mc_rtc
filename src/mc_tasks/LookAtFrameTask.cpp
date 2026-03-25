@@ -58,7 +58,10 @@ std::shared_ptr<mc_tasks::LookAtFrameTask> load_look_at_frame(mc_solver::QPSolve
                                                               const mc_rtc::Configuration & config)
 {
   Eigen::Vector3d frameVector = Eigen::Vector3d::Zero();
+  // false positive, see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=107532
+  MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_BEGIN
   const auto & robot = robotFromConfig(config, solver.robots(), "lookAtFrame");
+  MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_END
   const auto & frame = [&]() -> const mc_rbdyn::RobotFrame &
   {
     if(config.has("body"))
@@ -70,7 +73,8 @@ std::shared_ptr<mc_tasks::LookAtFrameTask> load_look_at_frame(mc_solver::QPSolve
     frameVector = config("frameVector");
     return robot.frame(config("frame"));
   }();
-  const auto & target = [&]() -> const mc_rbdyn::RobotFrame &
+  MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_BEGIN
+  auto getTarget = [&]() -> const mc_rbdyn::RobotFrame &
   {
     if(config.has("surface"))
     {
@@ -83,7 +87,10 @@ std::shared_ptr<mc_tasks::LookAtFrameTask> load_look_at_frame(mc_solver::QPSolve
     const auto & target_robots =
         robotFromConfig(tgt, solver.robots(), "lookAtFrame", false, "robotIndex", "robot", frame.robot().name());
     return target_robots.frame(tgt("frame"));
-  }();
+  };
+  const auto & target = getTarget();
+  MC_RTC_GCC_IGNORE_DANGLING_REFERENCE_END
+
   auto t = std::make_shared<mc_tasks::LookAtFrameTask>(frame, frameVector, target);
   t->load(solver, config);
   return t;
