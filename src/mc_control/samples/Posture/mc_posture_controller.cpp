@@ -15,29 +15,33 @@ MCPostureController::MCPostureController(std::shared_ptr<mc_rbdyn::RobotModule> 
 
                                          const mc_rtc::Configuration & config,
                                          Backend backend)
-: MCController(robot_module, dt, backend)
+: MCController(robot_module, dt, config, backend)
 {
 
   if(config("ContactConstraint", true))
   {
+    mc_rtc::log::info("[PostureController] Adding contact constraint");
     solver().addConstraintSet(std::make_shared<mc_solver::ContactConstraint>(dt));
   }
   if(config("KinematicsConstraint", true))
   {
+    mc_rtc::log::info("[PostureController] Adding kinamatics constraint");
     solver().addConstraintSet(std::make_shared<mc_solver::KinematicsConstraint>(robots(), 0, dt));
   }
   if(config("SelfCollisionConstraint", true))
   {
-    solver().addConstraintSet(selfCollisionConstraint);
+    mc_rtc::log::info("[PostureController] Adding self collision constraint");
     auto selfColCstr = std::make_shared<mc_solver::CollisionsConstraint>(robots(), 0, 0, dt);
     selfColCstr->addCollisions(solver(), robot().module().minimalSelfCollisions());
     solver().addConstraintSet(selfColCstr);
   }
   if(config("CompoundJointConstraint", true))
   {
+    mc_rtc::log::info("[PostureController] Adding compound joint constraint");
     solver().addConstraintSet(std::make_shared<mc_solver::CompoundJointConstraint>(robots(), 0, dt));
   }
 
+  mc_rtc::log::info("[PostureController] Adding default posture task");
   // Add the default posture task to the solver
   solver().addTask(postureTask.get());
   postureTask->stiffness(1.0);
