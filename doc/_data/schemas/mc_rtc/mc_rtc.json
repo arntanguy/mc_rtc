@@ -50,9 +50,18 @@
           {
             "type": "array",
             "items": { "$ref": "#/definitions/SampleControllerNames"},
-            "description": "Names of multiple controllers to enable"
+            "description": "Names of multiple controllers to enable. First controller is used by default, use 'Default' to choose."
           }
         ]
+    },
+    "Default": {
+      "$ref": "#/definitions/SampleControllerNames"
+      "description": "Select which controller to run from the Enabled array" }
+    },
+    "IncludeHalfSitController": {
+      "type": "boolean",
+      "default": true,
+      "description": "Set to false to prevent loading the HalfSitting controller"
     },
     "Timestep": {
       "type": "number",
