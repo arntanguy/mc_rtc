@@ -52,10 +52,33 @@ macro(mc_rtc_set_all_install_paths HONOR_PREFIX)
   else()
     message(DEBUG "Using mc_rtc's install prefix for all runtime install paths")
     # On Nix all paths obtained from GNUInstallDir are absolute, here we want mc_rtc'
-    # runtime paths include(GNUInstallDirs)
-    set(MC_RTC_BINDIR "${PACKAGE_PREFIX_DIR}/bin")
-    set(MC_RTC_DOCDIR "${PACKAGE_PREFIX_DIR}/share/doc/mc_rtc")
-    set(MC_RTC_LIBDIR "${PACKAGE_PREFIX_DIR}/lib")
+    # runtime paths 
+    include(GNUInstallDirs)
+
+    message(WARNING "Debugging GNUInstallDirs when HONOR_PREFIX=OFF")
+    message(STATUS "CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}")
+    message(STATUS "PACKAGE_PREFIX_DIR=${PACKAGE_PREFIX_DIR}")
+    message(STATUS "CMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}")
+    message(STATUS "CMAKE_INSTALL_DOCDIR=${CMAKE_INSTALL_DOCDIR}")
+    message(STATUS "CMAKE_INSTALL_BINDIR=${CMAKE_INSTALL_BINDIR}")
+    cmake_path(RELATIVE_PATH CMAKE_INSTALL_BINDIR
+      BASE_DIRECTORY ${CMAKE_INSTALL_PREFIX}
+      OUTPUT_VARIABLE MC_RTC_BINDIR)
+    cmake_path(RELATIVE_PATH CMAKE_INSTALL_LIBDIR
+      BASE_DIRECTORY ${CMAKE_INSTALL_PREFIX}
+      OUTPUT_VARIABLE MC_RTC_LIBDIR)
+    cmake_path(RELATIVE_PATH CMAKE_INSTALL_DOCDIR
+      BASE_DIRECTORY ${CMAKE_INSTALL_PREFIX}
+      OUTPUT_VARIABLE MC_RTC_DOCDIR)
+    message(STATUS "MC_RTC_LIBDIR=${MC_RTC_LIBDIR}")
+    message(STATUS "MC_RTC_DOCDIR=${MC_RTC_DOCDIR}")
+    message(STATUS "MC_RTC_BINDIR=${MC_RTC_BINDIR}")
+    set(MC_RTC_BINDIR "${PACKAGE_PREFIX_DIR}/${MC_RTC_BINDIR}")
+    set(MC_RTC_DOCDIR "${PACKAGE_PREFIX_DIR}/${MC_RTC_DOCDIR}")
+    set(MC_RTC_LIBDIR "${PACKAGE_PREFIX_DIR}/${MC_RTC_LIBDIR}")
+    message(STATUS "MC_RTC_LIBDIR=${MC_RTC_LIBDIR}")
+    message(STATUS "MC_RTC_DOCDIR=${MC_RTC_DOCDIR}")
+    message(STATUS "MC_RTC_BINDIR=${MC_RTC_BINDIR}")
   endif()
   message(DEBUG
           "MC_RTC_BINDIR set to ${MC_RTC_BINDIR} because HONOR_PREFIX=${HONOR_PREFIX}"
