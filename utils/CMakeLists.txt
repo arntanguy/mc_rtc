@@ -129,5 +129,5 @@ if(BUILD_MC_RTC_PYTHON_UTILS)
     endforeach()
   endif()
 
-  add_subdirectory(mc_log_gui)
+  add_subdirectory(python)
 endif() # MC_RTC_BUILD_PYTHON_UTILITIES

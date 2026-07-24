@@ -1608,9 +1608,9 @@ class MCLogUI(QtWidgets.QMainWindow):
         for n, y1, y2, y1d, y2d in menuEntries:
             act = QtWidgets.QAction(n, self.ui.menuCommonPlots)
             act.triggered.connect(
-                lambda checked, n_=n, y1_=y1, y2_=y2, y1d_=y1d, y2d_=y2d: MCLogJointDialog(
-                    self, self.rm, n_, y1_, y2_, y1d_, y2d_
-                ).exec_()
+                lambda checked, n_=n, y1_=y1, y2_=y2, y1d_=y1d, y2d_=y2d: (
+                    MCLogJointDialog(self, self.rm, n_, y1_, y2_, y1d_, y2d_).exec_()
+                )
             )
             self.ui.menuCommonPlots.addAction(act)
         fSensors = set()

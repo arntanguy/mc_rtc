@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_MCLogTab(object):
     def setupUi(self, MCLogTab):
         MCLogTab.setObjectName("MCLogTab")
@@ -49,4 +50,5 @@ class Ui_MCLogTab(object):
         _translate = QtCore.QCoreApplication.translate
         MCLogTab.setWindowTitle(_translate("MCLogTab", "MCLogTab"))
 
-from mc_log_ui.mc_log_plotcanvas import PlotCanvasWithToolbar
+
+from ..mc_log_plotcanvas import PlotCanvasWithToolbar

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mc_log_ui"
+version = "1.0.0"
+description = "A log UI using PyQt5"
+authors = [
+  {name = "Your Name", email = "your@email.com"}
+]
+dependencies = [
+  "PyQt5",
+  "numpy",
+  "matplotlib"
+]
+requires-python = ">=3.7"
+
+[project.scripts]
+mc_log_ui = "mc_log_ui.__main__:main"
+plot_logs = "mc_log_ui.plot_logs:main"
+
+[tool.setuptools]
+packages = ["mc_log_ui", "mc_log_ui.ui"]

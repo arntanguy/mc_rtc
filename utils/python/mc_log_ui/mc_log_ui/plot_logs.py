@@ -1,4 +1,4 @@
-#!/usr/bin/env @MC_LOG_UI_PYTHON_EXECUTABLE@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 #
@@ -39,7 +39,7 @@ def usage():
     sys.exit(1)
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 3:
         usage()
     data = read_log(sys.argv[1])
@@ -52,3 +52,7 @@ if __name__ == "__main__":
         figure.fig.set_size_inches(30, 20)
         figure.fig.savefig("{}.{}".format(plot.title, format_))
         plt.close(figure.fig)
+
+
+if __name__ == "__main__":
+    main()

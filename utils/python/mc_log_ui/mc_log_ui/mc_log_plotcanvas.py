@@ -1412,8 +1412,8 @@ class PlotCanvasWithToolbar(PlotFigure, QWidget):
         def isNull(ydata, idx):
             if self._3D:
                 # data is [x, y, z, t]
-                return (
-                    lambda ydata, idx: (ydata[0] is None or np.isnan(ydata[0][idx]))
+                return lambda ydata, idx: (
+                    (ydata[0] is None or np.isnan(ydata[0][idx]))
                     or (ydata[1] is None or np.isnan(ydata[1][idx]))
                     or (ydata[2] is None or np.isnan(ydata[2][idx]))
                 )
