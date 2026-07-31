@@ -129,7 +129,6 @@ void EncoderObserver::update(mc_control::MCController & ctl)
   const auto & q = robot.encoderValues();
   const auto & tau = robot.jointTorques();
 
-  // Set all joint values and velocities from encoders
   size_t nJoints = realRobot.refJointOrder().size();
 
   bool tauValid = (tau.size() == nJoints);

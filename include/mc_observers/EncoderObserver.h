@@ -52,9 +52,10 @@ struct MC_OBSERVER_DLLAPI EncoderObserver : public Observer
   bool run(const mc_control::MCController & ctl) override;
 
   /** Update the real robot from the estimator state according to the observer's
-   * results
+   * results. Joint torque is always synced from sensor readings (or zeroed if
+   * unavailable) regardless of PosUpdate/VelUpdate configuration.
    *
-   * \see PosUpdate, VelUpdate for details on the method used for estimation
+   * \see PosUpdate, VelUpdate for details on the method used for position/velocity estimation
    */
   void update(mc_control::MCController & ctl) override;
 
